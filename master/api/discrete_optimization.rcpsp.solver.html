@@ -1959,6 +1959,45 @@ to a discrete-optimization problem</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.solver.rcpsp_lp_solver.</span></span><span class="sig-name descname"><span class="pre">LP_RCPSP_CPLEX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_model.SingleModeRCPSPModel" title="discrete_optimization.rcpsp.rcpsp_model.SingleModeRCPSPModel"><span class="pre">SingleModeRCPSPModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_objective_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction" title="discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction"><span class="pre">ParamsObjectiveFunction</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/discrete_optimization/rcpsp/solver/rcpsp_lp_solver.html#LP_RCPSP_CPLEX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver" title="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">CplexMilpSolver</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">_BaseLP_MRCPSP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.init_model">
+<span class="sig-name descname"><span class="pre">init_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/discrete_optimization/rcpsp/solver/rcpsp_lp_solver.html#LP_RCPSP_CPLEX.init_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.init_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">docplex.mp.model.Model</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.results_solve">
+<span class="sig-name descname"><span class="pre">results_solve</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">SolveSolution</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.results_solve" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.retrieve_solutions">
+<span class="sig-name descname"><span class="pre">retrieve_solutions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters_milp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.ParametersMilp" title="discrete_optimization.generic_tools.lp_tools.ParametersMilp"><span class="pre">ParametersMilp</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage" title="discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage"><span class="pre">ResultStorage</span></a></span></span><a class="reference internal" href="../_modules/discrete_optimization/rcpsp/solver/rcpsp_lp_solver.html#LP_RCPSP_CPLEX.retrieve_solutions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.retrieve_solutions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters_milp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.ParametersMilp" title="discrete_optimization.generic_tools.lp_tools.ParametersMilp"><span class="pre">ParametersMilp</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage" title="discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage"><span class="pre">ResultStorage</span></a></span></span><a class="reference internal" href="../_modules/discrete_optimization/rcpsp/solver/rcpsp_lp_solver.html#LP_RCPSP_CPLEX.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solver.rcpsp_lp_solver.LP_RCPSP_CPLEX.solve" title="Permalink to this definition"></a></dt>
+<dd><p>Generic solving function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – any argument specific to the solver</p>
+</dd>
+</dl>
+<p>Returns (ResultStorage): a result object containing potentially a pool of solutions
+to a discrete-optimization problem</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt">
 <span id="discrete-optimization-rcpsp-solver-rcpsp-lp-solver-gantt-module"></span><h2>discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt module<a class="headerlink" href="#module-discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt" title="Permalink to this heading"></a></h2>

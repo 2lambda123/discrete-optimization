@@ -1770,6 +1770,53 @@ to a discrete-optimization problem</p>
 <section id="module-discrete_optimization.generic_tools.lp_tools">
 <span id="discrete-optimization-generic-tools-lp-tools-module"></span><h2>discrete_optimization.generic_tools.lp_tools module<a class="headerlink" href="#module-discrete_optimization.generic_tools.lp_tools" title="Permalink to this heading"></a></h2>
 <dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.lp_tools.</span></span><span class="sig-name descname"><span class="pre">CplexMilpSolver</span></span><a class="reference internal" href="../_modules/discrete_optimization/generic_tools/lp_tools.html#CplexMilpSolver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#discrete_optimization.generic_tools.lp_tools.MilpSolver" title="discrete_optimization.generic_tools.lp_tools.MilpSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">MilpSolver</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_obj_value_for_ith_solution">
+<span class="sig-name descname"><span class="pre">get_obj_value_for_ith_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/discrete_optimization/generic_tools/lp_tools.html#CplexMilpSolver.get_obj_value_for_ith_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_obj_value_for_ith_solution" title="Permalink to this definition"></a></dt>
+<dd><p>Get objective value for i-th solution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_var_value_for_ith_solution">
+<span class="sig-name descname"><span class="pre">get_var_value_for_ith_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">docplex.mp.dvar.Var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/discrete_optimization/generic_tools/lp_tools.html#CplexMilpSolver.get_var_value_for_ith_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_var_value_for_ith_solution" title="Permalink to this definition"></a></dt>
+<dd><p>Get value for i-th solution of a given variable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">docplex.mp.model.Model</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.nb_solutions">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nb_solutions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.nb_solutions" title="Permalink to this definition"></a></dt>
+<dd><p>Number of solutions found by the solver.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.results_solve">
+<span class="sig-name descname"><span class="pre">results_solve</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">SolveSolution</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.results_solve" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters_milp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#discrete_optimization.generic_tools.lp_tools.ParametersMilp" title="discrete_optimization.generic_tools.lp_tools.ParametersMilp"><span class="pre">ParametersMilp</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage" title="discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage"><span class="pre">ResultStorage</span></a></span></span><a class="reference internal" href="../_modules/discrete_optimization/generic_tools/lp_tools.html#CplexMilpSolver.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.solve" title="Permalink to this definition"></a></dt>
+<dd><p>Generic solving function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – any argument specific to the solver</p>
+</dd>
+</dl>
+<p>Returns (ResultStorage): a result object containing potentially a pool of solutions
+to a discrete-optimization problem</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.lp_tools.</span></span><span class="sig-name descname"><span class="pre">GurobiMilpSolver</span></span><a class="reference internal" href="../_modules/discrete_optimization/generic_tools/lp_tools.html#GurobiMilpSolver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#discrete_optimization.generic_tools.lp_tools.MilpSolver" title="discrete_optimization.generic_tools.lp_tools.MilpSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">MilpSolver</span></code></a></p>
