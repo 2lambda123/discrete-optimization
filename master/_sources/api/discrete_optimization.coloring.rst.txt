@@ -28,6 +28,14 @@ discrete\_optimization.coloring.coloring\_parser module
    :undoc-members:
    :show-inheritance:
 
+discrete\_optimization.coloring.coloring\_plot module
+-----------------------------------------------------
+
+.. automodule:: discrete_optimization.coloring.coloring_plot
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 discrete\_optimization.coloring.coloring\_solvers module
 --------------------------------------------------------
 
