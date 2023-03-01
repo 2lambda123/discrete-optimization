@@ -11,10 +11,8 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -122,10 +120,10 @@ available in the <code class="docutils literal notranslate"><span class="pre">no
 <p>We handle here the <em>0-1 knapsack problem</em> where each item can only be taken once.</p>
 <p>Many different optimization approach can be tested on the combinatorial problem, we’ll see a few during the notebook:</p>
 <ul class="simple">
-<li><p><span class="xref myst">Greedy heuristic methods</span></p></li>
-<li><p><span class="xref myst">Mixed Integer Linear Programming (MILP)</span></p></li>
-<li><p><span class="xref myst">Constraint Programming (CP)</span></p></li>
-<li><p><span class="xref myst">Large neighborhood search (LNS)</span>, a metaheuristic on top of CP or MILP</p></li>
+<li><p><a class="reference internal" href="#Greedy-heuristic"><span class="xref myst">Greedy heuristic methods</span></a></p></li>
+<li><p><a class="reference internal" href="#Mixed-integer-linear-programming"><span class="xref myst">Mixed Integer Linear Programming (MILP)</span></a></p></li>
+<li><p><a class="reference internal" href="#Constraint-Programming"><span class="xref myst">Constraint Programming (CP)</span></a></p></li>
+<li><p><a class="reference internal" href="#Large-neighborhood-search"><span class="xref myst">Large neighborhood search (LNS)</span></a>, a metaheuristic on top of CP or MILP</p></li>
 </ul>
 </section>
 <section id="rcpsp-tutorials">
@@ -160,7 +158,7 @@ available in the <code class="docutils literal notranslate"><span class="pre">no
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Solving RCPSP with heuristics</a><a class="headerlink" href="#solving-rcpsp-with-heuristics" title="Permalink to this heading"></a></h3>
 <p><a class="reference external" href="https://github.com/airbus/discrete-optimization/blob/master/notebooks/RCPSP%20tutorials/RCPSP-2%20Heuristics%20Solving.ipynb"><img alt="Github" src="https://img.shields.io/badge/see-Github-579aca?logo=github" /></a>
 <a class="reference external" href="https://mybinder.org/v2/gh/airbus/discrete-optimization/binder?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fairbus%252Fdiscrete-optimization%26urlpath%3Dtree%252Fdiscrete-optimization%252Fnotebooks%252FRCPSP%2Btutorials%252FRCPSP-2%2BHeuristics%2BSolving.ipynb%26branch%3Dmaster"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>We admit that you followed the following <span class="xref myst">notebook</span> that introduced you all the basics for RCPSP Problems, in this notebook we will test two greedy heuristics that builds feasible solution.</p>
+<p>We admit that you followed the following <a class="reference internal" href="#RCPSP%20%231%20Introduction.ipynb"><span class="xref myst">notebook</span></a> that introduced you all the basics for RCPSP Problems, in this notebook we will test two greedy heuristics that builds feasible solution.</p>
 </section>
 <section id="solving-rcpsp-with-local-search-metaheuristics-genetic-algorithm">
 <h3><a class="toc-backref" href="#id5" role="doc-backlink">Solving RCPSP with local search/metaheuristics/genetic algorithm</a><a class="headerlink" href="#solving-rcpsp-with-local-search-metaheuristics-genetic-algorithm" title="Permalink to this heading"></a></h3>
@@ -168,7 +166,7 @@ available in the <code class="docutils literal notranslate"><span class="pre">no
 <a class="reference external" href="https://mybinder.org/v2/gh/airbus/discrete-optimization/binder?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fairbus%252Fdiscrete-optimization%26urlpath%3Dtree%252Fdiscrete-optimization%252Fnotebooks%252FRCPSP%2Btutorials%252FRCPSP-3%2BLocal%2Bsearch.ipynb%26branch%3Dmaster"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <p>One big family of combinatorial optimisation solver is local search. We include all metaheuristics and genetic algorithm into this simple terminology.</p>
 <p>In general, a local search algorithm explore the solution space by applying local changes to the current set of solutions.</p>
-<p>In the case of RCPSP, we have seen in <span class="xref myst">the first notebook</span> that we can represent a solution with a priority list of tasks (equivalent to a permutation).
+<p>In the case of RCPSP, we have seen in <a class="reference internal" href="#RCPSP%20%231%20Introduction.ipynb"><span class="xref myst">the first notebook</span></a> that we can represent a solution with a priority list of tasks (equivalent to a permutation).
 Therefore local search algorithms are available on the search space being the ensemble of all permutation of tasks. We can imagine many kind of local changes possible to explore the permutation set.</p>
 <p>Local search (LS) algorithms are anytime algorithm, we have access to the current best solution whenever we want to stop the optimisation process. LS can’t prove that a solution is optimal but it is rarely an issue in real world applications.</p>
 </section>
@@ -176,7 +174,7 @@ Therefore local search algorithms are available on the search space being the en
 <h3><a class="toc-backref" href="#id6" role="doc-backlink">Solve RCPSP by linear programming: MILP</a><a class="headerlink" href="#solve-rcpsp-by-linear-programming-milp" title="Permalink to this heading"></a></h3>
 <p><a class="reference external" href="https://github.com/airbus/discrete-optimization/blob/master/notebooks/RCPSP%20tutorials/RCPSP-4%20Linear%20programming.ipynb"><img alt="Github" src="https://img.shields.io/badge/see-Github-579aca?logo=github" /></a>
 <a class="reference external" href="https://mybinder.org/v2/gh/airbus/discrete-optimization/binder?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fairbus%252Fdiscrete-optimization%26urlpath%3Dtree%252Fdiscrete-optimization%252Fnotebooks%252FRCPSP%2Btutorials%252FRCPSP-4%2BLinear%2Bprogramming.ipynb%26branch%3Dmaster"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>We admit that you followed the <span class="xref myst">first notebook</span> that introduced you all the basics for RCPSP Problems, on which we will apply here linear programming.</p>
+<p>We admit that you followed the <a class="reference internal" href="#RCPSP%20%231%20Introduction.ipynb"><span class="xref myst">first notebook</span></a> that introduced you all the basics for RCPSP Problems, on which we will apply here linear programming.</p>
 <p>Linear programming is a paradigm to model optimisation problem where the objective function and constraints are linear in terms of the variables :</p>
 <p><span class="math notranslate nohighlight">\( y = max_{x}(c^t.x) \)</span>
 such that <span class="math notranslate nohighlight">\(A.x \leq b \)</span></p>
@@ -190,7 +188,7 @@ such that <span class="math notranslate nohighlight">\(A.x \leq b \)</span></p>
 In discrete-optimization library, <a class="reference external" href="https://www.minizinc.org/">minizinc</a> declarative language and its <a class="reference external" href="https://minizinc-python.readthedocs.io/en/latest/">python api</a> is used extensively. However it is quite easy to use other modeling library such as <a class="reference external" href="https://github.com/CPMpy/cpmpy/tree/master/cpmpy">Cpmpy</a> in the future.
 Some constraint programming models are stored in discrete_optimization/knapsack/minizinc folder.</p>
 <p>In this notebook, we’ll use the <a class="reference external" href="https://github.com/chuffed/chuffed#description">chuffed</a> solver which is a state of the art lazy clause solver.</p>
-<p>We assume that you have already been introduced to RCPSP problems thanks to this <span class="xref myst">notebook</span>.</p>
+<p>We assume that you have already been introduced to RCPSP problems thanks to this <a class="reference internal" href="#RCPSP%20%231%20Introduction.ipynb"><span class="xref myst">notebook</span></a>.</p>
 </section>
 <section id="large-neighborhood-search-cp-to-solve-rcpsp">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">Large neighborhood search + CP to solve RCPSP</a><a class="headerlink" href="#large-neighborhood-search-cp-to-solve-rcpsp" title="Permalink to this heading"></a></h3>

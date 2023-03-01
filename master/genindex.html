@@ -10,10 +10,8 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/versions.js"></script>
@@ -561,7 +559,11 @@
 </li>
       </ul></li>
       <li><a href="api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_asp_solver.ColoringASPSolver.build_string_data_input">build_string_data_input() (discrete_optimization.coloring.solvers.coloring_asp_solver.ColoringASPSolver method)</a>
+
+      <ul>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver.build_string_data_input">(discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver method)</a>
 </li>
+      </ul></li>
       <li><a href="api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_the_cycles">build_the_cycles() (in module discrete_optimization.pickup_vrp.solver.lp_solver)</a>
 
       <ul>
@@ -1219,7 +1221,11 @@
       <li><a href="api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_model.SGSWithoutArray.create_delta_dict">create_delta_dict() (discrete_optimization.rcpsp.rcpsp_model.SGSWithoutArray static method)</a>
 </li>
       <li><a href="api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_asp_solver.create_empty_folder">create_empty_folder() (in module discrete_optimization.coloring.solvers.coloring_asp_solver)</a>
+
+      <ul>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_asp_solver.create_empty_folder">(in module discrete_optimization.knapsack.solvers.knapsack_asp_solver)</a>
 </li>
+      </ul></li>
       <li><a href="api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_model_utils.create_fake_tasks">create_fake_tasks() (in module discrete_optimization.rcpsp.rcpsp_model_utils)</a>
 </li>
       <li><a href="api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.create_fake_tasks_multiskills">create_fake_tasks_multiskills() (in module discrete_optimization.rcpsp_multiskill.rcpsp_multiskill)</a>
@@ -1249,6 +1255,8 @@
       <li><a href="api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_model.UncertainRCPSPModel.create_rcpsp_model">create_rcpsp_model() (discrete_optimization.rcpsp.rcpsp_model.UncertainRCPSPModel method)</a>
 </li>
       <li><a href="api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_selective_tsp">create_selective_tsp() (in module discrete_optimization.pickup_vrp.builders.instance_builders)</a>
+</li>
+      <li><a href="api/discrete_optimization.knapsack.html#discrete_optimization.knapsack.knapsack_model.create_subknapsack_model">create_subknapsack_model() (in module discrete_optimization.knapsack.knapsack_model)</a>
 </li>
       <li><a href="api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblem_cut_time">create_subproblem_cut_time() (in module discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive)</a>
 </li>
@@ -1954,8 +1962,6 @@
         <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.cp_solvers">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     discrete_optimization.knapsack.solvers.dyn_prog_knapsack
 
@@ -1963,6 +1969,8 @@
         <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.dyn_prog_knapsack">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     discrete_optimization.knapsack.solvers.gphh_knapsack
 
@@ -1978,10 +1986,24 @@
 </li>
       </ul></li>
       <li>
+    discrete_optimization.knapsack.solvers.knapsack_asp_solver
+
+      <ul>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_asp_solver">module</a>
+</li>
+      </ul></li>
+      <li>
     discrete_optimization.knapsack.solvers.knapsack_cpmpy
 
       <ul>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_cpmpy">module</a>
+</li>
+      </ul></li>
+      <li>
+    discrete_optimization.knapsack.solvers.knapsack_decomposition
+
+      <ul>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_decomposition">module</a>
 </li>
       </ul></li>
       <li>
@@ -3831,6 +3853,8 @@
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.gphh_knapsack.GPHH.init_model">(discrete_optimization.knapsack.solvers.gphh_knapsack.GPHH method)</a>
 </li>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver.init_model">(discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver method)</a>
+</li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_cpmpy.CPMPYKnapsackSolver.init_model">(discrete_optimization.knapsack.solvers.knapsack_cpmpy.CPMPYKnapsackSolver method)</a>
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_solver.SolverKnapsack.init_model">(discrete_optimization.knapsack.solvers.knapsack_solver.SolverKnapsack method)</a>
@@ -4050,16 +4074,20 @@
 </li>
       <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler">KnapConstraintHandler (class in discrete_optimization.knapsack.solvers.cp_solvers)</a>
 </li>
+      <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver">KnapsackASPSolver (class in discrete_optimization.knapsack.solvers.knapsack_asp_solver)</a>
+</li>
+      <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver">KnapsackDecomposedSolver (class in discrete_optimization.knapsack.solvers.knapsack_decomposition)</a>
+</li>
       <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.dyn_prog_knapsack.KnapsackDynProg">KnapsackDynProg (class in discrete_optimization.knapsack.solvers.dyn_prog_knapsack)</a>
 </li>
       <li><a href="api/discrete_optimization.knapsack.html#discrete_optimization.knapsack.knapsack_model.KnapsackModel">KnapsackModel (class in discrete_optimization.knapsack.knapsack_model)</a>
 </li>
       <li><a href="api/discrete_optimization.knapsack.html#discrete_optimization.knapsack.knapsack_model.KnapsackModel_Mobj">KnapsackModel_Mobj (class in discrete_optimization.knapsack.knapsack_model)</a>
 </li>
-      <li><a href="api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip">KnapsackMutationSingleBitFlip (class in discrete_optimization.knapsack.mutation.mutation_knapsack)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip">KnapsackMutationSingleBitFlip (class in discrete_optimization.knapsack.mutation.mutation_knapsack)</a>
+</li>
       <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.lp_solvers.KnapsackORTools">KnapsackORTools (class in discrete_optimization.knapsack.solvers.lp_solvers)</a>
 </li>
       <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapsackSol">KnapsackSol (class in discrete_optimization.knapsack.solvers.cp_solvers)</a>
@@ -4642,7 +4670,11 @@
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.greedy_solvers">discrete_optimization.knapsack.solvers.greedy_solvers</a>
 </li>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_asp_solver">discrete_optimization.knapsack.solvers.knapsack_asp_solver</a>
+</li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_cpmpy">discrete_optimization.knapsack.solvers.knapsack_cpmpy</a>
+</li>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_decomposition">discrete_optimization.knapsack.solvers.knapsack_decomposition</a>
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#module-discrete_optimization.knapsack.solvers.knapsack_lns_cp_solver">discrete_optimization.knapsack.solvers.knapsack_lns_cp_solver</a>
 </li>
@@ -5671,6 +5703,8 @@
 </li>
       <li><a href="api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.rebuild_routine_variant">rebuild_routine_variant() (in module discrete_optimization.pickup_vrp.solver.lp_solver)</a>
 </li>
+      <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver.rebuild_sol">rebuild_sol() (discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver method)</a>
+</li>
       <li><a href="api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.rebuild_tsp_routine">rebuild_tsp_routine() (in module discrete_optimization.tsp.solver.solver_lp_iterative)</a>
 
       <ul>
@@ -5899,6 +5933,8 @@
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver.retrieve_solutions">(discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver method)</a>
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver.retrieve_solutions">(discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver method)</a>
+</li>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver.retrieve_solutions">(discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver method)</a>
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.lp_solvers.LPKnapsack.retrieve_solutions">(discrete_optimization.knapsack.solvers.lp_solvers.LPKnapsack method)</a>
 </li>
@@ -6398,7 +6434,11 @@
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyDummy.solve">(discrete_optimization.knapsack.solvers.greedy_solvers.GreedyDummy method)</a>
 </li>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver.solve">(discrete_optimization.knapsack.solvers.knapsack_asp_solver.KnapsackASPSolver method)</a>
+</li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_cpmpy.CPMPYKnapsackSolver.solve">(discrete_optimization.knapsack.solvers.knapsack_cpmpy.CPMPYKnapsackSolver method)</a>
+</li>
+        <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver.solve">(discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver method)</a>
 </li>
         <li><a href="api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.lp_solvers.KnapsackORTools.solve">(discrete_optimization.knapsack.solvers.lp_solvers.KnapsackORTools method)</a>
 </li>

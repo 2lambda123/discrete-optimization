@@ -36,10 +36,26 @@ discrete\_optimization.knapsack.solvers.greedy\_solvers module
    :undoc-members:
    :show-inheritance:
 
+discrete\_optimization.knapsack.solvers.knapsack\_asp\_solver module
+--------------------------------------------------------------------
+
+.. automodule:: discrete_optimization.knapsack.solvers.knapsack_asp_solver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 discrete\_optimization.knapsack.solvers.knapsack\_cpmpy module
 --------------------------------------------------------------
 
 .. automodule:: discrete_optimization.knapsack.solvers.knapsack_cpmpy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+discrete\_optimization.knapsack.solvers.knapsack\_decomposition module
+----------------------------------------------------------------------
+
+.. automodule:: discrete_optimization.knapsack.solvers.knapsack_decomposition
    :members:
    :undoc-members:
    :show-inheritance:
