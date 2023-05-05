@@ -177,13 +177,13 @@
             <span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">resource_avail_in_time</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span>
-                <span class="n">new_horizon</span><span class="p">,</span> <span class="n">multimode_rcpsp_model</span><span class="o">.</span><span class="n">resources</span><span class="p">[</span><span class="n">res</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span>
+                <span class="n">new_horizon</span><span class="p">,</span> <span class="n">multimode_rcpsp_model</span><span class="o">.</span><span class="n">resources</span><span class="p">[</span><span class="n">res</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span>
             <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
     <span class="n">worker_avail_in_time</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">multiskill_rcpsp_model</span><span class="o">.</span><span class="n">employees</span><span class="p">:</span>
         <span class="n">worker_avail_in_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
             <span class="n">multiskill_rcpsp_model</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">calendar_employee</span><span class="p">[:</span> <span class="n">new_horizon</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span>
-            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">,</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="n">rcpsp_schedule</span> <span class="o">=</span> <span class="n">solution_rcpsp</span><span class="o">.</span><span class="n">rcpsp_schedule</span>
     <span class="n">employee_usage</span> <span class="o">=</span> <span class="p">{}</span>
