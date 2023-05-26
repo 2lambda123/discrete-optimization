@@ -10,6 +10,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
@@ -99,12 +101,16 @@
 <li><a href="discrete_optimization/facility/solvers/facility_solver.html">discrete_optimization.facility.solvers.facility_solver</a></li>
 <li><a href="discrete_optimization/facility/solvers/gphh_facility.html">discrete_optimization.facility.solvers.gphh_facility</a></li>
 <li><a href="discrete_optimization/facility/solvers/greedy_solvers.html">discrete_optimization.facility.solvers.greedy_solvers</a></li>
+<li><a href="discrete_optimization/generic_rcpsp_tools/generic_rcpsp_solver.html">discrete_optimization.generic_rcpsp_tools.generic_rcpsp_solver</a></li>
+<li><a href="discrete_optimization/generic_rcpsp_tools/gphh_solver.html">discrete_optimization.generic_rcpsp_tools.gphh_solver</a></li>
 <li><a href="discrete_optimization/generic_rcpsp_tools/graph_tools_rcpsp.html">discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp</a></li>
 <li><a href="discrete_optimization/generic_rcpsp_tools/large_neighborhood_search_scheduling.html">discrete_optimization.generic_rcpsp_tools.large_neighborhood_search_scheduling</a></li>
+<li><a href="discrete_optimization/generic_rcpsp_tools/ls_solver.html">discrete_optimization.generic_rcpsp_tools.ls_solver</a></li>
 <li><a href="discrete_optimization/generic_rcpsp_tools/neighbor_builder.html">discrete_optimization.generic_rcpsp_tools.neighbor_builder</a></li>
 <li><a href="discrete_optimization/generic_rcpsp_tools/neighbor_tools_rcpsp.html">discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp</a></li>
 <li><a href="discrete_optimization/generic_rcpsp_tools/postpro_local_search.html">discrete_optimization.generic_rcpsp_tools.postpro_local_search</a></li>
 <li><a href="discrete_optimization/generic_rcpsp_tools/solution_repair.html">discrete_optimization.generic_rcpsp_tools.solution_repair</a></li>
+<li><a href="discrete_optimization/generic_rcpsp_tools/typing.html">discrete_optimization.generic_rcpsp_tools.typing</a></li>
 <li><a href="discrete_optimization/generic_tools/cp_tools.html">discrete_optimization.generic_tools.cp_tools</a></li>
 <li><a href="discrete_optimization/generic_tools/do_mutation.html">discrete_optimization.generic_tools.do_mutation</a></li>
 <li><a href="discrete_optimization/generic_tools/do_problem.html">discrete_optimization.generic_tools.do_problem</a></li>
@@ -160,11 +166,12 @@
 <li><a href="discrete_optimization/rcpsp/plots/rcpsp_utils_preemptive.html">discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive</a></li>
 <li><a href="discrete_optimization/rcpsp/rcpsp_model.html">discrete_optimization.rcpsp.rcpsp_model</a></li>
 <li><a href="discrete_optimization/rcpsp/rcpsp_model_preemptive.html">discrete_optimization.rcpsp.rcpsp_model_preemptive</a></li>
-<li><a href="discrete_optimization/rcpsp/rcpsp_model_utils.html">discrete_optimization.rcpsp.rcpsp_model_utils</a></li>
 <li><a href="discrete_optimization/rcpsp/rcpsp_parser.html">discrete_optimization.rcpsp.rcpsp_parser</a></li>
-<li><a href="discrete_optimization/rcpsp/rcpsp_solution_utils.html">discrete_optimization.rcpsp.rcpsp_solution_utils</a></li>
+<li><a href="discrete_optimization/rcpsp/rcpsp_solution.html">discrete_optimization.rcpsp.rcpsp_solution</a></li>
 <li><a href="discrete_optimization/rcpsp/rcpsp_solvers.html">discrete_optimization.rcpsp.rcpsp_solvers</a></li>
 <li><a href="discrete_optimization/rcpsp/rcpsp_utils.html">discrete_optimization.rcpsp.rcpsp_utils</a></li>
+<li><a href="discrete_optimization/rcpsp/robust_rcpsp.html">discrete_optimization.rcpsp.robust_rcpsp</a></li>
+<li><a href="discrete_optimization/rcpsp/sgs_without_array.html">discrete_optimization.rcpsp.sgs_without_array</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/calendar_solver_iterative.html">discrete_optimization.rcpsp.solver.calendar_solver_iterative</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/cp_lns_methods_preemptive.html">discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/cp_lns_solver.html">discrete_optimization.rcpsp.solver.cp_lns_solver</a></li>
@@ -172,14 +179,14 @@
 <li><a href="discrete_optimization/rcpsp/solver/cp_solvers.html">discrete_optimization.rcpsp.solver.cp_solvers</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/cp_solvers_multiscenario.html">discrete_optimization.rcpsp.solver.cp_solvers_multiscenario</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/cpm.html">discrete_optimization.rcpsp.solver.cpm</a></li>
-<li><a href="discrete_optimization/rcpsp/solver/gphh_solver.html">discrete_optimization.rcpsp.solver.gphh_solver</a></li>
-<li><a href="discrete_optimization/rcpsp/solver/ls_solver.html">discrete_optimization.rcpsp.solver.ls_solver</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/rcpsp_cp_lns_solver.html">discrete_optimization.rcpsp.solver.rcpsp_cp_lns_solver</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/rcpsp_ga_solver.html">discrete_optimization.rcpsp.solver.rcpsp_ga_solver</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/rcpsp_lp_lns_solver.html">discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/rcpsp_lp_solver.html">discrete_optimization.rcpsp.solver.rcpsp_lp_solver</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/rcpsp_lp_solver_gantt.html">discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt</a></li>
 <li><a href="discrete_optimization/rcpsp/solver/rcpsp_pile.html">discrete_optimization.rcpsp.solver.rcpsp_pile</a></li>
+<li><a href="discrete_optimization/rcpsp/solver/rcpsp_solver.html">discrete_optimization.rcpsp.solver.rcpsp_solver</a></li>
+<li><a href="discrete_optimization/rcpsp/special_constraints.html">discrete_optimization.rcpsp.special_constraints</a></li>
 <li><a href="discrete_optimization/rcpsp/specialized_rcpsp/rcpsp_specialized_constraints.html">discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints</a></li>
 <li><a href="discrete_optimization/rcpsp/specialized_rcpsp/rcpsp_task_merger.html">discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_task_merger</a></li>
 <li><a href="discrete_optimization/rcpsp_multiskill/fast_function_ms_rcpsp.html">discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp</a></li>

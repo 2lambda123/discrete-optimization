@@ -10,6 +10,8 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinx_highlight.js"></script>
@@ -85,16 +87,13 @@
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">networkx</span> <span class="kn">import</span> <span class="n">NetworkXNoCycle</span>
 
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MultiModeRCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
-    <span class="n">SingleModeRCPSPModel</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model_preemptive</span> <span class="kn">import</span> <span class="n">RCPSPModelPreemptive</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.special_constraints</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RCPSPModelSpecialConstraints</span><span class="p">,</span>
     <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span>
-    <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp_multiskill.rcpsp_multiskill</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MS_RCPSPModel</span><span class="p">,</span>
@@ -107,9 +106,7 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
             <span class="n">RCPSPModel</span><span class="p">,</span>
-            <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
-            <span class="n">MultiModeRCPSPModel</span><span class="p">,</span>
-            <span class="n">SingleModeRCPSPModel</span><span class="p">,</span>
+            <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
             <span class="n">MS_RCPSPModel</span><span class="p">,</span>
             <span class="n">MS_RCPSPModel_Variant</span><span class="p">,</span>
         <span class="p">],</span>
@@ -178,10 +175,10 @@
 <div class="viewcode-block" id="GraphRCPSPSpecialConstraints"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints">[docs]</a><span class="k">class</span> <span class="nc">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">GraphRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
-            <span class="n">RCPSPModelSpecialConstraints</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span>
-        <span class="p">],</span>
+        <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">],</span>
     <span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">RCPSPModel</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">problem</span><span class="o">.</span><span class="n">do_special_constraints</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;this graph is meant for models with special constraints&quot;</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">special_constraints</span><span class="p">:</span> <span class="n">SpecialConstraintsDescription</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">problem</span><span class="o">.</span><span class="n">special_constraints</span>
@@ -242,17 +239,13 @@
     <span class="k">return</span> <span class="n">unrel</span><span class="p">,</span> <span class="n">set_pairs</span></div>
 
 
-<div class="viewcode-block" id="build_graph_rcpsp_object"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.build_graph_rcpsp_object">[docs]</a><span class="k">def</span> <span class="nf">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-        <span class="n">rcpsp_problem</span><span class="p">,</span>
-        <span class="p">(</span><span class="n">RCPSPModelSpecialConstraints</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">),</span>
+<div class="viewcode-block" id="build_graph_rcpsp_object"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.build_graph_rcpsp_object">[docs]</a><span class="k">def</span> <span class="nf">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelPreemptive</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="nb">hasattr</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">,</span> <span class="s2">&quot;do_special_constraints&quot;</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">do_special_constraints</span>
     <span class="p">):</span>
         <span class="k">return</span> <span class="n">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s2">&quot;special_constraints&quot;</span> <span class="ow">in</span> <span class="n">rcpsp_problem</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
-            <span class="nb">getattr</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">,</span> <span class="s2">&quot;special_constraints&quot;</span><span class="p">),</span> <span class="n">SpecialConstraintsDescription</span>
-        <span class="p">):</span>
-            <span class="k">return</span> <span class="n">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GraphRCPSP</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">)</span></div>
 </pre></div>
 

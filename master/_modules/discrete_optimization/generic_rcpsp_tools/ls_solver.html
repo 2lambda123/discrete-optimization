@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>discrete_optimization.rcpsp.solver.ls_solver &mdash; discrete-optimization master documentation</title>
-      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <title>discrete_optimization.generic_rcpsp_tools.ls_solver &mdash; discrete-optimization master documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../../../../_static/js/html5shiv.min.js"></script>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
-    <script src="../../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" /> 
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/versions.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,14 +29,14 @@
 
           
           
-          <a href="../../../../index.html" class="icon icon-home">
+          <a href="../../../index.html" class="icon icon-home">
             discrete-optimization
           </a>
               <div class="version">
                 master
               </div>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -43,11 +45,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
 </ul>
 
@@ -57,16 +59,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../index.html">discrete-optimization</a>
+          <a href="../../../index.html">discrete-optimization</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">discrete_optimization.rcpsp.solver.ls_solver</li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">discrete_optimization.generic_rcpsp_tools.ls_solver</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -75,7 +77,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for discrete_optimization.rcpsp.solver.ls_solver</h1><div class="highlight"><pre>
+  <h1>Source code for discrete_optimization.generic_rcpsp_tools.ls_solver</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2022 AIRBUS and its affiliates.</span>
 <span class="c1">#  This source code is licensed under the MIT license found in the</span>
 <span class="c1">#  LICENSE file in the root directory of this source tree.</span>
@@ -85,12 +87,14 @@
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp</span> <span class="kn">import</span> <span class="n">ANY_RCPSP</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.generic_rcpsp_solver</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SolverGenericRCPSP</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.typing</span> <span class="kn">import</span> <span class="n">ANY_RCPSP</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_problem</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ParamsObjectiveFunction</span><span class="p">,</span>
     <span class="n">build_aggreg_function_and_params_objective</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_solver</span> <span class="kn">import</span> <span class="n">SolverDO</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.ls.hill_climber</span> <span class="kn">import</span> <span class="n">HillClimber</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.ls.local_search</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ModeMutation</span><span class="p">,</span>
@@ -118,36 +122,37 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="LS_SOLVER"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.ls_solver.LS_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LS_SOLVER</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="LS_SOLVER"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.ls_solver.LS_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LS_SOLVER</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">SA</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">HC</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="LS_RCPSP_Solver"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.ls_solver.LS_RCPSP_Solver">[docs]</a><span class="k">class</span> <span class="nc">LS_RCPSP_Solver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="LS_RCPSP_Solver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.ls_solver.LS_RCPSP_Solver">[docs]</a><span class="k">class</span> <span class="nc">LS_RCPSP_Solver</span><span class="p">(</span><span class="n">SolverGenericRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
+        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
         <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">ParamsObjectiveFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">ls_solver</span><span class="p">:</span> <span class="n">LS_SOLVER</span> <span class="o">=</span> <span class="n">LS_SOLVER</span><span class="o">.</span><span class="n">SA</span><span class="p">,</span>
         <span class="o">**</span><span class="n">args</span>
     <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="n">SolverGenericRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_sol</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_dict</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span> <span class="o">=</span> <span class="n">build_aggreg_function_and_params_objective</span><span class="p">(</span>
-            <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
+            <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span>
+            <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ls_solver</span> <span class="o">=</span> <span class="n">ls_solver</span>
 
-<div class="viewcode-block" id="LS_RCPSP_Solver.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.ls_solver.LS_RCPSP_Solver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span>
+<div class="viewcode-block" id="LS_RCPSP_Solver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.ls_solver.LS_RCPSP_Solver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span>
         <span class="n">dummy</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;starting_point&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">())</span>
         <span class="n">find_better_starting_solution</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;init_solution_process&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">MS_RCPSPModel</span><span class="p">)</span> <span class="ow">and</span> <span class="n">find_better_starting_solution</span><span class="p">:</span>
             <span class="n">init</span> <span class="o">=</span> <span class="n">InitialSolutionMS_RCPSP</span><span class="p">(</span>
-                <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+                <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span>
                 <span class="n">initial_method</span><span class="o">=</span><span class="n">InitialMethodRCPSP</span><span class="o">.</span><span class="n">PILE_CALENDAR</span><span class="p">,</span>
                 <span class="n">params_objective_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
             <span class="p">)</span>

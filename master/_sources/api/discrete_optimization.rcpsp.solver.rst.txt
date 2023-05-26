@@ -68,22 +68,6 @@ discrete\_optimization.rcpsp.solver.cpm module
    :undoc-members:
    :show-inheritance:
 
-discrete\_optimization.rcpsp.solver.gphh\_solver module
--------------------------------------------------------
-
-.. automodule:: discrete_optimization.rcpsp.solver.gphh_solver
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-discrete\_optimization.rcpsp.solver.ls\_solver module
------------------------------------------------------
-
-.. automodule:: discrete_optimization.rcpsp.solver.ls_solver
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 discrete\_optimization.rcpsp.solver.rcpsp\_cp\_lns\_solver module
 -----------------------------------------------------------------
 
@@ -128,6 +112,14 @@ discrete\_optimization.rcpsp.solver.rcpsp\_pile module
 ------------------------------------------------------
 
 .. automodule:: discrete_optimization.rcpsp.solver.rcpsp_pile
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+discrete\_optimization.rcpsp.solver.rcpsp\_solver module
+--------------------------------------------------------
+
+.. automodule:: discrete_optimization.rcpsp.solver.rcpsp_solver
    :members:
    :undoc-members:
    :show-inheritance:

@@ -10,6 +10,8 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinx_highlight.js"></script>
@@ -95,40 +97,29 @@
     <span class="n">GraphRCPSPSpecialConstraints</span><span class="p">,</span>
     <span class="n">build_graph_rcpsp_object</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
+    <span class="n">ANY_MSRCPSP</span><span class="p">,</span>
+    <span class="n">ANY_RCPSP</span><span class="p">,</span>
+    <span class="n">ANY_SOLUTION</span><span class="p">,</span>
+    <span class="n">ANY_SOLUTION_PREEMPTIVE</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.cp_tools</span> <span class="kn">import</span> <span class="n">CPSolver</span><span class="p">,</span> <span class="n">SignEnum</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lns_cp</span> <span class="kn">import</span> <span class="n">ConstraintHandler</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.result_storage.result_storage</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ResultStorage</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MultiModeRCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
-    <span class="n">RCPSPSolution</span><span class="p">,</span>
-    <span class="n">SingleModeRCPSPModel</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model_preemptive</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
-    <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.cp_solvers</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">CP_MRCPSP_MZN</span><span class="p">,</span>
-    <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span>
-    <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
-    <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model_preemptive</span> <span class="kn">import</span> <span class="n">RCPSPSolutionPreemptive</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.cp_solvers</span> <span class="kn">import</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RCPSPModelSpecialConstraints</span><span class="p">,</span>
     <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span>
     <span class="n">compute_constraints_details</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp_multiskill.rcpsp_multiskill</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MS_RCPSPModel</span><span class="p">,</span>
-    <span class="n">MS_RCPSPModel_Variant</span><span class="p">,</span>
     <span class="n">MS_RCPSPSolution</span><span class="p">,</span>
     <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Variant</span><span class="p">,</span>
     <span class="n">compute_overskill</span><span class="p">,</span>
     <span class="n">employee_usage</span><span class="p">,</span>
     <span class="n">start_together_problem_description</span><span class="p">,</span>
@@ -143,48 +134,6 @@
 <span class="p">)</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-
-
-<span class="n">ANY_RCPSP</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-    <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
-    <span class="n">MultiModeRCPSPModel</span><span class="p">,</span>
-    <span class="n">SingleModeRCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
-    <span class="n">RCPSPModelSpecialConstraints</span><span class="p">,</span>
-    <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span>
-    <span class="n">MS_RCPSPModel</span><span class="p">,</span>
-    <span class="n">MS_RCPSPModel_Variant</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">ANY_MSRCPSP</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPModel_Variant</span><span class="p">,</span> <span class="n">MS_RCPSPModel</span><span class="p">]</span>
-<span class="n">ANY_SOLUTION</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-    <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
-    <span class="n">RCPSPSolution</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Variant</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">ANY_SOLUTION_UNPREEMPTIVE</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-    <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Variant</span>
-<span class="p">]</span>
-<span class="n">ANY_SOLUTION_PREEMPTIVE</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">]</span>
-<span class="n">ANY_SOLUTION_CLASSICAL_RCPSP</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">]</span>
-<span class="n">ANY_SOLUTION_MSRCPSP</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-    <span class="n">MS_RCPSPSolution</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Variant</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
-    <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">ANY_CP_SOLVER</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-    <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span>
-    <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
-    <span class="n">CP_MRCPSP_MZN</span><span class="p">,</span>
-    <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span>
-    <span class="n">CP_MS_MRCPSP_MZN</span><span class="p">,</span>
-    <span class="n">CP_MS_MRCPSP_MZN_PREEMPTIVE</span><span class="p">,</span>
-    <span class="n">CP_MS_MRCPSP_MZN_PARTIAL_PREEMPTIVE</span><span class="p">,</span>
-<span class="p">]</span>
 
 
 <div class="viewcode-block" id="get_max_time_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.get_max_time_solution">[docs]</a><span class="k">def</span> <span class="nf">get_max_time_solution</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">):</span>
@@ -1223,17 +1172,22 @@
 <div class="viewcode-block" id="NeighborConstraintBreaks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborConstraintBreaks">[docs]</a><span class="k">class</span> <span class="nc">NeighborConstraintBreaks</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
-            <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraints</span>
-        <span class="p">],</span>
+        <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span> <span class="n">RCPSPModel</span><span class="p">],</span>
         <span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">fraction_subproblem</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
         <span class="n">other_constraint_handler</span><span class="p">:</span> <span class="n">NeighborBuilder</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="s2">&quot;do_special_constraints&quot;</span><span class="p">)</span>
+            <span class="ow">or</span> <span class="ow">not</span> <span class="n">problem</span><span class="o">.</span><span class="n">do_special_constraints</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;NeighborConstraintBreaks is meant for problems with special constraints&quot;</span>
+            <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">graph</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">problem</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_subproblem</span> <span class="o">=</span> <span class="n">fraction_subproblem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_jobs_subproblem</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">n_jobs</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">fraction_subproblem</span>
@@ -1445,9 +1399,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">basic_constraint_builder</span> <span class="o">=</span> <span class="n">basic_constraint_builder</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
-            <span class="p">(</span><span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraints</span><span class="p">),</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">RCPSPModel</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">do_special_constraints</span>
         <span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">graph_rcpsp</span> <span class="o">=</span> <span class="n">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">special_constraints</span> <span class="o">=</span> <span class="kc">True</span>

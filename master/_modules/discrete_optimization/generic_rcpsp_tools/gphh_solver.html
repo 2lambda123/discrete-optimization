@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>discrete_optimization.rcpsp.solver.gphh_solver &mdash; discrete-optimization master documentation</title>
-      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <title>discrete_optimization.generic_rcpsp_tools.gphh_solver &mdash; discrete-optimization master documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../../../../_static/js/html5shiv.min.js"></script>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
-    <script src="../../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" /> 
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/versions.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,14 +29,14 @@
 
           
           
-          <a href="../../../../index.html" class="icon icon-home">
+          <a href="../../../index.html" class="icon icon-home">
             discrete-optimization
           </a>
               <div class="version">
                 master
               </div>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -43,11 +45,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
 </ul>
 
@@ -57,16 +59,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../index.html">discrete-optimization</a>
+          <a href="../../../index.html">discrete-optimization</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">discrete_optimization.rcpsp.solver.gphh_solver</li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">discrete_optimization.generic_rcpsp_tools.gphh_solver</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -75,8 +77,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for discrete_optimization.rcpsp.solver.gphh_solver</h1><div class="highlight"><pre>
-<span></span><span class="c1">#  Copyright (c) 2022 AIRBUS and its affiliates.</span>
+  <h1>Source code for discrete_optimization.generic_rcpsp_tools.gphh_solver</h1><div class="highlight"><pre>
+<span></span><span class="c1">#  Copyright (c) 2022-2023 AIRBUS and its affiliates.</span>
 <span class="c1">#  This source code is licensed under the MIT license found in the</span>
 <span class="c1">#  LICENSE file in the root directory of this source tree.</span>
 
@@ -91,55 +93,55 @@
 <span class="kn">from</span> <span class="nn">deap.base</span> <span class="kn">import</span> <span class="n">Fitness</span><span class="p">,</span> <span class="n">Toolbox</span>
 <span class="kn">from</span> <span class="nn">deap.gp</span> <span class="kn">import</span> <span class="n">PrimitiveSet</span><span class="p">,</span> <span class="n">PrimitiveTree</span><span class="p">,</span> <span class="n">genHalfAndHalf</span>
 
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">ANY_RCPSP</span><span class="p">,</span>
-    <span class="n">MS_RCPSPModel</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.generic_rcpsp_solver</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SolverGenericRCPSP</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.typing</span> <span class="kn">import</span> <span class="n">ANY_RCPSP</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_problem</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ParamsObjectiveFunction</span><span class="p">,</span>
     <span class="n">Problem</span><span class="p">,</span>
     <span class="n">build_aggreg_function_and_params_objective</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_solver</span> <span class="kn">import</span> <span class="n">SolverDO</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.result_storage.result_storage</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ResultStorage</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.cpm</span> <span class="kn">import</span> <span class="n">CPM</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp_multiskill.rcpsp_multiskill</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MS_RCPSPModel</span><span class="p">,</span>
     <span class="n">MS_RCPSPSolution_Variant</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="if_then_else"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.if_then_else">[docs]</a><span class="k">def</span> <span class="nf">if_then_else</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">):</span>
+<div class="viewcode-block" id="if_then_else"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.if_then_else">[docs]</a><span class="k">def</span> <span class="nf">if_then_else</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">input1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">output1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">output2</span></div>
 
 
-<div class="viewcode-block" id="protected_div"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.protected_div">[docs]</a><span class="k">def</span> <span class="nf">protected_div</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<div class="viewcode-block" id="protected_div"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.protected_div">[docs]</a><span class="k">def</span> <span class="nf">protected_div</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">right</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">left</span> <span class="o">/</span> <span class="n">right</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">1.0</span></div>
 
 
-<div class="viewcode-block" id="max_operator"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.max_operator">[docs]</a><span class="k">def</span> <span class="nf">max_operator</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<div class="viewcode-block" id="max_operator"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.max_operator">[docs]</a><span class="k">def</span> <span class="nf">max_operator</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="min_operator"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.min_operator">[docs]</a><span class="k">def</span> <span class="nf">min_operator</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<div class="viewcode-block" id="min_operator"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.min_operator">[docs]</a><span class="k">def</span> <span class="nf">min_operator</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="feature_task_duration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_task_duration">[docs]</a><span class="k">def</span> <span class="nf">feature_task_duration</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_task_duration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_task_duration">[docs]</a><span class="k">def</span> <span class="nf">feature_task_duration</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">problem</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">task_id</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="feature_total_n_res"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_total_n_res">[docs]</a><span class="k">def</span> <span class="nf">feature_total_n_res</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_total_n_res"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_total_n_res">[docs]</a><span class="k">def</span> <span class="nf">feature_total_n_res</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">mode_consumption</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">task_id</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">mode_consumption</span><span class="p">:</span>
@@ -149,15 +151,15 @@
     <span class="k">return</span> <span class="n">val</span></div>
 
 
-<div class="viewcode-block" id="feature_n_successors"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_n_successors">[docs]</a><span class="k">def</span> <span class="nf">feature_n_successors</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_n_successors"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_n_successors">[docs]</a><span class="k">def</span> <span class="nf">feature_n_successors</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">problem</span><span class="o">.</span><span class="n">successors</span><span class="p">[</span><span class="n">task_id</span><span class="p">])</span> <span class="o">/</span> <span class="n">problem</span><span class="o">.</span><span class="n">n_jobs</span></div>
 
 
-<div class="viewcode-block" id="feature_n_predecessors"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_n_predecessors">[docs]</a><span class="k">def</span> <span class="nf">feature_n_predecessors</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_n_predecessors"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_n_predecessors">[docs]</a><span class="k">def</span> <span class="nf">feature_n_predecessors</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">problem</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get_predecessors</span><span class="p">(</span><span class="n">task_id</span><span class="p">))</span> <span class="o">/</span> <span class="n">problem</span><span class="o">.</span><span class="n">n_jobs</span></div>
 
 
-<div class="viewcode-block" id="get_resource_requirements_across_duration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.get_resource_requirements_across_duration">[docs]</a><span class="k">def</span> <span class="nf">get_resource_requirements_across_duration</span><span class="p">(</span>
+<div class="viewcode-block" id="get_resource_requirements_across_duration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.get_resource_requirements_across_duration">[docs]</a><span class="k">def</span> <span class="nf">get_resource_requirements_across_duration</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
@@ -172,7 +174,7 @@
     <span class="k">return</span> <span class="n">values</span></div>
 
 
-<div class="viewcode-block" id="feature_average_resource_requirements"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_average_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_average_resource_requirements</span><span class="p">(</span>
+<div class="viewcode-block" id="feature_average_resource_requirements"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_average_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_average_resource_requirements</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="n">values</span> <span class="o">=</span> <span class="n">get_resource_requirements_across_duration</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span> <span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
@@ -182,7 +184,7 @@
     <span class="k">return</span> <span class="n">val</span></div>
 
 
-<div class="viewcode-block" id="feature_minimum_resource_requirements"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_minimum_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_minimum_resource_requirements</span><span class="p">(</span>
+<div class="viewcode-block" id="feature_minimum_resource_requirements"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_minimum_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_minimum_resource_requirements</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="n">values</span> <span class="o">=</span> <span class="n">get_resource_requirements_across_duration</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span> <span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
@@ -192,7 +194,7 @@
     <span class="k">return</span> <span class="n">val</span></div>
 
 
-<div class="viewcode-block" id="feature_non_zero_minimum_resource_requirements"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_non_zero_minimum_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_non_zero_minimum_resource_requirements</span><span class="p">(</span>
+<div class="viewcode-block" id="feature_non_zero_minimum_resource_requirements"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_non_zero_minimum_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_non_zero_minimum_resource_requirements</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="n">values</span> <span class="o">=</span> <span class="n">get_resource_requirements_across_duration</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span> <span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
@@ -205,7 +207,7 @@
     <span class="k">return</span> <span class="n">val</span></div>
 
 
-<div class="viewcode-block" id="feature_maximum_resource_requirements"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_maximum_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_maximum_resource_requirements</span><span class="p">(</span>
+<div class="viewcode-block" id="feature_maximum_resource_requirements"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_maximum_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_maximum_resource_requirements</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="n">values</span> <span class="o">=</span> <span class="n">get_resource_requirements_across_duration</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span> <span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
@@ -215,7 +217,7 @@
     <span class="k">return</span> <span class="n">val</span></div>
 
 
-<div class="viewcode-block" id="feature_resource_requirements"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_resource_requirements</span><span class="p">(</span>
+<div class="viewcode-block" id="feature_resource_requirements"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_resource_requirements">[docs]</a><span class="k">def</span> <span class="nf">feature_resource_requirements</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="n">values</span> <span class="o">=</span> <span class="n">get_resource_requirements_across_duration</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span> <span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
@@ -226,11 +228,11 @@
         <span class="k">return</span> <span class="mi">0</span></div>
 
 
-<div class="viewcode-block" id="feature_all_descendants"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_all_descendants">[docs]</a><span class="k">def</span> <span class="nf">feature_all_descendants</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_all_descendants"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_all_descendants">[docs]</a><span class="k">def</span> <span class="nf">feature_all_descendants</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">problem</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">full_successors</span><span class="p">[</span><span class="n">task_id</span><span class="p">])</span> <span class="o">/</span> <span class="n">problem</span><span class="o">.</span><span class="n">n_jobs</span></div>
 
 
-<div class="viewcode-block" id="compute_cpm"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.compute_cpm">[docs]</a><span class="k">def</span> <span class="nf">compute_cpm</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">):</span>
+<div class="viewcode-block" id="compute_cpm"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.compute_cpm">[docs]</a><span class="k">def</span> <span class="nf">compute_cpm</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">):</span>
     <span class="n">cpm_solver</span> <span class="o">=</span> <span class="n">CPM</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">cpm_solver</span><span class="o">.</span><span class="n">run_classic_cpm</span><span class="p">()</span>
     <span class="n">cpm</span> <span class="o">=</span> <span class="n">cpm_solver</span><span class="o">.</span><span class="n">map_node</span>
@@ -238,32 +240,32 @@
     <span class="k">return</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span></div>
 
 
-<div class="viewcode-block" id="feature_esd"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_esd">[docs]</a><span class="k">def</span> <span class="nf">feature_esd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_esd"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_esd">[docs]</a><span class="k">def</span> <span class="nf">feature_esd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Will only work if you store cpm results into the object. dirty trick&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cpm</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">_ESD</span> <span class="o">/</span> <span class="n">cpm_esd</span></div>
 
 
-<div class="viewcode-block" id="feature_lsd"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_lsd">[docs]</a><span class="k">def</span> <span class="nf">feature_lsd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_lsd"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_lsd">[docs]</a><span class="k">def</span> <span class="nf">feature_lsd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Will only work if you store cpm results into the object. dirty trick&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cpm</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">_LSD</span> <span class="o">/</span> <span class="n">cpm_esd</span></div>
 
 
-<div class="viewcode-block" id="feature_efd"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_efd">[docs]</a><span class="k">def</span> <span class="nf">feature_efd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_efd"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_efd">[docs]</a><span class="k">def</span> <span class="nf">feature_efd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Will only work if you store cpm results into the object. dirty trick&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cpm</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">_EFD</span> <span class="o">/</span> <span class="n">cpm_esd</span></div>
 
 
-<div class="viewcode-block" id="feature_lfd"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.feature_lfd">[docs]</a><span class="k">def</span> <span class="nf">feature_lfd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="feature_lfd"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.feature_lfd">[docs]</a><span class="k">def</span> <span class="nf">feature_lfd</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Will only work if you store cpm results into the object. dirty trick&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cpm</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">_LFD</span> <span class="o">/</span> <span class="n">cpm_esd</span></div>
 
 
-<div class="viewcode-block" id="get_dummy"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.get_dummy">[docs]</a><span class="k">def</span> <span class="nf">get_dummy</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">increase</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="get_dummy"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.get_dummy">[docs]</a><span class="k">def</span> <span class="nf">get_dummy</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">increase</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Will only work if you store cpm results into the object. dirty trick&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">increase</span></div>
 
 
-<div class="viewcode-block" id="FeatureEnum"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.FeatureEnum">[docs]</a><span class="k">class</span> <span class="nc">FeatureEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="FeatureEnum"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.FeatureEnum">[docs]</a><span class="k">class</span> <span class="nc">FeatureEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">TASK_DURATION</span> <span class="o">=</span> <span class="s2">&quot;task_duration&quot;</span>
     <span class="n">RESSOURCE_TOTAL</span> <span class="o">=</span> <span class="s2">&quot;total_nres&quot;</span>
     <span class="n">N_SUCCESSORS</span> <span class="o">=</span> <span class="s2">&quot;n_successors&quot;</span>
@@ -318,18 +320,18 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="EvaluationGPHH"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.EvaluationGPHH">[docs]</a><span class="k">class</span> <span class="nc">EvaluationGPHH</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="EvaluationGPHH"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.EvaluationGPHH">[docs]</a><span class="k">class</span> <span class="nc">EvaluationGPHH</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">SGS</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">PERMUTATION_DISTANCE</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="PermutationDistance"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.PermutationDistance">[docs]</a><span class="k">class</span> <span class="nc">PermutationDistance</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="PermutationDistance"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.PermutationDistance">[docs]</a><span class="k">class</span> <span class="nc">PermutationDistance</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">KTD</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">HAMMING</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">KTD_HAMMING</span> <span class="o">=</span> <span class="mi">2</span></div>
 
 
-<div class="viewcode-block" id="ParametersGPHH"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.ParametersGPHH">[docs]</a><span class="k">class</span> <span class="nc">ParametersGPHH</span><span class="p">:</span>
+<div class="viewcode-block" id="ParametersGPHH"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.ParametersGPHH">[docs]</a><span class="k">class</span> <span class="nc">ParametersGPHH</span><span class="p">:</span>
     <span class="n">set_feature</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">FeatureEnum</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">set_primitves</span><span class="p">:</span> <span class="n">PrimitiveSet</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">tournament_ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span>
@@ -371,7 +373,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">evaluation</span> <span class="o">=</span> <span class="n">evaluation</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">permutation_distance</span> <span class="o">=</span> <span class="n">permutation_distance</span>
 
-<div class="viewcode-block" id="ParametersGPHH.default"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.ParametersGPHH.default">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGPHH.default"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.ParametersGPHH.default">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default</span><span class="p">():</span>
         <span class="n">set_feature</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">FeatureEnum</span><span class="o">.</span><span class="n">EARLIEST_FINISH_DATE</span><span class="p">,</span>
@@ -411,7 +413,7 @@
             <span class="n">permutation_distance</span><span class="o">=</span><span class="n">PermutationDistance</span><span class="o">.</span><span class="n">KTD</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersGPHH.fast_test"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.ParametersGPHH.fast_test">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGPHH.fast_test"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.ParametersGPHH.fast_test">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">fast_test</span><span class="p">():</span>
         <span class="n">set_feature</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">FeatureEnum</span><span class="o">.</span><span class="n">EARLIEST_FINISH_DATE</span><span class="p">,</span>
@@ -456,7 +458,7 @@
             <span class="n">permutation_distance</span><span class="o">=</span><span class="n">PermutationDistance</span><span class="o">.</span><span class="n">KTD</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersGPHH.ms_fast"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.ParametersGPHH.ms_fast">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGPHH.ms_fast"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.ParametersGPHH.ms_fast">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">ms_fast</span><span class="p">():</span>
         <span class="n">set_feature</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">FeatureEnum</span><span class="o">.</span><span class="n">EARLIEST_FINISH_DATE</span><span class="p">,</span>
@@ -492,7 +494,7 @@
             <span class="n">permutation_distance</span><span class="o">=</span><span class="n">PermutationDistance</span><span class="o">.</span><span class="n">KTD</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersGPHH.ms_default"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.ParametersGPHH.ms_default">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGPHH.ms_default"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.ParametersGPHH.ms_default">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">ms_default</span><span class="p">():</span>
         <span class="n">set_feature</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">FeatureEnum</span><span class="o">.</span><span class="n">EARLIEST_FINISH_DATE</span><span class="p">,</span>
@@ -528,7 +530,7 @@
             <span class="n">permutation_distance</span><span class="o">=</span><span class="n">PermutationDistance</span><span class="o">.</span><span class="n">KTD</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersGPHH.default_for_set_features"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.ParametersGPHH.default_for_set_features">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGPHH.default_for_set_features"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.ParametersGPHH.default_for_set_features">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_for_set_features</span><span class="p">(</span><span class="n">set_feature</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">FeatureEnum</span><span class="p">]):</span>
         <span class="n">pset</span> <span class="o">=</span> <span class="n">PrimitiveSet</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">set_feature</span><span class="p">))</span>
         <span class="n">pset</span><span class="o">.</span><span class="n">addPrimitive</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -554,7 +556,7 @@
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="GPHH"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH">[docs]</a><span class="k">class</span> <span class="nc">GPHH</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="GPHH"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH">[docs]</a><span class="k">class</span> <span class="nc">GPHH</span><span class="p">(</span><span class="n">SolverGenericRCPSP</span><span class="p">):</span>
     <span class="n">training_domains</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Problem</span><span class="p">]</span>
     <span class="n">weight</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">pset</span><span class="p">:</span> <span class="n">PrimitiveSet</span>
@@ -567,13 +569,13 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">training_domains</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Problem</span><span class="p">],</span>
-        <span class="n">domain_model</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
+        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
         <span class="n">weight</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
         <span class="n">params_gphh</span><span class="p">:</span> <span class="n">ParametersGPHH</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">ParamsObjectiveFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
+        <span class="n">SolverGenericRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">training_domains</span> <span class="o">=</span> <span class="n">training_domains</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">domain_model</span> <span class="o">=</span> <span class="n">domain_model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span> <span class="o">=</span> <span class="n">params_gphh</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span> <span class="o">=</span> <span class="n">ParametersGPHH</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
@@ -583,7 +585,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">pset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_primitives</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">set_primitves</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">evaluation_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">evaluation</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">domain_model</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">full_successors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">full_predecessors</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">ancestors_map</span><span class="p">()</span>
@@ -597,12 +599,12 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_dict</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span> <span class="o">=</span> <span class="n">build_aggreg_function_and_params_objective</span><span class="p">(</span>
-            <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">domain_model</span><span class="p">,</span>
+            <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span>
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">toolbox</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="GPHH.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GPHH.init_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">tournament_ratio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">tournament_ratio</span>
         <span class="n">pop_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">pop_size</span>
         <span class="n">min_tree_depth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">min_tree_depth</span>
@@ -659,7 +661,7 @@
         <span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
         <span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GPHH.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="GPHH.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbox</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">init_model</span><span class="p">()</span>
         <span class="n">stats_fit</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ind</span><span class="p">:</span> <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
@@ -687,19 +689,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">final_pop</span> <span class="o">=</span> <span class="n">pop</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">func_heuristic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbox</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">best_heuristic</span><span class="p">)</span>
         <span class="n">solution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_solution</span><span class="p">(</span>
-            <span class="n">domain</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">domain_model</span><span class="p">,</span> <span class="n">func_heuristic</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">func_heuristic</span>
+            <span class="n">domain</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">func_heuristic</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">func_heuristic</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">ResultStorage</span><span class="p">(</span>
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="p">[(</span><span class="n">solution</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_sol</span><span class="p">(</span><span class="n">solution</span><span class="p">))],</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="GPHH.init_primitives"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH.init_primitives">[docs]</a>    <span class="k">def</span> <span class="nf">init_primitives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveSet</span><span class="p">:</span>
+<div class="viewcode-block" id="GPHH.init_primitives"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH.init_primitives">[docs]</a>    <span class="k">def</span> <span class="nf">init_primitives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveSet</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_feature</span><span class="p">)):</span>
             <span class="n">pset</span><span class="o">.</span><span class="n">renameArguments</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s2">&quot;ARG&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_feature</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">})</span>
         <span class="k">return</span> <span class="n">pset</span></div>
 
-<div class="viewcode-block" id="GPHH.build_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH.build_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">individual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">func_heuristic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="GPHH.build_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH.build_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">individual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">func_heuristic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">func_heuristic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">func_heuristic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbox</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="n">individual</span><span class="p">)</span>
         <span class="n">d</span><span class="p">:</span> <span class="n">ANY_RCPSP</span> <span class="o">=</span> <span class="n">domain</span>
@@ -747,7 +749,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">solution</span></div>
 
-<div class="viewcode-block" id="GPHH.evaluate_heuristic"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH.evaluate_heuristic">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_heuristic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">individual</span><span class="p">,</span> <span class="n">domains</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="GPHH.evaluate_heuristic"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH.evaluate_heuristic">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_heuristic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">individual</span><span class="p">,</span> <span class="n">domains</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">func_heuristic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbox</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="n">individual</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">domain</span> <span class="ow">in</span> <span class="n">domains</span><span class="p">:</span>
@@ -759,7 +761,7 @@
         <span class="n">fitness</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vals</span><span class="p">)]</span>
         <span class="k">return</span> <span class="n">fitness</span></div>
 
-<div class="viewcode-block" id="GPHH.initialize_cpm_data_for_training"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.gphh_solver.GPHH.initialize_cpm_data_for_training">[docs]</a>    <span class="k">def</span> <span class="nf">initialize_cpm_data_for_training</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GPHH.initialize_cpm_data_for_training"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.gphh_solver.GPHH.initialize_cpm_data_for_training">[docs]</a>    <span class="k">def</span> <span class="nf">initialize_cpm_data_for_training</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cpm_data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">domain</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">training_domains</span><span class="p">:</span>
             <span class="n">cpm</span><span class="p">,</span> <span class="n">cpm_esd</span> <span class="o">=</span> <span class="n">compute_cpm</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>

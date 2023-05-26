@@ -10,6 +10,8 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinx_highlight.js"></script>
@@ -86,10 +88,11 @@
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.typing</span> <span class="k">as</span> <span class="nn">npt</span>
 
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_problem</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">EncodingRegister</span><span class="p">,</span>
@@ -349,10 +352,14 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 <div class="viewcode-block" id="RCPSPSolutionPreemptive.generate_schedule_from_permutation_serial_sgs_2"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_model_preemptive.RCPSPSolutionPreemptive.generate_schedule_from_permutation_serial_sgs_2">[docs]</a>    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_2</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">current_t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">completed_tasks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial_schedule</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">do_fast</span><span class="o">=</span><span class="kc">True</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">current_t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">partial_schedule</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">do_fast</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="k">if</span> <span class="n">completed_tasks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">completed_tasks</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">completed_tasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">partial_schedule</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">partial_schedule</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">if</span> <span class="n">do_fast</span><span class="p">:</span>
@@ -1022,9 +1029,9 @@
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">partial_schedule</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]],</span>
-    <span class="n">current_t</span><span class="p">,</span>
-    <span class="n">completed_tasks</span><span class="p">,</span>
-<span class="p">):</span>
+    <span class="n">current_t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]],</span> <span class="nb">bool</span><span class="p">]:</span>
     <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">unfeasible_non_renewable_resources</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">new_horizon</span> <span class="o">=</span> <span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">horizon</span>
@@ -1290,8 +1297,8 @@
 
 
 <div class="viewcode-block" id="permutation_do_to_permutation_sgs_fast"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_model_preemptive.permutation_do_to_permutation_sgs_fast">[docs]</a><span class="k">def</span> <span class="nf">permutation_do_to_permutation_sgs_fast</span><span class="p">(</span>
-    <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span> <span class="n">permutation_do</span>
-<span class="p">):</span>
+    <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span> <span class="n">permutation_do</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]:</span>
     <span class="n">perm_extended</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">index_task</span><span class="p">[</span><span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">tasks_list_non_dummy</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">permutation_do</span>

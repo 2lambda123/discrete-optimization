@@ -10,6 +10,8 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinx_highlight.js"></script>
@@ -262,14 +264,14 @@
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;file = &quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">parse_file_mslib</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">to_variant_model</span><span class="p">()</span>
     <span class="n">solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">()</span>
-    <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.ls_solver</span> <span class="kn">import</span> <span class="n">LS_RCPSP_Solver</span>
+    <span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.ls_solver</span> <span class="kn">import</span> <span class="n">LS_RCPSP_Solver</span>
     <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp_multiskill.plots.plot_solution</span> <span class="kn">import</span> <span class="p">(</span>
         <span class="n">plot_resource_individual_gantt</span><span class="p">,</span>
         <span class="n">plt</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-    <span class="n">solver</span> <span class="o">=</span> <span class="n">LS_RCPSP_Solver</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">LS_RCPSP_Solver</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">nb_iteration_max</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
     <span class="n">sol</span><span class="p">,</span> <span class="n">fit</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_best_solution_fit</span><span class="p">()</span>
     <span class="n">plot_resource_individual_gantt</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="o">=</span><span class="n">sol</span><span class="p">)</span>

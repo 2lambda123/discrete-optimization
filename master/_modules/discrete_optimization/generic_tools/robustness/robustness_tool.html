@@ -10,6 +10,8 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
@@ -122,11 +124,9 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.mutations.mutation_rcpsp</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">PermutationMutationRCPSP</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">Aggreg_RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPSolution</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.robust_rcpsp</span> <span class="kn">import</span> <span class="n">AggregRCPSPModel</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -150,19 +150,19 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">train_instance</span> <span class="o">=</span> <span class="n">train_instance</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">test_instance</span> <span class="o">=</span> <span class="n">test_instance</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_mean</span> <span class="o">=</span> <span class="n">Aggreg_RCPSPModel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_mean</span> <span class="o">=</span> <span class="n">AggregRCPSPModel</span><span class="p">(</span>
             <span class="n">list_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_instance</span><span class="p">,</span>
             <span class="n">method_aggregating</span><span class="o">=</span><span class="n">MethodAggregating</span><span class="p">(</span><span class="n">BaseMethodAggregating</span><span class="o">.</span><span class="n">MEAN</span><span class="p">),</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_max</span> <span class="o">=</span> <span class="n">Aggreg_RCPSPModel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_max</span> <span class="o">=</span> <span class="n">AggregRCPSPModel</span><span class="p">(</span>
             <span class="n">list_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_instance</span><span class="p">,</span>
             <span class="n">method_aggregating</span><span class="o">=</span><span class="n">MethodAggregating</span><span class="p">(</span><span class="n">BaseMethodAggregating</span><span class="o">.</span><span class="n">MAX</span><span class="p">),</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_min</span> <span class="o">=</span> <span class="n">Aggreg_RCPSPModel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_min</span> <span class="o">=</span> <span class="n">AggregRCPSPModel</span><span class="p">(</span>
             <span class="n">list_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_instance</span><span class="p">,</span>
             <span class="n">method_aggregating</span><span class="o">=</span><span class="n">MethodAggregating</span><span class="p">(</span><span class="n">BaseMethodAggregating</span><span class="o">.</span><span class="n">MIN</span><span class="p">),</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_median</span> <span class="o">=</span> <span class="n">Aggreg_RCPSPModel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_aggreg_median</span> <span class="o">=</span> <span class="n">AggregRCPSPModel</span><span class="p">(</span>
             <span class="n">list_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_instance</span><span class="p">,</span>
             <span class="n">method_aggregating</span><span class="o">=</span><span class="n">MethodAggregating</span><span class="p">(</span><span class="n">BaseMethodAggregating</span><span class="o">.</span><span class="n">MEDIAN</span><span class="p">),</span>
         <span class="p">)</span>

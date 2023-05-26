@@ -10,6 +10,8 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinx_highlight.js"></script>
@@ -82,17 +84,16 @@
 
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">GraphRCPSP</span><span class="p">,</span>
+    <span class="n">build_graph_rcpsp_object</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">ANY_RCPSP</span><span class="p">,</span>
     <span class="n">BasicConstraintBuilder</span><span class="p">,</span>
-    <span class="n">ConstraintHandler</span><span class="p">,</span>
     <span class="n">ConstraintHandlerMultiskillAllocation</span><span class="p">,</span>
     <span class="n">ConstraintHandlerScheduling</span><span class="p">,</span>
     <span class="n">EquilibrateMultiskillAllocation</span><span class="p">,</span>
     <span class="n">EquilibrateMultiskillAllocationNonPreemptive</span><span class="p">,</span>
-    <span class="n">GraphRCPSP</span><span class="p">,</span>
-    <span class="n">MS_RCPSPModel</span><span class="p">,</span>
-    <span class="n">MS_RCPSPModel_Variant</span><span class="p">,</span>
     <span class="n">NeighborBuilderMix</span><span class="p">,</span>
     <span class="n">NeighborBuilderSubPart</span><span class="p">,</span>
     <span class="n">NeighborBuilderTimeWindow</span><span class="p">,</span>
@@ -101,9 +102,16 @@
     <span class="n">NeighborRandomAndNeighborGraph</span><span class="p">,</span>
     <span class="n">ObjectiveSubproblem</span><span class="p">,</span>
     <span class="n">ParamsConstraintBuilder</span><span class="p">,</span>
-    <span class="n">build_graph_rcpsp_object</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lns_cp</span> <span class="kn">import</span> <span class="n">ConstraintHandlerMix</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.typing</span> <span class="kn">import</span> <span class="n">ANY_RCPSP</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lns_cp</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ConstraintHandler</span><span class="p">,</span>
+    <span class="n">ConstraintHandlerMix</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp_multiskill.rcpsp_multiskill</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MS_RCPSPModel</span><span class="p">,</span>
+    <span class="n">MS_RCPSPModel_Variant</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <div class="viewcode-block" id="OptionNeighborRandom"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.OptionNeighborRandom">[docs]</a><span class="k">class</span> <span class="nc">OptionNeighborRandom</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>

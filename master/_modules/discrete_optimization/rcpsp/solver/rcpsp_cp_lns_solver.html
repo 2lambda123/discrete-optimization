@@ -10,6 +10,8 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
@@ -87,36 +89,33 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">minizinc</span> <span class="kn">import</span> <span class="n">Instance</span>
 
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_rcpsp_tools.ls_solver</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LS_SOLVER</span><span class="p">,</span>
+    <span class="n">LS_RCPSP_Solver</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.cp_tools</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">CPSolver</span><span class="p">,</span>
     <span class="n">CPSolverName</span><span class="p">,</span>
     <span class="n">ParametersCP</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_problem</span> <span class="kn">import</span> <span class="n">get_default_objective_setup</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lns_cp</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">LNS_CP</span><span class="p">,</span>
-    <span class="n">ConstraintHandler</span><span class="p">,</span>
-    <span class="n">SolverDO</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lns_cp</span> <span class="kn">import</span> <span class="n">LNS_CP</span><span class="p">,</span> <span class="n">ConstraintHandler</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lns_mip</span> <span class="kn">import</span> <span class="n">PostProcessSolution</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.result_storage.result_storage</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ResultStorage</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">PartialSolution</span><span class="p">,</span>
-    <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPSolution</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">PartialSolution</span><span class="p">,</span> <span class="n">RCPSPSolution</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.cp_solvers</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">CP_MRCPSP_MZN</span><span class="p">,</span>
     <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span>
     <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.ls_solver</span> <span class="kn">import</span> <span class="n">LS_SOLVER</span><span class="p">,</span> <span class="n">LS_RCPSP_Solver</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">InitialMethodRCPSP</span><span class="p">,</span>
     <span class="n">InitialSolutionRCPSP</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.rcpsp_solver</span> <span class="kn">import</span> <span class="n">SolverRCPSP</span>
 
 
 <span class="c1"># Strategy n°1 : fixing subset of starting time</span>
@@ -588,7 +587,9 @@
                     <span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">solution</span><span class="p">)[</span><span class="s2">&quot;makespan&quot;</span><span class="p">])</span>
                 <span class="p">]</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">partial_solution</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">solver</span> <span class="o">=</span> <span class="n">LS_RCPSP_Solver</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_problem</span><span class="p">,</span> <span class="n">ls_solver</span><span class="o">=</span><span class="n">LS_SOLVER</span><span class="o">.</span><span class="n">SA</span><span class="p">)</span>
+            <span class="n">solver</span> <span class="o">=</span> <span class="n">LS_RCPSP_Solver</span><span class="p">(</span>
+                <span class="n">rcpsp_model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_problem</span><span class="p">,</span> <span class="n">ls_solver</span><span class="o">=</span><span class="n">LS_SOLVER</span><span class="o">.</span><span class="n">SA</span>
+            <span class="p">)</span>
             <span class="n">satisfiable</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">satisfy</span>
             <span class="p">]</span>
@@ -677,14 +678,14 @@
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
 
 
-<div class="viewcode-block" id="LNS_CP_RCPSP_SOLVER"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_cp_lns_solver.LNS_CP_RCPSP_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LNS_CP_RCPSP_SOLVER</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="LNS_CP_RCPSP_SOLVER"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_cp_lns_solver.LNS_CP_RCPSP_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LNS_CP_RCPSP_SOLVER</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
         <span class="n">option_neighbor</span><span class="p">:</span> <span class="n">OptionNeighbor</span> <span class="o">=</span> <span class="n">OptionNeighbor</span><span class="o">.</span><span class="n">MIX_ALL</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span> <span class="o">=</span> <span class="n">rcpsp_model</span>
+        <span class="n">SolverRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">with_varying_resource</span> <span class="o">=</span> <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">is_varying_resource</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_varying_resource</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">solver</span> <span class="o">=</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">(</span>

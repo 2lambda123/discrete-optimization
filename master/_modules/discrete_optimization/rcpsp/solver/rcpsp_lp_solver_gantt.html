@@ -10,6 +10,8 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
@@ -99,7 +101,9 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.result_storage.result_storage</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ResultStorage</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModelCalendar</span><span class="p">,</span> <span class="n">RCPSPSolution</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.rcpsp_solver</span> <span class="kn">import</span> <span class="n">SolverRCPSP</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">gurobipy</span>
@@ -143,14 +147,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">working_time_upper_bound</span> <span class="o">=</span> <span class="n">working_time_upper_bound</span></div>
 
 
-<span class="k">class</span> <span class="nc">_Base_LP_MRCPSP_GANTT</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">_Base_LP_MRCPSP_GANTT</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
+        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
         <span class="n">rcpsp_solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span> <span class="o">=</span> <span class="n">rcpsp_model</span>
+        <span class="k">if</span> <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">calendar_details</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;rcpsp_model.calendar_details cannot be None for this solver&quot;</span>
+            <span class="p">)</span>
+        <span class="n">SolverRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_solution</span> <span class="o">=</span> <span class="n">rcpsp_solution</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">mode_details</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">modes_dict</span> <span class="o">=</span> <span class="p">{</span>
@@ -223,7 +231,7 @@
 <div class="viewcode-block" id="LP_MRCPSP_GANTT"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT">[docs]</a><span class="k">class</span> <span class="nc">LP_MRCPSP_GANTT</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">,</span> <span class="n">_Base_LP_MRCPSP_GANTT</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
+        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
         <span class="n">rcpsp_solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span>
         <span class="n">lp_solver</span><span class="o">=</span><span class="n">MilpSolverName</span><span class="o">.</span><span class="n">CBC</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>

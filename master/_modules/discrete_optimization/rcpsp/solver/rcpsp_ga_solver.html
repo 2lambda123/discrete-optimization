@@ -10,6 +10,8 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
@@ -84,24 +86,24 @@
     <span class="n">ParamsObjectiveFunction</span><span class="p">,</span>
     <span class="n">build_aggreg_function_and_params_objective</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.do_solver</span> <span class="kn">import</span> <span class="n">SolverDO</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.ea.alternating_ga</span> <span class="kn">import</span> <span class="n">AlternatingGa</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.ea.ga</span> <span class="kn">import</span> <span class="n">Ga</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.ea.ga_tools</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ParametersAltGa</span><span class="p">,</span>
     <span class="n">ParametersGa</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">MultiModeRCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.rcpsp_solver</span> <span class="kn">import</span> <span class="n">SolverRCPSP</span>
 
 
-<div class="viewcode-block" id="GA_RCPSP_Solver"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_ga_solver.GA_RCPSP_Solver">[docs]</a><span class="k">class</span> <span class="nc">GA_RCPSP_Solver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="GA_RCPSP_Solver"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_ga_solver.GA_RCPSP_Solver">[docs]</a><span class="k">class</span> <span class="nc">GA_RCPSP_Solver</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
         <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">ParamsObjectiveFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span> <span class="o">=</span> <span class="n">rcpsp_model</span>
+        <span class="n">SolverRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_sol</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_dict_values</span><span class="p">,</span>
@@ -130,14 +132,14 @@
         <span class="k">return</span> <span class="n">ga_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span></div></div>
 
 
-<div class="viewcode-block" id="GA_MRCPSP_Solver"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_ga_solver.GA_MRCPSP_Solver">[docs]</a><span class="k">class</span> <span class="nc">GA_MRCPSP_Solver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="GA_MRCPSP_Solver"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_ga_solver.GA_MRCPSP_Solver">[docs]</a><span class="k">class</span> <span class="nc">GA_MRCPSP_Solver</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">MultiModeRCPSPModel</span><span class="p">,</span>
+        <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
         <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">ParamsObjectiveFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span> <span class="o">=</span> <span class="n">rcpsp_model</span>
+        <span class="n">SolverRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_sol</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_dict_values</span><span class="p">,</span>

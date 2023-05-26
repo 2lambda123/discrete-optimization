@@ -10,6 +10,8 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
@@ -98,7 +100,6 @@
     <span class="n">LNS_MILP</span><span class="p">,</span>
     <span class="n">ConstraintHandler</span><span class="p">,</span>
     <span class="n">InitialSolution</span><span class="p">,</span>
-    <span class="n">SolverDO</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.lp_tools</span> <span class="kn">import</span> <span class="n">ParametersMilp</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.generic_tools.ls.local_search</span> <span class="kn">import</span> <span class="p">(</span>
@@ -121,11 +122,8 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.mutations.mutation_rcpsp</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">PermutationMutationRCPSP</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="n">RCPSPModelCalendar</span><span class="p">,</span>
-    <span class="n">RCPSPSolution</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver</span> <span class="kn">import</span> <span class="n">CP_MRCPSP_MZN</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.rcpsp_lp_solver</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">LP_MRCPSP</span><span class="p">,</span>
@@ -137,6 +135,7 @@
     <span class="n">PileSolverRCPSP</span><span class="p">,</span>
     <span class="n">PileSolverRCPSP_Calendar</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.rcpsp_solver</span> <span class="kn">import</span> <span class="n">SolverRCPSP</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -153,7 +152,7 @@
 <div class="viewcode-block" id="InitialSolutionRCPSP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialSolutionRCPSP">[docs]</a><span class="k">class</span> <span class="nc">InitialSolutionRCPSP</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelCalendar</span><span class="p">],</span>
+        <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
         <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">ParamsObjectiveFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">initial_method</span><span class="p">:</span> <span class="n">InitialMethodRCPSP</span> <span class="o">=</span> <span class="n">InitialMethodRCPSP</span><span class="o">.</span><span class="n">PILE</span><span class="p">,</span>
     <span class="p">):</span>
@@ -531,9 +530,9 @@
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
 
 
-<div class="viewcode-block" id="LNS_LP_RCPSP_SOLVER"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.LNS_LP_RCPSP_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LNS_LP_RCPSP_SOLVER</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="LNS_LP_RCPSP_SOLVER"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.LNS_LP_RCPSP_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LNS_LP_RCPSP_SOLVER</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span> <span class="o">=</span> <span class="n">rcpsp_model</span>
+        <span class="n">SolverRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="n">solver</span> <span class="o">=</span> <span class="n">LP_MRCPSP</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">solver</span><span class="o">.</span><span class="n">init_model</span><span class="p">(</span><span class="n">greedy_start</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parameters_milp</span> <span class="o">=</span> <span class="n">ParametersMilp</span><span class="p">(</span>
