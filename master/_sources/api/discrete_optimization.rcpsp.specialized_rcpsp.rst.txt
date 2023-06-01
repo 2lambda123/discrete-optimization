@@ -12,14 +12,6 @@ discrete\_optimization.rcpsp.specialized\_rcpsp.rcpsp\_specialized\_constraints 
    :undoc-members:
    :show-inheritance:
 
-discrete\_optimization.rcpsp.specialized\_rcpsp.rcpsp\_task\_merger module
---------------------------------------------------------------------------
-
-.. automodule:: discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_task_merger
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

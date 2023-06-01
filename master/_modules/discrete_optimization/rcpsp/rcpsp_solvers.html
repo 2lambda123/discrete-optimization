@@ -107,9 +107,6 @@
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model_preemptive</span> <span class="kn">import</span> <span class="n">RCPSPModelPreemptive</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.calendar_solver_iterative</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SolverWithCalendarIterative</span><span class="p">,</span>
-<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.solver.cp_lns_solver</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">LargeNeighborhoodSearchRCPSP</span><span class="p">,</span>
 <span class="p">)</span>
@@ -243,16 +240,6 @@
         <span class="p">(</span><span class="n">GA_RCPSP_Solver</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;parameters_ga&quot;</span><span class="p">:</span> <span class="n">ParametersGa</span><span class="o">.</span><span class="n">default_rcpsp</span><span class="p">()}),</span>
         <span class="p">(</span><span class="n">GA_MRCPSP_Solver</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;parameters_ga&quot;</span><span class="p">:</span> <span class="n">ParametersAltGa</span><span class="o">.</span><span class="n">default_mrcpsp</span><span class="p">()}),</span>
     <span class="p">],</span>
-    <span class="s2">&quot;lns-cp-calendar&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">(</span>
-            <span class="n">SolverWithCalendarIterative</span><span class="p">,</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;parameters_cp&quot;</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="o">.</span><span class="n">default</span><span class="p">(),</span>
-                <span class="s2">&quot;nb_iteration_lns&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-                <span class="s2">&quot;skip_first_iteration&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-            <span class="p">},</span>
-        <span class="p">)</span>
-    <span class="p">],</span>
     <span class="s2">&quot;gphh&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="n">GPHH</span><span class="p">,</span> <span class="p">{})],</span>
 <span class="p">}</span>
 
@@ -297,9 +284,6 @@
     <span class="n">GA_MRCPSP_Solver</span><span class="p">:</span> <span class="p">[</span>
         <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
         <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span>
-        <span class="n">RCPSPModel</span><span class="p">,</span>
-    <span class="p">],</span>
-    <span class="n">SolverWithCalendarIterative</span><span class="p">:</span> <span class="p">[</span>
         <span class="n">RCPSPModel</span><span class="p">,</span>
     <span class="p">],</span>
     <span class="n">LargeNeighborhoodSearchRCPSP</span><span class="p">:</span> <span class="p">[</span>

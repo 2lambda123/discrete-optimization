@@ -4,14 +4,6 @@ discrete\_optimization.rcpsp.solver package
 Submodules
 ----------
 
-discrete\_optimization.rcpsp.solver.calendar\_solver\_iterative module
-----------------------------------------------------------------------
-
-.. automodule:: discrete_optimization.rcpsp.solver.calendar_solver_iterative
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 discrete\_optimization.rcpsp.solver.cp\_lns\_methods\_clean module
 ------------------------------------------------------------------
 
