@@ -285,11 +285,7 @@
                 <span class="k">if</span> <span class="p">(</span>
                     <span class="n">reached_t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
                     <span class="ow">and</span> <span class="n">preemptive_tag</span><span class="p">[</span><span class="n">act_id</span><span class="p">]</span>
-                    <span class="ow">and</span> <span class="p">(</span>
-                        <span class="n">reached_t</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">current_min_time</span>
-                        <span class="o">&gt;=</span> <span class="n">duration_array</span><span class="p">[</span><span class="n">act_id</span><span class="p">,</span> <span class="n">modes_array</span><span class="p">[</span><span class="n">act_id</span><span class="p">]]</span> <span class="o">/</span> <span class="mi">8</span>
-                        <span class="ow">or</span> <span class="n">reached_end</span>
-                    <span class="p">)</span>
+                    <span class="ow">and</span> <span class="p">(</span><span class="n">reached_t</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">current_min_time</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">reached_end</span><span class="p">)</span>
                 <span class="p">):</span>
                     <span class="n">starts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_min_time</span><span class="p">)</span>
                     <span class="n">ends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reached_t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>

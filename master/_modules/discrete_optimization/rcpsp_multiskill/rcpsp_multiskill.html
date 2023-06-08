@@ -3090,7 +3090,7 @@
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">]</span>
 <span class="p">):</span>
     <span class="n">ressources_arrays</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">resources_availability</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+        <span class="n">r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">get_resource_availability_array</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">resources_list</span>
     <span class="p">}</span>
     <span class="n">max_capacity</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ressources_arrays</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ressources_arrays</span><span class="p">}</span>
