@@ -214,11 +214,7 @@
             <span class="n">cons</span> <span class="o">=</span> <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">modes_dict</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">list_resource</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">cons</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">continue</span>
-            <span class="n">bound</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">resources</span><span class="p">[</span><span class="n">list_resource</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">with_calendar</span>
-                <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">resources</span><span class="p">[</span><span class="n">list_resource</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>  <span class="c1"># type: ignore</span>
-            <span class="p">)</span>
+            <span class="n">bound</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">get_max_resource_capacity</span><span class="p">(</span><span class="n">list_resource</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">bound</span><span class="p">):</span>
                 <span class="n">polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span>
                     <span class="p">[</span>

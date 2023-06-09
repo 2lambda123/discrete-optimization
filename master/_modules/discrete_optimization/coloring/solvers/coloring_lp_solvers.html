@@ -269,7 +269,7 @@
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;self.start_solution.nb_color should not be None.&quot;</span><span class="p">)</span>
         <span class="n">color_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">)</span>
         <span class="n">colors_var</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="s2">&quot;Var&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">range_node</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">)</span>
+        <span class="n">range_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes_name</span>
         <span class="n">range_color</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes_name</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">range_color</span><span class="p">:</span>
@@ -426,7 +426,7 @@
             <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">mip</span><span class="o">.</span><span class="n">MINIMIZE</span><span class="p">,</span> <span class="n">solver_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">solver_name</span>
         <span class="p">)</span>
         <span class="n">colors_var</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">range_node</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">)</span>
+        <span class="n">range_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes_name</span>
         <span class="n">range_color</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes_name</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">range_color</span><span class="p">:</span>
