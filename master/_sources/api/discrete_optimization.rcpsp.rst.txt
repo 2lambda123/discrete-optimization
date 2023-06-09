@@ -95,6 +95,14 @@ discrete\_optimization.rcpsp.special\_constraints module
    :undoc-members:
    :show-inheritance:
 
+discrete\_optimization.rcpsp.transform\_model module
+----------------------------------------------------
+
+.. automodule:: discrete_optimization.rcpsp.transform_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
