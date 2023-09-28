@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -105,7 +105,9 @@
     <span class="p">)</span>
 
 
-<div class="viewcode-block" id="create_selective_tsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_selective_tsp">[docs]</a><span class="k">def</span> <span class="nf">create_selective_tsp</span><span class="p">(</span>
+<div class="viewcode-block" id="create_selective_tsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_selective_tsp">[docs]</a>
+<span class="k">def</span> <span class="nf">create_selective_tsp</span><span class="p">(</span>
     <span class="n">nb_nodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">nb_vehicles</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nb_clusters</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -198,7 +200,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="create_pickup_and_delivery"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_pickup_and_delivery">[docs]</a><span class="k">def</span> <span class="nf">create_pickup_and_delivery</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_pickup_and_delivery">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_pickup_and_delivery">[docs]</a>
+<span class="k">def</span> <span class="nf">create_pickup_and_delivery</span><span class="p">(</span>
     <span class="n">number_of_vehicles</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">number_of_node</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
     <span class="n">include_cluster</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -310,14 +315,20 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="load_vrp_and_transform"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.load_vrp_and_transform">[docs]</a><span class="k">def</span> <span class="nf">load_vrp_and_transform</span><span class="p">(</span><span class="n">index_in_files_available</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
+
+<div class="viewcode-block" id="load_vrp_and_transform">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.load_vrp_and_transform">[docs]</a>
+<span class="k">def</span> <span class="nf">load_vrp_and_transform</span><span class="p">(</span><span class="n">index_in_files_available</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">vrp_parser</span><span class="o">.</span><span class="n">get_data_available</span><span class="p">()[</span><span class="n">index_in_files_available</span><span class="p">]</span>
     <span class="n">vrp_model</span> <span class="o">=</span> <span class="n">vrp_parser</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
     <span class="n">gpdp</span> <span class="o">=</span> <span class="n">ProxyClass</span><span class="o">.</span><span class="n">from_vrp_model_to_gpdp</span><span class="p">(</span><span class="n">vrp_model</span><span class="o">=</span><span class="n">vrp_model</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">gpdp</span></div>
 
 
-<div class="viewcode-block" id="load_tsp_and_transform"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.load_tsp_and_transform">[docs]</a><span class="k">def</span> <span class="nf">load_tsp_and_transform</span><span class="p">(</span><span class="n">index_in_files_available</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
+
+<div class="viewcode-block" id="load_tsp_and_transform">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.load_tsp_and_transform">[docs]</a>
+<span class="k">def</span> <span class="nf">load_tsp_and_transform</span><span class="p">(</span><span class="n">index_in_files_available</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
     <span class="n">files_available</span> <span class="o">=</span> <span class="n">tsp_parser</span><span class="o">.</span><span class="n">get_data_available</span><span class="p">()</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">files_available</span><span class="p">[</span><span class="n">index_in_files_available</span><span class="p">]</span>
     <span class="n">tsp_model</span> <span class="o">=</span> <span class="n">tsp_parser</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
@@ -325,7 +336,10 @@
     <span class="k">return</span> <span class="n">gpdp</span></div>
 
 
-<div class="viewcode-block" id="create_ortools_example"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_ortools_example">[docs]</a><span class="k">def</span> <span class="nf">create_ortools_example</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
+
+<div class="viewcode-block" id="create_ortools_example">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.builders.html#discrete_optimization.pickup_vrp.builders.instance_builders.create_ortools_example">[docs]</a>
+<span class="k">def</span> <span class="nf">create_ortools_example</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">GPDP</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Build instances from ortools reference guide.&quot;&quot;&quot;</span>
     <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">coordinates</span> <span class="o">=</span> <span class="p">[</span>
@@ -831,6 +845,7 @@
         <span class="n">coordinates_2d</span><span class="o">=</span><span class="n">coordinates_dict</span><span class="p">,</span>
         <span class="n">time_windows_nodes</span><span class="o">=</span><span class="n">time_windows_nodes</span><span class="p">,</span>
     <span class="p">)</span></div>
+
 </pre></div>
 
            </div>

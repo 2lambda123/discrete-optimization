@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -93,7 +93,9 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
 
 
-<div class="viewcode-block" id="SGSWithoutArray"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray">[docs]</a><span class="k">class</span> <span class="nc">SGSWithoutArray</span><span class="p">:</span>
+<div class="viewcode-block" id="SGSWithoutArray">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray">[docs]</a>
+<span class="k">class</span> <span class="nc">SGSWithoutArray</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span> <span class="o">=</span> <span class="n">rcpsp_model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resource_avail_in_time</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -114,7 +116,9 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">resource_avail_in_time</span><span class="p">[</span><span class="n">res</span><span class="p">]</span>
             <span class="p">)</span>
 
-<div class="viewcode-block" id="SGSWithoutArray.get_available_from_delta"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.get_available_from_delta">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SGSWithoutArray.get_available_from_delta">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.get_available_from_delta">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_available_from_delta</span><span class="p">(</span><span class="n">sdict</span><span class="p">:</span> <span class="n">SortedDict</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">sdict</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">sdict</span><span class="p">:</span>
@@ -124,13 +128,19 @@
         <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sdict</span><span class="o">.</span><span class="n">peekitem</span><span class="p">(</span><span class="n">j</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">r</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="SGSWithoutArray.get_available_from_absolute"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.get_available_from_absolute">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="SGSWithoutArray.get_available_from_absolute">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.get_available_from_absolute">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_available_from_absolute</span><span class="p">(</span><span class="n">sdict</span><span class="p">:</span> <span class="n">SortedDict</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">sdict</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">sdict</span><span class="o">.</span><span class="n">peekitem</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="SGSWithoutArray.add_event_delta"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.add_event_delta">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="SGSWithoutArray.add_event_delta">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.add_event_delta">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">add_event_delta</span><span class="p">(</span>
         <span class="n">sdict</span><span class="p">:</span> <span class="n">SortedDict</span><span class="p">,</span> <span class="n">time_start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">time_end</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -143,7 +153,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">sdict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">time_end</span><span class="p">:</span> <span class="o">-</span><span class="n">delta</span><span class="p">})</span></div>
 
-<div class="viewcode-block" id="SGSWithoutArray.add_event_delta_in_absolute"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.add_event_delta_in_absolute">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="SGSWithoutArray.add_event_delta_in_absolute">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.add_event_delta_in_absolute">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">add_event_delta_in_absolute</span><span class="p">(</span>
         <span class="n">sdict</span><span class="p">:</span> <span class="n">SortedDict</span><span class="p">,</span>
         <span class="n">time_start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -161,7 +174,10 @@
         <span class="k">if</span> <span class="n">time_end</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sdict</span><span class="p">:</span>
             <span class="n">sdict</span><span class="p">[</span><span class="n">time_end</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdict</span><span class="o">.</span><span class="n">peekitem</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">delta</span></div>
 
-<div class="viewcode-block" id="SGSWithoutArray.create_delta_dict"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.create_delta_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="SGSWithoutArray.create_delta_dict">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.create_delta_dict">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create_delta_dict</span><span class="p">(</span><span class="n">vector</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SortedDict</span><span class="p">:</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
@@ -173,7 +189,10 @@
         <span class="n">l</span> <span class="o">=</span> <span class="n">SortedDict</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">l</span></div>
 
-<div class="viewcode-block" id="SGSWithoutArray.create_absolute_dict"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.create_absolute_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="SGSWithoutArray.create_absolute_dict">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.create_absolute_dict">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create_absolute_dict</span><span class="p">(</span><span class="n">vector</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SortedDict</span><span class="p">:</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
@@ -185,7 +204,10 @@
         <span class="n">l</span> <span class="o">=</span> <span class="n">SortedDict</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">l</span></div>
 
-<div class="viewcode-block" id="SGSWithoutArray.generate_schedule_from_permutation_serial_sgs"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.generate_schedule_from_permutation_serial_sgs">[docs]</a>    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span>
+
+<div class="viewcode-block" id="SGSWithoutArray.generate_schedule_from_permutation_serial_sgs">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.sgs_without_array.SGSWithoutArray.generate_schedule_from_permutation_serial_sgs">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SortedDict</span><span class="p">]]:</span>
         <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
@@ -325,7 +347,9 @@
                 <span class="n">rcpsp_schedule</span><span class="p">[</span><span class="n">last_act_id</span><span class="p">][</span><span class="s2">&quot;end_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9999999</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">rcpsp_schedule_feasible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span><span class="p">,</span> <span class="n">resource_avail_in_time</span></div></div>
+        <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span><span class="p">,</span> <span class="n">resource_avail_in_time</span></div>
+</div>
+
 </pre></div>
 
            </div>

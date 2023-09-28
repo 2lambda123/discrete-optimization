@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -101,7 +101,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="compute_resource_consumption"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.compute_resource_consumption">[docs]</a><span class="k">def</span> <span class="nf">compute_resource_consumption</span><span class="p">(</span>
+<div class="viewcode-block" id="compute_resource_consumption">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.compute_resource_consumption">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_resource_consumption</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">list_resources</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -132,7 +134,10 @@
     <span class="k">return</span> <span class="n">consumptions</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">makespan</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="compute_nice_resource_consumption"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.compute_nice_resource_consumption">[docs]</a><span class="k">def</span> <span class="nf">compute_nice_resource_consumption</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_nice_resource_consumption">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.compute_nice_resource_consumption">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_nice_resource_consumption</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">list_resources</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -157,7 +162,10 @@
     <span class="k">return</span> <span class="n">merged_times</span><span class="p">,</span> <span class="n">merged_cons</span></div>
 
 
-<div class="viewcode-block" id="plot_ressource_view"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.plot_ressource_view">[docs]</a><span class="k">def</span> <span class="nf">plot_ressource_view</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_ressource_view">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.plot_ressource_view">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_ressource_view</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">list_resource</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -272,7 +280,10 @@
     <span class="k">return</span> <span class="n">fig</span></div>
 
 
-<div class="viewcode-block" id="plot_task_gantt"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.plot_task_gantt">[docs]</a><span class="k">def</span> <span class="nf">plot_task_gantt</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_task_gantt">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.plot_task_gantt">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_task_gantt</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">fig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -356,7 +367,10 @@
     <span class="k">return</span> <span class="n">fig</span></div>
 
 
-<div class="viewcode-block" id="compute_schedule_per_resource_individual"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.compute_schedule_per_resource_individual">[docs]</a><span class="k">def</span> <span class="nf">compute_schedule_per_resource_individual</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_schedule_per_resource_individual">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.compute_schedule_per_resource_individual">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_schedule_per_resource_individual</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">resource_types_to_consider</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -526,7 +540,10 @@
     <span class="k">return</span> <span class="n">array_ressource_usage</span></div>
 
 
-<div class="viewcode-block" id="plot_resource_individual_gantt"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.plot_resource_individual_gantt">[docs]</a><span class="k">def</span> <span class="nf">plot_resource_individual_gantt</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_resource_individual_gantt">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.plots.html#discrete_optimization.rcpsp.plots.rcpsp_utils_preemptive.plot_resource_individual_gantt">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_resource_individual_gantt</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
     <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">resource_types_to_consider</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -602,6 +619,7 @@
             <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">current_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;pyplot vertical line&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Timestep&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fig</span></div>
+
 </pre></div>
 
            </div>

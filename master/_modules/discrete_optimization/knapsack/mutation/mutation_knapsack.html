@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -102,30 +102,46 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="SingleBitFlipMove"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.SingleBitFlipMove">[docs]</a><span class="k">class</span> <span class="nc">SingleBitFlipMove</span><span class="p">(</span><span class="n">LocalMove</span><span class="p">):</span>
+<div class="viewcode-block" id="SingleBitFlipMove">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.SingleBitFlipMove">[docs]</a>
+<span class="k">class</span> <span class="nc">SingleBitFlipMove</span><span class="p">(</span><span class="n">LocalMove</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
 
-<div class="viewcode-block" id="SingleBitFlipMove.apply_local_move"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.SingleBitFlipMove.apply_local_move">[docs]</a>    <span class="k">def</span> <span class="nf">apply_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+<div class="viewcode-block" id="SingleBitFlipMove.apply_local_move">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.SingleBitFlipMove.apply_local_move">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="n">new_list_taken</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">list_taken</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">new_list_taken</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">new_list_taken</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">new_solution</span> <span class="o">=</span> <span class="n">KnapsackSolution</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">list_taken</span><span class="o">=</span><span class="n">new_list_taken</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">new_solution</span></div>
 
-<div class="viewcode-block" id="SingleBitFlipMove.backtrack_local_move"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.SingleBitFlipMove.backtrack_local_move">[docs]</a>    <span class="k">def</span> <span class="nf">backtrack_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="SingleBitFlipMove.backtrack_local_move">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.SingleBitFlipMove.backtrack_local_move">[docs]</a>
+    <span class="k">def</span> <span class="nf">backtrack_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="KnapsackMutationSingleBitFlip"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip">[docs]</a><span class="k">class</span> <span class="nc">KnapsackMutationSingleBitFlip</span><span class="p">(</span><span class="n">Mutation</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KnapsackMutationSingleBitFlip">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip">[docs]</a>
+<span class="k">class</span> <span class="nc">KnapsackMutationSingleBitFlip</span><span class="p">(</span><span class="n">Mutation</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
 
-<div class="viewcode-block" id="KnapsackMutationSingleBitFlip.mutate"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip.mutate">[docs]</a>    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+<div class="viewcode-block" id="KnapsackMutationSingleBitFlip.mutate">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip.mutate">[docs]</a>
+    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="n">s</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutate_and_compute_obj</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span><span class="p">,</span> <span class="n">m</span></div>
 
-<div class="viewcode-block" id="KnapsackMutationSingleBitFlip.mutate_and_compute_obj"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip.mutate_and_compute_obj">[docs]</a>    <span class="k">def</span> <span class="nf">mutate_and_compute_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="KnapsackMutationSingleBitFlip.mutate_and_compute_obj">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip.mutate_and_compute_obj">[docs]</a>
+    <span class="k">def</span> <span class="nf">mutate_and_compute_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">list_taken</span><span class="p">)</span>
         <span class="n">i</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">move</span> <span class="o">=</span> <span class="n">SingleBitFlipMove</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">)</span>
@@ -146,12 +162,19 @@
             <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">new_sol</span><span class="p">,</span> <span class="n">move</span><span class="p">,</span> <span class="n">obj</span></div>
 
-<div class="viewcode-block" id="KnapsackMutationSingleBitFlip.build"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip.build">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="KnapsackMutationSingleBitFlip.build">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.KnapsackMutationSingleBitFlip.build">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;KnapsackMutatio.nSingleBitFlip&quot;</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
-        <span class="k">return</span> <span class="n">KnapsackMutationSingleBitFlip</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">KnapsackMutationSingleBitFlip</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="BitFlipMoveKP"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.BitFlipMoveKP">[docs]</a><span class="k">class</span> <span class="nc">BitFlipMoveKP</span><span class="p">(</span><span class="n">LocalMove</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BitFlipMoveKP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.BitFlipMoveKP">[docs]</a>
+<span class="k">class</span> <span class="nc">BitFlipMoveKP</span><span class="p">(</span><span class="n">LocalMove</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span> <span class="n">list_index_flip</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
     <span class="p">):</span>
@@ -159,7 +182,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">list_index_flip</span> <span class="o">=</span> <span class="n">list_index_flip</span>
 
-<div class="viewcode-block" id="BitFlipMoveKP.apply_local_move"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.BitFlipMoveKP.apply_local_move">[docs]</a>    <span class="k">def</span> <span class="nf">apply_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+<div class="viewcode-block" id="BitFlipMoveKP.apply_local_move">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.BitFlipMoveKP.apply_local_move">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="k">if</span> <span class="n">solution</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">solution</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">solution</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -182,14 +207,24 @@
         <span class="n">solution</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
         <span class="k">return</span> <span class="n">solution</span></div>
 
-<div class="viewcode-block" id="BitFlipMoveKP.backtrack_local_move"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.BitFlipMoveKP.backtrack_local_move">[docs]</a>    <span class="k">def</span> <span class="nf">backtrack_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="BitFlipMoveKP.backtrack_local_move">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.BitFlipMoveKP.backtrack_local_move">[docs]</a>
+    <span class="k">def</span> <span class="nf">backtrack_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MutationKnapsack"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack">[docs]</a><span class="k">class</span> <span class="nc">MutationKnapsack</span><span class="p">(</span><span class="n">Mutation</span><span class="p">):</span>
-<div class="viewcode-block" id="MutationKnapsack.build"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.build">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="MutationKnapsack">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack">[docs]</a>
+<span class="k">class</span> <span class="nc">MutationKnapsack</span><span class="p">(</span><span class="n">Mutation</span><span class="p">):</span>
+<div class="viewcode-block" id="MutationKnapsack.build">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.build">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MutationKnapsack&quot;</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="k">return</span> <span class="n">MutationKnapsack</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span> <span class="o">=</span> <span class="n">knapsack_model</span>
@@ -210,7 +245,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span>
 
-<div class="viewcode-block" id="MutationKnapsack.switch_on"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.switch_on">[docs]</a>    <span class="k">def</span> <span class="nf">switch_on</span><span class="p">(</span>
+<div class="viewcode-block" id="MutationKnapsack.switch_on">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.switch_on">[docs]</a>
+    <span class="k">def</span> <span class="nf">switch_on</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">come_from_outside</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="n">variable</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">variable</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -261,7 +298,10 @@
                 <span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch_off</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MutationKnapsack.switch_off"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.switch_off">[docs]</a>    <span class="k">def</span> <span class="nf">switch_off</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MutationKnapsack.switch_off">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.switch_off">[docs]</a>
+    <span class="k">def</span> <span class="nf">switch_off</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">come_from_outside</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="n">variable</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">variable</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -305,11 +345,17 @@
                 <span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch_on</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">come_from_outside</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MutationKnapsack.mutate"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.mutate">[docs]</a>    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="MutationKnapsack.mutate">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.mutate">[docs]</a>
+    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="n">s</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutate_and_compute_obj</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span><span class="p">,</span> <span class="n">m</span></div>
 
-<div class="viewcode-block" id="MutationKnapsack.mutate_and_compute_obj"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.mutate_and_compute_obj">[docs]</a>    <span class="k">def</span> <span class="nf">mutate_and_compute_obj</span><span class="p">(</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="MutationKnapsack.mutate_and_compute_obj">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.mutation.html#discrete_optimization.knapsack.mutation.mutation_knapsack.MutationKnapsack.mutate_and_compute_obj">[docs]</a>
+    <span class="k">def</span> <span class="nf">mutate_and_compute_obj</span><span class="p">(</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">KnapsackSolution</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="n">variable</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -318,7 +364,9 @@
         <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch_on</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch_off</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch_off</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

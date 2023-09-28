@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -309,14 +309,19 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="look_for_solver"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.look_for_solver">[docs]</a><span class="k">def</span> <span class="nf">look_for_solver</span><span class="p">(</span>
+<div class="viewcode-block" id="look_for_solver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.look_for_solver">[docs]</a>
+<span class="k">def</span> <span class="nf">look_for_solver</span><span class="p">(</span>
     <span class="n">domain</span><span class="p">:</span> <span class="n">ANY_CLASSICAL_RCPSP</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverRCPSP</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">SolverGenericRCPSP</span><span class="p">]]]:</span>
     <span class="n">class_domain</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="vm">__class__</span>
     <span class="k">return</span> <span class="n">look_for_solver_class</span><span class="p">(</span><span class="n">class_domain</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="look_for_solver_class"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.look_for_solver_class">[docs]</a><span class="k">def</span> <span class="nf">look_for_solver_class</span><span class="p">(</span>
+
+<div class="viewcode-block" id="look_for_solver_class">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.look_for_solver_class">[docs]</a>
+<span class="k">def</span> <span class="nf">look_for_solver_class</span><span class="p">(</span>
     <span class="n">class_domain</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">ANY_CLASSICAL_RCPSP</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverRCPSP</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">SolverGenericRCPSP</span><span class="p">]]]:</span>
     <span class="n">available</span> <span class="o">=</span> <span class="p">[]</span>
@@ -326,7 +331,10 @@
     <span class="k">return</span> <span class="n">available</span></div>
 
 
-<div class="viewcode-block" id="solve"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.solve">[docs]</a><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.solve">[docs]</a>
+<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
     <span class="n">method</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverRCPSP</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">SolverGenericRCPSP</span><span class="p">]],</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_CLASSICAL_RCPSP</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -335,7 +343,10 @@
     <span class="k">return</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="solve_return_solver"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.solve_return_solver">[docs]</a><span class="k">def</span> <span class="nf">solve_return_solver</span><span class="p">(</span>
+
+<div class="viewcode-block" id="solve_return_solver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.solve_return_solver">[docs]</a>
+<span class="k">def</span> <span class="nf">solve_return_solver</span><span class="p">(</span>
     <span class="n">method</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverRCPSP</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">SolverGenericRCPSP</span><span class="p">]],</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_CLASSICAL_RCPSP</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -344,7 +355,10 @@
     <span class="k">return</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">solver</span></div>
 
 
-<div class="viewcode-block" id="return_solver"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.return_solver">[docs]</a><span class="k">def</span> <span class="nf">return_solver</span><span class="p">(</span>
+
+<div class="viewcode-block" id="return_solver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.return_solver">[docs]</a>
+<span class="k">def</span> <span class="nf">return_solver</span><span class="p">(</span>
     <span class="n">method</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverRCPSP</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">SolverGenericRCPSP</span><span class="p">]],</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_CLASSICAL_RCPSP</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -361,13 +375,17 @@
     <span class="k">return</span> <span class="n">solver</span></div>
 
 
-<div class="viewcode-block" id="get_solver_default_arguments"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.get_solver_default_arguments">[docs]</a><span class="k">def</span> <span class="nf">get_solver_default_arguments</span><span class="p">(</span>
+
+<div class="viewcode-block" id="get_solver_default_arguments">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solvers.get_solver_default_arguments">[docs]</a>
+<span class="k">def</span> <span class="nf">get_solver_default_arguments</span><span class="p">(</span>
     <span class="n">method</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverRCPSP</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">SolverGenericRCPSP</span><span class="p">]]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">solvers_map</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> is not in the list of available solvers for RCPSP.&quot;</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

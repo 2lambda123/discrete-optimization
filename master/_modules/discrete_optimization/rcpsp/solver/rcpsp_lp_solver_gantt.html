@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -117,7 +117,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="intersect"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.intersect">[docs]</a><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
+<div class="viewcode-block" id="intersect">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.intersect">[docs]</a>
+<span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i2</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
@@ -126,7 +128,10 @@
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="ConstraintTaskIndividual"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.ConstraintTaskIndividual">[docs]</a><span class="k">class</span> <span class="nc">ConstraintTaskIndividual</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ConstraintTaskIndividual">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.ConstraintTaskIndividual">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintTaskIndividual</span><span class="p">:</span>
     <span class="n">list_tuple</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span>
     <span class="c1"># task, ressource, ressource_individual, has or has not to do a task</span>
     <span class="c1"># indicates constraint for a given resource individual that has to do a tas</span>
@@ -134,7 +139,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">list_tuple</span> <span class="o">=</span> <span class="n">list_tuple</span></div>
 
 
-<div class="viewcode-block" id="ConstraintWorkDuration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.ConstraintWorkDuration">[docs]</a><span class="k">class</span> <span class="nc">ConstraintWorkDuration</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ConstraintWorkDuration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.ConstraintWorkDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintWorkDuration</span><span class="p">:</span>
     <span class="n">ressource</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">individual</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">time_bounds</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
@@ -145,6 +153,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">individual</span> <span class="o">=</span> <span class="n">individual</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">time_bounds</span> <span class="o">=</span> <span class="n">time_bounds</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">working_time_upper_bound</span> <span class="o">=</span> <span class="n">working_time_upper_bound</span></div>
+
 
 
 <span class="k">class</span> <span class="nc">_Base_LP_MRCPSP_GANTT</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
@@ -228,7 +237,9 @@
         <span class="p">)</span>
 
 
-<div class="viewcode-block" id="LP_MRCPSP_GANTT"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT">[docs]</a><span class="k">class</span> <span class="nc">LP_MRCPSP_GANTT</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">,</span> <span class="n">_Base_LP_MRCPSP_GANTT</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_MRCPSP_GANTT">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_MRCPSP_GANTT</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">,</span> <span class="n">_Base_LP_MRCPSP_GANTT</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -243,7 +254,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lp_solver</span> <span class="o">=</span> <span class="n">lp_solver</span>
 
-<div class="viewcode-block" id="LP_MRCPSP_GANTT.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_MRCPSP_GANTT.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">sense</span><span class="o">=</span><span class="n">MINIMIZE</span><span class="p">,</span> <span class="n">solver_name</span><span class="o">=</span><span class="n">map_solver</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lp_solver</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ressource_id_usage</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">k</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">{}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">calendar_details</span><span class="p">[</span><span class="n">k</span><span class="p">]))}</span>
@@ -321,13 +334,19 @@
                                 <span class="p">]</span>
                             <span class="p">)</span>
                             <span class="o">&lt;=</span> <span class="mi">1</span>
-                        <span class="p">)</span></div></div>
+                        <span class="p">)</span></div>
+</div>
+
 
 
 <span class="c1"># gurobi solver which is ussefull to get a pool of solution (indeed, using the other one we dont have usually a lot of</span>
 <span class="c1"># ssolution since we converge rapidly to the &quot;optimum&quot; (we don&#39;t have an objective value..)</span>
-<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI">[docs]</a><span class="k">class</span> <span class="nc">LP_MRCPSP_GANTT_GUROBI</span><span class="p">(</span><span class="n">GurobiMilpSolver</span><span class="p">,</span> <span class="n">_Base_LP_MRCPSP_GANTT</span><span class="p">):</span>
-<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_MRCPSP_GANTT_GUROBI</span><span class="p">(</span><span class="n">GurobiMilpSolver</span><span class="p">,</span> <span class="n">_Base_LP_MRCPSP_GANTT</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">gurobi</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s2">&quot;Gantt&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ressource_id_usage</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">k</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">{}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">calendar_details</span><span class="p">[</span><span class="n">k</span><span class="p">]))}</span>
@@ -406,7 +425,10 @@
                         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">modelSense</span> <span class="o">=</span> <span class="n">gurobi</span><span class="o">.</span><span class="n">GRB</span><span class="o">.</span><span class="n">MINIMIZE</span></div>
 
-<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.adding_constraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.adding_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.adding_constraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.adding_constraint">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">constraint_description</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ConstraintTaskIndividual</span><span class="p">,</span> <span class="n">ConstraintWorkDuration</span><span class="p">],</span>
         <span class="n">constraint_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -479,7 +501,10 @@
             <span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">parameters_milp</span><span class="o">.</span><span class="n">retrieve_all_solution</span><span class="p">:</span>
             <span class="n">n_solutions</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">.</span><span class="n">n_solutions_max</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_solutions</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -505,7 +530,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sense_optim</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.build_objective_function_from_a_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.build_objective_function_from_a_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_objective_function_from_a_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LP_MRCPSP_GANTT_GUROBI.build_objective_function_from_a_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_solver_gantt.LP_MRCPSP_GANTT_GUROBI.build_objective_function_from_a_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_objective_function_from_a_solution</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">ressource_usage</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]],</span>
         <span class="n">ignore_tuple</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -519,7 +547,9 @@
                     <span class="k">if</span> <span class="n">ressource_usage</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">individual</span><span class="p">][</span><span class="n">task</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
                         <span class="n">objective</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">ressource_id_usage</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">individual</span><span class="p">][</span><span class="n">task</span><span class="p">])</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Setting new objectives = Change task objective&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">setObjective</span><span class="p">(</span><span class="n">objective</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">setObjective</span><span class="p">(</span><span class="n">objective</span><span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

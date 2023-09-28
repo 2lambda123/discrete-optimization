@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -160,7 +160,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="RCPSPSolCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.RCPSPSolCP">[docs]</a><span class="k">class</span> <span class="nc">RCPSPSolCP</span><span class="p">:</span>
+<div class="viewcode-block" id="RCPSPSolCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.RCPSPSolCP">[docs]</a>
+<span class="k">class</span> <span class="nc">RCPSPSolCP</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -170,11 +172,17 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;One solution </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output </span><span class="si">{</span><span class="n">_output_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RCPSPSolCP.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.RCPSPSolCP.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="RCPSPSolCP.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.RCPSPSolCP.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="add_fake_task_cp_data"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_fake_task_cp_data">[docs]</a><span class="k">def</span> <span class="nf">add_fake_task_cp_data</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_fake_task_cp_data">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_fake_task_cp_data">[docs]</a>
+<span class="k">def</span> <span class="nf">add_fake_task_cp_data</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelPreemptive</span><span class="p">],</span>
     <span class="n">ignore_fake_task</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">max_time_to_consider</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -216,7 +224,10 @@
         <span class="k">return</span> <span class="n">dict_to_add_in_instance</span></div>
 
 
-<div class="viewcode-block" id="CP_RCPSP_MZN"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN">[docs]</a><span class="k">class</span> <span class="nc">CP_RCPSP_MZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_RCPSP_MZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -243,7 +254,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="p">[]</span>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_RCPSP_MZN.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model_type&quot;</span><span class="p">,</span> <span class="s2">&quot;single&quot;</span><span class="p">)</span>
         <span class="n">max_time</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_time&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">horizon</span><span class="p">)</span>
         <span class="n">fake_tasks</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -347,20 +360,32 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">strings_to_add</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.add_hard_special_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.add_hard_special_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partial_solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.add_hard_special_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.add_hard_special_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partial_solution</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">add_hard_special_constraints</span><span class="p">(</span><span class="n">partial_solution</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_objective_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_objective_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_objective_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_objective_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;constraint forall ( i in Tasks where suc[i] == </span><span class="si">{}</span><span class="s2"> )</span>
 <span class="s2">                (s[i] + d[i] &lt;= objective);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_objective_equal_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_objective_equal_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_objective_equal_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_objective_equal_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
         <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">task_sink</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;constraint (s[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]+d[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]==objective);</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_sum_of_ending_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_sum_of_ending_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_sum_of_ending_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_sum_of_ending_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;int: nb_indexes=&quot;&quot;&quot;</span>
@@ -373,7 +398,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_sum_of_starting_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_sum_of_starting_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_sum_of_starting_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_sum_of_starting_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;int: nb_indexes=&quot;&quot;&quot;</span>
@@ -386,7 +414,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_objective_max_time_set_of_jobs"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_objective_max_time_set_of_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_objective_max_time_set_of_jobs">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_objective_max_time_set_of_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">set_of_jobs</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="p">[</span>
@@ -398,7 +429,10 @@
             <span class="p">]</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_start_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_start_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_start_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_start_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -410,7 +444,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_end_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_end_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.constraint_end_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.constraint_end_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -424,7 +461,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -470,11 +510,18 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">result_storage</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN.get_stats"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.get_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span></div></div>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN.get_stats">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN.get_stats">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN">[docs]</a><span class="k">class</span> <span class="nc">CP_MRCPSP_MZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_MRCPSP_MZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -499,7 +546,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">is_varying_resource</span><span class="p">()</span>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_MRCPSP_MZN.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model_type&quot;</span><span class="p">,</span> <span class="s2">&quot;multi&quot;</span><span class="p">)</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">files_mzn</span><span class="p">[</span><span class="n">model_type</span><span class="p">])</span>
         <span class="n">custom_output_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output_type&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -647,10 +696,16 @@
             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.add_hard_special_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.add_hard_special_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partial_solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.add_hard_special_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.add_hard_special_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partial_solution</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">add_hard_special_constraints</span><span class="p">(</span><span class="n">partial_solution</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_task_to_mode"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_task_to_mode">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_task_to_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_task_to_mode">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_task_to_mode">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_task_to_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
         <span class="n">modes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
         <span class="n">list_strings</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span>
@@ -668,17 +723,26 @@
             <span class="n">list_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_objective_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_objective_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_objective_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_objective_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;constraint forall ( i in Act where suc[i] == </span><span class="si">{}</span><span class="s2"> )</span>
 <span class="s2">                (start[i] + adur[i] &lt;= objective);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_objective_equal_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_objective_equal_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_objective_equal_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_objective_equal_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
         <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">task_sink</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;constraint (start[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]+adur[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]==objective);</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_objective_max_time_set_of_jobs"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_objective_max_time_set_of_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_objective_max_time_set_of_jobs">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_objective_max_time_set_of_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">set_of_jobs</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="p">[</span>
@@ -690,7 +754,10 @@
             <span class="p">]</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_sum_of_ending_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_sum_of_ending_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_sum_of_ending_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_sum_of_ending_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;int: nb_indexes=&quot;&quot;&quot;</span>
@@ -703,7 +770,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_sum_of_starting_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_sum_of_starting_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_sum_of_starting_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_sum_of_starting_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;int: nb_indexes=&quot;&quot;&quot;</span>
@@ -716,7 +786,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_start_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_start_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_start_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_start_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -728,7 +801,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_end_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_end_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.constraint_end_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.constraint_end_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -742,7 +818,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -799,9 +878,13 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
             <span class="n">limit_store</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_WITH_FAKE_TASK">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_WITH_FAKE_TASK">[docs]</a>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">deprecated_in</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">(</span><span class="n">CP_MRCPSP_MZN</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -1036,10 +1119,13 @@
             <span class="o">+</span> <span class="s2">&quot;&quot;&quot;;</span><span class="se">\n</span>
 <span class="s2">               constraint objective&gt;=sum(j in index_tasks)(start[j]);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE">[docs]</a><span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -1067,7 +1153,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data_dict</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_preemptive</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model_type&quot;</span><span class="p">,</span> <span class="s2">&quot;multi-preemptive&quot;</span><span class="p">)</span>
         <span class="n">add_objective_makespan</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;add_objective_makespan&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">ignore_sec_objective</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ignore_sec_objective&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -1220,7 +1308,10 @@
             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_ressource_requirement_at_time_t</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_ressource_requirement_at_time_t</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">ressource</span><span class="p">,</span> <span class="n">ressource_number</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">LEQ</span>
     <span class="p">):</span>
         <span class="n">index_ressource</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources_index</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ressource</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1239,7 +1330,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -1325,7 +1419,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">result_storage</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_task_to_mode"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_task_to_mode">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_task_to_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_task_to_mode">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_task_to_mode">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_task_to_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
         <span class="n">modes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
         <span class="n">list_strings</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span>
@@ -1343,10 +1440,16 @@
             <span class="n">list_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.add_hard_special_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.add_hard_special_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partial_solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.add_hard_special_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.add_hard_special_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partial_solution</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">add_hard_special_constraints</span><span class="p">(</span><span class="n">partial_solution</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_to_min_duration_preemptive"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_to_min_duration_preemptive">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_duration_to_min_duration_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">min_duration</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_to_min_duration_preemptive">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_to_min_duration_preemptive">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_duration_to_min_duration_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">min_duration</span><span class="p">):</span>
         <span class="n">list_strings</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_preemptive</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
             <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
@@ -1366,7 +1469,10 @@
             <span class="n">list_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_minduration_all_tasks"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_minduration_all_tasks">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_minduration_all_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_minduration_all_tasks">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_minduration_all_tasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_minduration_all_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">list_strings</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">duration_subtask</span><span class="p">[</span><span class="n">task</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
@@ -1375,7 +1481,10 @@
                 <span class="p">)</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1387,7 +1496,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_end_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_end_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_end_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_end_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1399,7 +1511,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string_preemptive_i"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string_preemptive_i">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_string_preemptive_i</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string_preemptive_i">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_string_preemptive_i">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_string_preemptive_i</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">part_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1413,7 +1528,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_string_preemptive_i"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_string_preemptive_i">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_duration_string_preemptive_i</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_string_preemptive_i">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_duration_string_preemptive_i">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_duration_string_preemptive_i</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">part_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1427,7 +1545,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_precomputed"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_precomputed">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_precomputed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_precomputed">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_start_time_precomputed">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_precomputed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">intervals</span> <span class="o">=</span> <span class="n">precompute_posssible_starting_time_interval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="n">list_strings</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">:</span>
@@ -1462,12 +1583,18 @@
                 <span class="n">list_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;constraint forall ( i in Tasks where suc[i] == </span><span class="si">{}</span><span class="s2"> )</span>
 <span class="s2">                (s_preemptive[i, nb_preemptive] + d_preemptive[i, nb_preemptive] &lt;= objective);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_max_time_set_of_jobs"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_max_time_set_of_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_max_time_set_of_jobs">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_max_time_set_of_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">set_of_jobs</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="p">[</span>
@@ -1477,7 +1604,10 @@
             <span class="p">]</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_equal_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_equal_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_equal_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_objective_equal_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
         <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">task_sink</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
             <span class="s2">&quot;constraint (s_preemptive[&quot;</span>
@@ -1488,7 +1618,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_ending_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_ending_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_ending_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_ending_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">sink_task</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
@@ -1505,7 +1638,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_starting_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_starting_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_starting_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_PREEMMPTIVE.constraint_sum_of_starting_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">sink_task</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
 
@@ -1521,10 +1657,14 @@
             <span class="o">+</span> <span class="s2">&quot;&quot;&quot;;</span><span class="se">\n</span>
 <span class="s2">               constraint objective&gt;=sum(j in 1..nb_indexes)(weights[j]*s_preemptive[index_tasks[j], 1]);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE">[docs]</a><span class="k">class</span> <span class="nc">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">(</span><span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">(</span><span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -1544,7 +1684,9 @@
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model_type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="n">add_objective_makespan</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;add_objective_makespan&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">ignore_sec_objective</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ignore_sec_objective&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -1679,7 +1821,10 @@
             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -1753,7 +1898,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">result_storage</span></div>
 
-<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_ressource_requirement_at_time_t</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_RCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_RCPSP_MZN_PREEMMPTIVE.constraint_ressource_requirement_at_time_t">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_ressource_requirement_at_time_t</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">ressource</span><span class="p">,</span> <span class="n">ressource_number</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">LEQ</span>
     <span class="p">):</span>
         <span class="n">index_ressource</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources_index</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ressource</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1770,10 +1918,14 @@
             <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">index_ressource</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot;&quot;&quot;,i]);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">s</span></div></div>
+        <span class="k">return</span> <span class="n">s</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MRCPSP_Result"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.MRCPSP_Result">[docs]</a><span class="k">class</span> <span class="nc">MRCPSP_Result</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MRCPSP_Result">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.MRCPSP_Result">[docs]</a>
+<span class="k">class</span> <span class="nc">MRCPSP_Result</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -1782,11 +1934,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">dict</span> <span class="o">=</span> <span class="n">kwargs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode_chosen</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">_output_item</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MRCPSP_Result.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.MRCPSP_Result.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="MRCPSP_Result.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.MRCPSP_Result.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL">[docs]</a><span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_NOBOOL</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_NOBOOL</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -1813,7 +1971,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">is_varying_resource</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kc">True</span>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">add_objective_makespan</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;add_objective_makespan&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">ignore_sec_objective</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ignore_sec_objective&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">add_partial_solution_hard_constraint</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -1951,17 +2111,26 @@
                         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
                         <span class="n">constraint_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">string</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_objective_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_objective_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_objective_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_objective_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;constraint forall ( i in Act where suc[i] == </span><span class="si">{}</span><span class="s2"> )</span>
 <span class="s2">                (start[i] + adur[i] &lt;= objective);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_objective_equal_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_objective_equal_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_objective_equal_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_objective_equal_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
         <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">task_sink</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;constraint (start[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]+adur[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]==objective);</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_objective_max_time_set_of_jobs"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_objective_max_time_set_of_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_objective_max_time_set_of_jobs">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_objective_max_time_set_of_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">set_of_jobs</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="p">[</span>
@@ -1973,7 +2142,10 @@
             <span class="p">]</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_start_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_start_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_start_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_start_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1985,7 +2157,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_end_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_end_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.constraint_end_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.constraint_end_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1999,7 +2174,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_NOBOOL.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_NOBOOL.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -2044,10 +2222,14 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
             <span class="n">limit_store</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES">[docs]</a><span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_MODES</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_MRCPSP_MZN_MODES</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -2069,7 +2251,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">files_mzn</span><span class="p">[</span><span class="s2">&quot;modes&quot;</span><span class="p">])</span>
         <span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">map_cp_solver_name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cp_solver_name</span><span class="p">])</span>
         <span class="n">instance</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
@@ -2146,7 +2330,10 @@
                         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
                         <span class="n">constraint_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">string</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">parameters_cp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">parameters_cp</span> <span class="o">=</span> <span class="n">ParametersCP</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
@@ -2174,7 +2361,10 @@
             <span class="n">all_modes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">all_modes</span></div>
 
-<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersCP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MRCPSP_MZN_MODES.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.CP_MRCPSP_MZN_MODES.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersCP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">init_model</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">parameters_cp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -2190,10 +2380,14 @@
             <span class="n">intermediate_solutions</span><span class="o">=</span><span class="n">intermediate_solutions</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="o">=</span><span class="n">parameters_cp</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="o">=</span><span class="n">parameters_cp</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="precompute_posssible_starting_time_interval"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.precompute_posssible_starting_time_interval">[docs]</a><span class="k">def</span> <span class="nf">precompute_posssible_starting_time_interval</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="precompute_posssible_starting_time_interval">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.precompute_posssible_starting_time_interval">[docs]</a>
+<span class="k">def</span> <span class="nf">precompute_posssible_starting_time_interval</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">):</span>
     <span class="n">interval_possible</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">problem</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">}</span>
     <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">interval_possible</span><span class="p">:</span>
         <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2231,7 +2425,10 @@
     <span class="k">return</span> <span class="n">interval_possible</span></div>
 
 
-<div class="viewcode-block" id="hard_start_times"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_times">[docs]</a><span class="k">def</span> <span class="nf">hard_start_times</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_times">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_times">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_times</span><span class="p">(</span>
     <span class="n">dict_start_times</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2248,7 +2445,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_times"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_times">[docs]</a><span class="k">def</span> <span class="nf">soft_start_times</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_times">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_times">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_times</span><span class="p">(</span>
     <span class="n">dict_start_times</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2273,7 +2473,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_times&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_times_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_times_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">hard_start_times_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_times_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_times_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_times_mrcpsp</span><span class="p">(</span>
     <span class="n">dict_start_times</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2290,7 +2493,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_times_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_times_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_start_times_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_times_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_times_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_times_mrcpsp</span><span class="p">(</span>
     <span class="n">dict_start_times</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2315,7 +2521,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_times&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="soft_start_together_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_together_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_start_together_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_together_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_together_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_together_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_together</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2340,7 +2549,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_together&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_together_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_together_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">hard_start_together_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_together_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_together_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_together_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_together</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2357,7 +2569,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_together"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_together">[docs]</a><span class="k">def</span> <span class="nf">soft_start_together</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_together">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_together">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_together</span><span class="p">(</span>
     <span class="n">list_start_together</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2382,7 +2597,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_together&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_together"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_together">[docs]</a><span class="k">def</span> <span class="nf">hard_start_together</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_together">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_together">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_together</span><span class="p">(</span>
     <span class="n">list_start_together</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2399,7 +2617,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="hard_start_after_nunit"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_after_nunit">[docs]</a><span class="k">def</span> <span class="nf">hard_start_after_nunit</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_after_nunit">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_after_nunit">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_after_nunit</span><span class="p">(</span>
     <span class="n">list_start_after_nunit</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2418,7 +2639,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_after_nunit"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_after_nunit">[docs]</a><span class="k">def</span> <span class="nf">soft_start_after_nunit</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_after_nunit">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_after_nunit">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_after_nunit</span><span class="p">(</span>
     <span class="n">list_start_after_nunit</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2457,7 +2681,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_after_nunit&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_after_nunit_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_after_nunit_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">hard_start_after_nunit_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_after_nunit_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_after_nunit_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_after_nunit_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_after_nunit</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2476,7 +2703,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_after_nunit_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_after_nunit_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_start_after_nunit_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_after_nunit_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_after_nunit_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_after_nunit_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_after_nunit</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2515,7 +2745,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_after_nunit&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_at_end_plus_offset_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end_plus_offset_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">hard_start_at_end_plus_offset_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_at_end_plus_offset_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end_plus_offset_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_at_end_plus_offset_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_at_end_plus_offset</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2536,7 +2769,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="hard_start_at_end_plus_offset"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end_plus_offset">[docs]</a><span class="k">def</span> <span class="nf">hard_start_at_end_plus_offset</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_at_end_plus_offset">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end_plus_offset">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_at_end_plus_offset</span><span class="p">(</span>
     <span class="n">list_start_at_end_plus_offset</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2568,7 +2804,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_at_end_plus_offset_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end_plus_offset_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_start_at_end_plus_offset_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_at_end_plus_offset_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end_plus_offset_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_at_end_plus_offset_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_at_end_plus_offset</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2607,7 +2846,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_at_end_plus_offset&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="soft_start_at_end_plus_offset"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end_plus_offset">[docs]</a><span class="k">def</span> <span class="nf">soft_start_at_end_plus_offset</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_at_end_plus_offset">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end_plus_offset">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_at_end_plus_offset</span><span class="p">(</span>
     <span class="n">list_start_at_end_plus_offset</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2651,7 +2893,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_at_end_plus_offset&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_at_end_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">hard_start_at_end_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_at_end_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_at_end_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_at_end</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2670,7 +2915,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_at_end_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_start_at_end_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_at_end_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_at_end_mrcpsp</span><span class="p">(</span>
     <span class="n">list_start_at_end</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2695,7 +2943,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_at_end&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_at_end"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end">[docs]</a><span class="k">def</span> <span class="nf">hard_start_at_end</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_at_end">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_at_end">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_at_end</span><span class="p">(</span>
     <span class="n">list_start_at_end</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2723,7 +2974,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="soft_start_at_end"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end">[docs]</a><span class="k">def</span> <span class="nf">soft_start_at_end</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_at_end">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_at_end">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_at_end</span><span class="p">(</span>
     <span class="n">list_start_at_end</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2755,7 +3009,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_at_end&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="soft_start_window"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_window">[docs]</a><span class="k">def</span> <span class="nf">soft_start_window</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_window">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_window">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_window</span><span class="p">(</span>
     <span class="n">start_times_window</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2805,7 +3062,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_low&quot;</span><span class="p">,</span> <span class="s2">&quot;penalty_start_up&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="soft_end_window"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_end_window">[docs]</a><span class="k">def</span> <span class="nf">soft_end_window</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_end_window">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_end_window">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_end_window</span><span class="p">(</span>
     <span class="n">end_times_window</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2862,7 +3122,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_end_low&quot;</span><span class="p">,</span> <span class="s2">&quot;penalty_end_up&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="soft_start_window_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_window_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_start_window_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_start_window_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_start_window_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_start_window_mrcpsp</span><span class="p">(</span>
     <span class="n">start_times_window</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2912,7 +3175,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_start_low&quot;</span><span class="p">,</span> <span class="s2">&quot;penalty_start_up&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="soft_end_window_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_end_window_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">soft_end_window_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="soft_end_window_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.soft_end_window_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">soft_end_window_mrcpsp</span><span class="p">(</span>
     <span class="n">end_times_window</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -2962,7 +3228,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;penalty_end_low&quot;</span><span class="p">,</span> <span class="s2">&quot;penalty_end_up&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="hard_start_window"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_window">[docs]</a><span class="k">def</span> <span class="nf">hard_start_window</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_start_window">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_start_window">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_start_window</span><span class="p">(</span>
     <span class="n">start_times_window</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
         <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
@@ -2990,7 +3259,10 @@
     <span class="k">return</span> <span class="n">l</span></div>
 
 
-<div class="viewcode-block" id="hard_end_window"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_end_window">[docs]</a><span class="k">def</span> <span class="nf">hard_end_window</span><span class="p">(</span>
+
+<div class="viewcode-block" id="hard_end_window">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.hard_end_window">[docs]</a>
+<span class="k">def</span> <span class="nf">hard_end_window</span><span class="p">(</span>
     <span class="n">end_times_window</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
         <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
@@ -3018,7 +3290,10 @@
     <span class="k">return</span> <span class="n">l</span></div>
 
 
-<div class="viewcode-block" id="add_hard_special_constraints_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_hard_special_constraints_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">add_hard_special_constraints_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_hard_special_constraints_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_hard_special_constraints_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">add_hard_special_constraints_mrcpsp</span><span class="p">(</span>
     <span class="n">partial_solution</span><span class="p">:</span> <span class="n">PartialSolution</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_WITH_FAKE_TASK</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_NOBOOL</span><span class="p">],</span>
 <span class="p">):</span>
@@ -3097,7 +3372,10 @@
         <span class="k">return</span> <span class="p">[]</span></div>
 
 
-<div class="viewcode-block" id="add_soft_special_constraints_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_soft_special_constraints_mrcpsp">[docs]</a><span class="k">def</span> <span class="nf">add_soft_special_constraints_mrcpsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_soft_special_constraints_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_soft_special_constraints_mrcpsp">[docs]</a>
+<span class="k">def</span> <span class="nf">add_soft_special_constraints_mrcpsp</span><span class="p">(</span>
     <span class="n">partial_solution</span><span class="p">:</span> <span class="n">PartialSolution</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN</span><span class="p">]</span>
 <span class="p">):</span>
     <span class="k">if</span> <span class="n">partial_solution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -3189,7 +3467,10 @@
         <span class="k">return</span> <span class="p">[],</span> <span class="p">[]</span></div>
 
 
-<div class="viewcode-block" id="add_hard_special_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_hard_special_constraints">[docs]</a><span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_hard_special_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_hard_special_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">add_hard_special_constraints</span><span class="p">(</span>
     <span class="n">partial_solution</span><span class="p">:</span> <span class="n">PartialSolution</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -3247,7 +3528,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span></div>
 
 
-<div class="viewcode-block" id="add_soft_special_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_soft_special_constraints">[docs]</a><span class="k">def</span> <span class="nf">add_soft_special_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_soft_special_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_soft_special_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">add_soft_special_constraints</span><span class="p">(</span>
     <span class="n">partial_solution</span><span class="p">:</span> <span class="n">PartialSolution</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN</span><span class="p">],</span>
 <span class="p">):</span>
@@ -3323,7 +3607,10 @@
     <span class="k">return</span> <span class="n">constraint_strings</span><span class="p">,</span> <span class="n">name_penalty</span></div>
 
 
-<div class="viewcode-block" id="define_second_part_objective"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.define_second_part_objective">[docs]</a><span class="k">def</span> <span class="nf">define_second_part_objective</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">name_penalty</span><span class="p">,</span> <span class="n">equal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="define_second_part_objective">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.define_second_part_objective">[docs]</a>
+<span class="k">def</span> <span class="nf">define_second_part_objective</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">name_penalty</span><span class="p">,</span> <span class="n">equal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">sum_string</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*&quot;</span> <span class="o">+</span> <span class="n">name_penalty</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">weights</span><span class="p">))]</span>
     <span class="p">)</span>
@@ -3333,9 +3620,13 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="add_constraints_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_constraints_string">[docs]</a><span class="k">def</span> <span class="nf">add_constraints_string</span><span class="p">(</span><span class="n">child_instance</span><span class="p">,</span> <span class="n">list_of_strings</span><span class="p">):</span>
+
+<div class="viewcode-block" id="add_constraints_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers.add_constraints_string">[docs]</a>
+<span class="k">def</span> <span class="nf">add_constraints_string</span><span class="p">(</span><span class="n">child_instance</span><span class="p">,</span> <span class="n">list_of_strings</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">list_of_strings</span><span class="p">:</span>
         <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

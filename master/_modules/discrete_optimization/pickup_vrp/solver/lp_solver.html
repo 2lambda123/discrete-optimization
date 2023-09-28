@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -131,7 +131,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="TemporaryResult"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.TemporaryResult">[docs]</a><span class="k">class</span> <span class="nc">TemporaryResult</span><span class="p">:</span>
+<div class="viewcode-block" id="TemporaryResult">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.TemporaryResult">[docs]</a>
+<span class="k">class</span> <span class="nc">TemporaryResult</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">flow_solution</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
@@ -154,7 +156,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">indexes_component</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
-<div class="viewcode-block" id="convert_temporaryresult_to_gpdpsolution"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.convert_temporaryresult_to_gpdpsolution">[docs]</a><span class="k">def</span> <span class="nf">convert_temporaryresult_to_gpdpsolution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="convert_temporaryresult_to_gpdpsolution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.convert_temporaryresult_to_gpdpsolution">[docs]</a>
+<span class="k">def</span> <span class="nf">convert_temporaryresult_to_gpdpsolution</span><span class="p">(</span>
     <span class="n">temporaryresult</span><span class="p">:</span> <span class="n">TemporaryResult</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GPDPSolution</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">temporaryresult</span><span class="o">.</span><span class="n">rebuilt_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -185,7 +190,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="retrieve_ith_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.retrieve_ith_solution">[docs]</a><span class="k">def</span> <span class="nf">retrieve_ith_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="retrieve_ith_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.retrieve_ith_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">retrieve_ith_solution</span><span class="p">(</span>
     <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span> <span class="n">variable_decisions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="nb">float</span><span class="p">]:</span>
     <span class="n">results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -223,7 +231,10 @@
     <span class="k">return</span> <span class="n">results</span><span class="p">,</span> <span class="n">obj</span></div>
 
 
-<div class="viewcode-block" id="retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.retrieve_solutions">[docs]</a><span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.retrieve_solutions">[docs]</a>
+<span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span> <span class="n">variable_decisions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="nb">float</span><span class="p">]]:</span>
     <span class="n">nSolutions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">SolCount</span>
@@ -237,7 +248,10 @@
     <span class="k">return</span> <span class="n">list_results</span></div>
 
 
-<div class="viewcode-block" id="LinearFlowSolver"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver">[docs]</a><span class="k">class</span> <span class="nc">LinearFlowSolver</span><span class="p">(</span><span class="n">GurobiMilpSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LinearFlowSolver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">LinearFlowSolver</span><span class="p">(</span><span class="n">GurobiMilpSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
@@ -256,7 +270,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LinearFlowSolver.one_visit_per_node"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.one_visit_per_node">[docs]</a>    <span class="k">def</span> <span class="nf">one_visit_per_node</span><span class="p">(</span>
+<div class="viewcode-block" id="LinearFlowSolver.one_visit_per_node">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.one_visit_per_node">[docs]</a>
+    <span class="k">def</span> <span class="nf">one_visit_per_node</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span>
         <span class="n">nodes_of_interest</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span>
@@ -284,7 +300,10 @@
             <span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.one_visit_per_clusters"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.one_visit_per_clusters">[docs]</a>    <span class="k">def</span> <span class="nf">one_visit_per_clusters</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.one_visit_per_clusters">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.one_visit_per_clusters">[docs]</a>
+    <span class="k">def</span> <span class="nf">one_visit_per_clusters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span>
         <span class="n">nodes_of_interest</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span>
@@ -328,7 +347,10 @@
                 <span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.resources_constraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.resources_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">resources_constraint</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.resources_constraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.resources_constraint">[docs]</a>
+    <span class="k">def</span> <span class="nf">resources_constraint</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span>
         <span class="n">variables_edges</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
@@ -397,7 +419,10 @@
             <span class="s2">&quot;resources_variable_leaving&quot;</span><span class="p">:</span> <span class="n">resources_variable_leaving</span><span class="p">,</span>
         <span class="p">}</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.simple_capacity_constraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.simple_capacity_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">simple_capacity_constraint</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.simple_capacity_constraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.simple_capacity_constraint">[docs]</a>
+    <span class="k">def</span> <span class="nf">simple_capacity_constraint</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span>
         <span class="n">variables_edges</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
@@ -443,7 +468,10 @@
                 <span class="p">)</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;consumption_per_vehicle&quot;</span><span class="p">:</span> <span class="n">consumption_per_vehicle</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.time_evolution"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.time_evolution">[docs]</a>    <span class="k">def</span> <span class="nf">time_evolution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.time_evolution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.time_evolution">[docs]</a>
+    <span class="k">def</span> <span class="nf">time_evolution</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;grb.Model&quot;</span><span class="p">,</span>
         <span class="n">variables_edges</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
@@ -486,7 +514,10 @@
                 <span class="p">)</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;time_coming&quot;</span><span class="p">:</span> <span class="n">time_coming</span><span class="p">,</span> <span class="s2">&quot;time_leaving&quot;</span><span class="p">:</span> <span class="n">time_leaving</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">model</span><span class="p">:</span> <span class="n">grb</span><span class="o">.</span><span class="n">Model</span> <span class="o">=</span> <span class="n">grb</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s2">&quot;GPDP-flow&quot;</span><span class="p">)</span>
         <span class="n">include_backward</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;include_backward&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">include_triangle</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;include_triangle&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -890,7 +921,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">clusters_version</span> <span class="o">=</span> <span class="n">one_visit_per_cluster</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tsp_version</span> <span class="o">=</span> <span class="n">one_visit_per_node</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.retrieve_ith_temporaryresult"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.retrieve_ith_temporaryresult">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_ith_temporaryresult</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TemporaryResult</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.retrieve_ith_temporaryresult">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.retrieve_ith_temporaryresult">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_ith_temporaryresult</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TemporaryResult</span><span class="p">:</span>
         <span class="n">res</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">retrieve_ith_solution</span><span class="p">(</span>
             <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">variable_decisions</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">variable_decisions</span>
         <span class="p">)</span>
@@ -905,7 +939,10 @@
         <span class="n">reevaluate_result</span><span class="p">(</span><span class="n">temporaryresult</span><span class="p">,</span> <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">temporaryresult</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Not used here as GurobiMilpSolver.solve() is overriden</span>
@@ -930,7 +967,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.solve_one_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.solve_one_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">solve_one_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.solve_one_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.solve_one_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_one_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">TemporaryResult</span><span class="p">]:</span>
 
@@ -941,7 +981,10 @@
 
         <span class="k">return</span> <span class="n">list_temporary_results</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.solve_iterative"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.solve_iterative">[docs]</a>    <span class="k">def</span> <span class="nf">solve_iterative</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.solve_iterative">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.solve_iterative">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_iterative</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">do_lns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -1083,7 +1126,10 @@
             <span class="n">finished</span> <span class="o">=</span> <span class="n">nb_iteration</span> <span class="o">&gt;</span> <span class="n">nb_iteration_max</span>
         <span class="k">return</span> <span class="n">all_solutions</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">do_lns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -1118,7 +1164,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolver.init_warm_start"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.init_warm_start">[docs]</a>    <span class="k">def</span> <span class="nf">init_warm_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">routes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LinearFlowSolver.init_warm_start">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolver.init_warm_start">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_warm_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">routes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">routes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">routes</span><span class="p">:</span>
@@ -1129,10 +1178,14 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">variable_decisions</span><span class="p">[</span><span class="s2">&quot;variables_edges&quot;</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="n">e</span><span class="p">]</span><span class="o">.</span><span class="n">varhintval</span> <span class="o">=</span> <span class="mi">1</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">variable_decisions</span><span class="p">[</span><span class="s2">&quot;variables_edges&quot;</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="n">e</span><span class="p">]</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">variable_decisions</span><span class="p">[</span><span class="s2">&quot;variables_edges&quot;</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="n">e</span><span class="p">]</span><span class="o">.</span><span class="n">varhintval</span> <span class="o">=</span> <span class="mi">0</span></div></div>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">variable_decisions</span><span class="p">[</span><span class="s2">&quot;variables_edges&quot;</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="n">e</span><span class="p">]</span><span class="o">.</span><span class="n">varhintval</span> <span class="o">=</span> <span class="mi">0</span></div>
+</div>
 
 
-<div class="viewcode-block" id="construct_edges_in_out_dict"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.construct_edges_in_out_dict">[docs]</a><span class="k">def</span> <span class="nf">construct_edges_in_out_dict</span><span class="p">(</span>
+
+<div class="viewcode-block" id="construct_edges_in_out_dict">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.construct_edges_in_out_dict">[docs]</a>
+<span class="k">def</span> <span class="nf">construct_edges_in_out_dict</span><span class="p">(</span>
     <span class="n">variables_edges</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">clusters_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span>
     <span class="n">Dict</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Edge</span><span class="p">]]],</span>
@@ -1211,7 +1264,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="build_path_from_vehicle_type_flow"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_path_from_vehicle_type_flow">[docs]</a><span class="k">def</span> <span class="nf">build_path_from_vehicle_type_flow</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_path_from_vehicle_type_flow">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_path_from_vehicle_type_flow">[docs]</a>
+<span class="k">def</span> <span class="nf">build_path_from_vehicle_type_flow</span><span class="p">(</span>
     <span class="n">result_from_retrieve</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]]:</span>
@@ -1235,11 +1291,16 @@
     <span class="k">return</span> <span class="n">solution</span></div>
 
 
-<div class="viewcode-block" id="LinearFlowSolverLazyConstraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolverLazyConstraint">[docs]</a><span class="k">class</span> <span class="nc">LinearFlowSolverLazyConstraint</span><span class="p">(</span><span class="n">LinearFlowSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LinearFlowSolverLazyConstraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolverLazyConstraint">[docs]</a>
+<span class="k">class</span> <span class="nc">LinearFlowSolverLazyConstraint</span><span class="p">(</span><span class="n">LinearFlowSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
 
-<div class="viewcode-block" id="LinearFlowSolverLazyConstraint.solve_one_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolverLazyConstraint.solve_one_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">solve_one_iteration</span><span class="p">(</span>
+<div class="viewcode-block" id="LinearFlowSolverLazyConstraint.solve_one_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolverLazyConstraint.solve_one_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_one_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">TemporaryResult</span><span class="p">]:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1392,7 +1453,10 @@
 
         <span class="k">return</span> <span class="n">list_temporary_results</span></div>
 
-<div class="viewcode-block" id="LinearFlowSolverLazyConstraint.solve_iterative"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolverLazyConstraint.solve_iterative">[docs]</a>    <span class="k">def</span> <span class="nf">solve_iterative</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LinearFlowSolverLazyConstraint.solve_iterative">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.LinearFlowSolverLazyConstraint.solve_iterative">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_iterative</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">do_lns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -1480,10 +1544,14 @@
             <span class="n">all_solutions</span> <span class="o">+=</span> <span class="n">solutions</span>
             <span class="n">nb_iteration</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">finished</span> <span class="o">=</span> <span class="n">nb_iteration</span> <span class="o">&gt;</span> <span class="n">nb_iteration_max</span>
-        <span class="k">return</span> <span class="n">all_solutions</span></div></div>
+        <span class="k">return</span> <span class="n">all_solutions</span></div>
+</div>
 
 
-<div class="viewcode-block" id="SubtourAddingConstraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraint">[docs]</a><span class="k">class</span> <span class="nc">SubtourAddingConstraint</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SubtourAddingConstraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraint">[docs]</a>
+<span class="k">class</span> <span class="nc">SubtourAddingConstraint</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
@@ -1494,7 +1562,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span> <span class="o">=</span> <span class="n">linear_solver</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lazy</span> <span class="o">=</span> <span class="n">lazy</span>
 
-<div class="viewcode-block" id="SubtourAddingConstraint.adding_component_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraint.adding_component_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">adding_component_constraints</span><span class="p">(</span>
+<div class="viewcode-block" id="SubtourAddingConstraint.adding_component_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraint.adding_component_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_component_constraints</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">list_solution</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">TemporaryResult</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1562,10 +1632,14 @@
                         <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">edges_out_all_vehicles</span><span class="p">,</span>
                         <span class="n">do_order</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                     <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="SubtourAddingConstraintCluster"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraintCluster">[docs]</a><span class="k">class</span> <span class="nc">SubtourAddingConstraintCluster</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SubtourAddingConstraintCluster">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraintCluster">[docs]</a>
+<span class="k">class</span> <span class="nc">SubtourAddingConstraintCluster</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
@@ -1576,7 +1650,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span> <span class="o">=</span> <span class="n">linear_solver</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lazy</span> <span class="o">=</span> <span class="n">lazy</span>
 
-<div class="viewcode-block" id="SubtourAddingConstraintCluster.adding_component_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraintCluster.adding_component_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">adding_component_constraints</span><span class="p">(</span>
+<div class="viewcode-block" id="SubtourAddingConstraintCluster.adding_component_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.SubtourAddingConstraintCluster.adding_component_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_component_constraints</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">list_solution</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">TemporaryResult</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1599,10 +1675,14 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">edges_in_all_vehicles_cluster</span><span class="p">,</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">edges_out_all_vehicles_cluster</span><span class="p">,</span>
                     <span class="n">lazy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lazy</span><span class="p">,</span>
-                <span class="p">)</span></div></div>
+                <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerOrWarmStart"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.ConstraintHandlerOrWarmStart">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerOrWarmStart</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ConstraintHandlerOrWarmStart">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.ConstraintHandlerOrWarmStart">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerOrWarmStart</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">linear_solver</span><span class="p">:</span> <span class="n">LinearFlowSolver</span><span class="p">,</span>
@@ -1614,7 +1694,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">do_lns</span> <span class="o">=</span> <span class="n">do_lns</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">index_tuple</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">number_vehicle</span><span class="p">)]</span>
 
-<div class="viewcode-block" id="ConstraintHandlerOrWarmStart.adding_constraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.ConstraintHandlerOrWarmStart.adding_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rebuilt_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ConstraintHandlerOrWarmStart.adding_constraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.ConstraintHandlerOrWarmStart.adding_constraint">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rebuilt_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;self.linear_solver.model cannot be None at this point&quot;</span><span class="p">)</span>
         <span class="n">vehicle_keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">variable_decisions</span><span class="p">[</span><span class="s2">&quot;variables_edges&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -1763,10 +1845,14 @@
                                 <span class="n">name</span><span class="o">=</span><span class="s2">&quot;c_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">),</span>
                             <span class="p">)</span>
                             <span class="n">iedge</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="build_the_cycles"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_the_cycles">[docs]</a><span class="k">def</span> <span class="nf">build_the_cycles</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_the_cycles">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_the_cycles">[docs]</a>
+<span class="k">def</span> <span class="nf">build_the_cycles</span><span class="p">(</span>
     <span class="n">flow_solution</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
     <span class="n">component</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span>
     <span class="n">start_index</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span>
@@ -1799,7 +1885,10 @@
     <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">indexes</span></div>
 
 
-<div class="viewcode-block" id="rebuild_routine"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.rebuild_routine">[docs]</a><span class="k">def</span> <span class="nf">rebuild_routine</span><span class="p">(</span>
+
+<div class="viewcode-block" id="rebuild_routine">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.rebuild_routine">[docs]</a>
+<span class="k">def</span> <span class="nf">rebuild_routine</span><span class="p">(</span>
     <span class="n">sorted_connected_component</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">paths_component</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]],</span>
     <span class="n">node_to_component</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
@@ -1920,7 +2009,10 @@
     <span class="k">return</span> <span class="n">rebuilded_path</span></div>
 
 
-<div class="viewcode-block" id="rebuild_routine_variant"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.rebuild_routine_variant">[docs]</a><span class="k">def</span> <span class="nf">rebuild_routine_variant</span><span class="p">(</span>
+
+<div class="viewcode-block" id="rebuild_routine_variant">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.rebuild_routine_variant">[docs]</a>
+<span class="k">def</span> <span class="nf">rebuild_routine_variant</span><span class="p">(</span>
     <span class="n">sorted_connected_component</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">paths_component</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]],</span>
     <span class="n">node_to_component</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
@@ -1995,7 +2087,10 @@
     <span class="k">return</span> <span class="n">rebuilded_path</span></div>
 
 
-<div class="viewcode-block" id="reevaluate_result"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.reevaluate_result">[docs]</a><span class="k">def</span> <span class="nf">reevaluate_result</span><span class="p">(</span>
+
+<div class="viewcode-block" id="reevaluate_result">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.reevaluate_result">[docs]</a>
+<span class="k">def</span> <span class="nf">reevaluate_result</span><span class="p">(</span>
     <span class="n">temporary_result</span><span class="p">:</span> <span class="n">TemporaryResult</span><span class="p">,</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
     <span class="n">variant_rebuilt</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -2119,7 +2214,10 @@
     <span class="k">return</span> <span class="n">temporary_result</span></div>
 
 
-<div class="viewcode-block" id="build_graph_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_graph_solution">[docs]</a><span class="k">def</span> <span class="nf">build_graph_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_graph_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_graph_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">build_graph_solution</span><span class="p">(</span>
     <span class="n">results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">obj</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">Graph</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TemporaryResult</span><span class="p">:</span>
     <span class="n">current_solution</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;variables_edges&quot;</span><span class="p">]</span>
@@ -2158,7 +2256,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="build_graph_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_graph_solutions">[docs]</a><span class="k">def</span> <span class="nf">build_graph_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_graph_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.build_graph_solutions">[docs]</a>
+<span class="k">def</span> <span class="nf">build_graph_solutions</span><span class="p">(</span>
     <span class="n">solutions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="n">graph</span><span class="p">:</span> <span class="n">Graph</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">TemporaryResult</span><span class="p">]:</span>
     <span class="n">n_solutions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">solutions</span><span class="p">)</span>
@@ -2171,7 +2272,10 @@
     <span class="k">return</span> <span class="n">transformed_solutions</span></div>
 
 
-<div class="viewcode-block" id="update_model_cluster_tsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.update_model_cluster_tsp">[docs]</a><span class="k">def</span> <span class="nf">update_model_cluster_tsp</span><span class="p">(</span>
+
+<div class="viewcode-block" id="update_model_cluster_tsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.update_model_cluster_tsp">[docs]</a>
+<span class="k">def</span> <span class="nf">update_model_cluster_tsp</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
     <span class="n">lp_solver</span><span class="p">:</span> <span class="n">LinearFlowSolver</span><span class="p">,</span>
     <span class="n">components_global</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="nb">int</span><span class="p">]],</span>
@@ -2270,7 +2374,10 @@
     <span class="k">return</span> <span class="n">list_constraints</span></div>
 
 
-<div class="viewcode-block" id="update_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.update_model">[docs]</a><span class="k">def</span> <span class="nf">update_model</span><span class="p">(</span>
+
+<div class="viewcode-block" id="update_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.update_model">[docs]</a>
+<span class="k">def</span> <span class="nf">update_model</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
     <span class="n">lp_solver</span><span class="p">:</span> <span class="n">LinearFlowSolver</span><span class="p">,</span>
     <span class="n">components_global</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span> <span class="nb">int</span><span class="p">]],</span>
@@ -2393,7 +2500,10 @@
     <span class="k">return</span> <span class="n">list_constraints</span></div>
 
 
-<div class="viewcode-block" id="update_model_lazy"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.update_model_lazy">[docs]</a><span class="k">def</span> <span class="nf">update_model_lazy</span><span class="p">(</span>
+
+<div class="viewcode-block" id="update_model_lazy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.update_model_lazy">[docs]</a>
+<span class="k">def</span> <span class="nf">update_model_lazy</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">,</span>
     <span class="n">lp_solver</span><span class="p">:</span> <span class="n">LinearFlowSolver</span><span class="p">,</span>
     <span class="n">components_global</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span> <span class="nb">int</span><span class="p">]],</span>
@@ -2508,7 +2618,10 @@
     <span class="k">return</span> <span class="n">list_constraints</span></div>
 
 
-<div class="viewcode-block" id="plot_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.plot_solution">[docs]</a><span class="k">def</span> <span class="nf">plot_solution</span><span class="p">(</span><span class="n">temporary_result</span><span class="p">:</span> <span class="n">TemporaryResult</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="plot_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.pickup_vrp.solver.html#discrete_optimization.pickup_vrp.solver.lp_solver.plot_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_solution</span><span class="p">(</span><span class="n">temporary_result</span><span class="p">:</span> <span class="n">TemporaryResult</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">GPDP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">problem</span><span class="o">.</span><span class="n">coordinates_2d</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="s2">&quot;problem.coordinates_2d cannot be None when calling plot_solution.&quot;</span>
@@ -2559,6 +2672,7 @@
             <span class="p">[</span><span class="n">problem</span><span class="o">.</span><span class="n">coordinates_2d</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">temporary_result</span><span class="o">.</span><span class="n">rebuilt_dict</span><span class="p">[</span><span class="n">v</span><span class="p">]],</span>
             <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="p">)</span></div>
+
 </pre></div>
 
            </div>

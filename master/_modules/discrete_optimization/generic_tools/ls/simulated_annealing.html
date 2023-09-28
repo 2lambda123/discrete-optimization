@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -111,17 +111,25 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="TemperatureScheduling"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling">[docs]</a><span class="k">class</span> <span class="nc">TemperatureScheduling</span><span class="p">:</span>
+<div class="viewcode-block" id="TemperatureScheduling">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling">[docs]</a>
+<span class="k">class</span> <span class="nc">TemperatureScheduling</span><span class="p">:</span>
     <span class="n">nb_iteration</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">restart_handler</span><span class="p">:</span> <span class="n">RestartHandler</span>
     <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span>
 
-<div class="viewcode-block" id="TemperatureScheduling.next_temperature"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.next_temperature">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="TemperatureScheduling.next_temperature">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.next_temperature">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">next_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="o">...</span></div></div>
+        <span class="o">...</span></div>
+</div>
 
 
-<div class="viewcode-block" id="SimulatedAnnealing"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing">[docs]</a><span class="k">class</span> <span class="nc">SimulatedAnnealing</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SimulatedAnnealing">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing">[docs]</a>
+<span class="k">class</span> <span class="nc">SimulatedAnnealing</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">evaluator</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -158,7 +166,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">store_solution</span> <span class="o">=</span> <span class="n">store_solution</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_solutions</span> <span class="o">=</span> <span class="n">nb_solutions</span>
 
-<div class="viewcode-block" id="SimulatedAnnealing.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+<div class="viewcode-block" id="SimulatedAnnealing.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">initial_variable</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span>
         <span class="n">nb_iteration_max</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -259,10 +269,14 @@
                 <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">init_time</span> <span class="o">&gt;</span> <span class="n">max_time_seconds</span><span class="p">:</span>
                     <span class="k">break</span>
         <span class="n">store</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">store</span></div></div>
+        <span class="k">return</span> <span class="n">store</span></div>
+</div>
 
 
-<div class="viewcode-block" id="TemperatureSchedulingFactor"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor">[docs]</a><span class="k">class</span> <span class="nc">TemperatureSchedulingFactor</span><span class="p">(</span><span class="n">TemperatureScheduling</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TemperatureSchedulingFactor">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor">[docs]</a>
+<span class="k">class</span> <span class="nc">TemperatureSchedulingFactor</span><span class="p">(</span><span class="n">TemperatureScheduling</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
@@ -273,9 +287,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">restart_handler</span> <span class="o">=</span> <span class="n">restart_handler</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">coefficient</span> <span class="o">=</span> <span class="n">coefficient</span>
 
-<div class="viewcode-block" id="TemperatureSchedulingFactor.next_temperature"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor.next_temperature">[docs]</a>    <span class="k">def</span> <span class="nf">next_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="TemperatureSchedulingFactor.next_temperature">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor.next_temperature">[docs]</a>
+    <span class="k">def</span> <span class="nf">next_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficient</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span></div>
+</div>
+
 </pre></div>
 
            </div>

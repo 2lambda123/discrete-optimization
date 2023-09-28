@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -94,7 +94,6 @@
     <span class="n">ColoringProblem</span><span class="p">,</span>
     <span class="n">ColoringSolution</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">discrete_optimization.coloring.solvers.coloring_solver</span> <span class="kn">import</span> <span class="n">SolverColoring</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.coloring.solvers.greedy_coloring</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">GreedyColoring</span><span class="p">,</span>
     <span class="n">NXGreedyColoringMethod</span><span class="p">,</span>
@@ -114,12 +113,17 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="InitialColoringMethod"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.InitialColoringMethod">[docs]</a><span class="k">class</span> <span class="nc">InitialColoringMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="InitialColoringMethod">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.InitialColoringMethod">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialColoringMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">DUMMY</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">GREEDY</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="InitialColoring"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.InitialColoring">[docs]</a><span class="k">class</span> <span class="nc">InitialColoring</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="InitialColoring">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.InitialColoring">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialColoring</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initial solution provider for lns algorithm.</span>
 
 <span class="sd">    Attributes:</span>
@@ -143,7 +147,9 @@
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="InitialColoring.get_starting_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.InitialColoring.get_starting_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="InitialColoring.get_starting_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.InitialColoring.get_starting_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute initial solution via greedy methods.</span>
 
 <span class="sd">        Returns: initial solution storage</span>
@@ -161,10 +167,14 @@
                 <span class="n">coloring_model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
                 <span class="n">params_objective_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="k">return</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">NXGreedyColoringMethod</span><span class="o">.</span><span class="n">largest_first</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">NXGreedyColoringMethod</span><span class="o">.</span><span class="n">largest_first</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.ConstraintHandlerFixColorsCP">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerFixColorsCP</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixColorsCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.ConstraintHandlerFixColorsCP">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerFixColorsCP</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Constraint builder for LNS coloring problem.</span>
 
 <span class="sd">    This constraint handler is pretty basic, it fixes a fraction_to_fix proportion of nodes color.</span>
@@ -178,7 +188,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_to_fix</span> <span class="o">=</span> <span class="n">fraction_to_fix</span>
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsCP.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.ConstraintHandlerFixColorsCP.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerFixColorsCP.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.ConstraintHandlerFixColorsCP.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -186,7 +198,10 @@
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsCP.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.ConstraintHandlerFixColorsCP.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixColorsCP.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.ConstraintHandlerFixColorsCP.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -249,10 +264,14 @@
             <span class="p">)</span>
             <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
             <span class="n">list_strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">list_strings</span></div></div>
+        <span class="k">return</span> <span class="n">list_strings</span></div>
+</div>
 
 
-<div class="viewcode-block" id="PostProcessSolutionColoring"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.PostProcessSolutionColoring">[docs]</a><span class="k">class</span> <span class="nc">PostProcessSolutionColoring</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PostProcessSolutionColoring">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.PostProcessSolutionColoring">[docs]</a>
+<span class="k">class</span> <span class="nc">PostProcessSolutionColoring</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Post process class for coloring problem.</span>
 
 <span class="sd">     It transforms the color vector to have colors between 0 and nb_colors-1</span>
@@ -278,7 +297,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="PostProcessSolutionColoring.build_other_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.PostProcessSolutionColoring.build_other_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="PostProcessSolutionColoring.build_other_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_lns_solvers.PostProcessSolutionColoring.build_other_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">bs</span> <span class="o">=</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">get_best_solution</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">bs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -302,7 +323,9 @@
         <span class="p">)</span>
         <span class="n">fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_sol</span><span class="p">(</span><span class="n">new_solution</span><span class="p">)</span>
         <span class="n">result_storage</span><span class="o">.</span><span class="n">add_solution</span><span class="p">(</span><span class="n">new_solution</span><span class="p">,</span> <span class="n">fit</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
+
 </pre></div>
 
            </div>

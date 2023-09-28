@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -115,7 +115,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="RCPSPSolCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.RCPSPSolCP">[docs]</a><span class="k">class</span> <span class="nc">RCPSPSolCP</span><span class="p">:</span>
+<div class="viewcode-block" id="RCPSPSolCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.RCPSPSolCP">[docs]</a>
+<span class="k">class</span> <span class="nc">RCPSPSolCP</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -125,11 +127,17 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;One solution </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output </span><span class="si">{</span><span class="n">_output_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RCPSPSolCP.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.RCPSPSolCP.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="RCPSPSolCP.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.RCPSPSolCP.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="add_fake_task_cp_data"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.add_fake_task_cp_data">[docs]</a><span class="k">def</span> <span class="nf">add_fake_task_cp_data</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_fake_task_cp_data">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.add_fake_task_cp_data">[docs]</a>
+<span class="k">def</span> <span class="nf">add_fake_task_cp_data</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelPreemptive</span><span class="p">],</span>
     <span class="n">ignore_fake_task</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">max_time_to_consider</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -171,7 +179,10 @@
         <span class="k">return</span> <span class="n">dict_to_add_in_instance</span></div>
 
 
-<div class="viewcode-block" id="CP_MULTISCENARIO"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.CP_MULTISCENARIO">[docs]</a><span class="k">class</span> <span class="nc">CP_MULTISCENARIO</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MULTISCENARIO">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.CP_MULTISCENARIO">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_MULTISCENARIO</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">list_rcpsp_model</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">],</span>
@@ -195,7 +206,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">base_rcpsp_model</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="CP_MULTISCENARIO.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.CP_MULTISCENARIO.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_MULTISCENARIO.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.CP_MULTISCENARIO.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model_type&quot;</span><span class="p">,</span> <span class="s2">&quot;multiscenario&quot;</span><span class="p">)</span>
         <span class="n">max_time</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_time&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_rcpsp_model</span><span class="o">.</span><span class="n">horizon</span><span class="p">)</span>
         <span class="n">fake_tasks</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -282,7 +295,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">base_rcpsp_model</span><span class="o">.</span><span class="n">sink_task</span>
         <span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MULTISCENARIO.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.CP_MULTISCENARIO.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CP_MULTISCENARIO.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_solvers_multiscenario.CP_MULTISCENARIO.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -347,7 +363,9 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
             <span class="n">limit_store</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
+
 </pre></div>
 
            </div>

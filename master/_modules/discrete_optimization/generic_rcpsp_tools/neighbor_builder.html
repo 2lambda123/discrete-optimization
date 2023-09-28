@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -114,7 +114,9 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="OptionNeighborRandom"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.OptionNeighborRandom">[docs]</a><span class="k">class</span> <span class="nc">OptionNeighborRandom</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="OptionNeighborRandom">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.OptionNeighborRandom">[docs]</a>
+<span class="k">class</span> <span class="nc">OptionNeighborRandom</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">MIX_ALL</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">MIX_FAST</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">MIX_LARGE_NEIGH</span> <span class="o">=</span> <span class="mi">2</span>
@@ -123,7 +125,10 @@
     <span class="n">NO_CONSTRAINT</span> <span class="o">=</span> <span class="mi">6</span></div>
 
 
-<div class="viewcode-block" id="return_random_basic_constraint_handler"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.return_random_basic_constraint_handler">[docs]</a><span class="k">def</span> <span class="nf">return_random_basic_constraint_handler</span><span class="p">(</span>
+
+<div class="viewcode-block" id="return_random_basic_constraint_handler">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.return_random_basic_constraint_handler">[docs]</a>
+<span class="k">def</span> <span class="nf">return_random_basic_constraint_handler</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
     <span class="n">graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">fraction_to_fix</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
@@ -145,14 +150,20 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Params"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.Params">[docs]</a><span class="k">class</span> <span class="nc">Params</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Params">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.Params">[docs]</a>
+<span class="k">class</span> <span class="nc">Params</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fraction_to_fix</span><span class="p">,</span> <span class="n">minus_delta</span><span class="p">,</span> <span class="n">plus_delta</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_to_fix</span> <span class="o">=</span> <span class="n">fraction_to_fix</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">minus_delta</span> <span class="o">=</span> <span class="n">minus_delta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plus_delta</span> <span class="o">=</span> <span class="n">plus_delta</span></div>
 
 
-<div class="viewcode-block" id="build_neighbor_random"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_neighbor_random">[docs]</a><span class="k">def</span> <span class="nf">build_neighbor_random</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_neighbor_random">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_neighbor_random">[docs]</a>
+<span class="k">def</span> <span class="nf">build_neighbor_random</span><span class="p">(</span>
     <span class="n">option_neighbor</span><span class="p">:</span> <span class="n">OptionNeighborRandom</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ConstraintHandler</span><span class="p">:</span>
     <span class="n">graph</span> <span class="o">=</span> <span class="n">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
@@ -375,7 +386,10 @@
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
 
 
-<div class="viewcode-block" id="build_constraint_handler_cut_part"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_constraint_handler_cut_part">[docs]</a><span class="k">def</span> <span class="nf">build_constraint_handler_cut_part</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="build_constraint_handler_cut_part">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_constraint_handler_cut_part">[docs]</a>
+<span class="k">def</span> <span class="nf">build_constraint_handler_cut_part</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">n1</span> <span class="o">=</span> <span class="n">NeighborBuilderSubPart</span><span class="p">(</span>
         <span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_cut_part&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="p">)</span>
@@ -415,7 +429,10 @@
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
 
 
-<div class="viewcode-block" id="build_basic_random_constraint_handler"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_basic_random_constraint_handler">[docs]</a><span class="k">def</span> <span class="nf">build_basic_random_constraint_handler</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="build_basic_random_constraint_handler">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_basic_random_constraint_handler">[docs]</a>
+<span class="k">def</span> <span class="nf">build_basic_random_constraint_handler</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">ConstraintHandlerScheduling</span><span class="p">(</span>
         <span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">,</span>
         <span class="n">basic_constraint_builder</span><span class="o">=</span><span class="n">BasicConstraintBuilder</span><span class="p">(</span>
@@ -451,7 +468,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="build_basic_time_window_constraint_handler"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_basic_time_window_constraint_handler">[docs]</a><span class="k">def</span> <span class="nf">build_basic_time_window_constraint_handler</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_basic_time_window_constraint_handler">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_basic_time_window_constraint_handler">[docs]</a>
+<span class="k">def</span> <span class="nf">build_basic_time_window_constraint_handler</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="k">return</span> <span class="n">ConstraintHandlerScheduling</span><span class="p">(</span>
@@ -483,7 +503,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="build_basic_random_and_neighbor"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_basic_random_and_neighbor">[docs]</a><span class="k">def</span> <span class="nf">build_basic_random_and_neighbor</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="build_basic_random_and_neighbor">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_basic_random_and_neighbor">[docs]</a>
+<span class="k">def</span> <span class="nf">build_basic_random_and_neighbor</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">ConstraintHandlerScheduling</span><span class="p">(</span>
         <span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">,</span>
         <span class="n">basic_constraint_builder</span><span class="o">=</span><span class="n">BasicConstraintBuilder</span><span class="p">(</span>
@@ -513,7 +536,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="build_neighbor_mixing_methods"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_neighbor_mixing_methods">[docs]</a><span class="k">def</span> <span class="nf">build_neighbor_mixing_methods</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_neighbor_mixing_methods">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_neighbor_mixing_methods">[docs]</a>
+<span class="k">def</span> <span class="nf">build_neighbor_mixing_methods</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="k">if</span> <span class="n">graph</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -567,7 +593,10 @@
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
 
 
-<div class="viewcode-block" id="build_neighbor_mixing_cut_parts"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_neighbor_mixing_cut_parts">[docs]</a><span class="k">def</span> <span class="nf">build_neighbor_mixing_cut_parts</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_neighbor_mixing_cut_parts">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.build_neighbor_mixing_cut_parts">[docs]</a>
+<span class="k">def</span> <span class="nf">build_neighbor_mixing_cut_parts</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
     <span class="k">if</span> <span class="n">graph</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -614,7 +643,10 @@
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
 
 
-<div class="viewcode-block" id="mix_both"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.mix_both">[docs]</a><span class="k">def</span> <span class="nf">mix_both</span><span class="p">(</span>
+
+<div class="viewcode-block" id="mix_both">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.mix_both">[docs]</a>
+<span class="k">def</span> <span class="nf">mix_both</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
     <span class="n">option_neighbor_random</span><span class="p">:</span> <span class="n">OptionNeighborRandom</span><span class="p">,</span>
     <span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -635,7 +667,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="random_neigh"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.random_neigh">[docs]</a><span class="k">def</span> <span class="nf">random_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.35</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="random_neigh">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.random_neigh">[docs]</a>
+<span class="k">def</span> <span class="nf">random_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.35</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">build_basic_random_constraint_handler</span><span class="p">(</span>
         <span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">,</span>
         <span class="n">graph</span><span class="o">=</span><span class="n">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">),</span>
@@ -663,7 +698,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="time_window_neigh"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.time_window_neigh">[docs]</a><span class="k">def</span> <span class="nf">time_window_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="time_window_neigh">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.time_window_neigh">[docs]</a>
+<span class="k">def</span> <span class="nf">time_window_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">build_basic_time_window_constraint_handler</span><span class="p">(</span>
         <span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">,</span>
         <span class="n">graph</span><span class="o">=</span><span class="n">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">),</span>
@@ -689,7 +727,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="constraint_neigh"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.constraint_neigh">[docs]</a><span class="k">def</span> <span class="nf">constraint_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.35</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="constraint_neigh">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.constraint_neigh">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.35</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">gr</span> <span class="o">=</span> <span class="n">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
     <span class="n">n1</span> <span class="o">=</span> <span class="n">NeighborBuilderSubPart</span><span class="p">(</span>
         <span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">,</span>
@@ -729,7 +770,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="cut_parts"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.cut_parts">[docs]</a><span class="k">def</span> <span class="nf">cut_parts</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="cut_parts">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.cut_parts">[docs]</a>
+<span class="k">def</span> <span class="nf">cut_parts</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">constraint_handler</span> <span class="o">=</span> <span class="n">build_constraint_handler_cut_part</span><span class="p">(</span>
         <span class="n">rcpsp_problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">,</span>
         <span class="n">nb_cut_part</span><span class="o">=</span><span class="n">nb_cut_part</span><span class="p">,</span>
@@ -757,7 +801,10 @@
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
 
 
-<div class="viewcode-block" id="mix"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.mix">[docs]</a><span class="k">def</span> <span class="nf">mix</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="o">=</span><span class="mf">0.25</span><span class="p">):</span>
+
+<div class="viewcode-block" id="mix">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.mix">[docs]</a>
+<span class="k">def</span> <span class="nf">mix</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="o">=</span><span class="mf">0.25</span><span class="p">):</span>
     <span class="n">c1</span> <span class="o">=</span> <span class="n">cut_parts</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="p">)</span>
     <span class="n">c2</span> <span class="o">=</span> <span class="n">random_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="o">=</span><span class="n">fraction_subproblem</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ConstraintHandlerMix</span><span class="p">(</span>
@@ -769,7 +816,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="mix_lot"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.mix_lot">[docs]</a><span class="k">def</span> <span class="nf">mix_lot</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_parts</span><span class="p">,</span> <span class="n">fraction_subproblems</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="mix_lot">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_builder.mix_lot">[docs]</a>
+<span class="k">def</span> <span class="nf">mix_lot</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_parts</span><span class="p">,</span> <span class="n">fraction_subproblems</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">c1</span> <span class="o">=</span> <span class="p">[</span><span class="n">cut_parts</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">nb_cut_part</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">nb_cut_part</span> <span class="ow">in</span> <span class="n">nb_cut_parts</span><span class="p">]</span>
     <span class="n">c2</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">random_neigh</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">fraction_subproblem</span><span class="o">=</span><span class="n">fraction_subproblem</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -819,6 +869,7 @@
         <span class="n">update_proba</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">tag_constraint_handler</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span>
     <span class="p">)</span></div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -111,7 +111,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="LP_Solver_MRSCPSP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP">[docs]</a><span class="k">class</span> <span class="nc">LP_Solver_MRSCPSP</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_Solver_MRSCPSP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_Solver_MRSCPSP</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
@@ -132,7 +134,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LP_Solver_MRSCPSP.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_Solver_MRSCPSP.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mrcpsp&quot;</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">MINIMIZE</span><span class="p">,</span> <span class="n">solver_name</span><span class="o">=</span><span class="n">map_solver</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lp_solver</span><span class="p">]</span>
         <span class="p">)</span>
@@ -365,7 +369,10 @@
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objective</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_times_task</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_times_task</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="LP_Solver_MRSCPSP.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_Solver_MRSCPSP.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">parameters_milp</span><span class="o">.</span><span class="n">retrieve_all_solution</span><span class="p">:</span>
             <span class="n">n_solutions</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">.</span><span class="n">n_solutions_max</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_solutions</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -467,7 +474,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_Solver_MRSCPSP.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LP_Solver_MRSCPSP.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.lp_model.LP_Solver_MRSCPSP.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -475,7 +485,9 @@
             <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">init_model</span><span class="p">(</span><span class="n">greedy_start</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LP model initialized...in </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

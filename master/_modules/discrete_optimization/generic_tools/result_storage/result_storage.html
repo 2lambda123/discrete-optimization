@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -101,7 +101,9 @@
 <span class="n">fitness_class</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">TupleFitness</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="ResultStorage"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage">[docs]</a><span class="k">class</span> <span class="nc">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="ResultStorage">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage">[docs]</a>
+<span class="k">class</span> <span class="nc">ResultStorage</span><span class="p">:</span>
     <span class="n">list_solution_fits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]]</span>
     <span class="n">best_solution</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Solution</span><span class="p">]</span>
     <span class="n">map_solutions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]</span>
@@ -145,7 +147,9 @@
                 <span class="n">f</span> <span class="o">=</span> <span class="nb">min</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">max</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">best_solution</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 
-<div class="viewcode-block" id="ResultStorage.add_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.add_solution">[docs]</a>    <span class="k">def</span> <span class="nf">add_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="n">fitness</span><span class="p">:</span> <span class="n">fitness_class</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ResultStorage.add_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.add_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="n">fitness</span><span class="p">:</span> <span class="n">fitness_class</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">solution</span><span class="p">,</span> <span class="n">fitness</span><span class="p">)]</span>
         <span class="k">if</span> <span class="n">solution</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_solutions</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">map_solutions</span><span class="p">[</span><span class="n">solution</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitness</span>
@@ -171,10 +175,16 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">fitness</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">fitness</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ResultStorage.finalize"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ResultStorage.finalize">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.finalize">[docs]</a>
+    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">heap</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">maximize</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ResultStorage.get_best_solution_fit"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution_fit">[docs]</a>    <span class="k">def</span> <span class="nf">get_best_solution_fit</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ResultStorage.get_best_solution_fit">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution_fit">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_best_solution_fit</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -182,7 +192,10 @@
         <span class="n">f</span> <span class="o">=</span> <span class="nb">max</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">min</span>
         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="ResultStorage.get_last_best_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_last_best_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_last_best_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="ResultStorage.get_last_best_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_last_best_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_last_best_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">max</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">min</span>
         <span class="n">best</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">sol</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
@@ -194,7 +207,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">[</span><span class="n">sol</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ResultStorage.get_random_best_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_best_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_random_best_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="ResultStorage.get_random_best_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_best_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_random_best_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">max</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">min</span>
         <span class="n">best</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">sol</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
@@ -206,7 +222,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">[</span><span class="n">sol</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ResultStorage.get_random_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_random_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="ResultStorage.get_random_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_random_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">l</span>
             <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span>
@@ -217,13 +236,19 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ResultStorage.get_best_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_best_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="ResultStorage.get_best_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_best_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">max</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">min</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ResultStorage.get_n_best_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_n_best_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_n_best_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ResultStorage.get_n_best_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_n_best_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_n_best_solution</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">n_solutions</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]]:</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">max</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">min</span>
@@ -231,7 +256,10 @@
         <span class="n">l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[:</span><span class="n">n</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">l</span></div>
 
-<div class="viewcode-block" id="ResultStorage.remove_duplicate_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.remove_duplicate_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">remove_duplicate_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ResultStorage.remove_duplicate_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.remove_duplicate_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_duplicate_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">index_to_remove</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="n">sol1</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">var_name</span><span class="p">)</span>
@@ -250,10 +278,14 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">))</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">index_to_remove</span>
-        <span class="p">]</span></div></div>
+        <span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="merge_results_storage"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.merge_results_storage">[docs]</a><span class="k">def</span> <span class="nf">merge_results_storage</span><span class="p">(</span>
+
+<div class="viewcode-block" id="merge_results_storage">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.merge_results_storage">[docs]</a>
+<span class="k">def</span> <span class="nf">merge_results_storage</span><span class="p">(</span>
     <span class="n">result_1</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">,</span> <span class="n">result_2</span><span class="p">:</span> <span class="n">ResultStorage</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">ResultStorage</span><span class="p">(</span>
@@ -262,7 +294,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="from_solutions_to_result_storage"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.from_solutions_to_result_storage">[docs]</a><span class="k">def</span> <span class="nf">from_solutions_to_result_storage</span><span class="p">(</span>
+
+<div class="viewcode-block" id="from_solutions_to_result_storage">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.from_solutions_to_result_storage">[docs]</a>
+<span class="k">def</span> <span class="nf">from_solutions_to_result_storage</span><span class="p">(</span>
     <span class="n">list_solution</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Solution</span><span class="p">],</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
     <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParamsObjectiveFunction</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -286,7 +321,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="result_storage_to_pareto_front"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.result_storage_to_pareto_front">[docs]</a><span class="k">def</span> <span class="nf">result_storage_to_pareto_front</span><span class="p">(</span>
+
+<div class="viewcode-block" id="result_storage_to_pareto_front">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.result_storage_to_pareto_front">[docs]</a>
+<span class="k">def</span> <span class="nf">result_storage_to_pareto_front</span><span class="p">(</span>
     <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Problem</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParetoFront&quot;</span><span class="p">:</span>
     <span class="n">list_solution_fits</span> <span class="o">=</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span>
@@ -306,7 +344,10 @@
     <span class="k">return</span> <span class="n">pf</span></div>
 
 
-<div class="viewcode-block" id="ParetoFront"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront">[docs]</a><span class="k">class</span> <span class="nc">ParetoFront</span><span class="p">(</span><span class="n">ResultStorage</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ParetoFront">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront">[docs]</a>
+<span class="k">class</span> <span class="nc">ParetoFront</span><span class="p">(</span><span class="n">ResultStorage</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">list_solution_fits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]],</span>
@@ -324,7 +365,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">paretos</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">TupleFitness</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
 
-<div class="viewcode-block" id="ParetoFront.add_point"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.add_point">[docs]</a>    <span class="k">def</span> <span class="nf">add_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="n">tuple_fitness</span><span class="p">:</span> <span class="n">TupleFitness</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ParetoFront.add_point">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.add_point">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="n">tuple_fitness</span><span class="p">:</span> <span class="n">TupleFitness</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">tuple_fitness</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">paretos</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">paretos</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">solution</span><span class="p">,</span> <span class="n">tuple_fitness</span><span class="p">)]</span>
@@ -346,10 +389,16 @@
                         <span class="n">pp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">p</span><span class="p">]</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">paretos</span> <span class="o">=</span> <span class="n">pp</span></div>
 
-<div class="viewcode-block" id="ParetoFront.len_pareto_front"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.len_pareto_front">[docs]</a>    <span class="k">def</span> <span class="nf">len_pareto_front</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ParetoFront.len_pareto_front">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.len_pareto_front">[docs]</a>
+    <span class="k">def</span> <span class="nf">len_pareto_front</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paretos</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParetoFront.finalize"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ParetoFront.finalize">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.finalize">[docs]</a>
+    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">paretos</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">:</span>
@@ -360,17 +409,24 @@
                 <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="n">solution</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">tuple_fitness</span><span class="o">=</span><span class="n">t</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParetoFront.compute_extreme_points"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.compute_extreme_points">[docs]</a>    <span class="k">def</span> <span class="nf">compute_extreme_points</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">TupleFitness</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="ParetoFront.compute_extreme_points">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.compute_extreme_points">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_extreme_points</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">TupleFitness</span><span class="p">]]:</span>
         <span class="n">function_used</span> <span class="o">=</span> <span class="nb">max</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maximize</span> <span class="k">else</span> <span class="nb">min</span>
         <span class="n">number_fitness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>  <span class="c1"># type: ignore</span>
         <span class="n">extreme_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">TupleFitness</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_fitness</span><span class="p">):</span>
             <span class="n">extr</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">TupleFitness</span><span class="p">]</span> <span class="o">=</span> <span class="n">function_used</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paretos</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">vector_fitness</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
             <span class="n">extreme_points</span> <span class="o">+=</span> <span class="p">[</span><span class="n">extr</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">extreme_points</span></div></div>
+        <span class="k">return</span> <span class="n">extreme_points</span></div>
+</div>
 
 
-<div class="viewcode-block" id="plot_storage_2d"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.plot_storage_2d">[docs]</a><span class="k">def</span> <span class="nf">plot_storage_2d</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_storage_2d">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.plot_storage_2d">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_storage_2d</span><span class="p">(</span>
     <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">,</span>
     <span class="n">name_axis</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
     <span class="n">ax</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -391,7 +447,10 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">name_axis</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="plot_pareto_2d"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.plot_pareto_2d">[docs]</a><span class="k">def</span> <span class="nf">plot_pareto_2d</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_pareto_2d">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.plot_pareto_2d">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_pareto_2d</span><span class="p">(</span>
     <span class="n">pareto_front</span><span class="p">:</span> <span class="n">ParetoFront</span><span class="p">,</span> <span class="n">name_axis</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">ax</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -405,7 +464,10 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">name_axis</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="plot_fitness"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.plot_fitness">[docs]</a><span class="k">def</span> <span class="nf">plot_fitness</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_fitness">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.plot_fitness">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_fitness</span><span class="p">(</span>
     <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">,</span> <span class="n">ax</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -414,6 +476,7 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Solution number&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fitness&quot;</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

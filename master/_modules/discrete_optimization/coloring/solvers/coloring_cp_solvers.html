@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -92,7 +92,7 @@
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">pymzn</span>
@@ -101,6 +101,7 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.coloring.coloring_model</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ColoringProblem</span><span class="p">,</span>
     <span class="n">ColoringSolution</span><span class="p">,</span>
+    <span class="n">ConstraintsColoring</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.coloring.coloring_toolbox</span> <span class="kn">import</span> <span class="n">compute_cliques</span>
 <span class="kn">from</span> <span class="nn">discrete_optimization.coloring.solvers.coloring_solver</span> <span class="kn">import</span> <span class="n">SolverColoring</span>
@@ -131,34 +132,47 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ColoringCPSolution"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCPSolution">[docs]</a><span class="k">class</span> <span class="nc">ColoringCPSolution</span><span class="p">:</span>
+<div class="viewcode-block" id="ColoringCPSolution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCPSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">ColoringCPSolution</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">_output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">=</span> <span class="n">objective</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict</span> <span class="o">=</span> <span class="n">kwargs</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New solution </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output </span><span class="si">{</span><span class="n">_output_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New solution </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output </span><span class="si">{</span><span class="n">_output_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ColoringCPSolution.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCPSolution.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="ColoringCPSolution.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCPSolution.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ColoringCPModel"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCPModel">[docs]</a><span class="k">class</span> <span class="nc">ColoringCPModel</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ColoringCPModel">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCPModel">[docs]</a>
+<span class="k">class</span> <span class="nc">ColoringCPModel</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">CLIQUES</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">DEFAULT</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">LNS</span> <span class="o">=</span> <span class="mi">2</span></div>
+    <span class="n">LNS</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">DEFAULT_WITH_SUBSET</span> <span class="o">=</span> <span class="mi">3</span></div>
+
 
 
 <span class="n">file_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">CLIQUES</span><span class="p">:</span> <span class="s2">&quot;coloring_clique.mzn&quot;</span><span class="p">,</span>
     <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">:</span> <span class="s2">&quot;coloring.mzn&quot;</span><span class="p">,</span>
     <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">LNS</span><span class="p">:</span> <span class="s2">&quot;coloring_for_lns.mzn&quot;</span><span class="p">,</span>
+    <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT_WITH_SUBSET</span><span class="p">:</span> <span class="s2">&quot;coloring_subset_nodes.mzn&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="ColoringCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP">[docs]</a><span class="k">class</span> <span class="nc">ColoringCP</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverColoring</span><span class="p">):</span>
+<div class="viewcode-block" id="ColoringCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP">[docs]</a>
+<span class="k">class</span> <span class="nc">ColoringCP</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverColoring</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">coloring_model</span><span class="p">:</span> <span class="n">ColoringProblem</span><span class="p">,</span>
@@ -195,8 +209,11 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cp_solver_name</span> <span class="o">=</span> <span class="n">cp_solver_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dict_datas</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="ColoringCP.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ColoringCP.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Instantiate a minizinc model with the coloring problem data.</span>
 
 <span class="sd">        Keyword Args:</span>
@@ -214,25 +231,47 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">nb_colors</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_colors&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="n">object_output</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;object_output&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">with_subset_nodes</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="s2">&quot;with_subset_nodes&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">use_subset</span>
+        <span class="p">)</span>
         <span class="n">include_seq_chain_constraint</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;include_seq_chain_constraint&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">nb_colors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">solution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_solution</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="n">nb_colors</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">nb_color</span>
-        <span class="n">model_type</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cp_model&quot;</span><span class="p">,</span> <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">)</span>
+            <span class="n">solution</span><span class="p">:</span> <span class="n">ColoringSolution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_solution</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">nb_colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">count_colors_all_index</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
+        <span class="n">model_type</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="s2">&quot;cp_model&quot;</span><span class="p">,</span>
+            <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">with_subset_nodes</span>
+            <span class="k">else</span> <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT_WITH_SUBSET</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">with_subset_nodes</span> <span class="ow">and</span> <span class="n">model_type</span> <span class="o">!=</span> <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT_WITH_SUBSET</span><span class="p">:</span>
+            <span class="n">model_type</span> <span class="o">=</span> <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT_WITH_SUBSET</span>
         <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_minizinc</span><span class="p">,</span> <span class="n">file_dict</span><span class="p">[</span><span class="n">model_type</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">object_output</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">output_type</span> <span class="o">=</span> <span class="n">ColoringCPSolution</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">output_type</span> <span class="o">=</span> <span class="n">ColoringCPSolution</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">custom_output_type</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">map_cp_solver_name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cp_solver_name</span><span class="p">])</span>
-        <span class="n">instance</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;n_nodes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">number_of_nodes</span>
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;n_edges&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number_of_edges</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;nb_colors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nb_colors</span>
         <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="n">model_type</span> <span class="ow">in</span> <span class="p">{</span><span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">,</span> <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">CLIQUES</span><span class="p">}:</span>
+        <span class="k">if</span> <span class="n">model_type</span> <span class="ow">in</span> <span class="p">{</span>
+            <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">,</span>
+            <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">CLIQUES</span><span class="p">,</span>
+            <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT_WITH_SUBSET</span><span class="p">,</span>
+        <span class="p">}:</span>
             <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;include_seq_chain_constraint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">include_seq_chain_constraint</span>
             <span class="n">keys</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;include_seq_chain_constraint&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">model_type</span> <span class="o">==</span> <span class="n">ColoringCPModel</span><span class="o">.</span><span class="n">DEFAULT_WITH_SUBSET</span><span class="p">:</span>
+            <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;subset_node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">subset_nodes</span>
+                <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">nodes_name</span>
+            <span class="p">]</span>
+            <span class="n">keys</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;subset_node&quot;</span><span class="p">]</span>
         <span class="n">keys</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;n_nodes&quot;</span><span class="p">,</span> <span class="s2">&quot;n_edges&quot;</span><span class="p">,</span> <span class="s2">&quot;nb_colors&quot;</span><span class="p">]</span>
         <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_nodes_name</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_nodes_name</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
@@ -250,10 +289,19 @@
             <span class="n">keys</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;cliques&quot;</span><span class="p">,</span> <span class="s2">&quot;n_cliques&quot;</span><span class="p">,</span> <span class="s2">&quot;all_cliques&quot;</span><span class="p">]</span>
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;list_edges&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">]</span>
         <span class="n">keys</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;list_edges&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">has_constraints_coloring</span><span class="p">:</span>
+            <span class="n">constraints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_coloring_constraint</span><span class="p">(</span>
+                <span class="n">coloring_constraint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">constraints_coloring</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">constraints</span><span class="p">:</span>
+                <span class="n">instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict_datas</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="ColoringCP.export_dzn"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.export_dzn">[docs]</a>    <span class="k">def</span> <span class="nf">export_dzn</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ColoringCP.export_dzn">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.export_dzn">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_dzn</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">keys</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;[DEBUG utility] Export the instantiated data into a dzn for potential debugs without python.</span>
@@ -275,7 +323,10 @@
         <span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully dumped data file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ColoringCP.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ColoringCP.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve the solution found by solving the minizinc instance</span>
@@ -321,7 +372,21 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ColoringCP.get_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.get_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ColoringSolution</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ColoringCP.add_coloring_constraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.add_coloring_constraint">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_coloring_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coloring_constraint</span><span class="p">:</span> <span class="n">ConstraintsColoring</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">coloring_constraint</span><span class="o">.</span><span class="n">color_constraint</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_nodes_name</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+            <span class="n">value_color</span> <span class="o">=</span> <span class="n">coloring_constraint</span><span class="o">.</span><span class="n">color_constraint</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;constraint color_graph[</span><span class="si">{</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">]==</span><span class="si">{</span><span class="n">value_color</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span></div>
+
+
+<div class="viewcode-block" id="ColoringCP.get_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_cp_solvers.ColoringCP.get_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ColoringSolution</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Used by the init_model method to provide a greedy first solution</span>
 
 <span class="sd">        Keyword Args:</span>
@@ -355,7 +420,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Get dummy solution&quot;</span><span class="p">)</span>
             <span class="n">solution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">solution</span></div></div>
+        <span class="k">return</span> <span class="n">solution</span></div>
+</div>
+
 </pre></div>
 
            </div>

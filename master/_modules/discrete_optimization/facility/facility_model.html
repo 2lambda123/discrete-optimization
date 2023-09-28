@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -110,13 +110,18 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="Point"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.Point">[docs]</a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="viewcode-block" id="Point">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.Point">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">y</span><span class="p">:</span> <span class="nb">float</span></div>
 
 
-<div class="viewcode-block" id="Facility"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.Facility">[docs]</a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Facility">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.Facility">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Facility</span><span class="p">:</span>
     <span class="n">index</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">setup_cost</span><span class="p">:</span> <span class="nb">float</span>
@@ -124,14 +129,20 @@
     <span class="n">location</span><span class="p">:</span> <span class="n">Point</span></div>
 
 
-<div class="viewcode-block" id="Customer"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.Customer">[docs]</a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Customer">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.Customer">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Customer</span><span class="p">:</span>
     <span class="n">index</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">demand</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">location</span><span class="p">:</span> <span class="n">Point</span></div>
 
 
-<div class="viewcode-block" id="FacilitySolution"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution">[docs]</a><span class="k">class</span> <span class="nc">FacilitySolution</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FacilitySolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution">[docs]</a>
+<span class="k">class</span> <span class="nc">FacilitySolution</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Solution object for facility location</span>
 
 <span class="sd">    Attributes:</span>
@@ -152,31 +163,43 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">facility_for_customers</span> <span class="o">=</span> <span class="n">facility_for_customers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span> <span class="o">=</span> <span class="n">dict_details</span>
 
-<div class="viewcode-block" id="FacilitySolution.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;FacilitySolution&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="FacilitySolution.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;FacilitySolution&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">FacilitySolution</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">facility_for_customers</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">facility_for_customers</span><span class="p">),</span>
             <span class="n">dict_details</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="FacilitySolution.lazy_copy"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution.lazy_copy">[docs]</a>    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;FacilitySolution&quot;</span><span class="p">:</span>
+
+<div class="viewcode-block" id="FacilitySolution.lazy_copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution.lazy_copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;FacilitySolution&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">FacilitySolution</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">facility_for_customers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">facility_for_customers</span><span class="p">,</span>
             <span class="n">dict_details</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="FacilitySolution.change_problem"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution.change_problem">[docs]</a>    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="FacilitySolution.change_problem">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilitySolution.change_problem">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">new_problem</span><span class="p">,</span> <span class="n">FacilityProblem</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;new_problem must a FacilityProblem for a FacilitySolution.&quot;</span>
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">new_problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">facility_for_customers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">facility_for_customers</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_details</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="FacilityProblem"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem">[docs]</a><span class="k">class</span> <span class="nc">FacilityProblem</span><span class="p">(</span><span class="n">Problem</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FacilityProblem">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem">[docs]</a>
+<span class="k">class</span> <span class="nc">FacilityProblem</span><span class="p">(</span><span class="n">Problem</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for the facility problem.</span>
 
 <span class="sd">    Attributes:</span>
@@ -200,7 +223,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">facilities</span> <span class="o">=</span> <span class="n">facilities</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">customers</span> <span class="o">=</span> <span class="n">customers</span>
 
-<div class="viewcode-block" id="FacilityProblem.evaluate_customer_facility"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate_customer_facility">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="FacilityProblem.evaluate_customer_facility">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate_customer_facility">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">evaluate_customer_facility</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">facility</span><span class="p">:</span> <span class="n">Facility</span><span class="p">,</span> <span class="n">customer</span><span class="p">:</span> <span class="n">Customer</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -215,7 +240,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.evaluate"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">FacilitySolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="FacilityProblem.evaluate">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">FacilitySolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the KPI of a FacilitySolution.</span>
 
 <span class="sd">        Args:</span>
@@ -235,7 +263,10 @@
         <span class="n">d</span><span class="p">[</span><span class="s2">&quot;capacity_constraint_violation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">capacity_constraint_violation</span>
         <span class="k">return</span> <span class="n">d</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.evaluate_from_encoding"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate_from_encoding">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span>
+
+<div class="viewcode-block" id="FacilityProblem.evaluate_from_encoding">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate_from_encoding">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">encoding_name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate function based on direct integer vector (used in GA algorithms only)</span>
@@ -260,7 +291,10 @@
         <span class="n">objectives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">kp_sol</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">objectives</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.evaluate_cost"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate_cost">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">FacilitySolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="FacilityProblem.evaluate_cost">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.evaluate_cost">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">FacilitySolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the allocation cost of the solution along with setup cost too.</span>
 
 <span class="sd">        Args:</span>
@@ -292,7 +326,10 @@
             <span class="n">cost</span> <span class="o">+=</span> <span class="n">c</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="n">cost</span><span class="p">,</span> <span class="s2">&quot;setup_cost&quot;</span><span class="p">:</span> <span class="n">setup_cost</span><span class="p">,</span> <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="n">facility_details</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.satisfy"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.satisfy">[docs]</a>    <span class="k">def</span> <span class="nf">satisfy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">FacilitySolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="FacilityProblem.satisfy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.satisfy">[docs]</a>
+    <span class="k">def</span> <span class="nf">satisfy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">FacilitySolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Satisfaction function of a facility solution.</span>
 
 <span class="sd">        We only check that the capacity constraint is fulfilled. We admit that the values of the vector are in the</span>
@@ -307,7 +344,10 @@
         <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;capacity_constraint_violation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.get_attribute_register"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_attribute_register">[docs]</a>    <span class="k">def</span> <span class="nf">get_attribute_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EncodingRegister</span><span class="p">:</span>
+
+<div class="viewcode-block" id="FacilityProblem.get_attribute_register">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_attribute_register">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_attribute_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EncodingRegister</span><span class="p">:</span>
         <span class="n">dict_register</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">dict_register</span><span class="p">[</span><span class="s2">&quot;facility_for_customers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;facility_for_customers&quot;</span><span class="p">,</span>
@@ -317,7 +357,10 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">EncodingRegister</span><span class="p">(</span><span class="n">dict_register</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.get_dummy_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_dummy_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FacilitySolution</span><span class="p">:</span>
+
+<div class="viewcode-block" id="FacilityProblem.get_dummy_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_dummy_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FacilitySolution</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns Dummy solution (that is not necessary fulfilling the constraints)</span>
 
 <span class="sd">        All customers are allocated to the first facility (which usually will break the capacity constraint)</span>
@@ -326,10 +369,16 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">FacilitySolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">customer_count</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.get_solution_type"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_solution_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="FacilityProblem.get_solution_type">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_solution_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
         <span class="k">return</span> <span class="n">FacilitySolution</span></div>
 
-<div class="viewcode-block" id="FacilityProblem.get_objective_register"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_objective_register">[docs]</a>    <span class="k">def</span> <span class="nf">get_objective_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectiveRegister</span><span class="p">:</span>
+
+<div class="viewcode-block" id="FacilityProblem.get_objective_register">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem.get_objective_register">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_objective_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectiveRegister</span><span class="p">:</span>
         <span class="n">dict_objective</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="n">ObjectiveDoc</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">TypeObjective</span><span class="o">.</span><span class="n">OBJECTIVE</span><span class="p">,</span> <span class="n">default_weight</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">),</span>
             <span class="s2">&quot;setup_cost&quot;</span><span class="p">:</span> <span class="n">ObjectiveDoc</span><span class="p">(</span>
@@ -343,10 +392,14 @@
             <span class="n">objective_sense</span><span class="o">=</span><span class="n">ModeOptim</span><span class="o">.</span><span class="n">MAXIMIZATION</span><span class="p">,</span>
             <span class="n">objective_handling</span><span class="o">=</span><span class="n">ObjectiveHandling</span><span class="o">.</span><span class="n">AGGREGATE</span><span class="p">,</span>
             <span class="n">dict_objective_to_doc</span><span class="o">=</span><span class="n">dict_objective</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="length"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.length">[docs]</a><span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="n">point1</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">point2</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="length">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.length">[docs]</a>
+<span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="n">point1</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">point2</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Classic euclidian distance between two points.</span>
 
 <span class="sd">    Args:</span>
@@ -359,8 +412,13 @@
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">point1</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">point2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">point1</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">point2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="FacilityProblem2DPoints"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem2DPoints">[docs]</a><span class="k">class</span> <span class="nc">FacilityProblem2DPoints</span><span class="p">(</span><span class="n">FacilityProblem</span><span class="p">):</span>
-<div class="viewcode-block" id="FacilityProblem2DPoints.evaluate_customer_facility"><a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem2DPoints.evaluate_customer_facility">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_customer_facility</span><span class="p">(</span>
+
+<div class="viewcode-block" id="FacilityProblem2DPoints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem2DPoints">[docs]</a>
+<span class="k">class</span> <span class="nc">FacilityProblem2DPoints</span><span class="p">(</span><span class="n">FacilityProblem</span><span class="p">):</span>
+<div class="viewcode-block" id="FacilityProblem2DPoints.evaluate_customer_facility">
+<a class="viewcode-back" href="../../../api/discrete_optimization.facility.html#discrete_optimization.facility.facility_model.FacilityProblem2DPoints.evaluate_customer_facility">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_customer_facility</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">facility</span><span class="p">:</span> <span class="n">Facility</span><span class="p">,</span> <span class="n">customer</span><span class="p">:</span> <span class="n">Customer</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Implementation of a distance based cost for allocation of facility to customers.</span>
@@ -374,7 +432,9 @@
 <span class="sd">        Returns: a float cost</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">length</span><span class="p">(</span><span class="n">facility</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="n">customer</span><span class="o">.</span><span class="n">location</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">length</span><span class="p">(</span><span class="n">facility</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="n">customer</span><span class="o">.</span><span class="n">location</span><span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

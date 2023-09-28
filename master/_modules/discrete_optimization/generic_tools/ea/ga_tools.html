@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -93,7 +93,9 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="ParametersGa"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersGa">[docs]</a><span class="k">class</span> <span class="nc">ParametersGa</span><span class="p">:</span>
+<div class="viewcode-block" id="ParametersGa">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersGa">[docs]</a>
+<span class="k">class</span> <span class="nc">ParametersGa</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">mutation</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Mutation</span><span class="p">,</span> <span class="n">DeapMutation</span><span class="p">],</span>
@@ -124,7 +126,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">tournament_size</span> <span class="o">=</span> <span class="n">tournament_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deap_verbose</span> <span class="o">=</span> <span class="n">deap_verbose</span>
 
-<div class="viewcode-block" id="ParametersGa.default_rcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersGa.default_rcpsp">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGa.default_rcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersGa.default_rcpsp">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_rcpsp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersGa&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersGa</span><span class="p">(</span>
             <span class="n">mutation</span><span class="o">=</span><span class="n">DeapMutation</span><span class="o">.</span><span class="n">MUT_SHUFFLE_INDEXES</span><span class="p">,</span>
@@ -140,10 +144,14 @@
             <span class="n">crossover_rate</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
             <span class="n">tournament_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
             <span class="n">deap_verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ParametersAltGa"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa">[docs]</a><span class="k">class</span> <span class="nc">ParametersAltGa</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ParametersAltGa">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa">[docs]</a>
+<span class="k">class</span> <span class="nc">ParametersAltGa</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">mutations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Mutation</span><span class="p">,</span> <span class="n">DeapMutation</span><span class="p">]],</span>
@@ -176,7 +184,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">deap_verbose</span> <span class="o">=</span> <span class="n">deap_verbose</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sub_evals</span> <span class="o">=</span> <span class="n">sub_evals</span>
 
-<div class="viewcode-block" id="ParametersAltGa.default_mrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_mrcpsp">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersAltGa.default_mrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_mrcpsp">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_mrcpsp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersAltGa&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersAltGa</span><span class="p">(</span>
             <span class="n">mutations</span><span class="o">=</span><span class="p">[</span><span class="n">DeapMutation</span><span class="o">.</span><span class="n">MUT_UNIFORM_INT</span><span class="p">,</span> <span class="n">DeapMutation</span><span class="o">.</span><span class="n">MUT_SHUFFLE_INDEXES</span><span class="p">],</span>
@@ -198,7 +208,10 @@
             <span class="n">sub_evals</span><span class="o">=</span><span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersAltGa.default_msrcpsp"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_msrcpsp">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="ParametersAltGa.default_msrcpsp">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ea.html#discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_msrcpsp">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_msrcpsp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersAltGa&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersAltGa</span><span class="p">(</span>
             <span class="n">mutations</span><span class="o">=</span><span class="p">[</span>
@@ -231,7 +244,9 @@
             <span class="n">tournament_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
             <span class="n">deap_verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">sub_evals</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

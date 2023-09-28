@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -111,12 +111,17 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="InitialColoringMethod"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.InitialColoringMethod">[docs]</a><span class="k">class</span> <span class="nc">InitialColoringMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="InitialColoringMethod">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.InitialColoringMethod">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialColoringMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">DUMMY</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">GREEDY</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="InitialColoring"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.InitialColoring">[docs]</a><span class="k">class</span> <span class="nc">InitialColoring</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="InitialColoring">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.InitialColoring">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialColoring</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initial solution provider for lns algorithm.</span>
 
 <span class="sd">    Attributes:</span>
@@ -140,7 +145,9 @@
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="InitialColoring.get_starting_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.InitialColoring.get_starting_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="InitialColoring.get_starting_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.InitialColoring.get_starting_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_method</span> <span class="o">==</span> <span class="n">InitialColoringMethod</span><span class="o">.</span><span class="n">DUMMY</span><span class="p">:</span>
             <span class="n">sol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">()</span>
             <span class="n">fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_sol</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
@@ -154,10 +161,14 @@
                 <span class="n">coloring_model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
                 <span class="n">params_objective_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="k">return</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span></div></div>
+            <span class="k">return</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsGrb"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsGrb">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerFixColorsGrb</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixColorsGrb">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsGrb">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerFixColorsGrb</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Constraint builder used in LNS+LP (using gurobi solver) for coloring problem.</span>
 
 <span class="sd">    This constraint handler is pretty basic, it fixes a fraction_to_fix proportion of nodes color.</span>
@@ -171,7 +182,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_to_fix</span> <span class="o">=</span> <span class="n">fraction_to_fix</span>
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsGrb.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsGrb.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerFixColorsGrb.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsGrb.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">milp_solver</span><span class="p">,</span> <span class="n">ColoringLP</span><span class="p">):</span>
@@ -231,7 +244,10 @@
                     <span class="p">)</span>
         <span class="k">return</span> <span class="n">lns_constraint</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsGrb.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsGrb.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixColorsGrb.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsGrb.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">milp_solver</span><span class="p">,</span> <span class="n">ColoringLP</span><span class="p">):</span>
@@ -243,10 +259,14 @@
                     <span class="s2">&quot;milp_solver.model must be not None after calling milp_solver.init_model()&quot;</span>
                 <span class="p">)</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">previous_constraints</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-        <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+        <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsPyMip"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsPyMip">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerFixColorsPyMip</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixColorsPyMip">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsPyMip">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerFixColorsPyMip</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Constraint builder used in LNS+ LP (using pymip library) for coloring problem.</span>
 
 <span class="sd">    This constraint handler is pretty basic, it fixes a fraction_to_fix proportion of nodes color.</span>
@@ -260,7 +280,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_to_fix</span> <span class="o">=</span> <span class="n">fraction_to_fix</span>
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsPyMip.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsPyMip.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerFixColorsPyMip.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsPyMip.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">milp_solver</span><span class="p">,</span> <span class="n">ColoringLP_MIP</span><span class="p">):</span>
@@ -323,7 +345,10 @@
             <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">lns_constraint</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerFixColorsPyMip.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsPyMip.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixColorsPyMip.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_lp_lns_solvers.ConstraintHandlerFixColorsPyMip.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">milp_solver</span><span class="p">,</span> <span class="n">ColoringLP_MIP</span><span class="p">):</span>
@@ -336,7 +361,9 @@
                 <span class="p">)</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">previous_constraints</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
         <span class="k">if</span> <span class="n">milp_solver</span><span class="o">.</span><span class="n">milp_solver_name</span> <span class="o">==</span> <span class="n">MilpSolverName</span><span class="o">.</span><span class="n">GRB</span><span class="p">:</span>
-            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
+
 </pre></div>
 
            </div>

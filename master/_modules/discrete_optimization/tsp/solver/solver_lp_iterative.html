@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -140,7 +140,9 @@
 <span class="n">Edge</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="n">Node</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="build_graph_pruned"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.build_graph_pruned">[docs]</a><span class="k">def</span> <span class="nf">build_graph_pruned</span><span class="p">(</span>
+<div class="viewcode-block" id="build_graph_pruned">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.build_graph_pruned">[docs]</a>
+<span class="k">def</span> <span class="nf">build_graph_pruned</span><span class="p">(</span>
     <span class="n">tsp_model</span><span class="p">:</span> <span class="n">TSPModel2D</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span>
@@ -196,7 +198,10 @@
     <span class="k">return</span> <span class="n">g</span><span class="p">,</span> <span class="n">g_empty</span><span class="p">,</span> <span class="n">edges_in</span><span class="p">,</span> <span class="n">edges_out</span></div>
 
 
-<div class="viewcode-block" id="build_graph_complete"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.build_graph_complete">[docs]</a><span class="k">def</span> <span class="nf">build_graph_complete</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_graph_complete">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.build_graph_complete">[docs]</a>
+<span class="k">def</span> <span class="nf">build_graph_complete</span><span class="p">(</span>
     <span class="n">tsp_model</span><span class="p">:</span> <span class="n">TSPModel</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]],]:</span>
     <span class="n">nodeCount</span> <span class="o">=</span> <span class="n">tsp_model</span><span class="o">.</span><span class="n">node_count</span>
@@ -237,12 +242,18 @@
     <span class="k">return</span> <span class="n">g</span><span class="p">,</span> <span class="n">g_empty</span><span class="p">,</span> <span class="n">edges_in</span><span class="p">,</span> <span class="n">edges_out</span></div>
 
 
-<div class="viewcode-block" id="MILPSolver"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.MILPSolver">[docs]</a><span class="k">class</span> <span class="nc">MILPSolver</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MILPSolver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.MILPSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">MILPSolver</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">GUROBI</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">CBC</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="LP_TSP_Iterative"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative">[docs]</a><span class="k">class</span> <span class="nc">LP_TSP_Iterative</span><span class="p">(</span><span class="n">SolverTSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_TSP_Iterative</span><span class="p">(</span><span class="n">SolverTSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">tsp_model</span><span class="p">:</span> <span class="n">TSPModel</span><span class="p">,</span>
@@ -285,7 +296,9 @@
                 <span class="s2">&quot;LP_TSP_Iterative can only handle single or aggregated objective.&quot;</span>
             <span class="p">)</span>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">MILPSolver</span> <span class="o">=</span> <span class="n">MILPSolver</span><span class="o">.</span><span class="n">CBC</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="LP_TSP_Iterative.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">MILPSolver</span> <span class="o">=</span> <span class="n">MILPSolver</span><span class="o">.</span><span class="n">CBC</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">MILPSolver</span><span class="o">.</span><span class="n">GUROBI</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">init_model_gurobi</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
@@ -293,7 +306,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">init_model_cbc</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span></div>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.init_model_gurobi"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.init_model_gurobi">[docs]</a>    <span class="k">def</span> <span class="nf">init_model_gurobi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative.init_model_gurobi">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.init_model_gurobi">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model_gurobi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">g</span><span class="p">,</span> <span class="n">g_empty</span><span class="p">,</span> <span class="n">edges_in</span><span class="p">,</span> <span class="n">edges_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_builder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tsp_model</span><span class="p">)</span>
         <span class="n">tsp_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s2">&quot;TSP-master&quot;</span><span class="p">)</span>
         <span class="n">edges</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
@@ -387,7 +403,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">tsp_model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x_var</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.init_model_cbc"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.init_model_cbc">[docs]</a>    <span class="k">def</span> <span class="nf">init_model_cbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative.init_model_cbc">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.init_model_cbc">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model_cbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">g</span><span class="p">,</span> <span class="n">g_empty</span><span class="p">,</span> <span class="n">edges_in</span><span class="p">,</span> <span class="n">edges_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_builder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tsp_model</span><span class="p">)</span>
         <span class="n">tsp_model</span> <span class="o">=</span> <span class="n">pywraplp</span><span class="o">.</span><span class="n">Solver</span><span class="p">(</span>
             <span class="s2">&quot;TSP-master&quot;</span><span class="p">,</span> <span class="n">pywraplp</span><span class="o">.</span><span class="n">Solver</span><span class="o">.</span><span class="n">CBC_MIXED_INTEGER_PROGRAMMING</span>
@@ -463,7 +482,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x_var</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">SetTimeLimit</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.retrieve_results_cbc"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.retrieve_results_cbc">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_results_cbc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative.retrieve_results_cbc">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.retrieve_results_cbc">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_results_cbc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]]:</span>
         <span class="n">g_empty</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
         <span class="n">g_empty</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node_count</span><span class="p">)])</span>
         <span class="n">x_solution</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -475,7 +497,10 @@
                 <span class="n">g_empty</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">g_empty</span><span class="p">,</span> <span class="n">x_solution</span></div>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.retrieve_results_gurobi"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.retrieve_results_gurobi">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_results_gurobi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative.retrieve_results_gurobi">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.retrieve_results_gurobi">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_results_gurobi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]]:</span>
         <span class="n">g_empty</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
         <span class="n">g_empty</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node_count</span><span class="p">)])</span>
         <span class="n">x_solution</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -487,7 +512,10 @@
                 <span class="n">g_empty</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">g_empty</span><span class="p">,</span> <span class="n">x_solution</span></div>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">nb_iteration_max</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_iteration_max&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
         <span class="n">plot</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;plot&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">plot_folder</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;plot_folder&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -658,7 +686,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_TSP_Iterative.plot_solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.plot_solve">[docs]</a>    <span class="k">def</span> <span class="nf">plot_solve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LP_TSP_Iterative.plot_solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.LP_TSP_Iterative.plot_solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot_solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">solutions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">]],</span>
         <span class="n">rebuilt_solution</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
@@ -709,10 +740,14 @@
                 <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div></div>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="build_the_cycles"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.build_the_cycles">[docs]</a><span class="k">def</span> <span class="nf">build_the_cycles</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_the_cycles">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.build_the_cycles">[docs]</a>
+<span class="k">def</span> <span class="nf">build_the_cycles</span><span class="p">(</span>
     <span class="n">x_solution</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Edge</span><span class="p">],</span>
     <span class="n">component</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span>
     <span class="n">graph</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span>
@@ -744,7 +779,10 @@
     <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">indexes</span></div>
 
 
-<div class="viewcode-block" id="rebuild_tsp_routine"><a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.rebuild_tsp_routine">[docs]</a><span class="k">def</span> <span class="nf">rebuild_tsp_routine</span><span class="p">(</span>
+
+<div class="viewcode-block" id="rebuild_tsp_routine">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.tsp.solver.html#discrete_optimization.tsp.solver.solver_lp_iterative.rebuild_tsp_routine">[docs]</a>
+<span class="k">def</span> <span class="nf">rebuild_tsp_routine</span><span class="p">(</span>
     <span class="n">sorted_connected_component</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Node</span><span class="p">],</span> <span class="nb">int</span><span class="p">]],</span>
     <span class="n">paths_component</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]],</span>
     <span class="n">node_to_component</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
@@ -879,6 +917,7 @@
     <span class="n">fit</span> <span class="o">=</span> <span class="n">tsp_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ObjRebuilt=</span><span class="si">{</span><span class="n">fit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">rebuilded_path</span><span class="p">,</span> <span class="n">fit</span></div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -131,7 +131,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="RobustnessTool"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool">[docs]</a><span class="k">class</span> <span class="nc">RobustnessTool</span><span class="p">:</span>
+<div class="viewcode-block" id="RobustnessTool">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool">[docs]</a>
+<span class="k">class</span> <span class="nc">RobustnessTool</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">base_instance</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -167,7 +169,9 @@
             <span class="n">method_aggregating</span><span class="o">=</span><span class="n">MethodAggregating</span><span class="p">(</span><span class="n">BaseMethodAggregating</span><span class="o">.</span><span class="n">MEDIAN</span><span class="p">),</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="RobustnessTool.get_models"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.get_models">[docs]</a>    <span class="k">def</span> <span class="nf">get_models</span><span class="p">(</span>
+<div class="viewcode-block" id="RobustnessTool.get_models">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.get_models">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_models</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">apriori</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">aposteriori</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">]:</span>
         <span class="n">models</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
@@ -198,7 +202,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
         <span class="k">return</span> <span class="n">models</span></div>
 
-<div class="viewcode-block" id="RobustnessTool.solve_and_retrieve"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.solve_and_retrieve">[docs]</a>    <span class="k">def</span> <span class="nf">solve_and_retrieve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="RobustnessTool.solve_and_retrieve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.solve_and_retrieve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_and_retrieve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">solve_models_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">RCPSPModel</span><span class="p">],</span> <span class="n">ResultStorage</span><span class="p">],</span>
         <span class="n">apriori</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -226,7 +233,10 @@
                 <span class="n">results</span><span class="p">[</span><span class="n">index_pareto</span><span class="p">,</span> <span class="n">index_instance</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="s2">&quot;mean_resource_reserve&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">results</span></div>
 
-<div class="viewcode-block" id="RobustnessTool.plot"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">],</span> <span class="n">image_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RobustnessTool.plot">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">],</span> <span class="n">image_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">mean_makespan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">max_makespan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">results</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean makespan over test instances : </span><span class="si">{</span><span class="n">mean_makespan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -244,10 +254,14 @@
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
             <span class="s2">&quot;Makespan distribution over test instances, for different optimisation approaches&quot;</span>
         <span class="p">)</span>
-        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">image_tag</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_comparaison_methods_robust.png&quot;</span><span class="p">)</span></div></div>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">image_tag</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_comparaison_methods_robust.png&quot;</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="solve_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.solve_model">[docs]</a><span class="k">def</span> <span class="nf">solve_model</span><span class="p">(</span>
+
+<div class="viewcode-block" id="solve_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.robustness.html#discrete_optimization.generic_tools.robustness.robustness_tool.solve_model">[docs]</a>
+<span class="k">def</span> <span class="nf">solve_model</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span> <span class="n">postpro</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">nb_iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
     <span class="n">dummy</span><span class="p">:</span> <span class="n">Solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">()</span>  <span class="c1"># type: ignore</span>
@@ -320,6 +334,7 @@
             <span class="n">update_iteration_pareto</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">result_ls</span></div>
+
 </pre></div>
 
            </div>

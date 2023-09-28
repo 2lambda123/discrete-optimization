@@ -12,6 +12,14 @@ discrete\_optimization.coloring.solvers.coloring\_asp\_solver module
    :undoc-members:
    :show-inheritance:
 
+discrete\_optimization.coloring.solvers.coloring\_cp\_lns module
+----------------------------------------------------------------
+
+.. automodule:: discrete_optimization.coloring.solvers.coloring_cp_lns
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 discrete\_optimization.coloring.solvers.coloring\_cp\_lns\_solvers module
 -------------------------------------------------------------------------
 

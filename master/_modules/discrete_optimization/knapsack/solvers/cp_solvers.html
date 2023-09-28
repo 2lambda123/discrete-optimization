@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -120,7 +120,9 @@
 <span class="n">this_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="KnapsackSol"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapsackSol">[docs]</a><span class="k">class</span> <span class="nc">KnapsackSol</span><span class="p">:</span>
+<div class="viewcode-block" id="KnapsackSol">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapsackSol">[docs]</a>
+<span class="k">class</span> <span class="nc">KnapsackSol</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -130,11 +132,17 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;One solution </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output </span><span class="si">{</span><span class="n">_output_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="KnapsackSol.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapsackSol.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="KnapsackSol.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapsackSol.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CPKnapsackMZN"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN">[docs]</a><span class="k">class</span> <span class="nc">CPKnapsackMZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverKnapsack</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPKnapsackMZN">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN">[docs]</a>
+<span class="k">class</span> <span class="nc">CPKnapsackMZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverKnapsack</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
@@ -156,7 +164,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="CPKnapsackMZN.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+<div class="viewcode-block" id="CPKnapsackMZN.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
@@ -193,7 +203,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CPKnapsackMZN.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CPKnapsackMZN.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># Load n-Queens model from file</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_path</span><span class="p">,</span> <span class="s2">&quot;../minizinc/knapsack_mzn.mzn&quot;</span><span class="p">))</span>
         <span class="c1"># Find the MiniZinc solver configuration for Gecode</span>
@@ -210,10 +223,14 @@
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="o">.</span><span class="n">nb_items</span><span class="p">)</span>
         <span class="p">]</span>
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;max_capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="o">.</span><span class="n">max_capacity</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CPKnapsackMZN2"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2">[docs]</a><span class="k">class</span> <span class="nc">CPKnapsackMZN2</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverKnapsack</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPKnapsackMZN2">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2">[docs]</a>
+<span class="k">class</span> <span class="nc">CPKnapsackMZN2</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverKnapsack</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
@@ -234,7 +251,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="CPKnapsackMZN2.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="CPKnapsackMZN2.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># Load n-Queens model from file</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_path</span><span class="p">,</span> <span class="s2">&quot;../minizinc/knapsack_global.mzn&quot;</span><span class="p">))</span>
         <span class="c1"># Find the MiniZinc solver configuration for Gecode</span>
@@ -253,7 +272,10 @@
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;max_capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="o">.</span><span class="n">max_capacity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span></div>
 
-<div class="viewcode-block" id="CPKnapsackMZN2.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CPKnapsackMZN2.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">l_items_taken</span> <span class="o">=</span> <span class="p">[]</span>
@@ -291,7 +313,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CPKnapsackMZN2.retrieve"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2.retrieve">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items_taken</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="CPKnapsackMZN2.retrieve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPKnapsackMZN2.retrieve">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items_taken</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">KnapsackSolution</span><span class="p">]:</span>
         <span class="n">taken</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="o">.</span><span class="n">nb_items</span>
         <span class="n">weight</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="n">value</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -307,10 +332,14 @@
                 <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span>
                 <span class="n">list_taken</span><span class="o">=</span><span class="n">taken</span><span class="p">,</span>
             <span class="p">)</span>
-        <span class="p">]</span></div></div>
+        <span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CPMultidimensionalSolver"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver">[docs]</a><span class="k">class</span> <span class="nc">CPMultidimensionalSolver</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPMultidimensionalSolver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">CPMultidimensionalSolver</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">MultidimensionalKnapsack</span><span class="p">,</span>
@@ -333,7 +362,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">custom_output_type</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="CPMultidimensionalSolver.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="CPMultidimensionalSolver.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_path</span><span class="p">,</span> <span class="s2">&quot;../minizinc/multidimension_knapsack.mzn&quot;</span><span class="p">)</span>
         <span class="p">)</span>
@@ -359,7 +390,10 @@
         <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;max_capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="o">.</span><span class="n">max_capacities</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span></div>
 
-<div class="viewcode-block" id="CPMultidimensionalSolver.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CPMultidimensionalSolver.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalSolver.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
@@ -391,10 +425,14 @@
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="n">list_solutions_fit</span><span class="p">,</span>
             <span class="n">best_solution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="CPMultidimensionalMultiScenarioSolver"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver">[docs]</a><span class="k">class</span> <span class="nc">CPMultidimensionalMultiScenarioSolver</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPMultidimensionalMultiScenarioSolver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">CPMultidimensionalMultiScenarioSolver</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">MultiScenarioMultidimensionalKnapsack</span><span class="p">,</span>
@@ -417,7 +455,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">custom_output_type</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="CPMultidimensionalMultiScenarioSolver.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="CPMultidimensionalMultiScenarioSolver.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_path</span><span class="p">,</span> <span class="s2">&quot;../minizinc/multidim_multiscenario_knapsack.mzn&quot;</span><span class="p">)</span>
         <span class="p">)</span>
@@ -456,7 +496,10 @@
         <span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span></div>
 
-<div class="viewcode-block" id="CPMultidimensionalMultiScenarioSolver.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CPMultidimensionalMultiScenarioSolver.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.CPMultidimensionalMultiScenarioSolver.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
@@ -488,14 +531,20 @@
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="n">list_solutions_fit</span><span class="p">,</span>
             <span class="n">best_solution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="KnapConstraintHandler"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler">[docs]</a><span class="k">class</span> <span class="nc">KnapConstraintHandler</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KnapConstraintHandler">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler">[docs]</a>
+<span class="k">class</span> <span class="nc">KnapConstraintHandler</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fraction_fix</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_fix</span> <span class="o">=</span> <span class="n">fraction_fix</span>
 
-<div class="viewcode-block" id="KnapConstraintHandler.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="KnapConstraintHandler.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -532,7 +581,10 @@
                 <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">strings</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">strings</span></div>
 
-<div class="viewcode-block" id="KnapConstraintHandler.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="KnapConstraintHandler.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.cp_solvers.KnapConstraintHandler.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -542,7 +594,9 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;cp_solver must a CPMultidimensionalMultiScenarioSolver for this constraint.&quot;</span>
             <span class="p">)</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
+
 </pre></div>
 
            </div>

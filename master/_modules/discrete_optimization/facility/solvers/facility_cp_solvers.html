@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -129,9 +129,12 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="FacilityCPModel"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCPModel">[docs]</a><span class="k">class</span> <span class="nc">FacilityCPModel</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="FacilityCPModel">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCPModel">[docs]</a>
+<span class="k">class</span> <span class="nc">FacilityCPModel</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">DEFAULT_INT</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">DEFAULT_INT_LNS</span> <span class="o">=</span> <span class="mi">1</span></div>
+
 
 
 <span class="n">file_dict</span> <span class="o">=</span> <span class="p">{</span>
@@ -140,7 +143,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="FacilitySolCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilitySolCP">[docs]</a><span class="k">class</span> <span class="nc">FacilitySolCP</span><span class="p">:</span>
+<div class="viewcode-block" id="FacilitySolCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilitySolCP">[docs]</a>
+<span class="k">class</span> <span class="nc">FacilitySolCP</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -150,11 +155,17 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;One solution </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output </span><span class="si">{</span><span class="n">_output_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FacilitySolCP.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilitySolCP.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="FacilitySolCP.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilitySolCP.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="FacilityCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP">[docs]</a><span class="k">class</span> <span class="nc">FacilityCP</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverFacility</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FacilityCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP">[docs]</a>
+<span class="k">class</span> <span class="nc">FacilityCP</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">,</span> <span class="n">SolverFacility</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;CP solver linked with minizinc implementation of coloring problem.</span>
 
 <span class="sd">    Attributes:</span>
@@ -192,7 +203,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">custom_output_type</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="FacilityCP.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="FacilityCP.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise the minizinc instance to solve for a given instance.</span>
 
 <span class="sd">        Keyword Args:</span>
@@ -247,7 +260,10 @@
             <span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span></div>
 
-<div class="viewcode-block" id="FacilityCP.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="FacilityCP.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
@@ -281,7 +297,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="FacilityCP.get_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP.get_solution">[docs]</a>    <span class="nd">@deprecated</span><span class="p">(</span>
+
+<div class="viewcode-block" id="FacilityCP.get_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_cp_solvers.FacilityCP.get_solution">[docs]</a>
+    <span class="nd">@deprecated</span><span class="p">(</span>
         <span class="n">deprecated_in</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="s2">&quot;Use rather initial solution provider utilities&quot;</span>
     <span class="p">)</span>
     <span class="k">def</span> <span class="nf">get_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FacilitySolution</span><span class="p">:</span>
@@ -304,7 +323,9 @@
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Get dummy solution&quot;</span><span class="p">)</span>
             <span class="n">solution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">()</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Greedy Done&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">solution</span></div></div>
+        <span class="k">return</span> <span class="n">solution</span></div>
+</div>
+
 </pre></div>
 
            </div>

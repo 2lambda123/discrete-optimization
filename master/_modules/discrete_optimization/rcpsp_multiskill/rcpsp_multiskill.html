@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -121,16 +121,24 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="tree"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.tree">[docs]</a><span class="k">def</span> <span class="nf">tree</span><span class="p">():</span>
+<div class="viewcode-block" id="tree">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.tree">[docs]</a>
+<span class="k">def</span> <span class="nf">tree</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ScheduleGenerationScheme"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.ScheduleGenerationScheme">[docs]</a><span class="k">class</span> <span class="nc">ScheduleGenerationScheme</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ScheduleGenerationScheme">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.ScheduleGenerationScheme">[docs]</a>
+<span class="k">class</span> <span class="nc">ScheduleGenerationScheme</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">SERIAL_SGS</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">PARALLEL_SGS</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="TaskDetails"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.TaskDetails">[docs]</a><span class="k">class</span> <span class="nc">TaskDetails</span><span class="p">:</span>
+
+<div class="viewcode-block" id="TaskDetails">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.TaskDetails">[docs]</a>
+<span class="k">class</span> <span class="nc">TaskDetails</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">resource_units_used</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
@@ -147,7 +155,10 @@
         <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="TaskDetailsPreemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.TaskDetailsPreemptive">[docs]</a><span class="k">class</span> <span class="nc">TaskDetailsPreemptive</span><span class="p">:</span>
+
+<div class="viewcode-block" id="TaskDetailsPreemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.TaskDetailsPreemptive">[docs]</a>
+<span class="k">class</span> <span class="nc">TaskDetailsPreemptive</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">starts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
@@ -169,7 +180,10 @@
         <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="MS_RCPSPSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPSolution</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPSolution</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -184,16 +198,27 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">schedule</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span> <span class="o">=</span> <span class="n">employee_usage</span>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_number_of_part"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_number_of_part">[docs]</a>    <span class="k">def</span> <span class="nf">get_number_of_part</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+<div class="viewcode-block" id="MS_RCPSPSolution.get_number_of_part">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_number_of_part">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_number_of_part</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_start_times_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_start_times_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_start_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.get_start_times_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_start_times_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_start_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">})[</span><span class="s2">&quot;start_time&quot;</span><span class="p">]]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_end_times_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_end_times_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_end_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.get_end_times_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_end_times_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_end_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">})[</span><span class="s2">&quot;end_time&quot;</span><span class="p">]]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.employee_used"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.employee_used">[docs]</a>    <span class="k">def</span> <span class="nf">employee_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.employee_used">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.employee_used">[docs]</a>
+    <span class="k">def</span> <span class="nf">employee_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">task</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_number_of_part</span><span class="p">(</span><span class="n">task</span><span class="p">))]</span>
         <span class="k">else</span><span class="p">:</span>
@@ -205,7 +230,10 @@
                 <span class="p">]</span>
             <span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MS_RCPSPSolution</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">modes</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modes</span><span class="p">),</span>
@@ -213,23 +241,42 @@
             <span class="n">employee_usage</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.change_problem"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.change_problem">[docs]</a>    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.change_problem">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.change_problem">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">new_problem</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_start_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_start_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.get_start_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_start_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">})[</span><span class="s2">&quot;start_time&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_end_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_end_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.get_end_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_end_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">})[</span><span class="s2">&quot;end_time&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_active_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_active_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.get_active_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_active_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_start_time</span><span class="p">(</span><span class="n">task</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">task</span><span class="p">)))</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution.get_max_end_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_max_end_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_max_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">])</span></div></div>
+
+<div class="viewcode-block" id="MS_RCPSPSolution.get_max_end_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution.get_max_end_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_max_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">])</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPSolution_Preemptive</span><span class="p">(</span><span class="n">MS_RCPSPSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPSolution_Preemptive</span><span class="p">(</span><span class="n">MS_RCPSPSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -240,7 +287,9 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">modes</span><span class="p">,</span> <span class="n">schedule</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span> <span class="o">=</span> <span class="n">employee_usage</span>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">modes</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modes</span><span class="p">),</span>
@@ -248,34 +297,61 @@
             <span class="n">employee_usage</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_start_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_start_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_start_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_start_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;starts&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]})[</span><span class="s2">&quot;starts&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_start_times_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_start_times_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_start_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_start_times_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_start_times_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_start_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;starts&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]})[</span><span class="s2">&quot;starts&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_end_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_end_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_end_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_end_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;ends&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]})[</span><span class="s2">&quot;ends&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_end_times_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_end_times_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_end_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_end_times_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_end_times_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_end_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;ends&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]})[</span><span class="s2">&quot;ends&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_active_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_active_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_active_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_active_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">[</span><span class="n">task</span><span class="p">][</span><span class="s2">&quot;starts&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">[</span><span class="n">task</span><span class="p">][</span><span class="s2">&quot;ends&quot;</span><span class="p">]):</span>
             <span class="n">l</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">l</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_nb_task_preemption"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_nb_task_preemption">[docs]</a>    <span class="k">def</span> <span class="nf">get_nb_task_preemption</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_nb_task_preemption">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_nb_task_preemption">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_nb_task_preemption</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">([</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="s2">&quot;starts&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.total_number_of_cut"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.total_number_of_cut">[docs]</a>    <span class="k">def</span> <span class="nf">total_number_of_cut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.total_number_of_cut">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.total_number_of_cut">[docs]</a>
+    <span class="k">def</span> <span class="nf">total_number_of_cut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">get_number_of_part</span><span class="p">(</span><span class="n">task</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_number_of_part"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_number_of_part">[docs]</a>    <span class="k">def</span> <span class="nf">get_number_of_part</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_number_of_part">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_number_of_part">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_number_of_part</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;starts&quot;</span><span class="p">:</span> <span class="p">[]})[</span><span class="s2">&quot;starts&quot;</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_min_duration_subtask"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_min_duration_subtask">[docs]</a>    <span class="k">def</span> <span class="nf">get_min_duration_subtask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_min_duration_subtask">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_min_duration_subtask">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_min_duration_subtask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">min</span><span class="p">(</span>
             <span class="p">[</span>
                 <span class="n">e</span> <span class="o">-</span> <span class="n">s</span>
@@ -286,13 +362,22 @@
             <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_max_preempted"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_max_preempted">[docs]</a>    <span class="k">def</span> <span class="nf">get_max_preempted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_max_preempted">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_max_preempted">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_max_preempted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="s2">&quot;starts&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_task_preempted"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_task_preempted">[docs]</a>    <span class="k">def</span> <span class="nf">get_task_preempted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.get_task_preempted">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.get_task_preempted">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_task_preempted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="s2">&quot;starts&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.employee_used"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.employee_used">[docs]</a>    <span class="k">def</span> <span class="nf">employee_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive.employee_used">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive.employee_used">[docs]</a>
+    <span class="k">def</span> <span class="nf">employee_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">task</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_number_of_part</span><span class="p">(</span><span class="n">task</span><span class="p">))]</span>
         <span class="k">else</span><span class="p">:</span>
@@ -303,10 +388,14 @@
                     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">[</span><span class="n">task</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">e</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span>
                 <span class="p">]</span>
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_number_of_part</span><span class="p">(</span><span class="n">task</span><span class="p">))</span>
-            <span class="p">]</span></div></div>
+            <span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="schedule_solution_to_variant"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.schedule_solution_to_variant">[docs]</a><span class="k">def</span> <span class="nf">schedule_solution_to_variant</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="schedule_solution_to_variant">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.schedule_solution_to_variant">[docs]</a>
+<span class="k">def</span> <span class="nf">schedule_solution_to_variant</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
     <span class="n">s</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span> <span class="o">=</span> <span class="n">solution</span>
     <span class="n">priority_list_task</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">schedule</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">schedule</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s2">&quot;start_time&quot;</span><span class="p">])</span>
     <span class="n">priority_list_task</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">source_task</span><span class="p">)</span>
@@ -329,7 +418,10 @@
     <span class="k">return</span> <span class="n">solution</span></div>
 
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Variant"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPSolution_Variant</span><span class="p">(</span><span class="n">MS_RCPSPSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Variant">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPSolution_Variant</span><span class="p">(</span><span class="n">MS_RCPSPSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -403,7 +495,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">do_recompute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Variant.do_recompute"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.do_recompute">[docs]</a>    <span class="k">def</span> <span class="nf">do_recompute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="MS_RCPSPSolution_Variant.do_recompute">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.do_recompute">[docs]</a>
+    <span class="k">def</span> <span class="nf">do_recompute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fast</span><span class="p">:</span>
             <span class="p">(</span>
                 <span class="n">rcpsp_schedule</span><span class="p">,</span>
@@ -444,7 +538,10 @@
                 <span class="n">unfeasible_non_renewable_resources</span><span class="o">=</span><span class="n">unfeasible_non_renewable_resources</span><span class="p">,</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Variant.run_sgs_partial"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.run_sgs_partial">[docs]</a>    <span class="k">def</span> <span class="nf">run_sgs_partial</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Variant.run_sgs_partial">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.run_sgs_partial">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_sgs_partial</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">current_t</span><span class="p">,</span>
         <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetails</span><span class="p">],</span>
@@ -511,7 +608,10 @@
                 <span class="n">unfeasible_non_renewable_resources</span><span class="o">=</span><span class="n">unfeasible_non_renewable_resources</span><span class="p">,</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Variant.update_infos_from_numba_output"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.update_infos_from_numba_output">[docs]</a>    <span class="k">def</span> <span class="nf">update_infos_from_numba_output</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Variant.update_infos_from_numba_output">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.update_infos_from_numba_output">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_infos_from_numba_output</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">skills_usage</span><span class="p">,</span> <span class="n">unfeasible_non_renewable_resources</span>
     <span class="p">):</span>
         <span class="k">if</span> <span class="n">unfeasible_non_renewable_resources</span><span class="p">:</span>
@@ -549,7 +649,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">modes</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">source_task</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Variant.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Variant.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Variant.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">priority_list_task</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">priority_list_task</span><span class="p">),</span>
@@ -559,10 +662,14 @@
             <span class="n">schedule</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">),</span>
             <span class="n">employee_usage</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">),</span>
             <span class="n">fast</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">(</span><span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">(</span><span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -608,7 +715,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">do_recompute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.do_recompute"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.do_recompute">[docs]</a>    <span class="k">def</span> <span class="nf">do_recompute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.do_recompute">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.do_recompute">[docs]</a>
+    <span class="k">def</span> <span class="nf">do_recompute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fast</span><span class="p">:</span>
             <span class="p">(</span>
                 <span class="n">rcpsp_schedule</span><span class="p">,</span>
@@ -650,7 +759,10 @@
                 <span class="n">starts_dict</span><span class="p">,</span> <span class="n">ends_dict</span><span class="p">,</span> <span class="n">skills_usage</span><span class="p">,</span> <span class="n">unfeasible_non_renewable_resources</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.update_from_numba_output"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.update_from_numba_output">[docs]</a>    <span class="k">def</span> <span class="nf">update_from_numba_output</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.update_from_numba_output">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.update_from_numba_output">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_from_numba_output</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">starts_dict</span><span class="p">,</span> <span class="n">ends_dict</span><span class="p">,</span> <span class="n">skills_usage</span><span class="p">,</span> <span class="n">unfeasible_non_renewable_resources</span>
     <span class="p">):</span>
         <span class="k">if</span> <span class="n">unfeasible_non_renewable_resources</span><span class="p">:</span>
@@ -691,7 +803,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">modes</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">source_task</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.run_sgs_partial"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.run_sgs_partial">[docs]</a>    <span class="k">def</span> <span class="nf">run_sgs_partial</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.run_sgs_partial">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.run_sgs_partial">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_sgs_partial</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">current_t</span><span class="p">,</span>
         <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetailsPreemptive</span><span class="p">],</span>
@@ -758,7 +873,10 @@
                 <span class="n">starts_dict</span><span class="p">,</span> <span class="n">ends_dict</span><span class="p">,</span> <span class="n">skills_usage</span><span class="p">,</span> <span class="n">unfeasible_non_renewable_resources</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPSolution_Preemptive_Variant.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPSolution_Preemptive_Variant.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">priority_list_task</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">priority_list_task</span><span class="p">),</span>
@@ -768,10 +886,14 @@
             <span class="n">schedule</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">),</span>
             <span class="n">employee_usage</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">employee_usage</span><span class="p">),</span>
             <span class="n">fast</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="schedule_solution_preemptive_to_variant"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.schedule_solution_preemptive_to_variant">[docs]</a><span class="k">def</span> <span class="nf">schedule_solution_preemptive_to_variant</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="schedule_solution_preemptive_to_variant">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.schedule_solution_preemptive_to_variant">[docs]</a>
+<span class="k">def</span> <span class="nf">schedule_solution_preemptive_to_variant</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
     <span class="n">s</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span> <span class="o">=</span> <span class="n">solution</span>
     <span class="n">priority_list_task</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">schedule</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">get_start_time</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
     <span class="n">priority_list_task</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">source_task</span><span class="p">)</span>
@@ -794,7 +916,10 @@
     <span class="k">return</span> <span class="n">solution</span></div>
 
 
-<div class="viewcode-block" id="sgs_multi_skill"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill">[docs]</a><span class="k">def</span> <span class="nf">sgs_multi_skill</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">):</span>
+
+<div class="viewcode-block" id="sgs_multi_skill">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill">[docs]</a>
+<span class="k">def</span> <span class="nf">sgs_multi_skill</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">):</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">problem</span>
     <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">unfeasible_non_renewable_resources</span> <span class="o">=</span> <span class="kc">False</span>
@@ -1019,7 +1144,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="p">[],</span> <span class="n">employee_usage</span><span class="p">,</span> <span class="n">modes_dict</span></div>
 
 
-<div class="viewcode-block" id="sgs_multi_skill_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill_preemptive">[docs]</a><span class="k">def</span> <span class="nf">sgs_multi_skill_preemptive</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">):</span>
+
+<div class="viewcode-block" id="sgs_multi_skill_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">sgs_multi_skill_preemptive</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">):</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">problem</span>
     <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">unfeasible_non_renewable_resources</span> <span class="o">=</span> <span class="kc">False</span>
@@ -1279,7 +1407,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="p">[],</span> <span class="n">employee_usage</span><span class="p">,</span> <span class="n">modes_dict</span></div>
 
 
-<div class="viewcode-block" id="sgs_multi_skill_preemptive_partial_schedule"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill_preemptive_partial_schedule">[docs]</a><span class="k">def</span> <span class="nf">sgs_multi_skill_preemptive_partial_schedule</span><span class="p">(</span>
+
+<div class="viewcode-block" id="sgs_multi_skill_preemptive_partial_schedule">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill_preemptive_partial_schedule">[docs]</a>
+<span class="k">def</span> <span class="nf">sgs_multi_skill_preemptive_partial_schedule</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive_Variant</span><span class="p">,</span>
     <span class="n">current_t</span><span class="p">,</span>
     <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetailsPreemptive</span><span class="p">],</span>
@@ -1616,7 +1747,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="p">[],</span> <span class="n">employee_usage</span><span class="p">,</span> <span class="n">modes_dict</span></div>
 
 
-<div class="viewcode-block" id="sgs_multi_skill_partial_schedule"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill_partial_schedule">[docs]</a><span class="k">def</span> <span class="nf">sgs_multi_skill_partial_schedule</span><span class="p">(</span>
+
+<div class="viewcode-block" id="sgs_multi_skill_partial_schedule">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.sgs_multi_skill_partial_schedule">[docs]</a>
+<span class="k">def</span> <span class="nf">sgs_multi_skill_partial_schedule</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">,</span>
     <span class="n">current_t</span><span class="p">,</span>
     <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetails</span><span class="p">],</span>
@@ -1908,7 +2042,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="p">[],</span> <span class="n">employee_usage</span><span class="p">,</span> <span class="n">modes_dict</span></div>
 
 
-<div class="viewcode-block" id="SkillDetail"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.SkillDetail">[docs]</a><span class="k">class</span> <span class="nc">SkillDetail</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SkillDetail">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.SkillDetail">[docs]</a>
+<span class="k">class</span> <span class="nc">SkillDetail</span><span class="p">:</span>
     <span class="n">skill_value</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">efficiency_ratio</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">experience</span><span class="p">:</span> <span class="nb">float</span>
@@ -1918,12 +2055,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">efficiency_ratio</span> <span class="o">=</span> <span class="n">efficiency_ratio</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">experience</span> <span class="o">=</span> <span class="n">experience</span>
 
-<div class="viewcode-block" id="SkillDetail.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.SkillDetail.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SkillDetail.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.SkillDetail.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">SkillDetail</span><span class="p">(</span>
             <span class="n">skill_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">skill_value</span><span class="p">,</span>
             <span class="n">efficiency_ratio</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">efficiency_ratio</span><span class="p">,</span>
             <span class="n">experience</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">experience</span><span class="p">,</span>
         <span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -1936,7 +2076,10 @@
         <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Employee"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee">[docs]</a><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Employee">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee">[docs]</a>
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="n">dict_skill</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SkillDetail</span><span class="p">]</span>
     <span class="n">calendar_employee</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 
@@ -1950,16 +2093,24 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span> <span class="o">=</span> <span class="n">dict_skill</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">calendar_employee</span> <span class="o">=</span> <span class="n">calendar_employee</span>
 
-<div class="viewcode-block" id="Employee.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Employee.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Employee</span><span class="p">(</span>
             <span class="n">dict_skill</span><span class="o">=</span><span class="p">{</span><span class="n">s</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span><span class="p">},</span>
             <span class="n">calendar_employee</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calendar_employee</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Employee.get_non_zero_skills"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.get_non_zero_skills">[docs]</a>    <span class="k">def</span> <span class="nf">get_non_zero_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="Employee.get_non_zero_skills">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.get_non_zero_skills">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_non_zero_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">skill_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="Employee.to_json"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.to_json">[docs]</a>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">with_calendar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="Employee.to_json">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.to_json">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">with_calendar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">with_calendar</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">{</span>
                 <span class="s2">&quot;dict_skill&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1983,11 +2134,18 @@
                 <span class="s2">&quot;calendar_employee&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">],</span>
             <span class="p">}</span></div>
 
-<div class="viewcode-block" id="Employee.get_skill_level"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.get_skill_level">[docs]</a>    <span class="k">def</span> <span class="nf">get_skill_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">SkillDetail</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">skill_value</span></div></div>
+
+<div class="viewcode-block" id="Employee.get_skill_level">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.Employee.get_skill_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_skill_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">SkillDetail</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">skill_value</span></div>
+</div>
 
 
-<div class="viewcode-block" id="intersect"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.intersect">[docs]</a><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
+
+<div class="viewcode-block" id="intersect">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.intersect">[docs]</a>
+<span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i2</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1996,7 +2154,10 @@
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="MS_RCPSPModel"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPModel</span><span class="p">(</span><span class="n">Problem</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPModel</span><span class="p">(</span><span class="n">Problem</span><span class="p">):</span>
     <span class="n">sgs</span><span class="p">:</span> <span class="n">ScheduleGenerationScheme</span>
     <span class="n">skills_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
     <span class="n">resources_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
@@ -2220,45 +2381,80 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">resource_blocking_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">resource_blocking_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_resource_available"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_resource_available">[docs]</a>    <span class="k">def</span> <span class="nf">get_resource_available</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+<div class="viewcode-block" id="MS_RCPSPModel.get_resource_available">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_resource_available">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_resource_available</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources_availability</span><span class="p">[</span><span class="n">res</span><span class="p">][</span><span class="n">time</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_tasks_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_tasks_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_tasks_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_tasks_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_tasks_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tasks_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tasks_list</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_resource_names"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_resource_names">[docs]</a>    <span class="k">def</span> <span class="nf">get_resource_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_resource_names">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_resource_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_resource_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources_list</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.is_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_preemptive">[docs]</a>    <span class="k">def</span> <span class="nf">is_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.is_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_preemptive">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">preemptive</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.is_multiskill"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_multiskill">[docs]</a>    <span class="k">def</span> <span class="nf">is_multiskill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.is_multiskill">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_multiskill">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_multiskill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_resource_availability_array"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_resource_availability_array">[docs]</a>    <span class="k">def</span> <span class="nf">get_resource_availability_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_resource_availability_array">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_resource_availability_array">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_resource_availability_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_varying_resource</span><span class="p">():</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources_availability</span><span class="p">[</span><span class="n">res</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources_availability</span><span class="p">[</span><span class="n">res</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.update_functions"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.update_functions">[docs]</a>    <span class="k">def</span> <span class="nf">update_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.update_functions">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.update_functions">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">func_sgs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_sgs_partial</span> <span class="o">=</span> <span class="n">create_np_data_and_jit_functions</span><span class="p">(</span>
             <span class="n">rcpsp_problem</span><span class="o">=</span><span class="bp">self</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.update_function"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.update_function">[docs]</a>    <span class="k">def</span> <span class="nf">update_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.update_function">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.update_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_functions</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.is_rcpsp_multimode"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_rcpsp_multimode">[docs]</a>    <span class="k">def</span> <span class="nf">is_rcpsp_multimode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.is_rcpsp_multimode">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_rcpsp_multimode">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_rcpsp_multimode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_multimode</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.is_varying_resource"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_varying_resource">[docs]</a>    <span class="k">def</span> <span class="nf">is_varying_resource</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.is_varying_resource">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.is_varying_resource">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_varying_resource</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_calendar</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.includes_special_constraint"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.includes_special_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">includes_special_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.includes_special_constraint">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.includes_special_constraint">[docs]</a>
+    <span class="k">def</span> <span class="nf">includes_special_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_special_constraints</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.build_multimode_rcpsp_calendar_representative"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.build_multimode_rcpsp_calendar_representative">[docs]</a>    <span class="k">def</span> <span class="nf">build_multimode_rcpsp_calendar_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.build_multimode_rcpsp_calendar_representative">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.build_multimode_rcpsp_calendar_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_multimode_rcpsp_calendar_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># put skills as ressource.</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resources_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">skills_availability</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">horizon</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">skills_set</span><span class="p">}</span>
@@ -2302,10 +2498,16 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">rcpsp_model</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.return_index_task"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.return_index_task">[docs]</a>    <span class="k">def</span> <span class="nf">return_index_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.return_index_task">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.return_index_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">return_index_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_task</span><span class="p">[</span><span class="n">task</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.compute_graph"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.compute_graph">[docs]</a>    <span class="k">def</span> <span class="nf">compute_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Graph</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.compute_graph">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.compute_graph">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Graph</span><span class="p">:</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">(</span>
                 <span class="n">n</span><span class="p">,</span>
@@ -2322,7 +2524,10 @@
                 <span class="n">edges</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">n</span><span class="p">,</span> <span class="n">succ</span><span class="p">,</span> <span class="p">{})]</span>
         <span class="k">return</span> <span class="n">Graph</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.build_mode_dict"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.build_mode_dict">[docs]</a>    <span class="k">def</span> <span class="nf">build_mode_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_modes_from_solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.build_mode_dict">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.build_mode_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_mode_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_modes_from_solution</span><span class="p">):</span>
         <span class="n">modes_dict</span> <span class="o">=</span> <span class="p">{</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">tasks_list_non_dummy</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="n">rcpsp_modes_from_solution</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs_non_dummy</span><span class="p">)</span>
@@ -2331,18 +2536,30 @@
         <span class="n">modes_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">sink_task</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">modes_dict</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_modes_dict"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_modes_dict">[docs]</a>    <span class="k">def</span> <span class="nf">get_modes_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_modes_dict">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_modes_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_modes_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">rcpsp_solution</span><span class="o">.</span><span class="n">modes</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.evaluate_function"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_function">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.evaluate_function">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
         <span class="n">makespan</span> <span class="o">=</span> <span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sink_task</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">makespan</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.evaluate_from_encoding"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_from_encoding">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.evaluate_from_encoding">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_from_encoding">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">,</span> <span class="n">encoding_name</span><span class="p">):</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.evaluate"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.evaluate">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="n">obj_makespan</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_function</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="p">)</span>
         <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;makespan&quot;</span><span class="p">:</span> <span class="n">obj_makespan</span><span class="p">}</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">includes_special_constraint</span><span class="p">():</span>
@@ -2352,18 +2569,30 @@
             <span class="n">d</span><span class="p">[</span><span class="s2">&quot;constraint_penalty&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">penalty</span>
         <span class="k">return</span> <span class="n">d</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.evaluate_mobj"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_mobj">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_mobj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.evaluate_mobj">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_mobj">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_mobj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_mobj_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.evaluate_mobj_from_dict"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_mobj_from_dict">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_mobj_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_values</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TupleFitness</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.evaluate_mobj_from_dict">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.evaluate_mobj_from_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_mobj_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_values</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TupleFitness</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">TupleFitness</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">dict_values</span><span class="p">[</span><span class="s2">&quot;makespan&quot;</span><span class="p">]]),</span> <span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.satisfy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.satisfy">[docs]</a>    <span class="k">def</span> <span class="nf">satisfy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.satisfy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.satisfy">[docs]</a>
+    <span class="k">def</span> <span class="nf">satisfy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">satisfy_preemptive</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">satisfy_classic</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.satisfy_classic"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.satisfy_classic">[docs]</a>    <span class="k">def</span> <span class="nf">satisfy_classic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.satisfy_classic">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.satisfy_classic">[docs]</a>
+    <span class="k">def</span> <span class="nf">satisfy_classic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="c1"># check the skills :</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">schedule</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_tasks</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
@@ -2523,7 +2752,10 @@
                     <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.satisfy_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.satisfy_preemptive">[docs]</a>    <span class="k">def</span> <span class="nf">satisfy_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.satisfy_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.satisfy_preemptive">[docs]</a>
+    <span class="k">def</span> <span class="nf">satisfy_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="c1"># check the skills :</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">schedule</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_tasks</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
@@ -2668,6 +2900,7 @@
                     <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
+
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;Multiskill RCPSP model</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="n">val</span> <span class="o">+=</span> <span class="s2">&quot;Ressource : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resources_list</span><span class="p">)</span>
@@ -2677,10 +2910,15 @@
         <span class="n">val</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Special constraints : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">do_special_constraints</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">val</span>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_solution_type"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_solution_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
+<div class="viewcode-block" id="MS_RCPSPModel.get_solution_type">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_solution_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
         <span class="k">return</span> <span class="n">MS_RCPSPSolution</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_attribute_register"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_attribute_register">[docs]</a>    <span class="k">def</span> <span class="nf">get_attribute_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EncodingRegister</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_attribute_register">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_attribute_register">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_attribute_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EncodingRegister</span><span class="p">:</span>
         <span class="n">dict_register</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;modes&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;modes&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]},</span>
             <span class="s2">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2694,7 +2932,10 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">EncodingRegister</span><span class="p">(</span><span class="n">dict_register</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_objective_register"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_objective_register">[docs]</a>    <span class="k">def</span> <span class="nf">get_objective_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectiveRegister</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_objective_register">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_objective_register">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_objective_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectiveRegister</span><span class="p">:</span>
         <span class="n">dict_objective</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;makespan&quot;</span><span class="p">:</span> <span class="n">ObjectiveDoc</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">TypeObjective</span><span class="o">.</span><span class="n">OBJECTIVE</span><span class="p">,</span> <span class="n">default_weight</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">)</span>
         <span class="p">}</span>
@@ -2710,7 +2951,10 @@
             <span class="n">dict_objective_to_doc</span><span class="o">=</span><span class="n">dict_objective</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MS_RCPSPModel</span><span class="p">(</span>
             <span class="n">skills_set</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">skills_set</span><span class="p">,</span>
             <span class="n">resources_set</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">resources_set</span><span class="p">,</span>
@@ -2731,7 +2975,10 @@
             <span class="n">strictly_disjunctive_subtasks</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">strictly_disjunctive_subtasks</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.to_variant_model"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.to_variant_model">[docs]</a>    <span class="k">def</span> <span class="nf">to_variant_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.to_variant_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.to_variant_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_variant_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MS_RCPSPModel_Variant</span><span class="p">(</span>
             <span class="n">skills_set</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">skills_set</span><span class="p">,</span>
             <span class="n">resources_set</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">resources_set</span><span class="p">,</span>
@@ -2758,14 +3005,24 @@
             <span class="n">strictly_disjunctive_subtasks</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">strictly_disjunctive_subtasks</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_dummy_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_dummy_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_dummy_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_dummy_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel.get_max_resource_capacity"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_max_resource_capacity">[docs]</a>    <span class="k">def</span> <span class="nf">get_max_resource_capacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_resource_capacity</span><span class="p">[</span><span class="n">res</span><span class="p">]</span></div></div>
+
+<div class="viewcode-block" id="MS_RCPSPModel.get_max_resource_capacity">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel.get_max_resource_capacity">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_max_resource_capacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_resource_capacity</span><span class="p">[</span><span class="n">res</span><span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPModel_Variant</span><span class="p">(</span><span class="n">MS_RCPSPModel</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPModel_Variant</span><span class="p">(</span><span class="n">MS_RCPSPModel</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">skills_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
@@ -2822,7 +3079,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fixed_permutation</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fixed_priority_worker_per_task</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.get_attribute_register"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.get_attribute_register">[docs]</a>    <span class="k">def</span> <span class="nf">get_attribute_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EncodingRegister</span><span class="p">:</span>
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.get_attribute_register">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.get_attribute_register">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_attribute_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EncodingRegister</span><span class="p">:</span>
         <span class="n">dict_register</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">mode_arity</span> <span class="o">=</span> <span class="p">[</span>
             <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">task</span><span class="p">])</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tasks_list_non_dummy</span>
@@ -2884,7 +3143,10 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">EncodingRegister</span><span class="p">(</span><span class="n">dict_register</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.get_dummy_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.get_dummy_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preemptive</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.get_dummy_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.get_dummy_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preemptive</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="n">preemptive</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preemptive</span> <span class="k">if</span> <span class="n">preemptive</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">preemptive</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">preemptive</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">(</span>
@@ -2907,7 +3169,10 @@
                 <span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.evaluate_function"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.evaluate_function">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.evaluate_function">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.evaluate_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">_schedule_to_recompute</span><span class="p">:</span>
                 <span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">do_recompute</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">fast</span><span class="p">)</span>
@@ -2915,7 +3180,10 @@
             <span class="k">pass</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">evaluate_function</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_attributes"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">set_fixed_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoding_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_attributes">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_attributes">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fixed_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoding_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sol</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">):</span>
         <span class="n">att</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute_register</span><span class="p">()</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="n">encoding_str</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">att</span> <span class="o">==</span> <span class="s2">&quot;modes_vector&quot;</span> <span class="ow">or</span> <span class="n">att</span> <span class="o">==</span> <span class="s2">&quot;modes_vector_from0&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_fixed_modes</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">modes_vector</span><span class="p">)</span>
@@ -2929,21 +3197,36 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">set_fixed_task_permutation</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">priority_list_task</span><span class="p">)</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;self.fixed_permutation: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed_permutation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_modes"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_modes">[docs]</a>    <span class="k">def</span> <span class="nf">set_fixed_modes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed_modes</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_modes">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_modes">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fixed_modes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed_modes</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fixed_modes</span> <span class="o">=</span> <span class="n">fixed_modes</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_task_permutation"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_task_permutation">[docs]</a>    <span class="k">def</span> <span class="nf">set_fixed_task_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed_permutation</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_task_permutation">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_task_permutation">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fixed_task_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed_permutation</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fixed_permutation</span> <span class="o">=</span> <span class="n">fixed_permutation</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task">[docs]</a>    <span class="k">def</span> <span class="nf">set_fixed_priority_worker_per_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed_priority_worker_per_task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fixed_priority_worker_per_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed_priority_worker_per_task</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fixed_priority_worker_per_task</span> <span class="o">=</span> <span class="n">fixed_priority_worker_per_task</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task_from_permutation"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task_from_permutation">[docs]</a>    <span class="k">def</span> <span class="nf">set_fixed_priority_worker_per_task_from_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task_from_permutation">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.set_fixed_priority_worker_per_task_from_permutation">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fixed_priority_worker_per_task_from_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fixed_priority_worker_per_task</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">convert_fixed_priority_worker_per_task_from_permutation</span><span class="p">(</span><span class="n">permutation</span><span class="p">)</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.convert_fixed_priority_worker_per_task_from_permutation"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.convert_fixed_priority_worker_per_task_from_permutation">[docs]</a>    <span class="k">def</span> <span class="nf">convert_fixed_priority_worker_per_task_from_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.convert_fixed_priority_worker_per_task_from_permutation">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.convert_fixed_priority_worker_per_task_from_permutation">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_fixed_priority_worker_per_task_from_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">):</span>
         <span class="n">priority_worker_per_task_corrected</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs_non_dummy</span><span class="p">):</span>
             <span class="n">tmp</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2953,7 +3236,10 @@
             <span class="n">priority_worker_per_task_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp_corrected</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">priority_worker_per_task_corrected</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.evaluate_from_encoding"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.evaluate_from_encoding">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">,</span> <span class="n">encoding_name</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.evaluate_from_encoding">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.evaluate_from_encoding">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">,</span> <span class="n">encoding_name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">encoding_name</span> <span class="o">==</span> <span class="s2">&quot;priority_list_task&quot;</span><span class="p">:</span>
             <span class="c1"># change the permutation in the solution with int_vector and set the modes with self.fixed_modes</span>
             <span class="n">rcpsp_sol</span> <span class="o">=</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">(</span>
@@ -2995,14 +3281,21 @@
         <span class="n">objectives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">objectives</span></div>
 
-<div class="viewcode-block" id="MS_RCPSPModel_Variant.get_solution_type"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.get_solution_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="MS_RCPSPModel_Variant.get_solution_type">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.MS_RCPSPModel_Variant.get_solution_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">preemptive</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">MS_RCPSPSolution_Variant</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">MS_RCPSPSolution_Preemptive_Variant</span></div></div>
+            <span class="k">return</span> <span class="n">MS_RCPSPSolution_Preemptive_Variant</span></div>
+</div>
 
 
-<div class="viewcode-block" id="permutation_do_to_permutation_sgs_fast"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.permutation_do_to_permutation_sgs_fast">[docs]</a><span class="k">def</span> <span class="nf">permutation_do_to_permutation_sgs_fast</span><span class="p">(</span>
+
+<div class="viewcode-block" id="permutation_do_to_permutation_sgs_fast">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.permutation_do_to_permutation_sgs_fast">[docs]</a>
+<span class="k">def</span> <span class="nf">permutation_do_to_permutation_sgs_fast</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">permutation_do</span>
 <span class="p">):</span>
     <span class="n">perm_extended</span> <span class="o">=</span> <span class="p">[</span>
@@ -3014,7 +3307,10 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">perm_extended</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="priority_worker_per_task_do_to_permutation_sgs_fast"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.priority_worker_per_task_do_to_permutation_sgs_fast">[docs]</a><span class="k">def</span> <span class="nf">priority_worker_per_task_do_to_permutation_sgs_fast</span><span class="p">(</span>
+
+<div class="viewcode-block" id="priority_worker_per_task_do_to_permutation_sgs_fast">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.priority_worker_per_task_do_to_permutation_sgs_fast">[docs]</a>
+<span class="k">def</span> <span class="nf">priority_worker_per_task_do_to_permutation_sgs_fast</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">priority_worker_per_task</span>
 <span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">nb_employees</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span>
@@ -3027,7 +3323,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="build_partial_vectors"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.build_partial_vectors">[docs]</a><span class="k">def</span> <span class="nf">build_partial_vectors</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_partial_vectors">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.build_partial_vectors">[docs]</a>
+<span class="k">def</span> <span class="nf">build_partial_vectors</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
     <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetails</span><span class="p">],</span>
     <span class="n">scheduled_tasks_start_times</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetails</span><span class="p">],</span>
@@ -3054,7 +3353,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="build_partial_vectors_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.build_partial_vectors_preemptive">[docs]</a><span class="k">def</span> <span class="nf">build_partial_vectors_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="build_partial_vectors_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.build_partial_vectors_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">build_partial_vectors_preemptive</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
     <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetailsPreemptive</span><span class="p">],</span>
     <span class="n">scheduled_tasks_start_times</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetailsPreemptive</span><span class="p">],</span>
@@ -3086,7 +3388,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="create_fake_tasks_multiskills"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.create_fake_tasks_multiskills">[docs]</a><span class="k">def</span> <span class="nf">create_fake_tasks_multiskills</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_fake_tasks_multiskills">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.create_fake_tasks_multiskills">[docs]</a>
+<span class="k">def</span> <span class="nf">create_fake_tasks_multiskills</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Variant</span><span class="p">]</span>
 <span class="p">):</span>
     <span class="n">ressources_arrays</span> <span class="o">=</span> <span class="p">{</span>
@@ -3144,7 +3449,10 @@
     <span class="k">return</span> <span class="n">fake_tasks</span><span class="p">,</span> <span class="n">fake_tasks_unit</span></div>
 
 
-<div class="viewcode-block" id="cluster_employees_to_resource_types"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.cluster_employees_to_resource_types">[docs]</a><span class="k">def</span> <span class="nf">cluster_employees_to_resource_types</span><span class="p">(</span><span class="n">ms_rcpsp_problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">):</span>
+
+<div class="viewcode-block" id="cluster_employees_to_resource_types">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.cluster_employees_to_resource_types">[docs]</a>
+<span class="k">def</span> <span class="nf">cluster_employees_to_resource_types</span><span class="p">(</span><span class="n">ms_rcpsp_problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">):</span>
     <span class="n">skills_representation_str</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="n">skills_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">ms_rcpsp_problem</span><span class="o">.</span><span class="n">employees</span><span class="p">:</span>
@@ -3168,7 +3476,10 @@
     <span class="k">return</span> <span class="n">skills_representation_str</span><span class="p">,</span> <span class="n">skills_dict</span></div>
 
 
-<div class="viewcode-block" id="create_np_data_and_jit_functions"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.create_np_data_and_jit_functions">[docs]</a><span class="k">def</span> <span class="nf">create_np_data_and_jit_functions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_np_data_and_jit_functions">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.create_np_data_and_jit_functions">[docs]</a>
+<span class="k">def</span> <span class="nf">create_np_data_and_jit_functions</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">MS_RCPSPModel_Variant</span><span class="p">]</span>
 <span class="p">):</span>
     <span class="n">consumption_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
@@ -3413,7 +3724,10 @@
     <span class="k">return</span> <span class="n">func_sgs</span><span class="p">,</span> <span class="n">func_sgs_partial</span></div>
 
 
-<div class="viewcode-block" id="employee_usage"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.employee_usage">[docs]</a><span class="k">def</span> <span class="nf">employee_usage</span><span class="p">(</span>
+
+<div class="viewcode-block" id="employee_usage">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.employee_usage">[docs]</a>
+<span class="k">def</span> <span class="nf">employee_usage</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
 <span class="p">):</span>
@@ -3434,7 +3748,10 @@
     <span class="k">return</span> <span class="n">employee_usage_matrix</span><span class="p">,</span> <span class="n">sum_usage</span><span class="p">,</span> <span class="n">employees_usage_dict</span></div>
 
 
-<div class="viewcode-block" id="evaluate_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.evaluate_constraints">[docs]</a><span class="k">def</span> <span class="nf">evaluate_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="evaluate_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.evaluate_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">evaluate_constraints</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
     <span class="n">constraints</span><span class="p">:</span> <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">):</span>
@@ -3442,7 +3759,10 @@
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_constraints_not_respected</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="compute_constraints_details"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_constraints_details">[docs]</a><span class="k">def</span> <span class="nf">compute_constraints_details</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_constraints_details">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_constraints_details">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_constraints_details</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
     <span class="n">constraints</span><span class="p">:</span> <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">):</span>
@@ -3552,7 +3872,10 @@
     <span class="k">return</span> <span class="n">list_constraints_not_respected</span></div>
 
 
-<div class="viewcode-block" id="start_together_problem_description"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.start_together_problem_description">[docs]</a><span class="k">def</span> <span class="nf">start_together_problem_description</span><span class="p">(</span>
+
+<div class="viewcode-block" id="start_together_problem_description">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.start_together_problem_description">[docs]</a>
+<span class="k">def</span> <span class="nf">start_together_problem_description</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
     <span class="n">constraints</span><span class="p">:</span> <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">):</span>
@@ -3585,7 +3908,10 @@
     <span class="k">return</span> <span class="n">list_constraints_not_respected</span></div>
 
 
-<div class="viewcode-block" id="check_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.check_solution">[docs]</a><span class="k">def</span> <span class="nf">check_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="check_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.check_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">check_solution</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPModel</span><span class="p">],</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
     <span class="n">relax_the_start_at_end</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -3651,7 +3977,10 @@
     <span class="k">return</span> <span class="kc">True</span></div>
 
 
-<div class="viewcode-block" id="compute_skills_missing_problem"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_skills_missing_problem">[docs]</a><span class="k">def</span> <span class="nf">compute_skills_missing_problem</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_skills_missing_problem">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_skills_missing_problem">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_skills_missing_problem</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
 <span class="p">):</span>
@@ -3698,7 +4027,10 @@
     <span class="k">return</span> <span class="n">problems</span></div>
 
 
-<div class="viewcode-block" id="compute_ressource_array_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_ressource_array_preemptive">[docs]</a><span class="k">def</span> <span class="nf">compute_ressource_array_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_ressource_array_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_ressource_array_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_ressource_array_preemptive</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
 <span class="p">):</span>
@@ -3724,7 +4056,10 @@
     <span class="k">return</span> <span class="n">resource_avail_in_time</span></div>
 
 
-<div class="viewcode-block" id="compute_overskill"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_overskill">[docs]</a><span class="k">def</span> <span class="nf">compute_overskill</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="compute_overskill">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.rcpsp_multiskill.compute_overskill">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_overskill</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
     <span class="n">overskill</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">problem</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">:</span>
         <span class="n">overskill</span><span class="p">[</span><span class="n">task</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -3757,6 +4092,7 @@
                             <span class="n">required_skills</span><span class="p">[</span><span class="n">skill</span><span class="p">],</span>
                         <span class="p">)</span>
     <span class="k">return</span> <span class="n">overskill</span></div>
+
 </pre></div>
 
            </div>

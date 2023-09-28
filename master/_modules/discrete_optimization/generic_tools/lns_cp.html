@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -120,8 +120,12 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ConstraintHandler"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandler">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandler</span><span class="p">:</span>
-<div class="viewcode-block" id="ConstraintHandler.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandler.adding_constraint_from_results_store">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="ConstraintHandler">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandler">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandler</span><span class="p">:</span>
+<div class="viewcode-block" id="ConstraintHandler.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandler.adding_constraint_from_results_store">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
@@ -131,17 +135,24 @@
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="ConstraintHandler.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandler.remove_constraints_from_previous_iteration">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="ConstraintHandler.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandler.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="o">...</span></div></div>
+        <span class="o">...</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LNS_CP"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CP">[docs]</a><span class="k">class</span> <span class="nc">LNS_CP</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LNS_CP">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CP">[docs]</a>
+<span class="k">class</span> <span class="nc">LNS_CP</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -169,7 +180,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LNS_CP.solve_lns"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CP.solve_lns">[docs]</a>    <span class="k">def</span> <span class="nf">solve_lns</span><span class="p">(</span>
+<div class="viewcode-block" id="LNS_CP.solve_lns">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CP.solve_lns">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_lns</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">,</span>
         <span class="n">nb_iteration_lns</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -322,11 +335,18 @@
                     <span class="k">break</span>
         <span class="k">return</span> <span class="n">store_lns</span></div>
 
-<div class="viewcode-block" id="LNS_CP.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CP.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_lns</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="LNS_CP.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CP.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_lns</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LNS_CPlex"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CPlex">[docs]</a><span class="k">class</span> <span class="nc">LNS_CPlex</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LNS_CPlex">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CPlex">[docs]</a>
+<span class="k">class</span> <span class="nc">LNS_CPlex</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -354,7 +374,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LNS_CPlex.solve_lns"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CPlex.solve_lns">[docs]</a>    <span class="k">def</span> <span class="nf">solve_lns</span><span class="p">(</span>
+<div class="viewcode-block" id="LNS_CPlex.solve_lns">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CPlex.solve_lns">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_lns</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">,</span>
         <span class="n">nb_iteration_lns</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -461,17 +483,27 @@
                 <span class="k">break</span>
         <span class="k">return</span> <span class="n">store_lns</span></div>
 
-<div class="viewcode-block" id="LNS_CPlex.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CPlex.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_lns</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="LNS_CPlex.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.LNS_CPlex.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_lns</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintStatus"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintStatus">[docs]</a><span class="k">class</span> <span class="nc">ConstraintStatus</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintStatus">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintStatus">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintStatus</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
     <span class="n">nb_usage</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">nb_improvement</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span></div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerMix"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandlerMix">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerMix</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerMix">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandlerMix">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerMix</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -506,7 +538,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">last_fitness</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">fitness_class</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_proba</span> <span class="o">=</span> <span class="n">update_proba</span>
 
-<div class="viewcode-block" id="ConstraintHandlerMix.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandlerMix.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerMix.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandlerMix.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -563,13 +597,18 @@
             <span class="n">cp_solver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">,</span> <span class="n">last_result_store</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerMix.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandlerMix.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerMix.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_cp.ConstraintHandlerMix.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
+
 </pre></div>
 
            </div>

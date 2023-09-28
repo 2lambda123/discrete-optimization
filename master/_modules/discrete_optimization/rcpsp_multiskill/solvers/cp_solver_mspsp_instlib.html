@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -128,7 +128,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="MS_RCPSPSolCP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.MS_RCPSPSolCP">[docs]</a><span class="k">class</span> <span class="nc">MS_RCPSPSolCP</span><span class="p">:</span>
+<div class="viewcode-block" id="MS_RCPSPSolCP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.MS_RCPSPSolCP">[docs]</a>
+<span class="k">class</span> <span class="nc">MS_RCPSPSolCP</span><span class="p">:</span>
     <span class="n">objective</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">__output_item</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -146,11 +148,17 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">]))</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">_output_item</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MS_RCPSPSolCP.check"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.MS_RCPSPSolCP.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span></div></div>
+<div class="viewcode-block" id="MS_RCPSPSolCP.check">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.MS_RCPSPSolCP.check">[docs]</a>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+</div>
 
 
-<div class="viewcode-block" id="create_usefull_res_data"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.create_usefull_res_data">[docs]</a><span class="k">def</span> <span class="nf">create_usefull_res_data</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">):</span>
+
+<div class="viewcode-block" id="create_usefull_res_data">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.create_usefull_res_data">[docs]</a>
+<span class="k">def</span> <span class="nf">create_usefull_res_data</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">):</span>
     <span class="c1"># USEFUL_RES  : array[ACT] of set of RESOURCE</span>
     <span class="c1"># POTENTIAL_ACT : array[RESOURCE] of set of ACT</span>
     <span class="n">employees_position</span> <span class="o">=</span> <span class="p">{</span>
@@ -185,7 +193,10 @@
     <span class="k">return</span> <span class="n">useful_res</span><span class="p">,</span> <span class="n">potential_act</span></div>
 
 
-<div class="viewcode-block" id="CP_MSPSP_MZN"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN">[docs]</a><span class="k">class</span> <span class="nc">CP_MSPSP_MZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN">[docs]</a>
+<span class="k">class</span> <span class="nc">CP_MSPSP_MZN</span><span class="p">(</span><span class="n">MinizincCPSolver</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">,</span>
@@ -211,7 +222,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">one_ressource_per_task</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;one_ressource_per_task&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resources_index</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="CP_MSPSP_MZN.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model_type&quot;</span><span class="p">,</span> <span class="s2">&quot;mspsp&quot;</span><span class="p">)</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">files_mzn</span><span class="p">[</span><span class="n">model_type</span><span class="p">])</span>
 
@@ -264,7 +277,10 @@
             <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">tasks_list</span>
         <span class="p">}</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.init_from_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.init_from_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_from_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.init_from_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.init_from_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_from_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="n">dict_data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">list_skills</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">skills_set</span><span class="p">))</span>
         <span class="n">dict_data</span><span class="p">[</span>
@@ -320,10 +336,16 @@
         <span class="n">dict_data</span><span class="p">[</span><span class="s2">&quot;POTENTIAL_ACT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">potential_act</span>
         <span class="k">return</span> <span class="n">dict_data</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_task_to_mode"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_task_to_mode">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_task_to_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_task_to_mode">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_task_to_mode">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_task_to_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[]</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_start_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_start_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_start_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_start_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_start_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -335,7 +357,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_end_time_string"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_end_time_string">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_end_time_string">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_end_time_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_end_time_string</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="n">SignEnum</span> <span class="o">=</span> <span class="n">SignEnum</span><span class="o">.</span><span class="n">EQUAL</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -349,15 +374,24 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_objective_equal_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_objective_equal_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_objective_equal_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_objective_equal_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_sink</span><span class="p">):</span>
         <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">task_sink</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;constraint start[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]==objective;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_objective_makespan"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_objective_makespan">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_objective_makespan">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_objective_makespan">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_makespan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraint_objective_equal_makespan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">sink_task</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_used_employee"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_used_employee">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_used_employee</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">employee</span><span class="p">,</span> <span class="n">indicator</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_used_employee">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_used_employee">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_used_employee</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">employee</span><span class="p">,</span> <span class="n">indicator</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="n">id_task</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">task</span><span class="p">]</span>
         <span class="n">id_employee</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_employees_in_minizinc</span><span class="p">[</span><span class="n">employee</span><span class="p">]</span>
         <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span> <span class="k">if</span> <span class="n">indicator</span> <span class="k">else</span> <span class="s2">&quot;false&quot;</span>
@@ -371,7 +405,10 @@
             <span class="o">+</span> <span class="s2">&quot;;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_objective_max_time_set_of_jobs"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_objective_max_time_set_of_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_objective_max_time_set_of_jobs">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_objective_max_time_set_of_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_objective_max_time_set_of_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_of_jobs</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">set_of_jobs</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="p">[</span>
@@ -383,7 +420,10 @@
             <span class="p">]</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_sum_of_ending_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_sum_of_ending_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_sum_of_ending_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_sum_of_ending_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_ending_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">sink_task</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
@@ -400,7 +440,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_sum_of_starting_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_sum_of_starting_time">[docs]</a>    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.constraint_sum_of_starting_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.constraint_sum_of_starting_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">constraint_sum_of_starting_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]):</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index_in_minizinc</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">sink_task</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">set_subtasks</span><span class="p">]</span>
         <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
@@ -417,7 +460,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CP_MSPSP_MZN.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CP_MSPSP_MZN.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.CP_MSPSP_MZN.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span><span class="p">):</span>
         <span class="n">intermediate_solutions</span> <span class="o">=</span> <span class="n">parameters_cp</span><span class="o">.</span><span class="n">intermediate_solution</span>
         <span class="n">best_solution</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_makespan</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
@@ -549,10 +595,14 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
             <span class="n">limit_store</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="chuffed_specific_code"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.chuffed_specific_code">[docs]</a><span class="k">def</span> <span class="nf">chuffed_specific_code</span><span class="p">():</span>
+
+<div class="viewcode-block" id="chuffed_specific_code">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp_multiskill.solvers.html#discrete_optimization.rcpsp_multiskill.solvers.cp_solver_mspsp_instlib.chuffed_specific_code">[docs]</a>
+<span class="k">def</span> <span class="nf">chuffed_specific_code</span><span class="p">():</span>
     <span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;include &quot;chuffed.mzn&quot;;</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;% Priority Searches</span><span class="se">\n</span>
 <span class="s2">          ann: priority_search;</span>
@@ -607,6 +657,7 @@
 <span class="s2">                                          input_order, indomain_max, complete)])</span>
 <span class="s2">                           | a in ACT ],</span>
 <span class="s2">                           first_fail, complete);</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span></div>
+
 </pre></div>
 
            </div>

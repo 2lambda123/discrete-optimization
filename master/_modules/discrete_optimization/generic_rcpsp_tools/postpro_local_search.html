@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -101,7 +101,9 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="PostProLocalSearch"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.postpro_local_search.PostProLocalSearch">[docs]</a><span class="k">class</span> <span class="nc">PostProLocalSearch</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
+<div class="viewcode-block" id="PostProLocalSearch">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.postpro_local_search.PostProLocalSearch">[docs]</a>
+<span class="k">class</span> <span class="nc">PostProLocalSearch</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
@@ -120,7 +122,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict_params</span> <span class="o">=</span> <span class="n">kwargs</span>
 
-<div class="viewcode-block" id="PostProLocalSearch.build_other_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.postpro_local_search.PostProLocalSearch.build_other_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="PostProLocalSearch.build_other_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.postpro_local_search.PostProLocalSearch.build_other_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">solver</span> <span class="o">=</span> <span class="n">LS_RCPSP_Solver</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">ls_solver</span><span class="o">=</span><span class="n">LS_SOLVER</span><span class="o">.</span><span class="n">SA</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">get_best_solution</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">):</span>
@@ -135,7 +139,9 @@
         <span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span> <span class="o">+=</span> <span class="p">[</span>
             <span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_sol</span><span class="p">(</span><span class="n">solution</span><span class="p">))</span>
         <span class="p">]</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
+
 </pre></div>
 
            </div>

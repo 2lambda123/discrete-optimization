@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -92,12 +92,17 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="ModeMutation"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.ModeMutation">[docs]</a><span class="k">class</span> <span class="nc">ModeMutation</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="ModeMutation">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.ModeMutation">[docs]</a>
+<span class="k">class</span> <span class="nc">ModeMutation</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">MUTATE</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">MUTATE_AND_EVALUATE</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="RestartHandler"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandler">[docs]</a><span class="k">class</span> <span class="nc">RestartHandler</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RestartHandler">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandler">[docs]</a>
+<span class="k">class</span> <span class="nc">RestartHandler</span><span class="p">:</span>
     <span class="n">solution_restart</span><span class="p">:</span> <span class="n">Solution</span>
     <span class="n">solution_best</span><span class="p">:</span> <span class="n">Solution</span>
     <span class="n">best_fitness</span><span class="p">:</span> <span class="n">fitness_class</span>
@@ -107,7 +112,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_iteration_no_local_improve</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_iteration_no_global_improve</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="RestartHandler.update"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandler.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
+<div class="viewcode-block" id="RestartHandler.update">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandler.update">[docs]</a>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">nv</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span>
         <span class="n">fitness</span><span class="p">:</span> <span class="n">fitness_class</span><span class="p">,</span>
@@ -126,13 +133,20 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">nb_iteration_no_local_improve</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="RestartHandler.restart"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandler.restart">[docs]</a>    <span class="k">def</span> <span class="nf">restart</span><span class="p">(</span>
+
+<div class="viewcode-block" id="RestartHandler.restart">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandler.restart">[docs]</a>
+    <span class="k">def</span> <span class="nf">restart</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">cur_solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="n">cur_objective</span><span class="p">:</span> <span class="n">fitness_class</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">cur_solution</span><span class="p">,</span> <span class="n">cur_objective</span></div></div>
+        <span class="k">return</span> <span class="n">cur_solution</span><span class="p">,</span> <span class="n">cur_objective</span></div>
+</div>
 
 
-<div class="viewcode-block" id="RestartHandlerLimit"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit">[docs]</a><span class="k">class</span> <span class="nc">RestartHandlerLimit</span><span class="p">(</span><span class="n">RestartHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RestartHandlerLimit">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit">[docs]</a>
+<span class="k">class</span> <span class="nc">RestartHandlerLimit</span><span class="p">(</span><span class="n">RestartHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">nb_iteration_no_improvement</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -144,7 +158,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">solution_best</span> <span class="o">=</span> <span class="n">cur_solution</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">best_fitness</span> <span class="o">=</span> <span class="n">cur_objective</span>
 
-<div class="viewcode-block" id="RestartHandlerLimit.restart"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit.restart">[docs]</a>    <span class="k">def</span> <span class="nf">restart</span><span class="p">(</span>
+<div class="viewcode-block" id="RestartHandlerLimit.restart">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit.restart">[docs]</a>
+    <span class="k">def</span> <span class="nf">restart</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">cur_solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="n">cur_objective</span><span class="p">:</span> <span class="n">fitness_class</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">fitness_class</span><span class="p">]:</span>
         <span class="k">if</span> <span class="p">(</span>
@@ -155,10 +171,14 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">nb_iteration_no_local_improve</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solution_best</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_fitness</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">cur_solution</span><span class="p">,</span> <span class="n">cur_objective</span></div></div>
+            <span class="k">return</span> <span class="n">cur_solution</span><span class="p">,</span> <span class="n">cur_objective</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ResultLS"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.ResultLS">[docs]</a><span class="k">class</span> <span class="nc">ResultLS</span><span class="p">(</span><span class="n">ResultStorage</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ResultLS">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.ls.html#discrete_optimization.generic_tools.ls.local_search.ResultLS">[docs]</a>
+<span class="k">class</span> <span class="nc">ResultLS</span><span class="p">(</span><span class="n">ResultStorage</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">,</span>
@@ -176,6 +196,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">max</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">best_solution</span> <span class="o">=</span> <span class="n">best_solution</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">best_objective</span> <span class="o">=</span> <span class="n">best_objective</span></div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -106,12 +106,17 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.knapsack.solvers.lp_solvers</span> <span class="kn">import</span> <span class="n">LPKnapsack</span>
 
 
-<div class="viewcode-block" id="InitialKnapsackMethod"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.InitialKnapsackMethod">[docs]</a><span class="k">class</span> <span class="nc">InitialKnapsackMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="InitialKnapsackMethod">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.InitialKnapsackMethod">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialKnapsackMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">DUMMY</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">GREEDY</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="InitialKnapsackSolution"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.InitialKnapsackSolution">[docs]</a><span class="k">class</span> <span class="nc">InitialKnapsackSolution</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="InitialKnapsackSolution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.InitialKnapsackSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialKnapsackSolution</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
@@ -128,7 +133,9 @@
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="InitialKnapsackSolution.get_starting_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.InitialKnapsackSolution.get_starting_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="InitialKnapsackSolution.get_starting_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.InitialKnapsackSolution.get_starting_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_method</span> <span class="o">==</span> <span class="n">InitialKnapsackMethod</span><span class="o">.</span><span class="n">GREEDY</span><span class="p">:</span>
             <span class="n">greedy_solver</span> <span class="o">=</span> <span class="n">GreedyBest</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span>
@@ -141,16 +148,22 @@
                 <span class="n">list_solution_fits</span><span class="o">=</span><span class="p">[(</span><span class="n">solution</span><span class="p">,</span> <span class="n">fit</span><span class="p">)],</span>
                 <span class="n">best_solution</span><span class="o">=</span><span class="n">solution</span><span class="p">,</span>
                 <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
-            <span class="p">)</span></div></div>
+            <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerKnapsack"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.ConstraintHandlerKnapsack">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerKnapsack</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerKnapsack">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.ConstraintHandlerKnapsack">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerKnapsack</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span> <span class="n">fraction_to_fix</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_to_fix</span> <span class="o">=</span> <span class="n">fraction_to_fix</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">iter</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="ConstraintHandlerKnapsack.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.ConstraintHandlerKnapsack.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerKnapsack.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.ConstraintHandlerKnapsack.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">milp_solver</span><span class="p">,</span> <span class="n">LPKnapsack</span><span class="p">):</span>
@@ -196,7 +209,10 @@
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
         <span class="k">return</span> <span class="n">lns_constraint</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerKnapsack.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.ConstraintHandlerKnapsack.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerKnapsack.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_lns_solver.ConstraintHandlerKnapsack.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">milp_solver</span><span class="p">,</span> <span class="n">LPKnapsack</span><span class="p">):</span>
@@ -209,7 +225,9 @@
                 <span class="p">)</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">previous_constraints</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
         <span class="k">if</span> <span class="n">milp_solver</span><span class="o">.</span><span class="n">milp_solver_name</span> <span class="o">==</span> <span class="n">MilpSolverName</span><span class="o">.</span><span class="n">GRB</span><span class="p">:</span>
-            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -94,7 +94,9 @@
     <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Protocol</span>
 
 
-<div class="viewcode-block" id="index_min"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.index_min">[docs]</a><span class="k">def</span> <span class="nf">index_min</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">:</span>
+<div class="viewcode-block" id="index_min">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.index_min">[docs]</a>
+<span class="k">def</span> <span class="nf">index_min</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Argmin operator that can be used in gp.</span>
 
 <span class="sd">    Args:</span>
@@ -105,7 +107,10 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="index_max"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.index_max">[docs]</a><span class="k">def</span> <span class="nf">index_max</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">:</span>
+
+<div class="viewcode-block" id="index_max">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.index_max">[docs]</a>
+<span class="k">def</span> <span class="nf">index_max</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Argmax operator that can be used in gp.</span>
 
 <span class="sd">    Args:</span>
@@ -116,7 +121,10 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="argsort"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.argsort">[docs]</a><span class="k">def</span> <span class="nf">argsort</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="argsort">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.argsort">[docs]</a>
+<span class="k">def</span> <span class="nf">argsort</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the sorted array with indexes</span>
 
 <span class="sd">    Args:</span>
@@ -127,21 +135,31 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">list_or_array</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="protected_div"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.protected_div">[docs]</a><span class="k">def</span> <span class="nf">protected_div</span><span class="p">(</span><span class="n">left</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="protected_div">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.protected_div">[docs]</a>
+<span class="k">def</span> <span class="nf">protected_div</span><span class="p">(</span><span class="n">left</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">right</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">left</span> <span class="o">/</span> <span class="n">right</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">1.0</span></div>
 
 
-<div class="viewcode-block" id="SupportsDunderLT"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.SupportsDunderLT">[docs]</a><span class="k">class</span> <span class="nc">SupportsDunderLT</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SupportsDunderLT">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.SupportsDunderLT">[docs]</a>
+<span class="k">class</span> <span class="nc">SupportsDunderLT</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">__other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="o">...</span></div>
 
 
-<div class="viewcode-block" id="SupportsDunderGT"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.SupportsDunderGT">[docs]</a><span class="k">class</span> <span class="nc">SupportsDunderGT</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SupportsDunderGT">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.SupportsDunderGT">[docs]</a>
+<span class="k">class</span> <span class="nc">SupportsDunderGT</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">__other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="o">...</span></div>
+
 
 
 <span class="n">SupportsRichComparison</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">SupportsDunderLT</span><span class="p">,</span> <span class="n">SupportsDunderGT</span><span class="p">]</span>
@@ -150,28 +168,40 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="max_operator"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.max_operator">[docs]</a><span class="k">def</span> <span class="nf">max_operator</span><span class="p">(</span>
+<div class="viewcode-block" id="max_operator">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.max_operator">[docs]</a>
+<span class="k">def</span> <span class="nf">max_operator</span><span class="p">(</span>
     <span class="n">left</span><span class="p">:</span> <span class="n">SupportsRichComparisonT</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">SupportsRichComparisonT</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SupportsRichComparisonT</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="min_operator"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.min_operator">[docs]</a><span class="k">def</span> <span class="nf">min_operator</span><span class="p">(</span>
+
+<div class="viewcode-block" id="min_operator">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.min_operator">[docs]</a>
+<span class="k">def</span> <span class="nf">min_operator</span><span class="p">(</span>
     <span class="n">left</span><span class="p">:</span> <span class="n">SupportsRichComparisonT</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">SupportsRichComparisonT</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SupportsRichComparisonT</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="max_operator_list"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.max_operator_list">[docs]</a><span class="k">def</span> <span class="nf">max_operator_list</span><span class="p">(</span>
+
+<div class="viewcode-block" id="max_operator_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.max_operator_list">[docs]</a>
+<span class="k">def</span> <span class="nf">max_operator_list</span><span class="p">(</span>
     <span class="n">list_</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">SupportsRichComparisonT</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SupportsRichComparisonT</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="min_operator_list"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.min_operator_list">[docs]</a><span class="k">def</span> <span class="nf">min_operator_list</span><span class="p">(</span>
+
+<div class="viewcode-block" id="min_operator_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.ghh_tools.min_operator_list">[docs]</a>
+<span class="k">def</span> <span class="nf">min_operator_list</span><span class="p">(</span>
     <span class="n">list_</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">SupportsRichComparisonT</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SupportsRichComparisonT</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

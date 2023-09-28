@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -103,7 +103,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="CPSolverName"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolverName">[docs]</a><span class="k">class</span> <span class="nc">CPSolverName</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="CPSolverName">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolverName">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSolverName</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Enum choice of underlying CP/LP solver used by Minizinc typically</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -114,6 +116,7 @@
     <span class="n">CPOPT</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">GUROBI</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="n">ORTOOLS</span> <span class="o">=</span> <span class="mi">5</span></div>
+
 
 
 <span class="n">map_cp_solver_name</span> <span class="o">=</span> <span class="p">{</span>
@@ -127,7 +130,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="ParametersCP"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP">[docs]</a><span class="k">class</span> <span class="nc">ParametersCP</span><span class="p">:</span>
+<div class="viewcode-block" id="ParametersCP">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP">[docs]</a>
+<span class="k">class</span> <span class="nc">ParametersCP</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parameters that can be used by any cp - solver</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -174,7 +179,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_process</span> <span class="o">=</span> <span class="n">nb_process</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">optimisation_level</span> <span class="o">=</span> <span class="n">optimisation_level</span>
 
-<div class="viewcode-block" id="ParametersCP.default"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.default">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersCP.default">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.default">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersCP&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersCP</span><span class="p">(</span>
             <span class="n">time_limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
@@ -185,7 +192,10 @@
             <span class="n">optimisation_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersCP.default_fast_lns"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.default_fast_lns">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="ParametersCP.default_fast_lns">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.default_fast_lns">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_fast_lns</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersCP&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersCP</span><span class="p">(</span>
             <span class="n">time_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
@@ -195,7 +205,10 @@
             <span class="n">free_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersCP.default_free"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.default_free">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="ParametersCP.default_free">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.default_free">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_free</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersCP&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersCP</span><span class="p">(</span>
             <span class="n">time_limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
@@ -205,7 +218,10 @@
             <span class="n">free_search</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParametersCP.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersCP&quot;</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ParametersCP.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.ParametersCP.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersCP&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersCP</span><span class="p">(</span>
             <span class="n">time_limit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_limit</span><span class="p">,</span>
             <span class="n">time_limit_iter0</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_limit_iter0</span><span class="p">,</span>
@@ -216,10 +232,14 @@
             <span class="n">multiprocess</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">multiprocess</span><span class="p">,</span>
             <span class="n">nb_process</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nb_process</span><span class="p">,</span>
             <span class="n">optimisation_level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimisation_level</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="SignEnum"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.SignEnum">[docs]</a><span class="k">class</span> <span class="nc">SignEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SignEnum">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.SignEnum">[docs]</a>
+<span class="k">class</span> <span class="nc">SignEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">EQUAL</span> <span class="o">=</span> <span class="s2">&quot;==&quot;</span>
     <span class="n">LEQ</span> <span class="o">=</span> <span class="s2">&quot;&lt;=&quot;</span>
     <span class="n">UEQ</span> <span class="o">=</span> <span class="s2">&quot;&gt;=&quot;</span>
@@ -227,11 +247,15 @@
     <span class="n">UP</span> <span class="o">=</span> <span class="s2">&quot;&gt;&quot;</span></div>
 
 
-<div class="viewcode-block" id="StatusSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.StatusSolver">[docs]</a><span class="k">class</span> <span class="nc">StatusSolver</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="StatusSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.StatusSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">StatusSolver</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">SATISFIED</span> <span class="o">=</span> <span class="s2">&quot;SATISFIED&quot;</span>
     <span class="n">UNSATISFIABLE</span> <span class="o">=</span> <span class="s2">&quot;UNSATISFIABLE&quot;</span>
     <span class="n">OPTIMAL</span> <span class="o">=</span> <span class="s2">&quot;OPTIMAL&quot;</span>
     <span class="n">UNKNOWN</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span></div>
+
 
 
 <span class="n">map_mzn_status_to_do_status</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Status</span><span class="p">,</span> <span class="n">StatusSolver</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
@@ -242,7 +266,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="CPSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver">[docs]</a><span class="k">class</span> <span class="nc">CPSolver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+<div class="viewcode-block" id="CPSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSolver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Additional function to be implemented by a CP Solver.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -250,7 +276,9 @@
     <span class="n">instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
     <span class="n">status_solver</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">StatusSolver</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="CPSolver.init_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.init_model">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="CPSolver.init_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.init_model">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Instantiate a CP model instance</span>
@@ -260,7 +288,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="CPSolver.retrieve_solutions"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.retrieve_solutions">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="CPSolver.retrieve_solutions">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.retrieve_solutions">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">ParametersCP</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
@@ -272,24 +303,36 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="CPSolver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.solve">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="CPSolver.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.solve">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersCP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="CPSolver.get_status_solver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.get_status_solver">[docs]</a>    <span class="k">def</span> <span class="nf">get_status_solver</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">StatusSolver</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status_solver</span></div></div>
+
+<div class="viewcode-block" id="CPSolver.get_status_solver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.CPSolver.get_status_solver">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_status_solver</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">StatusSolver</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status_solver</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MinizincCPSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.MinizincCPSolver">[docs]</a><span class="k">class</span> <span class="nc">MinizincCPSolver</span><span class="p">(</span><span class="n">CPSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MinizincCPSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.MinizincCPSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">MinizincCPSolver</span><span class="p">(</span><span class="n">CPSolver</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;CP solver wrapping a minizinc solver.&quot;&quot;&quot;</span>
 
     <span class="n">instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Instance</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">silent_solve_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;If True and `solve` should raise an error, a warning is raised instead and an empty ResultStorage returned.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinizincCPSolver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.MinizincCPSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+<div class="viewcode-block" id="MinizincCPSolver.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.cp_tools.MinizincCPSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersCP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">parameters_cp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -332,7 +375,9 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">statistics</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status_solver</span> <span class="o">=</span> <span class="n">map_mzn_status_to_do_status</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="o">=</span><span class="n">parameters_cp</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">parameters_cp</span><span class="o">=</span><span class="n">parameters_cp</span><span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -97,11 +97,16 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_solution</span> <span class="kn">import</span> <span class="n">RCPSPSolution</span>
 
 
-<div class="viewcode-block" id="tree"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.tree">[docs]</a><span class="k">def</span> <span class="nf">tree</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<div class="viewcode-block" id="tree">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.tree">[docs]</a>
+<span class="k">def</span> <span class="nf">tree</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
     <span class="k">return</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="AggregRCPSPModel"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel">[docs]</a><span class="k">class</span> <span class="nc">AggregRCPSPModel</span><span class="p">(</span><span class="n">RobustProblem</span><span class="p">,</span> <span class="n">RCPSPModel</span><span class="p">):</span>
+
+<div class="viewcode-block" id="AggregRCPSPModel">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregRCPSPModel</span><span class="p">(</span><span class="n">RobustProblem</span><span class="p">,</span> <span class="n">RCPSPModel</span><span class="p">):</span>
     <span class="n">list_problem</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -118,12 +123,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mode_details</span> <span class="o">=</span> <span class="n">list_problem</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mode_details</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resources_list</span> <span class="o">=</span> <span class="n">list_problem</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">resources_list</span>
 
-<div class="viewcode-block" id="AggregRCPSPModel.get_dummy_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.get_dummy_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCPSPSolution</span><span class="p">:</span>
+<div class="viewcode-block" id="AggregRCPSPModel.get_dummy_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.get_dummy_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCPSPSolution</span><span class="p">:</span>
         <span class="n">a</span><span class="p">:</span> <span class="n">RCPSPSolution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_problem</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_dummy_solution</span><span class="p">()</span>
         <span class="n">a</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="n">a</span></div>
 
-<div class="viewcode-block" id="AggregRCPSPModel.get_unique_rcpsp_model"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.get_unique_rcpsp_model">[docs]</a>    <span class="k">def</span> <span class="nf">get_unique_rcpsp_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCPSPModel</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AggregRCPSPModel.get_unique_rcpsp_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.get_unique_rcpsp_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_unique_rcpsp_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCPSPModel</span><span class="p">:</span>
         <span class="c1"># Create a unique rcpsp instance coherent with the aggregating method.</span>
         <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_problem</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">:</span>
@@ -139,7 +149,10 @@
                     <span class="n">model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">job</span><span class="p">][</span><span class="n">mode</span><span class="p">][</span><span class="n">res</span><span class="p">]</span> <span class="o">=</span> <span class="n">agg</span>
         <span class="k">return</span> <span class="n">model</span></div>
 
-<div class="viewcode-block" id="AggregRCPSPModel.evaluate_from_encoding"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.evaluate_from_encoding">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span>
+
+<div class="viewcode-block" id="AggregRCPSPModel.evaluate_from_encoding">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.evaluate_from_encoding">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">encoding_name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="n">fits</span> <span class="o">=</span> <span class="p">[</span>
@@ -153,7 +166,10 @@
             <span class="n">aggreg</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agg_vec</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">aggreg</span></div>
 
-<div class="viewcode-block" id="AggregRCPSPModel.evaluate"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>  <span class="c1"># type: ignore</span>
+
+<div class="viewcode-block" id="AggregRCPSPModel.evaluate">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.AggregRCPSPModel.evaluate">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>  <span class="c1"># type: ignore</span>
         <span class="n">fits</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nb_problem</span><span class="p">):</span>
             <span class="n">var</span><span class="p">:</span> <span class="n">RCPSPSolution</span> <span class="o">=</span> <span class="n">variable</span><span class="o">.</span><span class="n">lazy_copy</span><span class="p">()</span>
@@ -167,10 +183,14 @@
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
             <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fit</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">fit</span> <span class="ow">in</span> <span class="n">fits</span><span class="p">])</span>
             <span class="n">aggreg</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agg_vec</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">aggreg</span></div></div>
+        <span class="k">return</span> <span class="n">aggreg</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MethodBaseRobustification"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.MethodBaseRobustification">[docs]</a><span class="k">class</span> <span class="nc">MethodBaseRobustification</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MethodBaseRobustification">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.MethodBaseRobustification">[docs]</a>
+<span class="k">class</span> <span class="nc">MethodBaseRobustification</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">AVERAGE</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">WORST_CASE</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">BEST_CASE</span> <span class="o">=</span> <span class="mi">2</span>
@@ -178,7 +198,10 @@
     <span class="n">SAMPLE</span> <span class="o">=</span> <span class="mi">4</span></div>
 
 
-<div class="viewcode-block" id="MethodRobustification"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.MethodRobustification">[docs]</a><span class="k">class</span> <span class="nc">MethodRobustification</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MethodRobustification">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.MethodRobustification">[docs]</a>
+<span class="k">class</span> <span class="nc">MethodRobustification</span><span class="p">:</span>
     <span class="n">method_base</span><span class="p">:</span> <span class="n">MethodBaseRobustification</span>
     <span class="n">percentile</span><span class="p">:</span> <span class="nb">float</span>
 
@@ -187,7 +210,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">percentile</span> <span class="o">=</span> <span class="n">percentile</span></div>
 
 
-<div class="viewcode-block" id="create_poisson_laws_duration"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.create_poisson_laws_duration">[docs]</a><span class="k">def</span> <span class="nf">create_poisson_laws_duration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_poisson_laws_duration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.create_poisson_laws_duration">[docs]</a>
+<span class="k">def</span> <span class="nf">create_poisson_laws_duration</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">range_around_mean</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]]:</span>
     <span class="n">poisson_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -211,7 +237,10 @@
     <span class="k">return</span> <span class="n">poisson_dict</span></div>
 
 
-<div class="viewcode-block" id="create_poisson_laws_resource"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.create_poisson_laws_resource">[docs]</a><span class="k">def</span> <span class="nf">create_poisson_laws_resource</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_poisson_laws_resource">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.create_poisson_laws_resource">[docs]</a>
+<span class="k">def</span> <span class="nf">create_poisson_laws_resource</span><span class="p">(</span>
     <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">range_around_mean</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]]:</span>
     <span class="n">poisson_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -249,7 +278,10 @@
     <span class="k">return</span> <span class="n">poisson_dict</span></div>
 
 
-<div class="viewcode-block" id="create_poisson_laws"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.create_poisson_laws">[docs]</a><span class="k">def</span> <span class="nf">create_poisson_laws</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_poisson_laws">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.create_poisson_laws">[docs]</a>
+<span class="k">def</span> <span class="nf">create_poisson_laws</span><span class="p">(</span>
     <span class="n">base_rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
     <span class="n">range_around_mean_resource</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">range_around_mean_duration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
@@ -276,7 +308,10 @@
     <span class="k">return</span> <span class="n">poisson_laws</span></div>
 
 
-<div class="viewcode-block" id="UncertainRCPSPModel"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.UncertainRCPSPModel">[docs]</a><span class="k">class</span> <span class="nc">UncertainRCPSPModel</span><span class="p">:</span>
+
+<div class="viewcode-block" id="UncertainRCPSPModel">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.UncertainRCPSPModel">[docs]</a>
+<span class="k">class</span> <span class="nc">UncertainRCPSPModel</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">base_rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -317,7 +352,9 @@
                         <span class="p">),</span>
                     <span class="p">)</span>
 
-<div class="viewcode-block" id="UncertainRCPSPModel.create_rcpsp_model"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.UncertainRCPSPModel.create_rcpsp_model">[docs]</a>    <span class="k">def</span> <span class="nf">create_rcpsp_model</span><span class="p">(</span>
+<div class="viewcode-block" id="UncertainRCPSPModel.create_rcpsp_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.robust_rcpsp.UncertainRCPSPModel.create_rcpsp_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_rcpsp_model</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">method_robustification</span><span class="p">:</span> <span class="n">MethodRobustification</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCPSPModel</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_rcpsp_model</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -371,7 +408,9 @@
                         <span class="n">model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">activity</span><span class="p">][</span><span class="n">mode</span><span class="p">][</span><span class="n">detail</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">probas</span><span class="p">[</span>
                             <span class="n">activity</span>
                         <span class="p">][</span><span class="n">mode</span><span class="p">][</span><span class="n">detail</span><span class="p">][</span><span class="s2">&quot;prob-distribution&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">model</span></div></div>
+        <span class="k">return</span> <span class="n">model</span></div>
+</div>
+
 </pre></div>
 
            </div>

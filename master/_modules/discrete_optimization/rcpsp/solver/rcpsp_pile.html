@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -107,18 +107,23 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="GreedyChoice"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.GreedyChoice">[docs]</a><span class="k">class</span> <span class="nc">GreedyChoice</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="GreedyChoice">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.GreedyChoice">[docs]</a>
+<span class="k">class</span> <span class="nc">GreedyChoice</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">MOST_SUCCESSORS</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">SAMPLE_MOST_SUCCESSORS</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">FASTEST</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">TOTALLY_RANDOM</span> <span class="o">=</span> <span class="mi">4</span></div>
 
 
+
 <span class="n">pop</span> <span class="o">=</span> <span class="n">heappop</span>
 <span class="n">push</span> <span class="o">=</span> <span class="n">heappush</span>
 
 
-<div class="viewcode-block" id="PileSolverRCPSP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP">[docs]</a><span class="k">class</span> <span class="nc">PileSolverRCPSP</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
+<div class="viewcode-block" id="PileSolverRCPSP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">PileSolverRCPSP</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -178,7 +183,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">modes_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode_details</span><span class="p">}</span>
 
-<div class="viewcode-block" id="PileSolverRCPSP.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="PileSolverRCPSP.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">greedy_choice</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;greedy_choice&quot;</span><span class="p">,</span> <span class="n">GreedyChoice</span><span class="o">.</span><span class="n">MOST_SUCCESSORS</span><span class="p">)</span>
         <span class="n">current_succ</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">k</span><span class="p">:</span> <span class="p">{</span>
@@ -328,10 +335,14 @@
             <span class="n">best_solution</span><span class="o">=</span><span class="n">sol</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="PileSolverRCPSP_Calendar"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP_Calendar">[docs]</a><span class="k">class</span> <span class="nc">PileSolverRCPSP_Calendar</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PileSolverRCPSP_Calendar">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP_Calendar">[docs]</a>
+<span class="k">class</span> <span class="nc">PileSolverRCPSP_Calendar</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -393,7 +404,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">modes_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode_details</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">with_calendar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">is_varying_resource</span><span class="p">()</span>
 
-<div class="viewcode-block" id="PileSolverRCPSP_Calendar.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP_Calendar.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="PileSolverRCPSP_Calendar.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.PileSolverRCPSP_Calendar.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">greedy_choice</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;greedy_choice&quot;</span><span class="p">,</span> <span class="n">GreedyChoice</span><span class="o">.</span><span class="n">MOST_SUCCESSORS</span><span class="p">)</span>
         <span class="n">current_succ</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">k</span><span class="p">:</span> <span class="p">{</span>
@@ -574,10 +587,14 @@
             <span class="n">best_solution</span><span class="o">=</span><span class="n">sol</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="Executor"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.Executor">[docs]</a><span class="k">class</span> <span class="nc">Executor</span><span class="p">(</span><span class="n">PileSolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="Executor">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.Executor">[docs]</a>
+<span class="k">class</span> <span class="nc">Executor</span><span class="p">(</span><span class="n">PileSolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">immediate_predecessors</span> <span class="o">=</span> <span class="p">{</span>
@@ -587,11 +604,16 @@
             <span class="n">n</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nx_graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nx_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
         <span class="p">}</span>
 
-<div class="viewcode-block" id="Executor.update"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.Executor.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">):</span>
+<div class="viewcode-block" id="Executor.update">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.Executor.update">[docs]</a>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode_details</span> <span class="o">=</span> <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">mode_details</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resources</span> <span class="o">=</span> <span class="n">rcpsp_model</span><span class="o">.</span><span class="n">resources</span></div>
 
-<div class="viewcode-block" id="Executor.compute_schedule_from_priority_list"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.Executor.compute_schedule_from_priority_list">[docs]</a>    <span class="k">def</span> <span class="nf">compute_schedule_from_priority_list</span><span class="p">(</span>
+
+<div class="viewcode-block" id="Executor.compute_schedule_from_priority_list">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_pile.Executor.compute_schedule_from_priority_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_schedule_from_priority_list</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">permutation_jobs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">modes_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="n">current_pred</span> <span class="o">=</span> <span class="p">{</span>
@@ -692,7 +714,9 @@
             <span class="n">best_solution</span><span class="o">=</span><span class="n">sol</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
+
 </pre></div>
 
            </div>

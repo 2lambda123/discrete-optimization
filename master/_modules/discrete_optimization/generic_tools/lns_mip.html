@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -102,63 +102,104 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ConstraintHandler"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.ConstraintHandler">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandler</span><span class="p">:</span>
-<div class="viewcode-block" id="ConstraintHandler.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.ConstraintHandler.adding_constraint_from_results_store">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="ConstraintHandler">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.ConstraintHandler">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandler</span><span class="p">:</span>
+<div class="viewcode-block" id="ConstraintHandler.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.ConstraintHandler.adding_constraint_from_results_store">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="ConstraintHandler.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.ConstraintHandler.remove_constraints_from_previous_iteration">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="ConstraintHandler.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.ConstraintHandler.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">MilpSolver</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="o">...</span></div></div>
+        <span class="o">...</span></div>
+</div>
 
 
-<div class="viewcode-block" id="InitialSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolution">[docs]</a><span class="k">class</span> <span class="nc">InitialSolution</span><span class="p">:</span>
-<div class="viewcode-block" id="InitialSolution.get_starting_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolution.get_starting_solution">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="InitialSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialSolution</span><span class="p">:</span>
+<div class="viewcode-block" id="InitialSolution.get_starting_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolution.get_starting_solution">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="o">...</span></div></div>
+        <span class="o">...</span></div>
+</div>
 
 
-<div class="viewcode-block" id="InitialSolutionFromSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolutionFromSolver">[docs]</a><span class="k">class</span> <span class="nc">InitialSolutionFromSolver</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="InitialSolutionFromSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolutionFromSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialSolutionFromSolver</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="p">:</span> <span class="n">SolverDO</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solver</span> <span class="o">=</span> <span class="n">solver</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict</span> <span class="o">=</span> <span class="n">kwargs</span>
 
-<div class="viewcode-block" id="InitialSolutionFromSolver.get_starting_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolutionFromSolver.get_starting_solution">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="InitialSolutionFromSolver.get_starting_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.InitialSolutionFromSolver.get_starting_solution">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="TrivialInitialSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialInitialSolution">[docs]</a><span class="k">class</span> <span class="nc">TrivialInitialSolution</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TrivialInitialSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialInitialSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">TrivialInitialSolution</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solution</span> <span class="o">=</span> <span class="n">solution</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict</span> <span class="o">=</span> <span class="n">kwargs</span>
 
-<div class="viewcode-block" id="TrivialInitialSolution.get_starting_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialInitialSolution.get_starting_solution">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="TrivialInitialSolution.get_starting_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialInitialSolution.get_starting_solution">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solution</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">solution</span></div>
+</div>
 
 
-<div class="viewcode-block" id="PostProcessSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.PostProcessSolution">[docs]</a><span class="k">class</span> <span class="nc">PostProcessSolution</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PostProcessSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.PostProcessSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">PostProcessSolution</span><span class="p">:</span>
     <span class="c1"># From solution from MIP or CP you can build other solution.</span>
     <span class="c1"># Here you can have many different approaches:</span>
     <span class="c1"># if solution from mip/cp are not feasible you can code a repair function</span>
     <span class="c1"># you can also do mall changes (filling gap in a schedule) to try to improve the solution</span>
     <span class="c1"># you can also run algorithms from the new found solution.</span>
-<div class="viewcode-block" id="PostProcessSolution.build_other_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.PostProcessSolution.build_other_solution">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="PostProcessSolution.build_other_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.PostProcessSolution.build_other_solution">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="o">...</span></div></div>
+        <span class="o">...</span></div>
+</div>
 
 
-<div class="viewcode-block" id="TrivialPostProcessSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialPostProcessSolution">[docs]</a><span class="k">class</span> <span class="nc">TrivialPostProcessSolution</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
-<div class="viewcode-block" id="TrivialPostProcessSolution.build_other_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialPostProcessSolution.build_other_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+
+<div class="viewcode-block" id="TrivialPostProcessSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialPostProcessSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">TrivialPostProcessSolution</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
+<div class="viewcode-block" id="TrivialPostProcessSolution.build_other_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.TrivialPostProcessSolution.build_other_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LNS_MILP"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.LNS_MILP">[docs]</a><span class="k">class</span> <span class="nc">LNS_MILP</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LNS_MILP">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.LNS_MILP">[docs]</a>
+<span class="k">class</span> <span class="nc">LNS_MILP</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span>
@@ -187,7 +228,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LNS_MILP.solve_lns"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.LNS_MILP.solve_lns">[docs]</a>    <span class="k">def</span> <span class="nf">solve_lns</span><span class="p">(</span>
+<div class="viewcode-block" id="LNS_MILP.solve_lns">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lns_mip.LNS_MILP.solve_lns">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve_lns</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">,</span>
         <span class="n">nb_iteration_lns</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -263,7 +306,9 @@
                 <span class="k">break</span>
         <span class="k">if</span> <span class="n">store_lns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for mypy, should never happen</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;store_lns should have been initialized for now&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">store_lns</span></div></div>
+        <span class="k">return</span> <span class="n">store_lns</span></div>
+</div>
+
 </pre></div>
 
            </div>

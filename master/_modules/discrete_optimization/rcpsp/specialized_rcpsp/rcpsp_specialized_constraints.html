@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -120,20 +120,27 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive">[docs]</a><span class="k">class</span> <span class="nc">RCPSPSolutionSpecialPreemptive</span><span class="p">(</span><span class="n">RCPSPSolutionPreemptive</span><span class="p">):</span>
-<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.change_problem"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.change_problem">[docs]</a>    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">):</span>
+<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive">[docs]</a>
+<span class="k">class</span> <span class="nc">RCPSPSolutionSpecialPreemptive</span><span class="p">(</span><span class="n">RCPSPSolutionPreemptive</span><span class="p">):</span>
+<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.change_problem">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.change_problem">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="n">new_problem</span><span class="p">,</span>
             <span class="n">rcpsp_permutation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_permutation</span><span class="p">,</span>
             <span class="n">rcpsp_modes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_modes</span><span class="p">,</span>
         <span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="nb">super</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;rcpsp_permutation&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">True</span>
 
-<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.copy"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.copy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">RCPSPSolutionSpecialPreemptive</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">rcpsp_permutation</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_permutation</span><span class="p">),</span>
@@ -143,7 +150,10 @@
             <span class="n">standardised_permutation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">standardised_permutation</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.lazy_copy"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.lazy_copy">[docs]</a>    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.lazy_copy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.lazy_copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">RCPSPSolutionSpecialPreemptive</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">rcpsp_permutation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_permutation</span><span class="p">,</span>
@@ -153,6 +163,7 @@
             <span class="n">standardised_permutation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">standardised_permutation</span><span class="p">,</span>
         <span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">sched_str</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span>
@@ -161,7 +172,9 @@
         <span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;RCPSP solution (rcpsp_schedule): &quot;</span> <span class="o">+</span> <span class="n">sched_str</span>
         <span class="k">return</span> <span class="n">val</span>
 
-<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs">[docs]</a>    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">do_fast</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">do_fast</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">do_fast</span><span class="p">:</span>
             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span><span class="n">do_fast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -172,7 +185,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule_feasible</span> <span class="o">=</span> <span class="n">feasible</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs_2"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs_2">[docs]</a>    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_2</span><span class="p">(</span>
+
+<div class="viewcode-block" id="RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs_2">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPSolutionSpecialPreemptive.generate_schedule_from_permutation_serial_sgs_2">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_2</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">current_t</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -200,10 +216,14 @@
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule</span> <span class="o">=</span> <span class="n">schedule</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule_feasible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">feasible</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div>
+</div>
 
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive">[docs]</a><span class="k">class</span> <span class="nc">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">(</span><span class="n">RCPSPModelPreemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive">[docs]</a>
+<span class="k">class</span> <span class="nc">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">(</span><span class="n">RCPSPModelPreemptive</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">resources</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]],</span>
@@ -268,23 +288,37 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">compute_mean_resource</span><span class="p">,</span>
         <span class="p">)</span> <span class="o">=</span> <span class="n">create_np_data_and_jit_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.is_preemptive"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.is_preemptive">[docs]</a>    <span class="k">def</span> <span class="nf">is_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.is_preemptive">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.is_preemptive">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_preemptive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.has_special_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.has_special_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">has_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.has_special_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.has_special_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_special_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_special_constraints</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.update_function"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.update_function">[docs]</a>    <span class="k">def</span> <span class="nf">update_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.update_function">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.update_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">func_sgs</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">func_sgs_2</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">compute_mean_resource</span><span class="p">,</span>
         <span class="p">)</span> <span class="o">=</span> <span class="n">create_np_data_and_jit_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.update_functions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.update_functions">[docs]</a>    <span class="k">def</span> <span class="nf">update_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.update_functions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.update_functions">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_function</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.copy"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.copy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">(</span>
             <span class="n">resources</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">),</span>
             <span class="n">non_renewable_resources</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">non_renewable_resources</span><span class="p">),</span>
@@ -300,7 +334,10 @@
             <span class="n">name_task</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name_task</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.lazy_copy"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.lazy_copy">[docs]</a>    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.lazy_copy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.lazy_copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">(</span>
             <span class="n">resources</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">,</span>
             <span class="n">non_renewable_resources</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">non_renewable_resources</span><span class="p">,</span>
@@ -316,7 +353,10 @@
             <span class="n">name_task</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name_task</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.evaluate_from_encoding"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.evaluate_from_encoding">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">,</span> <span class="n">encoding_name</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.evaluate_from_encoding">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.evaluate_from_encoding">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_from_encoding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">int_vector</span><span class="p">,</span> <span class="n">encoding_name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">encoding_name</span> <span class="o">==</span> <span class="s2">&quot;rcpsp_permutation&quot;</span><span class="p">:</span>
             <span class="n">single_mode_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs_non_dummy</span><span class="p">)]</span>
             <span class="n">rcpsp_sol</span> <span class="o">=</span> <span class="n">RCPSPSolutionSpecialPreemptive</span><span class="p">(</span>
@@ -326,7 +366,10 @@
             <span class="k">return</span> <span class="n">objectives</span>
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.evaluate_function"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.evaluate_function">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.evaluate_function">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.evaluate_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">_schedule_to_recompute</span><span class="p">:</span>
             <span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">generate_schedule_from_permutation_serial_sgs</span><span class="p">()</span>
         <span class="n">makespan</span> <span class="o">=</span> <span class="n">rcpsp_sol</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sink_task</span><span class="p">)</span>
@@ -338,11 +381,17 @@
             <span class="n">penalty</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="n">makespan</span><span class="p">,</span> <span class="n">penalty</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.evaluate"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.evaluate">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.evaluate">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="n">obj_makespan</span><span class="p">,</span> <span class="n">penalty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_function</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;makespan&quot;</span><span class="p">:</span> <span class="n">obj_makespan</span><span class="p">,</span> <span class="s2">&quot;constraint_penalty&quot;</span><span class="p">:</span> <span class="n">penalty</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.get_objective_register"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.get_objective_register">[docs]</a>    <span class="k">def</span> <span class="nf">get_objective_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectiveRegister</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.get_objective_register">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.get_objective_register">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_objective_register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectiveRegister</span><span class="p">:</span>
         <span class="n">dict_objective</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;makespan&quot;</span><span class="p">:</span> <span class="n">ObjectiveDoc</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">TypeObjective</span><span class="o">.</span><span class="n">OBJECTIVE</span><span class="p">,</span> <span class="n">default_weight</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">),</span>
             <span class="s2">&quot;constraint_penalty&quot;</span><span class="p">:</span> <span class="n">ObjectiveDoc</span><span class="p">(</span>
@@ -355,7 +404,10 @@
             <span class="n">dict_objective_to_doc</span><span class="o">=</span><span class="n">dict_objective</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.satisfy"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.satisfy">[docs]</a>    <span class="k">def</span> <span class="nf">satisfy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.satisfy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.satisfy">[docs]</a>
+    <span class="k">def</span> <span class="nf">satisfy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_sol</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">check_solution</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">solution</span><span class="o">=</span><span class="n">rcpsp_sol</span><span class="p">,</span>
@@ -365,7 +417,10 @@
             <span class="k">return</span> <span class="n">s</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">satisfy</span><span class="p">(</span><span class="n">rcpsp_sol</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.get_dummy_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.get_dummy_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">random_perm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.get_dummy_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.get_dummy_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_dummy_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">random_perm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="n">rcpsp_permutation</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs_non_dummy</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">random_perm</span><span class="p">:</span>
             <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">rcpsp_permutation</span><span class="p">)</span>
@@ -376,11 +431,18 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">sol</span></div>
 
-<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.get_solution_type"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.get_solution_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">RCPSPSolutionSpecialPreemptive</span></div></div>
+
+<div class="viewcode-block" id="RCPSPModelSpecialConstraintsPreemptive.get_solution_type">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.RCPSPModelSpecialConstraintsPreemptive.get_solution_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_solution_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Solution</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">RCPSPSolutionSpecialPreemptive</span></div>
+</div>
 
 
-<div class="viewcode-block" id="evaluate_constraints"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.evaluate_constraints">[docs]</a><span class="k">def</span> <span class="nf">evaluate_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="evaluate_constraints">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.evaluate_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">evaluate_constraints</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">],</span>
     <span class="n">constraints</span><span class="p">:</span> <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">):</span>
@@ -388,7 +450,10 @@
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_constraints_not_respected</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="compute_constraints_details"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.compute_constraints_details">[docs]</a><span class="k">def</span> <span class="nf">compute_constraints_details</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_constraints_details">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.compute_constraints_details">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_constraints_details</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">],</span>
     <span class="n">constraints</span><span class="p">:</span> <span class="n">SpecialConstraintsDescription</span><span class="p">,</span>
 <span class="p">):</span>
@@ -502,7 +567,10 @@
     <span class="k">return</span> <span class="n">list_constraints_not_respected</span></div>
 
 
-<div class="viewcode-block" id="check_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.check_solution">[docs]</a><span class="k">def</span> <span class="nf">check_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="check_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.check_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">check_solution</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
         <span class="n">RCPSPSolutionSpecialPreemptive</span><span class="p">,</span>
@@ -617,7 +685,10 @@
     <span class="k">return</span> <span class="kc">True</span></div>
 
 
-<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_preemptive"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.generate_schedule_from_permutation_serial_sgs_preemptive">[docs]</a><span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_preemptive">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.generate_schedule_from_permutation_serial_sgs_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_preemptive</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span>
 <span class="p">):</span>
     <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
@@ -976,7 +1047,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span></div>
 
 
-<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_partial_schedule_preempptive"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.generate_schedule_from_permutation_serial_sgs_partial_schedule_preempptive">[docs]</a><span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_partial_schedule_preempptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_partial_schedule_preempptive">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.generate_schedule_from_permutation_serial_sgs_partial_schedule_preempptive">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_partial_schedule_preempptive</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">,</span>
     <span class="n">rcpsp_problem</span><span class="p">,</span>
     <span class="n">partial_schedule</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]],</span>
@@ -1341,7 +1415,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span></div>
 
 
-<div class="viewcode-block" id="create_np_data_and_jit_functions"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.create_np_data_and_jit_functions">[docs]</a><span class="k">def</span> <span class="nf">create_np_data_and_jit_functions</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_np_data_and_jit_functions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.specialized_rcpsp.html#discrete_optimization.rcpsp.specialized_rcpsp.rcpsp_specialized_constraints.create_np_data_and_jit_functions">[docs]</a>
+<span class="k">def</span> <span class="nf">create_np_data_and_jit_functions</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">],</span>
 <span class="p">):</span>
     <span class="n">consumption_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
@@ -1493,6 +1570,7 @@
         <span class="n">ressource_renewable</span><span class="o">=</span><span class="n">ressource_renewable</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">func_sgs</span><span class="p">,</span> <span class="n">func_sgs_2</span><span class="p">,</span> <span class="n">func_compute_mean_resource</span></div>
+
 </pre></div>
 
            </div>

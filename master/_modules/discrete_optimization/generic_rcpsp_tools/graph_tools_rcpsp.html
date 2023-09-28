@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -101,7 +101,9 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="GraphRCPSP"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP">[docs]</a><span class="k">class</span> <span class="nc">GraphRCPSP</span><span class="p">:</span>
+<div class="viewcode-block" id="GraphRCPSP">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">GraphRCPSP</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
@@ -142,26 +144,43 @@
             <span class="p">],</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="GraphRCPSP.get_next_activities"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_next_activities">[docs]</a>    <span class="k">def</span> <span class="nf">get_next_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+<div class="viewcode-block" id="GraphRCPSP.get_next_activities">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_next_activities">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_next_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">task</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GraphRCPSP.get_pred_activities"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_pred_activities">[docs]</a>    <span class="k">def</span> <span class="nf">get_pred_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSP.get_pred_activities">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_pred_activities">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_pred_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get_predecessors</span><span class="p">(</span><span class="n">task</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GraphRCPSP.get_descendants_activities"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_descendants_activities">[docs]</a>    <span class="k">def</span> <span class="nf">get_descendants_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSP.get_descendants_activities">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_descendants_activities">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_descendants_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">descendants_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;succs&quot;</span><span class="p">:</span> <span class="nb">set</span><span class="p">()})[</span><span class="s2">&quot;succs&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="GraphRCPSP.get_ancestors_activities"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_ancestors_activities">[docs]</a>    <span class="k">def</span> <span class="nf">get_ancestors_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSP.get_ancestors_activities">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.get_ancestors_activities">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ancestors_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ancestors_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;succs&quot;</span><span class="p">:</span> <span class="nb">set</span><span class="p">()})[</span><span class="s2">&quot;succs&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="GraphRCPSP.check_loop"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.check_loop">[docs]</a>    <span class="k">def</span> <span class="nf">check_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSP.check_loop">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.check_loop">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">cycles</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">find_cycle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph_nx</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">NetworkXNoCycle</span><span class="p">:</span>
             <span class="n">cycles</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">cycles</span></div>
 
-<div class="viewcode-block" id="GraphRCPSP.compute_component_in_non_dummy_graph"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.compute_component_in_non_dummy_graph">[docs]</a>    <span class="k">def</span> <span class="nf">compute_component_in_non_dummy_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSP.compute_component_in_non_dummy_graph">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSP.compute_component_in_non_dummy_graph">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_component_in_non_dummy_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span>
             <span class="n">c</span>
             <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
@@ -169,10 +188,14 @@
                 <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span>
                 <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="p">)</span>
-        <span class="p">]</span></div></div>
+        <span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GraphRCPSPSpecialConstraints"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints">[docs]</a><span class="k">class</span> <span class="nc">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">GraphRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSPSpecialConstraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints">[docs]</a>
+<span class="k">class</span> <span class="nc">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">GraphRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">],</span>
@@ -207,18 +230,27 @@
             <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components_graph_constraints</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">index_components</span><span class="p">[</span><span class="n">ci</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
 
-<div class="viewcode-block" id="GraphRCPSPSpecialConstraints.get_neighbors_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints.get_neighbors_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">get_neighbors_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+<div class="viewcode-block" id="GraphRCPSPSpecialConstraints.get_neighbors_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints.get_neighbors_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_neighbors_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_constraints</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph_constraints</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">task</span><span class="p">))</span>
         <span class="k">return</span> <span class="p">[]</span></div>
 
-<div class="viewcode-block" id="GraphRCPSPSpecialConstraints.get_pred_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints.get_pred_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">get_pred_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GraphRCPSPSpecialConstraints.get_pred_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.GraphRCPSPSpecialConstraints.get_pred_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_pred_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_constraints</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph_constraints</span><span class="o">.</span><span class="n">predecessors</span><span class="p">(</span><span class="n">task</span><span class="p">))</span>
-        <span class="k">return</span> <span class="p">[]</span></div></div>
+        <span class="k">return</span> <span class="p">[]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="build_unrelated_task"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.build_unrelated_task">[docs]</a><span class="k">def</span> <span class="nf">build_unrelated_task</span><span class="p">(</span><span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="build_unrelated_task">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.build_unrelated_task">[docs]</a>
+<span class="k">def</span> <span class="nf">build_unrelated_task</span><span class="p">(</span><span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span><span class="p">):</span>
     <span class="n">ancestors</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">ancestors_map</span>
     <span class="n">descendants</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">descendants_map</span>
     <span class="n">all_tasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">descendants</span><span class="p">)</span>
@@ -239,7 +271,10 @@
     <span class="k">return</span> <span class="n">unrel</span><span class="p">,</span> <span class="n">set_pairs</span></div>
 
 
-<div class="viewcode-block" id="build_graph_rcpsp_object"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.build_graph_rcpsp_object">[docs]</a><span class="k">def</span> <span class="nf">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelPreemptive</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="build_graph_rcpsp_object">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.graph_tools_rcpsp.build_graph_rcpsp_object">[docs]</a>
+<span class="k">def</span> <span class="nf">build_graph_rcpsp_object</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">RCPSPModelPreemptive</span><span class="p">]):</span>
     <span class="k">if</span> <span class="p">(</span>
         <span class="nb">hasattr</span><span class="p">(</span><span class="n">rcpsp_problem</span><span class="p">,</span> <span class="s2">&quot;do_special_constraints&quot;</span><span class="p">)</span>
         <span class="ow">and</span> <span class="n">rcpsp_problem</span><span class="o">.</span><span class="n">do_special_constraints</span>
@@ -247,6 +282,7 @@
         <span class="k">return</span> <span class="n">GraphRCPSPSpecialConstraints</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">GraphRCPSP</span><span class="p">(</span><span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_problem</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -117,15 +117,20 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="MilpSolverName"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolverName">[docs]</a><span class="k">class</span> <span class="nc">MilpSolverName</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="MilpSolverName">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolverName">[docs]</a>
+<span class="k">class</span> <span class="nc">MilpSolverName</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">CBC</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">GRB</span> <span class="o">=</span> <span class="mi">1</span></div>
+
 
 
 <span class="n">map_solver</span> <span class="o">=</span> <span class="p">{</span><span class="n">MilpSolverName</span><span class="o">.</span><span class="n">GRB</span><span class="p">:</span> <span class="n">mip</span><span class="o">.</span><span class="n">GRB</span><span class="p">,</span> <span class="n">MilpSolverName</span><span class="o">.</span><span class="n">CBC</span><span class="p">:</span> <span class="n">mip</span><span class="o">.</span><span class="n">CBC</span><span class="p">}</span>
 
 
-<div class="viewcode-block" id="ParametersMilp"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.ParametersMilp">[docs]</a><span class="k">class</span> <span class="nc">ParametersMilp</span><span class="p">:</span>
+<div class="viewcode-block" id="ParametersMilp">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.ParametersMilp">[docs]</a>
+<span class="k">class</span> <span class="nc">ParametersMilp</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">time_limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -144,7 +149,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">n_solutions_max</span> <span class="o">=</span> <span class="n">n_solutions_max</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pool_search_mode</span> <span class="o">=</span> <span class="n">pool_search_mode</span>
 
-<div class="viewcode-block" id="ParametersMilp.default"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.ParametersMilp.default">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersMilp.default">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.ParametersMilp.default">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersMilp&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ParametersMilp</span><span class="p">(</span>
             <span class="n">time_limit</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
@@ -153,35 +160,54 @@
             <span class="n">mip_gap</span><span class="o">=</span><span class="mf">0.000001</span><span class="p">,</span>
             <span class="n">retrieve_all_solution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">n_solutions_max</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MilpSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver">[docs]</a><span class="k">class</span> <span class="nc">MilpSolver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MilpSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">MilpSolver</span><span class="p">(</span><span class="n">SolverDO</span><span class="p">):</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
 
-<div class="viewcode-block" id="MilpSolver.init_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.init_model">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="MilpSolver.init_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.init_model">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="MilpSolver.retrieve_solutions"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_solutions">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="MilpSolver.retrieve_solutions">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_solutions">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="MilpSolver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.solve">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="MilpSolver.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.solve">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="o">...</span></div>
 
-<div class="viewcode-block" id="MilpSolver.get_var_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.get_var_value_for_ith_solution">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="MilpSolver.get_var_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.get_var_value_for_ith_solution">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get value for i-th solution of a given variable.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="MilpSolver.get_obj_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.get_obj_value_for_ith_solution">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="MilpSolver.get_obj_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.MilpSolver.get_obj_value_for_ith_solution">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get objective value for i-th solution.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
+
 
     <span class="nd">@property</span>
     <span class="nd">@abstractmethod</span>
@@ -190,12 +216,17 @@
         <span class="k">pass</span></div>
 
 
-<div class="viewcode-block" id="PymipMilpSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver">[docs]</a><span class="k">class</span> <span class="nc">PymipMilpSolver</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PymipMilpSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">PymipMilpSolver</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Milp solver wrapping a solver from pymip library.&quot;&quot;&quot;</span>
 
     <span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">mip</span><span class="o">.</span><span class="n">Model</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="PymipMilpSolver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+<div class="viewcode-block" id="PymipMilpSolver.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">parameters_milp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -203,7 +234,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">optimize_model</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PymipMilpSolver.prepare_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.prepare_model">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_model</span><span class="p">(</span>
+
+<div class="viewcode-block" id="PymipMilpSolver.prepare_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.prepare_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">prepare_model</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set Gurobi Model parameters according to parameters_milp&quot;&quot;&quot;</span>
@@ -221,7 +255,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">max_seconds</span> <span class="o">=</span> <span class="n">parameters_milp</span><span class="o">.</span><span class="n">time_limit</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">max_solutions</span> <span class="o">=</span> <span class="n">parameters_milp</span><span class="o">.</span><span class="n">n_solutions_max</span></div>
 
-<div class="viewcode-block" id="PymipMilpSolver.optimize_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.optimize_model">[docs]</a>    <span class="k">def</span> <span class="nf">optimize_model</span><span class="p">(</span>
+
+<div class="viewcode-block" id="PymipMilpSolver.optimize_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.optimize_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">optimize_model</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Optimize the mip Model.</span>
@@ -241,17 +278,24 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Solver found </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">num_solutions</span><span class="si">}</span><span class="s2"> solutions&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Objective : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objective_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PymipMilpSolver.get_var_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.get_var_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="n">mip</span><span class="o">.</span><span class="n">Var</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="PymipMilpSolver.get_var_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.get_var_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="n">mip</span><span class="o">.</span><span class="n">Var</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get value for i-th solution of a given variable.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">var</span><span class="o">.</span><span class="n">xi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PymipMilpSolver.get_obj_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.get_obj_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PymipMilpSolver.get_obj_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.PymipMilpSolver.get_obj_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get objective value for i-th solution.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for mypy</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
                 <span class="s2">&quot;self.model should not be None when calling this method.&quot;</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objective_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
+
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">nb_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -262,12 +306,17 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">num_solutions</span></div>
 
 
-<div class="viewcode-block" id="GurobiMilpSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver">[docs]</a><span class="k">class</span> <span class="nc">GurobiMilpSolver</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GurobiMilpSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">GurobiMilpSolver</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Milp solver wrapping a solver from gurobi library.&quot;&quot;&quot;</span>
 
     <span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;gurobipy.Model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="GurobiMilpSolver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+<div class="viewcode-block" id="GurobiMilpSolver.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">parameters_milp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -275,7 +324,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">optimize_model</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GurobiMilpSolver.prepare_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.prepare_model">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_model</span><span class="p">(</span>
+
+<div class="viewcode-block" id="GurobiMilpSolver.prepare_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.prepare_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">prepare_model</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set Gurobi Model parameters according to parameters_milp&quot;&quot;&quot;</span>
@@ -295,7 +347,10 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">setParam</span><span class="p">(</span><span class="s2">&quot;PoolSearchMode&quot;</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="o">.</span><span class="n">pool_search_mode</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GurobiMilpSolver.optimize_model"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.optimize_model">[docs]</a>    <span class="k">def</span> <span class="nf">optimize_model</span><span class="p">(</span>
+
+<div class="viewcode-block" id="GurobiMilpSolver.optimize_model">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.optimize_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">optimize_model</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Optimize the Gurobi Model.</span>
@@ -316,7 +371,10 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Solver found </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">SolCount</span><span class="si">}</span><span class="s2"> solutions&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Objective : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">getObjective</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GurobiMilpSolver.get_var_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_var_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="s2">&quot;gurobipy.Var&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
+
+<div class="viewcode-block" id="GurobiMilpSolver.get_var_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_var_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="s2">&quot;gurobipy.Var&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># type: ignore # avoid isinstance checks for efficiency</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get value for i-th solution of a given variable.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for mypy</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
@@ -325,7 +383,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">SolutionNumber</span> <span class="o">=</span> <span class="n">i</span>
         <span class="k">return</span> <span class="n">var</span><span class="o">.</span><span class="n">getAttr</span><span class="p">(</span><span class="s2">&quot;Xn&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GurobiMilpSolver.get_obj_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_obj_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GurobiMilpSolver.get_obj_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_obj_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get objective value for i-th solution.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for mypy</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
@@ -334,7 +395,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">SolutionNumber</span> <span class="o">=</span> <span class="n">i</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">getAttr</span><span class="p">(</span><span class="s2">&quot;ObjVal&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GurobiMilpSolver.get_pool_obj_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_pool_obj_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_pool_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GurobiMilpSolver.get_pool_obj_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_pool_obj_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_pool_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get pool objective value for i-th solution.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for mypy</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
@@ -342,6 +406,7 @@
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">SolutionNumber</span> <span class="o">=</span> <span class="n">i</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">getAttr</span><span class="p">(</span><span class="s2">&quot;PoolObjVal&quot;</span><span class="p">)</span></div>
+
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">nb_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -352,11 +417,16 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">SolCount</span></div>
 
 
-<div class="viewcode-block" id="CplexMilpSolver"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver">[docs]</a><span class="k">class</span> <span class="nc">CplexMilpSolver</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CplexMilpSolver">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">CplexMilpSolver</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">):</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;docplex.mp.model.Model&quot;</span><span class="p">]</span>
     <span class="n">results_solve</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="s2">&quot;SolveSolution&quot;</span><span class="p">]]</span>
 
-<div class="viewcode-block" id="CplexMilpSolver.solve"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+<div class="viewcode-block" id="CplexMilpSolver.solve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">cplex_available</span><span class="p">:</span>
@@ -395,13 +465,20 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Objective : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">results_solve</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_objective_value</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span><span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CplexMilpSolver.get_var_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_var_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CplexMilpSolver.get_var_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_var_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_var_value_for_ith_solution</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="s2">&quot;docplex.mp.dvar.Var&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">results_solve</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_var_value</span><span class="p">(</span><span class="n">var</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CplexMilpSolver.get_obj_value_for_ith_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_obj_value_for_ith_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CplexMilpSolver.get_obj_value_for_ith_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_obj_value_for_ith_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_obj_value_for_ith_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">results_solve</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
+
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">nb_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -410,6 +487,7 @@
             <span class="k">return</span> <span class="mi">0</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">results_solve</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

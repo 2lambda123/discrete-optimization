@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -140,7 +140,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="InitialMethodRCPSP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialMethodRCPSP">[docs]</a><span class="k">class</span> <span class="nc">InitialMethodRCPSP</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="InitialMethodRCPSP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialMethodRCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialMethodRCPSP</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">DUMMY</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">PILE</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">PILE_CALENDAR</span> <span class="o">=</span> <span class="mi">2</span>
@@ -149,7 +151,10 @@
     <span class="n">CP</span> <span class="o">=</span> <span class="mi">5</span></div>
 
 
-<div class="viewcode-block" id="InitialSolutionRCPSP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialSolutionRCPSP">[docs]</a><span class="k">class</span> <span class="nc">InitialSolutionRCPSP</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="InitialSolutionRCPSP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialSolutionRCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">InitialSolutionRCPSP</span><span class="p">(</span><span class="n">InitialSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -168,7 +173,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">initial_method</span> <span class="o">=</span> <span class="n">initial_method</span>
 
-<div class="viewcode-block" id="InitialSolutionRCPSP.get_starting_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialSolutionRCPSP.get_starting_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="InitialSolutionRCPSP.get_starting_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.InitialSolutionRCPSP.get_starting_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_starting_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_method</span> <span class="o">==</span> <span class="n">InitialMethodRCPSP</span><span class="o">.</span><span class="n">PILE</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Compute greedy&quot;</span><span class="p">)</span>
             <span class="n">greedy_solver</span> <span class="o">=</span> <span class="n">PileSolverRCPSP</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">)</span>
@@ -223,15 +230,21 @@
             <span class="n">store_solution</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
                 <span class="n">dummy</span><span class="p">,</span> <span class="n">nb_iteration_max</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">pickle_result</span><span class="o">=</span><span class="kc">False</span>
             <span class="p">)</span>
-        <span class="k">return</span> <span class="n">store_solution</span></div></div>
+        <span class="k">return</span> <span class="n">store_solution</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerFixStartTime"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerFixStartTime">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerFixStartTime</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixStartTime">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerFixStartTime">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerFixStartTime</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">fraction_fix_start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_fix_start_time</span> <span class="o">=</span> <span class="n">fraction_fix_start_time</span>
 
-<div class="viewcode-block" id="ConstraintHandlerFixStartTime.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerFixStartTime.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerFixStartTime.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerFixStartTime.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_RCPSP</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 
@@ -276,15 +289,22 @@
                 <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">constraints_dict</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerFixStartTime.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerFixStartTime.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerFixStartTime.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerFixStartTime.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_RCPSP</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">previous_constraints</span><span class="p">[</span><span class="s2">&quot;fix_start_time&quot;</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">milp_solver</span><span class="o">.</span><span class="n">solver_name</span> <span class="o">==</span> <span class="n">mip</span><span class="o">.</span><span class="n">GRB</span><span class="p">:</span>
-            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeInterval"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeInterval">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerStartTimeInterval</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerStartTimeInterval">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeInterval">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerStartTimeInterval</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -297,7 +317,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">minus_delta</span> <span class="o">=</span> <span class="n">minus_delta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plus_delta</span> <span class="o">=</span> <span class="n">plus_delta</span>
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeInterval.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeInterval.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerStartTimeInterval.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeInterval.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_RCPSP</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="n">constraints_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -351,15 +373,22 @@
             <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">constraints_dict</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeInterval.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeInterval.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerStartTimeInterval.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeInterval.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_RCPSP</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">previous_constraints</span><span class="p">[</span><span class="s2">&quot;range_start_time&quot;</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">milp_solver</span><span class="o">.</span><span class="n">solver_name</span> <span class="o">==</span> <span class="n">mip</span><span class="o">.</span><span class="n">GRB</span><span class="p">:</span>
-            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerStartTimeIntervalMRCPSP</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerStartTimeIntervalMRCPSP</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -372,7 +401,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">minus_delta</span> <span class="o">=</span> <span class="n">minus_delta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plus_delta</span> <span class="o">=</span> <span class="n">plus_delta</span>
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_MRCPSP</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="n">current_solution</span><span class="p">,</span> <span class="n">fit</span> <span class="o">=</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">get_best_solution_fit</span><span class="p">()</span>
@@ -437,15 +468,22 @@
             <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">constraints_dict</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_MRCPSP</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">previous_constraints</span><span class="p">[</span><span class="s2">&quot;range_start_time&quot;</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">milp_solver</span><span class="o">.</span><span class="n">solver_name</span> <span class="o">==</span> <span class="n">mip</span><span class="o">.</span><span class="n">GRB</span><span class="p">:</span>
-            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+            <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP_GRB"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP_GRB">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerStartTimeIntervalMRCPSP_GRB</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP_GRB">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP_GRB">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerStartTimeIntervalMRCPSP_GRB</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -458,7 +496,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">minus_delta</span> <span class="o">=</span> <span class="n">minus_delta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plus_delta</span> <span class="o">=</span> <span class="n">plus_delta</span>
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP_GRB.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP_GRB.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP_GRB.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP_GRB.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_MRCPSP_GUROBI</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="n">current_solution</span><span class="p">,</span> <span class="n">fit</span> <span class="o">=</span> <span class="n">result_storage</span><span class="o">.</span><span class="n">get_best_solution_fit</span><span class="p">()</span>
@@ -521,16 +561,23 @@
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">constraints_dict</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP_GRB.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP_GRB.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerStartTimeIntervalMRCPSP_GRB.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.ConstraintHandlerStartTimeIntervalMRCPSP_GRB.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">milp_solver</span><span class="p">:</span> <span class="n">LP_MRCPSP_GUROBI</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
         <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">previous_constraints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;range_start_time&quot;</span><span class="p">,</span> <span class="p">[]))</span>
-        <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
+        <span class="n">milp_solver</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LNS_LP_RCPSP_SOLVER"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.LNS_LP_RCPSP_SOLVER">[docs]</a><span class="k">class</span> <span class="nc">LNS_LP_RCPSP_SOLVER</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LNS_LP_RCPSP_SOLVER">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.LNS_LP_RCPSP_SOLVER">[docs]</a>
+<span class="k">class</span> <span class="nc">LNS_LP_RCPSP_SOLVER</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">SolverRCPSP</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">)</span>
         <span class="n">solver</span> <span class="o">=</span> <span class="n">LP_MRCPSP</span><span class="p">(</span><span class="n">rcpsp_model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -562,11 +609,15 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LNS_LP_RCPSP_SOLVER.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.LNS_LP_RCPSP_SOLVER.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="LNS_LP_RCPSP_SOLVER.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.rcpsp_lp_lns_solver.LNS_LP_RCPSP_SOLVER.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lns_solver</span><span class="o">.</span><span class="n">solve_lns</span><span class="p">(</span>
             <span class="n">parameters_milp</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters_milp</span><span class="p">,</span>
             <span class="n">nb_iteration_lns</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_iteration_lns&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

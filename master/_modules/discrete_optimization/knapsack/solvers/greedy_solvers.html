@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -97,7 +97,9 @@
 <span class="kn">from</span> <span class="nn">discrete_optimization.knapsack.solvers.knapsack_solver</span> <span class="kn">import</span> <span class="n">SolverKnapsack</span>
 
 
-<div class="viewcode-block" id="compute_density"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.compute_density">[docs]</a><span class="k">def</span> <span class="nf">compute_density</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">]:</span>
+<div class="viewcode-block" id="compute_density">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.compute_density">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_density</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">]:</span>
     <span class="n">dd</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
         <span class="p">[</span>
             <span class="n">l</span>
@@ -110,7 +112,10 @@
     <span class="k">return</span> <span class="n">dd</span></div>
 
 
-<div class="viewcode-block" id="compute_density_and_penalty"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.compute_density_and_penalty">[docs]</a><span class="k">def</span> <span class="nf">compute_density_and_penalty</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="compute_density_and_penalty">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.compute_density_and_penalty">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_density_and_penalty</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">]:</span>
     <span class="n">dd</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
         <span class="p">[</span>
             <span class="n">l</span>
@@ -123,7 +128,10 @@
     <span class="k">return</span> <span class="n">dd</span></div>
 
 
-<div class="viewcode-block" id="greedy_using_queue"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.greedy_using_queue">[docs]</a><span class="k">def</span> <span class="nf">greedy_using_queue</span><span class="p">(</span>
+
+<div class="viewcode-block" id="greedy_using_queue">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.greedy_using_queue">[docs]</a>
+<span class="k">def</span> <span class="nf">greedy_using_queue</span><span class="p">(</span>
     <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
     <span class="n">method_queue</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">KnapsackModel</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>
@@ -145,7 +153,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="best_of_greedy"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.best_of_greedy">[docs]</a><span class="k">def</span> <span class="nf">best_of_greedy</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>
+
+<div class="viewcode-block" id="best_of_greedy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.best_of_greedy">[docs]</a>
+<span class="k">def</span> <span class="nf">best_of_greedy</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KnapsackSolution</span><span class="p">:</span>
     <span class="n">result1</span> <span class="o">=</span> <span class="n">greedy_using_queue</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">,</span> <span class="n">compute_density</span><span class="p">)</span>
     <span class="n">result2</span> <span class="o">=</span> <span class="n">greedy_using_queue</span><span class="p">(</span><span class="n">knapsack_model</span><span class="p">,</span> <span class="n">compute_density_and_penalty</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">result1</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">result2</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -155,7 +166,10 @@
     <span class="k">return</span> <span class="n">result1</span> <span class="k">if</span> <span class="n">result1</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">result2</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="n">result2</span></div>
 
 
-<div class="viewcode-block" id="GreedyBest"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyBest">[docs]</a><span class="k">class</span> <span class="nc">GreedyBest</span><span class="p">(</span><span class="n">SolverKnapsack</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GreedyBest">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyBest">[docs]</a>
+<span class="k">class</span> <span class="nc">GreedyBest</span><span class="p">(</span><span class="n">SolverKnapsack</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
@@ -171,17 +185,23 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="GreedyBest.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyBest.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="GreedyBest.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyBest.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">res</span> <span class="o">=</span> <span class="n">best_of_greedy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="p">)</span>
         <span class="n">fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_sol</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ResultStorage</span><span class="p">(</span>
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="p">[(</span><span class="n">res</span><span class="p">,</span> <span class="n">fit</span><span class="p">)],</span>
             <span class="n">best_solution</span><span class="o">=</span><span class="n">res</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GreedyDummy"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyDummy">[docs]</a><span class="k">class</span> <span class="nc">GreedyDummy</span><span class="p">(</span><span class="n">SolverKnapsack</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GreedyDummy">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyDummy">[docs]</a>
+<span class="k">class</span> <span class="nc">GreedyDummy</span><span class="p">(</span><span class="n">SolverKnapsack</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
@@ -197,7 +217,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="GreedyDummy.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyDummy.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="GreedyDummy.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.greedy_solvers.GreedyDummy.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">sol</span> <span class="o">=</span> <span class="n">KnapsackSolution</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="p">,</span>
             <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
@@ -209,7 +231,9 @@
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="p">[(</span><span class="n">sol</span><span class="p">,</span> <span class="n">fit</span><span class="p">)],</span>
             <span class="n">best_solution</span><span class="o">=</span><span class="n">sol</span><span class="p">,</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

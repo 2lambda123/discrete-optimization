@@ -11,12 +11,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/versions.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=30d551ce"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/versions.js?v=dd1a30db"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -100,11 +100,11 @@
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
 <section id="minizinc-2-6">
-<h3>Minizinc 2.6+<a class="headerlink" href="#minizinc-2-6" title="Permalink to this heading"></a></h3>
+<h3>Minizinc 2.6+<a class="headerlink" href="#minizinc-2-6" title="Link to this heading"></a></h3>
 <p>You need to install <a class="reference external" href="https://www.minizinc.org/">minizinc</a> (version greater than 2.6) and update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable
 so that it can be found by Python.
 See <a class="reference external" href="https://www.minizinc.org/doc-latest/en/installation.html">minizinc documentation</a> for more details.</p>
@@ -115,7 +115,7 @@ is not an official documentation for minizinc and that the following lines can s
 as we do not test them automatically.</p>
 </div></blockquote>
 <section id="linux-command-line">
-<h4>Linux command line<a class="headerlink" href="#linux-command-line" title="Permalink to this heading"></a></h4>
+<h4>Linux command line<a class="headerlink" href="#linux-command-line" title="Link to this heading"></a></h4>
 <p>On a Linux distribution, you can use the bundled <a class="reference external" href="https://www.minizinc.org/doc-latest/en/installation.html#appimage">minizinc AppImage</a>.</p>
 <p>If <a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_in_Userspace">FUSE</a> is available:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir minizinc_install
@@ -139,7 +139,7 @@ minizinc --version
 </div>
 </section>
 <section id="macos-command-line">
-<h4>MacOs command line<a class="headerlink" href="#macos-command-line" title="Permalink to this heading"></a></h4>
+<h4>MacOs command line<a class="headerlink" href="#macos-command-line" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir minizinc_install
 curl -o minizinc.dmg -L https://github.com/MiniZinc/MiniZincIDE/releases/download/2.6.3/MiniZincIDE-2.6.3-bundled.dmg
 hdiutil attach minizinc.dmg
@@ -150,7 +150,7 @@ minizinc --version
 </div>
 </section>
 <section id="windows-command-line">
-<h4>Windows command line<a class="headerlink" href="#windows-command-line" title="Permalink to this heading"></a></h4>
+<h4>Windows command line<a class="headerlink" href="#windows-command-line" title="Link to this heading"></a></h4>
 <p>Works on Windows Server 2022 with bash shell:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir minizinc_install
 curl -o minizinc_setup.exe -L https://github.com/MiniZinc/MiniZincIDE/releases/download/2.6.3/MiniZincIDE-2.6.3-bundled-setup-win64.exe
@@ -161,7 +161,7 @@ minizinc --version
 </div>
 </section>
 <section id="skipping-minizinc-version-check">
-<h4>Skipping minizinc version check<a class="headerlink" href="#skipping-minizinc-version-check" title="Permalink to this heading"></a></h4>
+<h4>Skipping minizinc version check<a class="headerlink" href="#skipping-minizinc-version-check" title="Link to this heading"></a></h4>
 <p>It may happen that you need to use only a part of the library which is not relying on minizinc at all,
 and that you do not want to install minzinc.
 This can be troublesome as the minizinc binary version is checked at library import.
@@ -174,21 +174,21 @@ Most modules related to solvers will fail to be imported without minizinc as the
 </section>
 </section>
 <section id="python-3-7-environment">
-<h3>Python 3.7+ environment<a class="headerlink" href="#python-3-7-environment" title="Permalink to this heading"></a></h3>
+<h3>Python 3.7+ environment<a class="headerlink" href="#python-3-7-environment" title="Link to this heading"></a></h3>
 <p>The use of a virtual environment is recommended, and you will need to ensure that the environment use a Python version
 greater than 3.7.
 This can be achieved for instance either by using <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> or by using <a class="reference external" href="https://github.com/pyenv/pyenv">pyenv</a> (or <a class="reference external" href="https://github.com/pyenv-win/pyenv-win">pyenv-win</a> on windows)
 and <a class="reference external" href="https://docs.python.org/fr/3/library/venv.html">venv</a> module.</p>
 <p>The following examples show how to create a virtual environment with Python version 3.8.13 with the mentioned methods.</p>
 <section id="with-conda-all-platforms">
-<h4>With conda (all platforms)<a class="headerlink" href="#with-conda-all-platforms" title="Permalink to this heading"></a></h4>
+<h4>With conda (all platforms)<a class="headerlink" href="#with-conda-all-platforms" title="Link to this heading"></a></h4>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="k">do</span>-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8.13
 conda<span class="w"> </span>activate<span class="w"> </span><span class="k">do</span>-env
 </pre></div>
 </div>
 </section>
 <section id="with-pyenv-venv-linux-macos">
-<h4>With pyenv + venv (Linux/MacOS)<a class="headerlink" href="#with-pyenv-venv-linux-macos" title="Permalink to this heading"></a></h4>
+<h4>With pyenv + venv (Linux/MacOS)<a class="headerlink" href="#with-pyenv-venv-linux-macos" title="Link to this heading"></a></h4>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyenv<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.8.13
 pyenv<span class="w"> </span>shell<span class="w"> </span><span class="m">3</span>.8.13
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="k">do</span>-venv
@@ -197,7 +197,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 </div>
 </section>
 <section id="with-pyenv-win-venv-windows">
-<h4>With pyenv-win + venv (Windows)<a class="headerlink" href="#with-pyenv-win-venv-windows" title="Permalink to this heading"></a></h4>
+<h4>With pyenv-win + venv (Windows)<a class="headerlink" href="#with-pyenv-win-venv-windows" title="Link to this heading"></a></h4>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyenv<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.8.13
 pyenv<span class="w"> </span>shell<span class="w"> </span><span class="m">3</span>.8.13
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="k">do</span>-venv
@@ -207,7 +207,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 </section>
 </section>
 <section id="gurobi-optional">
-<h3>Gurobi [optional]<a class="headerlink" href="#gurobi-optional" title="Permalink to this heading"></a></h3>
+<h3>Gurobi [optional]<a class="headerlink" href="#gurobi-optional" title="Link to this heading"></a></h3>
 <p>Optionally, install <a class="reference external" href="https://www.gurobi.com/">gurobi</a> with its python binding (gurobipy)
 and an appropriate license, if you want to try solvers that make use of gurobi. The version of gurobi must be at least 9.0.</p>
 <blockquote>
@@ -216,7 +216,7 @@ and an appropriate license, if you want to try solvers that make use of gurobi. 
 </section>
 </section>
 <section id="pip-install-discrete-optimization-library">
-<h2>Pip install discrete-optimization library<a class="headerlink" href="#pip-install-discrete-optimization-library" title="Permalink to this heading"></a></h2>
+<h2>Pip install discrete-optimization library<a class="headerlink" href="#pip-install-discrete-optimization-library" title="Link to this heading"></a></h2>
 <p>Install discrete-optimization from pip:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>discrete-optimization
 </pre></div>

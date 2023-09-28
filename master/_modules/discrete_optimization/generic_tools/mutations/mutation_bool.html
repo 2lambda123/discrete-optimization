@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -97,25 +97,39 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="BitFlipMove"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove">[docs]</a><span class="k">class</span> <span class="nc">BitFlipMove</span><span class="p">(</span><span class="n">LocalMove</span><span class="p">):</span>
+<div class="viewcode-block" id="BitFlipMove">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove">[docs]</a>
+<span class="k">class</span> <span class="nc">BitFlipMove</span><span class="p">(</span><span class="n">LocalMove</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">list_index_flip</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">list_index_flip</span> <span class="o">=</span> <span class="n">list_index_flip</span>
 
-<div class="viewcode-block" id="BitFlipMove.apply_local_move"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.apply_local_move">[docs]</a>    <span class="k">def</span> <span class="nf">apply_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solution</span><span class="p">:</span>
+<div class="viewcode-block" id="BitFlipMove.apply_local_move">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.apply_local_move">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solution</span><span class="p">:</span>
         <span class="n">l</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_index_flip</span><span class="p">:</span>
             <span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">solution</span></div>
 
-<div class="viewcode-block" id="BitFlipMove.backtrack_local_move"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.backtrack_local_move">[docs]</a>    <span class="k">def</span> <span class="nf">backtrack_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solution</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="BitFlipMove.backtrack_local_move">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.backtrack_local_move">[docs]</a>
+    <span class="k">def</span> <span class="nf">backtrack_local_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solution</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MutationBitFlip"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip">[docs]</a><span class="k">class</span> <span class="nc">MutationBitFlip</span><span class="p">(</span><span class="n">Mutation</span><span class="p">):</span>
-<div class="viewcode-block" id="MutationBitFlip.build"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.build">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="MutationBitFlip">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip">[docs]</a>
+<span class="k">class</span> <span class="nc">MutationBitFlip</span><span class="p">(</span><span class="n">Mutation</span><span class="p">):</span>
+<div class="viewcode-block" id="MutationBitFlip.build">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.build">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MutationBitFlip&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">MutationBitFlip</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -134,17 +148,24 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">][</span><span class="s2">&quot;n&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="MutationBitFlip.mutate"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate">[docs]</a>    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">]:</span>
+<div class="viewcode-block" id="MutationBitFlip.mutate">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate">[docs]</a>
+    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">]:</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability_flip</span><span class="p">)</span>
         <span class="n">move</span> <span class="o">=</span> <span class="n">BitFlipMove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">,</span> <span class="n">indexes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">move</span><span class="o">.</span><span class="n">apply_local_move</span><span class="p">(</span><span class="n">solution</span><span class="p">),</span> <span class="n">move</span></div>
 
-<div class="viewcode-block" id="MutationBitFlip.mutate_and_compute_obj"><a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate_and_compute_obj">[docs]</a>    <span class="k">def</span> <span class="nf">mutate_and_compute_obj</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MutationBitFlip.mutate_and_compute_obj">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.generic_tools.mutations.html#discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate_and_compute_obj">[docs]</a>
+    <span class="k">def</span> <span class="nf">mutate_and_compute_obj</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">Solution</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Solution</span><span class="p">,</span> <span class="n">LocalMove</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
         <span class="n">s</span><span class="p">,</span> <span class="n">move</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
         <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">s</span><span class="p">,</span> <span class="n">move</span><span class="p">,</span> <span class="n">f</span></div></div>
+        <span class="k">return</span> <span class="n">s</span><span class="p">,</span> <span class="n">move</span><span class="p">,</span> <span class="n">f</span></div>
+</div>
+
 </pre></div>
 
            </div>

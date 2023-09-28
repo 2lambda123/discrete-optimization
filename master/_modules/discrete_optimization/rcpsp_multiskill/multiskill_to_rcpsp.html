@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -95,12 +95,16 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="MultiSkillToRCPSP"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRCPSP">[docs]</a><span class="k">class</span> <span class="nc">MultiSkillToRCPSP</span><span class="p">:</span>
+<div class="viewcode-block" id="MultiSkillToRCPSP">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRCPSP">[docs]</a>
+<span class="k">class</span> <span class="nc">MultiSkillToRCPSP</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">multiskill_model</span><span class="p">:</span> <span class="n">MS_RCPSPModel</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">multiskill_model</span> <span class="o">=</span> <span class="n">multiskill_model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">worker_type_to_worker</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="MultiSkillToRCPSP.is_compatible"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRCPSP.is_compatible">[docs]</a>    <span class="k">def</span> <span class="nf">is_compatible</span><span class="p">(</span>
+<div class="viewcode-block" id="MultiSkillToRCPSP.is_compatible">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRCPSP.is_compatible">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_compatible</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">task_requirements</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
         <span class="n">ressource_availability</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">],</span>
@@ -118,7 +122,10 @@
         <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="n">duration_task</span></div>
 
-<div class="viewcode-block" id="MultiSkillToRCPSP.construct_rcpsp_by_worker_type"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRCPSP.construct_rcpsp_by_worker_type">[docs]</a>    <span class="k">def</span> <span class="nf">construct_rcpsp_by_worker_type</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MultiSkillToRCPSP.construct_rcpsp_by_worker_type">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp_multiskill.html#discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRCPSP.construct_rcpsp_by_worker_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">construct_rcpsp_by_worker_type</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">limit_number_of_mode_per_task</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">max_number_of_mode</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -249,7 +256,9 @@
             <span class="n">source_task</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">multiskill_model</span><span class="o">.</span><span class="n">source_task</span><span class="p">,</span>
             <span class="n">sink_task</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">multiskill_model</span><span class="o">.</span><span class="n">sink_task</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">rcpsp_model</span></div></div>
+        <span class="k">return</span> <span class="n">rcpsp_model</span></div>
+</div>
+
 </pre></div>
 
            </div>

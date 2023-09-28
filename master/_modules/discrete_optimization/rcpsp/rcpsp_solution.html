@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -98,13 +98,18 @@
     <span class="kn">from</span> <span class="nn">discrete_optimization.rcpsp.rcpsp_model</span> <span class="kn">import</span> <span class="n">RCPSPModel</span>
 
 
-<div class="viewcode-block" id="TaskDetails"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.TaskDetails">[docs]</a><span class="k">class</span> <span class="nc">TaskDetails</span><span class="p">:</span>
+<div class="viewcode-block" id="TaskDetails">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.TaskDetails">[docs]</a>
+<span class="k">class</span> <span class="nc">TaskDetails</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span></div>
 
 
-<div class="viewcode-block" id="RCPSPSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution">[docs]</a><span class="k">class</span> <span class="nc">RCPSPSolution</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RCPSPSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">RCPSPSolution</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Solution to RCPSPModel problems.</span>
 
 <span class="sd">    Attributes:</span>
@@ -203,19 +208,24 @@
         <span class="c1"># schedule already computed (prevent issues with __setattr__ hack)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="RCPSPSolution.change_problem"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.change_problem">[docs]</a>    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+<div class="viewcode-block" id="RCPSPSolution.change_problem">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.change_problem">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_problem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
         <span class="c1"># set problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">new_problem</span>
         <span class="c1"># recompute schedule and standardised permutation with respect to the new problem</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span><span class="n">do_fast</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">standardised_permutation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_permutation_from_schedule</span><span class="p">()</span></div>
 
+
     <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;rcpsp_permutation&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">True</span>
 
-<div class="viewcode-block" id="RCPSPSolution.copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;RCPSPSolution&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="RCPSPSolution.copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;RCPSPSolution&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">RCPSPSolution</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">rcpsp_permutation</span><span class="o">=</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_permutation</span><span class="p">),</span>
@@ -226,7 +236,10 @@
             <span class="n">fast</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.lazy_copy"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.lazy_copy">[docs]</a>    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;RCPSPSolution&quot;</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.lazy_copy">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.lazy_copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">lazy_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;RCPSPSolution&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">RCPSPSolution</span><span class="p">(</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
             <span class="n">rcpsp_permutation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_permutation</span><span class="p">,</span>
@@ -237,6 +250,7 @@
             <span class="n">fast</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">,</span>
         <span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">sched_str</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span>
@@ -245,7 +259,9 @@
         <span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;RCPSP solution (rcpsp_schedule): &quot;</span> <span class="o">+</span> <span class="n">sched_str</span>
         <span class="k">return</span> <span class="n">val</span>
 
-<div class="viewcode-block" id="RCPSPSolution.generate_permutation_from_schedule"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.generate_permutation_from_schedule">[docs]</a>    <span class="k">def</span> <span class="nf">generate_permutation_from_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<div class="viewcode-block" id="RCPSPSolution.generate_permutation_from_schedule">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.generate_permutation_from_schedule">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_permutation_from_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="n">sorted_task</span> <span class="o">=</span> <span class="p">[</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">index_task_non_dummy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
@@ -255,7 +271,10 @@
         <span class="p">]</span>
         <span class="k">return</span> <span class="n">sorted_task</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.compute_mean_resource_reserve"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.compute_mean_resource_reserve">[docs]</a>    <span class="k">def</span> <span class="nf">compute_mean_resource_reserve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.compute_mean_resource_reserve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.compute_mean_resource_reserve">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_mean_resource_reserve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fast</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">compute_mean_resource_reserve</span><span class="p">(</span>
                 <span class="n">solution</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span>
@@ -289,7 +308,10 @@
                     <span class="p">),</span>
                 <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.generate_schedule_from_permutation_serial_sgs"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.generate_schedule_from_permutation_serial_sgs">[docs]</a>    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span>
+
+<div class="viewcode-block" id="RCPSPSolution.generate_schedule_from_permutation_serial_sgs">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.generate_schedule_from_permutation_serial_sgs">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">do_fast</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span>
@@ -332,7 +354,10 @@
                     <span class="n">solution</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span>
                 <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.generate_schedule_from_permutation_serial_sgs_2"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.generate_schedule_from_permutation_serial_sgs_2">[docs]</a>    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_2</span><span class="p">(</span>
+
+<div class="viewcode-block" id="RCPSPSolution.generate_schedule_from_permutation_serial_sgs_2">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.generate_schedule_from_permutation_serial_sgs_2">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_2</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">current_t</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">completed_tasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">TaskDetails</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -419,23 +444,42 @@
                 <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_to_recompute</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.get_max_end_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_max_end_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_max_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.get_max_end_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_max_end_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_max_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.get_start_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_start_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.get_start_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_start_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule</span><span class="p">[</span><span class="n">task</span><span class="p">][</span><span class="s2">&quot;start_time&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.get_end_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_end_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.get_end_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_end_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_schedule</span><span class="p">[</span><span class="n">task</span><span class="p">][</span><span class="s2">&quot;end_time&quot;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.get_start_times_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_start_times_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_start_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.get_start_times_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_start_times_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_start_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_start_time</span><span class="p">(</span><span class="n">task</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.get_end_times_list"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_end_times_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_end_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.get_end_times_list">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_end_times_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_end_times_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">task</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="RCPSPSolution.get_active_time"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_active_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="RCPSPSolution.get_active_time">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.RCPSPSolution.get_active_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_start_time</span><span class="p">(</span><span class="n">task</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="n">task</span><span class="p">)))</span></div>
+
 
     <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_permutation</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_modes</span><span class="p">)))</span>
@@ -448,7 +492,10 @@
         <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="permutation_do_to_permutation_sgs_fast"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.permutation_do_to_permutation_sgs_fast">[docs]</a><span class="k">def</span> <span class="nf">permutation_do_to_permutation_sgs_fast</span><span class="p">(</span>
+
+<div class="viewcode-block" id="permutation_do_to_permutation_sgs_fast">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.permutation_do_to_permutation_sgs_fast">[docs]</a>
+<span class="k">def</span> <span class="nf">permutation_do_to_permutation_sgs_fast</span><span class="p">(</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span> <span class="n">permutation_do</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]:</span>
     <span class="n">perm_extended</span> <span class="o">=</span> <span class="p">[</span>
@@ -460,7 +507,10 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">perm_extended</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs">[docs]</a><span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span>
+
+<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span> <span class="nb">bool</span><span class="p">]:</span>
     <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
@@ -584,7 +634,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span></div>
 
 
-<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_special_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs_special_constraints">[docs]</a><span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_special_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_special_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs_special_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_special_constraints</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span> <span class="nb">bool</span><span class="p">]:</span>
     <span class="n">activity_end_times</span> <span class="o">=</span> <span class="p">{}</span>
@@ -810,7 +863,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span></div>
 
 
-<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_partial_schedule"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs_partial_schedule">[docs]</a><span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_partial_schedule</span><span class="p">(</span>
+
+<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_partial_schedule">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs_partial_schedule">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_partial_schedule</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
     <span class="n">current_t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -958,7 +1014,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span></div>
 
 
-<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints">[docs]</a><span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span>
     <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
     <span class="n">current_t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -1213,7 +1272,10 @@
     <span class="k">return</span> <span class="n">rcpsp_schedule</span><span class="p">,</span> <span class="n">rcpsp_schedule_feasible</span></div>
 
 
-<div class="viewcode-block" id="compute_mean_resource_reserve"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.compute_mean_resource_reserve">[docs]</a><span class="k">def</span> <span class="nf">compute_mean_resource_reserve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="compute_mean_resource_reserve">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.compute_mean_resource_reserve">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_mean_resource_reserve</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">rcpsp_problem</span><span class="p">:</span> <span class="n">RCPSPModel</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">solution</span><span class="o">.</span><span class="n">rcpsp_schedule_feasible</span><span class="p">:</span>
@@ -1257,7 +1319,10 @@
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">mean_resource_reserve</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="PartialSolution"><a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.PartialSolution">[docs]</a><span class="k">class</span> <span class="nc">PartialSolution</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PartialSolution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.rcpsp.html#discrete_optimization.rcpsp.rcpsp_solution.PartialSolution">[docs]</a>
+<span class="k">class</span> <span class="nc">PartialSolution</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">task_mode</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1285,6 +1350,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">disjunctive_tasks</span> <span class="o">=</span> <span class="n">disjunctive_tasks</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">start_times_window</span> <span class="o">=</span> <span class="n">start_times_window</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">end_times_window</span> <span class="o">=</span> <span class="n">end_times_window</span></div>
+
         <span class="c1"># one element in self.list_partial_order is a list [l1, l2, l3]</span>
         <span class="c1"># indicating that l1 should be started before l1, and  l2 before l3 for example</span>
 </pre></div>

@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -82,7 +82,7 @@
 <span class="c1">#  This source code is licensed under the MIT license found in the</span>
 <span class="c1">#  LICENSE file in the root directory of this source tree.</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 
 <span class="kn">from</span> <span class="nn">discrete_optimization.coloring.coloring_model</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ColoringProblem</span><span class="p">,</span>
@@ -111,11 +111,14 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ToulbarColoringSolver"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver">[docs]</a><span class="k">class</span> <span class="nc">ToulbarColoringSolver</span><span class="p">(</span><span class="n">SolverColoringWithStartingSolution</span><span class="p">):</span>
+<div class="viewcode-block" id="ToulbarColoringSolver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">ToulbarColoringSolver</span><span class="p">(</span><span class="n">SolverColoringWithStartingSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">coloring_model</span><span class="p">:</span> <span class="n">ColoringProblem</span><span class="p">,</span>
         <span class="n">params_objective_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParamsObjectiveFunction</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="n">SolverColoringWithStartingSolution</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coloring_model</span><span class="o">=</span><span class="n">coloring_model</span><span class="p">)</span>
         <span class="p">(</span>
@@ -127,45 +130,79 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pytoulbar2</span><span class="o">.</span><span class="n">CFN</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="ToulbarColoringSolver.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ToulbarColoringSolver.get_range_value">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.get_range_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_range_value</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">index_node</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nb_colors_on_subset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nb_colors_all</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">):</span>
+        <span class="n">node_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">nodes_name</span><span class="p">[</span><span class="n">index_node</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">has_constraints_coloring</span><span class="p">:</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">constraints_coloring</span><span class="o">.</span><span class="n">nodes_fixed</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">constraints_coloring</span><span class="o">.</span><span class="n">color_constraint</span><span class="p">[</span>
+                    <span class="n">node_name</span>
+                <span class="p">]</span>
+                <span class="k">return</span> <span class="nb">range</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">in_subset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">is_in_subset_index</span><span class="p">(</span><span class="n">index_node</span><span class="p">)</span>
+        <span class="n">ub_i</span> <span class="o">=</span> <span class="n">nb_colors_on_subset</span> <span class="k">if</span> <span class="n">in_subset</span> <span class="k">else</span> <span class="n">nb_colors_all</span>
+        <span class="k">return</span> <span class="nb">range</span><span class="p">(</span><span class="n">ub_i</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ToulbarColoringSolver.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">number_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">number_of_nodes</span>
         <span class="n">index_nodes_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">index_nodes_name</span>
         <span class="n">nb_colors</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_colors&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">nb_colors_on_subset</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_colors_on_subset&quot;</span><span class="p">,</span> <span class="n">nb_colors</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">nb_colors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># Run greedy solver to get an upper bound of the bound.</span>
             <span class="n">sol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_starting_solution</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="n">nb_colors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">sol</span><span class="p">)[</span><span class="s2">&quot;nb_colors&quot;</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">,</span> <span class="s2">&quot; colors found by the greedy method &quot;</span><span class="p">)</span>
+            <span class="n">nb_colors_all</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">count_colors_all_index</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">nb_colors_on_subset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">count_colors</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nb_colors_on_subset</span><span class="si">}</span><span class="s2"> colors found by the greedy method &quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nb_colors_all</span> <span class="o">=</span> <span class="n">nb_colors</span>
         <span class="c1"># we don&#39;t have to have a very tight bound.</span>
         <span class="n">Problem</span> <span class="o">=</span> <span class="n">pytoulbar2</span><span class="o">.</span><span class="n">CFN</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
-        <span class="n">Problem</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s2">&quot;max_color&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">))</span>
-        <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="s2">&quot;max_color&quot;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">))</span>
+        <span class="n">Problem</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s2">&quot;max_color&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">))</span>
+        <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="s2">&quot;max_color&quot;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">))</span>
+        <span class="n">range_map</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_nodes</span><span class="p">):</span>
-            <span class="n">Problem</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">))</span>
-            <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">(</span>
-                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;max_color&quot;</span><span class="p">],</span>
-                <span class="p">[</span>
-                    <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">&gt;</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
-                    <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
-                <span class="p">],</span>
-            <span class="p">)</span>  <span class="c1"># encode that x_{i}&lt;=max_color.</span>
-            <span class="c1">#  Problem.AddLinearConstraint([1, -1], [0, i+1], &#39;&gt;=&#39;, 0)  # max_color&gt;x_{i} (alternative way ?)</span>
+            <span class="n">in_subset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">is_in_subset_index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">range_map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_range_value</span><span class="p">(</span>
+                <span class="n">index_node</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+                <span class="n">nb_colors_on_subset</span><span class="o">=</span><span class="n">nb_colors_on_subset</span><span class="p">,</span>
+                <span class="n">nb_colors_all</span><span class="o">=</span><span class="n">nb_colors_all</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">Problem</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">range_map</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">in_subset</span><span class="p">:</span>
+                <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">(</span>
+                    <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;max_color&quot;</span><span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">&gt;</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
+                        <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="n">range_map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">)</span>
+                    <span class="p">],</span>
+                <span class="p">)</span>  <span class="c1"># encode that x_{i}&lt;=max_color.</span>
+                <span class="c1">#  Problem.AddLinearConstraint([1, -1], [0, i+1], &#39;&gt;=&#39;, 0)  # max_color&gt;x_{i} (alternative way ?)</span>
         <span class="n">value_sequence_chain</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_sequence_chain&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1"># Warning : don&#39;t use this with special &quot;constraints&quot;</span>
         <span class="k">if</span> <span class="n">value_sequence_chain</span><span class="p">:</span>
             <span class="n">hard_value_sequence_chain</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;hard_value_sequence_chain&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
             <span class="n">tolerance_delta_max</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tolerance_delta_max&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="c1"># play with how &quot;fidele&quot; should be the &quot;max_x&quot; variable</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_nodes</span><span class="p">):</span>
-                <span class="n">Problem</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max_x_</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">))</span>
-            <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;max_x_</span><span class="si">{</span><span class="mi">0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">nb_colors</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="n">Problem</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max_x_</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">))</span>
+            <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;max_x_</span><span class="si">{</span><span class="mi">0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">nb_colors_all</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
             <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="mi">0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">nb_colors</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
             <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">(</span>
                 <span class="p">[</span><span class="s2">&quot;max_color&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;max_x_</span><span class="si">{</span><span class="n">number_nodes</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span>
                 <span class="p">[</span>
                     <span class="mi">1000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">!=</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
                     <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
                 <span class="p">],</span>
             <span class="p">)</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">number_nodes</span><span class="p">):</span>
@@ -215,19 +252,95 @@
         <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">costs</span> <span class="o">=</span> <span class="p">[</span>
             <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
         <span class="p">]</span>
+        <span class="n">costs_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_costs_matrix</span><span class="p">(</span>
+            <span class="n">nb_colors_all</span><span class="o">=</span><span class="n">nb_colors_all</span><span class="p">,</span> <span class="n">nb_colors_on_subset</span><span class="o">=</span><span class="n">nb_colors_on_subset</span>
+        <span class="p">)</span>
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nb edges introduced </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">len_edges</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">index1</span> <span class="o">=</span> <span class="n">index_nodes_name</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
             <span class="n">index2</span> <span class="o">=</span> <span class="n">index_nodes_name</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-            <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">index1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">index2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="n">costs</span><span class="p">)</span>
+            <span class="n">costs_i1_i2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_costs_matrix</span><span class="p">(</span>
+                <span class="n">index1</span><span class="o">=</span><span class="n">index1</span><span class="p">,</span> <span class="n">index2</span><span class="o">=</span><span class="n">index2</span><span class="p">,</span> <span class="n">costs</span><span class="o">=</span><span class="n">costs_dict</span><span class="p">,</span> <span class="n">range_map</span><span class="o">=</span><span class="n">range_map</span>
+            <span class="p">)</span>
+            <span class="n">Problem</span><span class="o">.</span><span class="n">AddFunction</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">index1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">index2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="n">costs_i1_i2</span><span class="p">)</span>
             <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">Problem</span></div>
 
-<div class="viewcode-block" id="ToulbarColoringSolver.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ToulbarColoringSolver.default_costs_matrix">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.default_costs_matrix">[docs]</a>
+    <span class="k">def</span> <span class="nf">default_costs_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nb_colors_all</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nb_colors_on_subset</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">costs</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">costs_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">use_subset</span><span class="p">:</span>
+            <span class="n">costs_dict</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;out-out&quot;</span><span class="p">:</span> <span class="n">costs</span><span class="p">,</span>
+                <span class="s2">&quot;in-out&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
+                    <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;out-in&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
+                    <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_all</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">)</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;in-in&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
+                    <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_colors_on_subset</span><span class="p">)</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">costs_dict</span></div>
+
+
+<div class="viewcode-block" id="ToulbarColoringSolver.get_costs_matrix">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.get_costs_matrix">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_costs_matrix</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">index1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">index2</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">costs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">],</span>
+        <span class="n">range_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="p">):</span>
+        <span class="n">in_subset_index1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">is_in_subset_index</span><span class="p">(</span><span class="n">index1</span><span class="p">)</span>
+        <span class="n">in_subset_index2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">is_in_subset_index</span><span class="p">(</span><span class="n">index2</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;out-out&quot;</span>
+        <span class="k">if</span> <span class="n">in_subset_index1</span> <span class="ow">and</span> <span class="n">in_subset_index2</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;in-in&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">in_subset_index1</span> <span class="ow">and</span> <span class="n">in_subset_index2</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;out-in&quot;</span>
+        <span class="k">if</span> <span class="n">in_subset_index1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">in_subset_index2</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;in-out&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">in_subset_index1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">in_subset_index2</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;out-out&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">has_constraints_coloring</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">costs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">nodes_fixed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">constraints_coloring</span><span class="o">.</span><span class="n">nodes_fixed</span><span class="p">()</span>
+        <span class="n">node_index1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">index_to_nodes_name</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span>
+        <span class="n">node_index2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coloring_model</span><span class="o">.</span><span class="n">index_to_nodes_name</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">node_index1</span> <span class="ow">in</span> <span class="n">nodes_fixed</span> <span class="ow">or</span> <span class="n">node_index2</span> <span class="ow">in</span> <span class="n">nodes_fixed</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">costs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span>
+                <span class="mi">10000</span> <span class="k">if</span> <span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span> <span class="k">else</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">val1</span> <span class="ow">in</span> <span class="n">range_map</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">val2</span> <span class="ow">in</span> <span class="n">range_map</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
+            <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ToulbarColoringSolver.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.coloring.solvers.html#discrete_optimization.coloring.solvers.coloring_toulbar_solver.ToulbarColoringSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">init_model</span><span class="p">()</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -247,7 +360,9 @@
         <span class="k">return</span> <span class="n">ResultStorage</span><span class="p">(</span>
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="p">[(</span><span class="n">rcpsp_sol</span><span class="p">,</span> <span class="n">fit</span><span class="p">)],</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

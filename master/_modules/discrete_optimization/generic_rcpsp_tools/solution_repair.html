@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -141,7 +141,9 @@
 <span class="p">]</span>
 
 
-<div class="viewcode-block" id="compute_shift_extremities"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.compute_shift_extremities">[docs]</a><span class="k">def</span> <span class="nf">compute_shift_extremities</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">):</span>
+<div class="viewcode-block" id="compute_shift_extremities">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.compute_shift_extremities">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_shift_extremities</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">):</span>
     <span class="n">ressource_names</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_resource_names</span><span class="p">()</span>
     <span class="n">ressource_arrays</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">r</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">get_resource_availability_array</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ressource_names</span>
@@ -155,7 +157,10 @@
     <span class="k">return</span> <span class="n">f</span></div>
 
 
-<div class="viewcode-block" id="return_pauses_and_active_times"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.return_pauses_and_active_times">[docs]</a><span class="k">def</span> <span class="nf">return_pauses_and_active_times</span><span class="p">(</span>
+
+<div class="viewcode-block" id="return_pauses_and_active_times">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.return_pauses_and_active_times">[docs]</a>
+<span class="k">def</span> <span class="nf">return_pauses_and_active_times</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
         <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
@@ -178,7 +183,10 @@
     <span class="k">return</span> <span class="n">dictionnary</span></div>
 
 
-<div class="viewcode-block" id="find_possible_problems_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.find_possible_problems_preemptive">[docs]</a><span class="k">def</span> <span class="nf">find_possible_problems_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="find_possible_problems_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.find_possible_problems_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">find_possible_problems_preemptive</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
         <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
@@ -227,7 +235,10 @@
     <span class="k">return</span> <span class="n">problems</span></div>
 
 
-<div class="viewcode-block" id="problem_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.problem_constraints">[docs]</a><span class="k">def</span> <span class="nf">problem_constraints</span><span class="p">(</span>
+
+<div class="viewcode-block" id="problem_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.problem_constraints">[docs]</a>
+<span class="k">def</span> <span class="nf">problem_constraints</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">],</span>
     <span class="n">problems_output</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">List</span><span class="p">],</span>
     <span class="n">minus_delta</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -475,11 +486,17 @@
     <span class="k">return</span> <span class="n">list_strings</span></div>
 
 
-<div class="viewcode-block" id="post_process_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.post_process_solution">[docs]</a><span class="k">def</span> <span class="nf">post_process_solution</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">solution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="post_process_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.post_process_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">post_process_solution</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">solution</span><span class="p">):</span>
     <span class="n">problem</span> <span class="o">=</span> <span class="n">find_possible_problems_preemptive</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="NeighborRepairProblems"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.NeighborRepairProblems">[docs]</a><span class="k">class</span> <span class="nc">NeighborRepairProblems</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborRepairProblems">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.NeighborRepairProblems">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborRepairProblems</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
@@ -517,7 +534,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">params_list</span> <span class="o">=</span> <span class="n">params_list</span>
 
-<div class="viewcode-block" id="NeighborRepairProblems.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.NeighborRepairProblems.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborRepairProblems.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.NeighborRepairProblems.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
             <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span>
@@ -621,7 +640,10 @@
             <span class="n">list_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="NeighborRepairProblems.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.NeighborRepairProblems.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="NeighborRepairProblems.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.solution_repair.NeighborRepairProblems.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
             <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span>
@@ -631,7 +653,9 @@
         <span class="n">child_instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
+
 </pre></div>
 
            </div>

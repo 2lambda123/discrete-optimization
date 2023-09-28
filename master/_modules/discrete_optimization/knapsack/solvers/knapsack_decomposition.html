@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -106,7 +106,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="KnapsackDecomposedSolver"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver">[docs]</a><span class="k">class</span> <span class="nc">KnapsackDecomposedSolver</span><span class="p">(</span><span class="n">SolverKnapsack</span><span class="p">):</span>
+<div class="viewcode-block" id="KnapsackDecomposedSolver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver">[docs]</a>
+<span class="k">class</span> <span class="nc">KnapsackDecomposedSolver</span><span class="p">(</span><span class="n">SolverKnapsack</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This solver is based on the current observation. From a given knapsack model and one current solution,</span>
 <span class="sd">    if we decide to freeze the decision variable for a subset of items, the remaining problem to solve is also a</span>
@@ -131,7 +133,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">knapsack_model</span><span class="p">,</span> <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="KnapsackDecomposedSolver.rebuild_sol"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver.rebuild_sol">[docs]</a>    <span class="k">def</span> <span class="nf">rebuild_sol</span><span class="p">(</span>
+<div class="viewcode-block" id="KnapsackDecomposedSolver.rebuild_sol">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver.rebuild_sol">[docs]</a>
+    <span class="k">def</span> <span class="nf">rebuild_sol</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">sol</span><span class="p">:</span> <span class="n">KnapsackSolution</span><span class="p">,</span>
         <span class="n">original_knapsack_model</span><span class="p">:</span> <span class="n">KnapsackModel</span><span class="p">,</span>
@@ -159,7 +163,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">solution</span></div>
 
-<div class="viewcode-block" id="KnapsackDecomposedSolver.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="KnapsackDecomposedSolver.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.knapsack.solvers.html#discrete_optimization.knapsack.solvers.knapsack_decomposition.KnapsackDecomposedSolver.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">initial_solver</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;initial_solver&quot;</span><span class="p">,</span> <span class="n">GreedyBest</span><span class="p">)</span>
         <span class="n">sub_solver</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;root_solver&quot;</span><span class="p">,</span> <span class="n">GreedyBest</span><span class="p">)</span>
         <span class="n">nb_iteration</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nb_iteration&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -199,7 +206,9 @@
             <span class="n">fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_sol</span><span class="p">(</span><span class="n">reb_sol</span><span class="p">)</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">nb_iteration</span><span class="si">}</span><span class="s2"> : --- Current fitness </span><span class="si">{</span><span class="n">fit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">results_storage</span><span class="o">.</span><span class="n">list_solution_fits</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">reb_sol</span><span class="p">,</span> <span class="n">fit</span><span class="p">)]</span>
-        <span class="k">return</span> <span class="n">results_storage</span></div></div>
+        <span class="k">return</span> <span class="n">results_storage</span></div>
+</div>
+
 </pre></div>
 
            </div>

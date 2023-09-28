@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -120,7 +120,9 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="distance"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.distance">[docs]</a><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span>
+<div class="viewcode-block" id="distance">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.distance">[docs]</a>
+<span class="k">def</span> <span class="nf">distance</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span> <span class="n">customer_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute distance to facilitied for a given customer index</span>
@@ -137,7 +139,10 @@
     <span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="demand_minus_capacity"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.demand_minus_capacity">[docs]</a><span class="k">def</span> <span class="nf">demand_minus_capacity</span><span class="p">(</span>
+
+<div class="viewcode-block" id="demand_minus_capacity">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.demand_minus_capacity">[docs]</a>
+<span class="k">def</span> <span class="nf">demand_minus_capacity</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span> <span class="n">customer_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute demand-capacity feature for a given customer_index</span>
@@ -152,7 +157,10 @@
     <span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="capacity"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.capacity">[docs]</a><span class="k">def</span> <span class="nf">capacity</span><span class="p">(</span>
+
+<div class="viewcode-block" id="capacity">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.capacity">[docs]</a>
+<span class="k">def</span> <span class="nf">capacity</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span> <span class="n">customer_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Capacity feature.</span>
@@ -163,7 +171,10 @@
     <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">capacity</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">problem</span><span class="o">.</span><span class="n">facilities</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="closest_facility"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.closest_facility">[docs]</a><span class="k">def</span> <span class="nf">closest_facility</span><span class="p">(</span>
+
+<div class="viewcode-block" id="closest_facility">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.closest_facility">[docs]</a>
+<span class="k">def</span> <span class="nf">closest_facility</span><span class="p">(</span>
     <span class="n">problem</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span> <span class="n">customer_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Closest facility feature for a given customer index.</span>
@@ -183,10 +194,14 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="FeatureEnum"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.FeatureEnum">[docs]</a><span class="k">class</span> <span class="nc">FeatureEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FeatureEnum">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.FeatureEnum">[docs]</a>
+<span class="k">class</span> <span class="nc">FeatureEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">DISTANCE</span> <span class="o">=</span> <span class="s2">&quot;distance&quot;</span>
     <span class="n">CAPACITIES</span> <span class="o">=</span> <span class="s2">&quot;capacities&quot;</span>
     <span class="n">DEMAND_MINUS_CAPACITY</span> <span class="o">=</span> <span class="s2">&quot;demand_minus_capacity&quot;</span></div>
+
 
 
 <span class="n">feature_function_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">FeatureEnum</span><span class="p">,</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{</span>
@@ -196,7 +211,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="ParametersGPHH"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.ParametersGPHH">[docs]</a><span class="k">class</span> <span class="nc">ParametersGPHH</span><span class="p">:</span>
+<div class="viewcode-block" id="ParametersGPHH">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.ParametersGPHH">[docs]</a>
+<span class="k">class</span> <span class="nc">ParametersGPHH</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom class to parametrize the GPHH solver.</span>
 
 <span class="sd">    Attributes:</span>
@@ -228,7 +245,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mutation_rate</span> <span class="o">=</span> <span class="n">mutation_rate</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deap_verbose</span> <span class="o">=</span> <span class="n">deap_verbose</span>
 
-<div class="viewcode-block" id="ParametersGPHH.default"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.ParametersGPHH.default">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParametersGPHH.default">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.ParametersGPHH.default">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParametersGPHH&quot;</span><span class="p">:</span>
         <span class="n">set_feature</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">FeatureEnum</span><span class="o">.</span><span class="n">DISTANCE</span><span class="p">,</span>
@@ -278,10 +297,14 @@
             <span class="n">crossover_rate</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
             <span class="n">mutation_rate</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
             <span class="n">deap_verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GPHH"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH">[docs]</a><span class="k">class</span> <span class="nc">GPHH</span><span class="p">(</span><span class="n">SolverFacility</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GPHH">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH">[docs]</a>
+<span class="k">class</span> <span class="nc">GPHH</span><span class="p">(</span><span class="n">SolverFacility</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">training_domains</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">FacilityProblem</span><span class="p">],</span>
@@ -313,7 +336,9 @@
             <span class="n">facility_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="GPHH.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="GPHH.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">tournament_ratio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">tournament_ratio</span>
         <span class="n">pop_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">pop_size</span>
         <span class="n">min_tree_depth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params_gphh</span><span class="o">.</span><span class="n">min_tree_depth</span>
@@ -363,7 +388,10 @@
         <span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
         <span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GPHH.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GPHH.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">stats_fit</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ind</span><span class="p">:</span> <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
         <span class="n">stats_size</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
         <span class="n">mstats</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">MultiStatistics</span><span class="p">(</span><span class="n">fitness</span><span class="o">=</span><span class="n">stats_fit</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">stats_size</span><span class="p">)</span>
@@ -392,12 +420,18 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="GPHH.init_primitives"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.init_primitives">[docs]</a>    <span class="k">def</span> <span class="nf">init_primitives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pset</span><span class="p">:</span> <span class="n">PrimitiveSetTyped</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveSet</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GPHH.init_primitives">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.init_primitives">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_primitives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pset</span><span class="p">:</span> <span class="n">PrimitiveSetTyped</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveSet</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_feature</span><span class="p">)):</span>
             <span class="n">pset</span><span class="o">.</span><span class="n">renameArguments</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s2">&quot;ARG&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_feature</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">})</span>
         <span class="k">return</span> <span class="n">pset</span></div>
 
-<div class="viewcode-block" id="GPHH.build_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.build_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_solution</span><span class="p">(</span>
+
+<div class="viewcode-block" id="GPHH.build_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.build_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_solution</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">domain</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span>
         <span class="n">individual</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -419,7 +453,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="GPHH.evaluate_heuristic"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.evaluate_heuristic">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_heuristic</span><span class="p">(</span>
+
+<div class="viewcode-block" id="GPHH.evaluate_heuristic">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.evaluate_heuristic">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_heuristic</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">individual</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">domains</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">FacilityProblem</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
         <span class="n">vals</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
@@ -433,7 +470,10 @@
         <span class="n">fitness</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vals</span><span class="p">)]</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">fitness</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_complexity</span><span class="p">(</span><span class="n">individual</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="GPHH.evaluate_complexity"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.evaluate_complexity">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_complexity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">individual</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GPHH.evaluate_complexity">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.evaluate_complexity">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate_complexity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">individual</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="n">all_primitives_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">all_features_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">individual</span><span class="p">)):</span>
@@ -446,7 +486,10 @@
         <span class="n">val</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">n_operators</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">n_features</span>
         <span class="k">return</span> <span class="n">val</span></div>
 
-<div class="viewcode-block" id="GPHH.plot_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.plot_solution">[docs]</a>    <span class="k">def</span> <span class="nf">plot_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GPHH.plot_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.gphh_facility.GPHH.plot_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">best_heuristic</span><span class="p">)</span>
         <span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
         <span class="n">g</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
@@ -456,7 +499,9 @@
         <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
         <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
         <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div></div>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+</div>
+
 </pre></div>
 
            </div>

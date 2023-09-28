@@ -10,12 +10,12 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/versions.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -136,11 +136,16 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="get_max_time_solution"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.get_max_time_solution">[docs]</a><span class="k">def</span> <span class="nf">get_max_time_solution</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">):</span>
+<div class="viewcode-block" id="get_max_time_solution">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.get_max_time_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">get_max_time_solution</span><span class="p">(</span><span class="n">solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">solution</span><span class="o">.</span><span class="n">get_max_end_time</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="ParamsConstraintBuilder"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ParamsConstraintBuilder">[docs]</a><span class="k">class</span> <span class="nc">ParamsConstraintBuilder</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ParamsConstraintBuilder">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ParamsConstraintBuilder">[docs]</a>
+<span class="k">class</span> <span class="nc">ParamsConstraintBuilder</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">minus_delta_primary</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -177,7 +182,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">second_method_multiskill</span> <span class="o">=</span> <span class="n">second_method_multiskill</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">additional_methods</span> <span class="o">=</span> <span class="n">additional_methods</span>
 
-<div class="viewcode-block" id="ParamsConstraintBuilder.default"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ParamsConstraintBuilder.default">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ParamsConstraintBuilder.default">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ParamsConstraintBuilder.default">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">ParamsConstraintBuilder</span><span class="p">(</span>
             <span class="n">minus_delta_primary</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
@@ -186,10 +193,14 @@
             <span class="n">plus_delta_secondary</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
             <span class="n">constraint_max_time_to_current_solution</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">fraction_of_task_assigned_multiskill</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="constraints_strings"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings">[docs]</a><span class="k">def</span> <span class="nf">constraints_strings</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_strings">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_strings</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">MS_RCPSPSolution</span><span class="p">],</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
     <span class="n">tasks_primary</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
@@ -253,7 +264,10 @@
     <span class="k">return</span> <span class="n">list_strings</span></div>
 
 
-<div class="viewcode-block" id="constraints_strings_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings_preemptive">[docs]</a><span class="k">def</span> <span class="nf">constraints_strings_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_strings_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_strings_preemptive</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION_PREEMPTIVE</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
     <span class="n">tasks_primary</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
@@ -441,7 +455,10 @@
     <span class="k">return</span> <span class="n">list_strings</span></div>
 
 
-<div class="viewcode-block" id="constraints_strings_multiskill"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings_multiskill">[docs]</a><span class="k">def</span> <span class="nf">constraints_strings_multiskill</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_strings_multiskill">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings_multiskill">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_strings_multiskill</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
     <span class="n">tasks_primary</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
@@ -558,7 +575,10 @@
     <span class="k">return</span> <span class="n">list_strings</span></div>
 
 
-<div class="viewcode-block" id="constraint_number_of_change_in_worker_allocation"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_number_of_change_in_worker_allocation">[docs]</a><span class="k">def</span> <span class="nf">constraint_number_of_change_in_worker_allocation</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraint_number_of_change_in_worker_allocation">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_number_of_change_in_worker_allocation">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_number_of_change_in_worker_allocation</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">nb_moves</span><span class="p">:</span> <span class="nb">int</span>
 <span class="p">):</span>
     <span class="n">ref_unit_used</span> <span class="o">=</span> <span class="p">[</span>
@@ -606,7 +626,10 @@
     <span class="k">return</span> <span class="n">s</span></div>
 
 
-<div class="viewcode-block" id="constraint_number_of_change_in_worker_allocation_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_number_of_change_in_worker_allocation_preemptive">[docs]</a><span class="k">def</span> <span class="nf">constraint_number_of_change_in_worker_allocation_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraint_number_of_change_in_worker_allocation_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_number_of_change_in_worker_allocation_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_number_of_change_in_worker_allocation_preemptive</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span> <span class="n">nb_preemptive</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nb_moves</span><span class="p">:</span> <span class="nb">int</span>
 <span class="p">):</span>
     <span class="n">ref_unit_used</span> <span class="o">=</span> <span class="p">[</span>
@@ -656,7 +679,10 @@
     <span class="k">return</span> <span class="n">s</span></div>
 
 
-<div class="viewcode-block" id="constraints_exchange_worker"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_exchange_worker">[docs]</a><span class="k">def</span> <span class="nf">constraints_exchange_worker</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_exchange_worker">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_exchange_worker">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_exchange_worker</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">nb_moves</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span>
 <span class="p">):</span>
     <span class="n">ref_unit_used</span> <span class="o">=</span> <span class="p">[</span>
@@ -720,7 +746,10 @@
     <span class="k">return</span> <span class="n">s</span></div>
 
 
-<div class="viewcode-block" id="constraints_start_on_end"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_start_on_end">[docs]</a><span class="k">def</span> <span class="nf">constraints_start_on_end</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_start_on_end">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_start_on_end">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_start_on_end</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span> <span class="n">frac</span><span class="o">=</span><span class="mf">0.5</span>
 <span class="p">):</span>
     <span class="n">end_times</span> <span class="o">=</span> <span class="p">{</span>
@@ -767,7 +796,10 @@
     <span class="k">return</span> <span class="n">s</span></div>
 
 
-<div class="viewcode-block" id="constraints_start_on_end_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_start_on_end_preemptive">[docs]</a><span class="k">def</span> <span class="nf">constraints_start_on_end_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_start_on_end_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_start_on_end_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_start_on_end_preemptive</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION_PREEMPTIVE</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span> <span class="n">frac</span><span class="o">=</span><span class="mf">0.5</span>
 <span class="p">):</span>
     <span class="n">end_times</span> <span class="o">=</span> <span class="p">{</span>
@@ -801,7 +833,10 @@
     <span class="k">return</span> <span class="n">s</span></div>
 
 
-<div class="viewcode-block" id="constraints_strings_multiskill_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings_multiskill_preemptive">[docs]</a><span class="k">def</span> <span class="nf">constraints_strings_multiskill_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_strings_multiskill_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraints_strings_multiskill_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_strings_multiskill_preemptive</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
     <span class="n">tasks_primary</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
@@ -872,7 +907,10 @@
     <span class="k">return</span> <span class="n">list_strings</span></div>
 
 
-<div class="viewcode-block" id="constraint_unit_used_to_tasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_to_tasks">[docs]</a><span class="k">def</span> <span class="nf">constraint_unit_used_to_tasks</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraint_unit_used_to_tasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_to_tasks">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_unit_used_to_tasks</span><span class="p">(</span>
     <span class="n">tasks_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MS_MRCPSP_MZN</span><span class="p">],</span>
@@ -900,7 +938,10 @@
     <span class="k">return</span> <span class="n">strings</span></div>
 
 
-<div class="viewcode-block" id="constraint_unit_used_subset_employees"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_subset_employees">[docs]</a><span class="k">def</span> <span class="nf">constraint_unit_used_subset_employees</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraint_unit_used_subset_employees">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_subset_employees">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_unit_used_subset_employees</span><span class="p">(</span>
     <span class="n">employees_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MS_MRCPSP_MZN</span><span class="p">],</span>
@@ -924,7 +965,10 @@
     <span class="k">return</span> <span class="n">strings</span></div>
 
 
-<div class="viewcode-block" id="constraint_unit_used_to_tasks_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_to_tasks_preemptive">[docs]</a><span class="k">def</span> <span class="nf">constraint_unit_used_to_tasks_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraint_unit_used_to_tasks_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_to_tasks_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_unit_used_to_tasks_preemptive</span><span class="p">(</span>
     <span class="n">tasks_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MS_MRCPSP_MZN_PREEMPTIVE</span><span class="p">],</span>
@@ -965,7 +1009,10 @@
     <span class="k">return</span> <span class="n">strings</span></div>
 
 
-<div class="viewcode-block" id="constraint_unit_used_subset_employees_preemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_subset_employees_preemptive">[docs]</a><span class="k">def</span> <span class="nf">constraint_unit_used_subset_employees_preemptive</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraint_unit_used_subset_employees_preemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.constraint_unit_used_subset_employees_preemptive">[docs]</a>
+<span class="k">def</span> <span class="nf">constraint_unit_used_subset_employees_preemptive</span><span class="p">(</span>
     <span class="n">employees_set</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">MS_RCPSPSolution_Preemptive</span><span class="p">,</span>
     <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MS_MRCPSP_MZN_PREEMPTIVE</span><span class="p">],</span>
@@ -997,8 +1044,13 @@
     <span class="k">return</span> <span class="n">strings</span></div>
 
 
-<div class="viewcode-block" id="NeighborBuilder"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilder">[docs]</a><span class="k">class</span> <span class="nc">NeighborBuilder</span><span class="p">:</span>
-<div class="viewcode-block" id="NeighborBuilder.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilder.find_subtasks">[docs]</a>    <span class="nd">@abstractmethod</span>
+
+<div class="viewcode-block" id="NeighborBuilder">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilder">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborBuilder</span><span class="p">:</span>
+<div class="viewcode-block" id="NeighborBuilder.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilder.find_subtasks">[docs]</a>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
@@ -1013,10 +1065,14 @@
 <span class="sd">        Returns:</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="o">...</span></div></div>
+        <span class="o">...</span></div>
+</div>
 
 
-<div class="viewcode-block" id="intersect"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.intersect">[docs]</a><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
+
+<div class="viewcode-block" id="intersect">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.intersect">[docs]</a>
+<span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i2</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1025,7 +1081,10 @@
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="NeighborBuilderSubPart"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderSubPart">[docs]</a><span class="k">class</span> <span class="nc">NeighborBuilderSubPart</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborBuilderSubPart">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderSubPart">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborBuilderSubPart</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cut the schedule in different subpart in the increasing order of the schedule.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1039,7 +1098,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">current_sub_part</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">)</span>
 
-<div class="viewcode-block" id="NeighborBuilderSubPart.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderSubPart.find_subtasks">[docs]</a>    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborBuilderSubPart.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderSubPart.find_subtasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
         <span class="n">nb_job_sub</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">n_jobs</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_cut_part</span><span class="p">)</span>
@@ -1058,10 +1119,14 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">subtasks</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">sink_task</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">current_sub_part</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_sub_part</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_cut_part</span>
-        <span class="k">return</span> <span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="NeighborRandom"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandom">[docs]</a><span class="k">class</span> <span class="nc">NeighborRandom</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborRandom">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandom">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborRandom</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
@@ -1083,7 +1148,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">)</span>
 
-<div class="viewcode-block" id="NeighborRandom.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandom.find_subtasks">[docs]</a>    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborRandom.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandom.find_subtasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="n">subtasks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1109,10 +1176,14 @@
             <span class="k">if</span> <span class="n">lj</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tasks_subproblem</span><span class="p">:</span>
                 <span class="n">tasks_subproblem</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">lj</span><span class="p">)</span>
         <span class="n">subtasks</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">tasks_subproblem</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="NeighborRandomAndNeighborGraph"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandomAndNeighborGraph">[docs]</a><span class="k">class</span> <span class="nc">NeighborRandomAndNeighborGraph</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborRandomAndNeighborGraph">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandomAndNeighborGraph">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborRandomAndNeighborGraph</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
@@ -1129,7 +1200,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">)</span>
 
-<div class="viewcode-block" id="NeighborRandomAndNeighborGraph.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandomAndNeighborGraph.find_subtasks">[docs]</a>    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborRandomAndNeighborGraph.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborRandomAndNeighborGraph.find_subtasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="n">subtasks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1166,10 +1239,14 @@
             <span class="n">len_subtask</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_jobs_subproblem</span><span class="p">:</span>
             <span class="n">subtasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_jobs_subproblem</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">subtasks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">subtasks</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="NeighborConstraintBreaks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborConstraintBreaks">[docs]</a><span class="k">class</span> <span class="nc">NeighborConstraintBreaks</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborConstraintBreaks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborConstraintBreaks">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborConstraintBreaks</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">RCPSPModelSpecialConstraintsPreemptive</span><span class="p">,</span> <span class="n">RCPSPModel</span><span class="p">],</span>
@@ -1201,7 +1278,9 @@
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_tasks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">tasks_list</span><span class="p">)</span>
 
-<div class="viewcode-block" id="NeighborConstraintBreaks.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborConstraintBreaks.find_subtasks">[docs]</a>    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborConstraintBreaks.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborConstraintBreaks.find_subtasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="s2">&quot;special_constraints&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -1269,10 +1348,14 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">other</span><span class="o">.</span><span class="n">find_subtasks</span><span class="p">(</span>
                 <span class="n">current_solution</span><span class="o">=</span><span class="n">current_solution</span><span class="p">,</span> <span class="n">subtasks</span><span class="o">=</span><span class="n">subtasks</span>
-            <span class="p">)</span></div></div>
+            <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="NeighborBuilderMix"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderMix">[docs]</a><span class="k">class</span> <span class="nc">NeighborBuilderMix</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborBuilderMix">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderMix">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborBuilderMix</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">list_neighbor</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">NeighborBuilder</span><span class="p">],</span>
@@ -1287,17 +1370,25 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">index_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_neighbor</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
 
-<div class="viewcode-block" id="NeighborBuilderMix.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderMix.find_subtasks">[docs]</a>    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborBuilderMix.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderMix.find_subtasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">RCPSPSolution</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
         <span class="n">choice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index_np</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">weight_neighbor</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_neighbor</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">find_subtasks</span><span class="p">(</span>
             <span class="n">current_solution</span><span class="o">=</span><span class="n">current_solution</span><span class="p">,</span> <span class="n">subtasks</span><span class="o">=</span><span class="n">subtasks</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="NeighborBuilderTimeWindow"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderTimeWindow">[docs]</a><span class="k">class</span> <span class="nc">NeighborBuilderTimeWindow</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
-<div class="viewcode-block" id="NeighborBuilderTimeWindow.find_subtasks"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderTimeWindow.find_subtasks">[docs]</a>    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
+
+<div class="viewcode-block" id="NeighborBuilderTimeWindow">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderTimeWindow">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborBuilderTimeWindow</span><span class="p">(</span><span class="n">NeighborBuilder</span><span class="p">):</span>
+<div class="viewcode-block" id="NeighborBuilderTimeWindow.find_subtasks">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.NeighborBuilderTimeWindow.find_subtasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_subtasks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">,</span> <span class="n">subtasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">]]:</span>
         <span class="n">last_time</span> <span class="o">=</span> <span class="n">current_solution</span><span class="o">.</span><span class="n">get_end_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">sink_task</span><span class="p">)</span>
@@ -1320,6 +1411,7 @@
         <span class="p">]</span>
         <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">tasks_of_interest</span><span class="p">),</span> <span class="nb">set</span><span class="p">(</span><span class="n">other_tasks</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">GraphRCPSP</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">time_window_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="p">):</span>
@@ -1329,7 +1421,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">current_time_window</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_window_length</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="BasicConstraintBuilder"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.BasicConstraintBuilder">[docs]</a><span class="k">class</span> <span class="nc">BasicConstraintBuilder</span><span class="p">:</span>
+
+<div class="viewcode-block" id="BasicConstraintBuilder">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.BasicConstraintBuilder">[docs]</a>
+<span class="k">class</span> <span class="nc">BasicConstraintBuilder</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">neighbor_builder</span><span class="p">:</span> <span class="n">NeighborBuilder</span><span class="p">,</span>
@@ -1353,7 +1448,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">matrix_func</span><span class="p">[</span><span class="n">multiskill</span><span class="p">][</span><span class="n">preemptive</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
 
-<div class="viewcode-block" id="BasicConstraintBuilder.return_constraints"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.BasicConstraintBuilder.return_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">return_constraints</span><span class="p">(</span>
+<div class="viewcode-block" id="BasicConstraintBuilder.return_constraints">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.BasicConstraintBuilder.return_constraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">return_constraints</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">current_solution</span><span class="p">:</span> <span class="n">ANY_SOLUTION</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
@@ -1376,17 +1473,24 @@
             <span class="n">tasks_secondary</span><span class="o">=</span><span class="n">subtasks_2</span><span class="p">,</span>
             <span class="n">params_constraints</span><span class="o">=</span><span class="n">p</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">list_strings</span><span class="p">,</span> <span class="n">subtasks_1</span><span class="p">,</span> <span class="n">subtasks_2</span></div></div>
+        <span class="k">return</span> <span class="n">list_strings</span><span class="p">,</span> <span class="n">subtasks_1</span><span class="p">,</span> <span class="n">subtasks_2</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ObjectiveSubproblem"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ObjectiveSubproblem">[docs]</a><span class="k">class</span> <span class="nc">ObjectiveSubproblem</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ObjectiveSubproblem">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ObjectiveSubproblem">[docs]</a>
+<span class="k">class</span> <span class="nc">ObjectiveSubproblem</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">MAKESPAN_SUBTASKS</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">SUM_START_SUBTASKS</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">SUM_END_SUBTASKS</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">GLOBAL_MAKESPAN</span> <span class="o">=</span> <span class="mi">3</span></div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerScheduling"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerScheduling">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerScheduling</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerScheduling">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerScheduling">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerScheduling</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_RCPSP</span><span class="p">,</span>
@@ -1432,7 +1536,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">objective_subproblem</span> <span class="o">=</span> <span class="n">ObjectiveSubproblem</span><span class="o">.</span><span class="n">MAKESPAN_SUBTASKS</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
 
-<div class="viewcode-block" id="ConstraintHandlerScheduling.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerScheduling.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerScheduling.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerScheduling.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -1555,16 +1661,23 @@
             <span class="n">list_strings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerScheduling.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerScheduling.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerScheduling.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerScheduling.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerMultiskillAllocation"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerMultiskillAllocation">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerMultiskillAllocation</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerMultiskillAllocation">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerMultiskillAllocation">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerMultiskillAllocation</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">ANY_MSRCPSP</span><span class="p">,</span>
@@ -1573,7 +1686,9 @@
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
 
-<div class="viewcode-block" id="ConstraintHandlerMultiskillAllocation.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerMultiskillAllocation.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerMultiskillAllocation.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerMultiskillAllocation.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -1636,17 +1751,27 @@
         <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="s2">&quot;constraint sec_objective==max(res_load);</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerMultiskillAllocation.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerMultiskillAllocation.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
-    <span class="p">):</span>
-        <span class="k">pass</span></div></div>
 
-
-<div class="viewcode-block" id="EquilibrateMultiskillAllocationNonPreemptive"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocationNonPreemptive">[docs]</a><span class="k">class</span> <span class="nc">EquilibrateMultiskillAllocationNonPreemptive</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
-<div class="viewcode-block" id="EquilibrateMultiskillAllocationNonPreemptive.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocationNonPreemptive.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerMultiskillAllocation.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.ConstraintHandlerMultiskillAllocation.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="k">pass</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="EquilibrateMultiskillAllocationNonPreemptive">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocationNonPreemptive">[docs]</a>
+<span class="k">class</span> <span class="nc">EquilibrateMultiskillAllocationNonPreemptive</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+<div class="viewcode-block" id="EquilibrateMultiskillAllocationNonPreemptive.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocationNonPreemptive.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="k">pass</span></div>
+
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -1656,7 +1781,9 @@
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
 
-<div class="viewcode-block" id="EquilibrateMultiskillAllocationNonPreemptive.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocationNonPreemptive.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="EquilibrateMultiskillAllocationNonPreemptive.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocationNonPreemptive.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -1730,14 +1857,21 @@
             <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span>
                 <span class="s2">&quot;constraint sec_objective&gt;=min(res_load)-max(res_load);</span><span class="se">\n</span><span class="s2">&quot;</span>
             <span class="p">)</span>
-        <span class="k">return</span> <span class="p">[]</span></div></div>
+        <span class="k">return</span> <span class="p">[]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="EquilibrateMultiskillAllocation"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocation">[docs]</a><span class="k">class</span> <span class="nc">EquilibrateMultiskillAllocation</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
-<div class="viewcode-block" id="EquilibrateMultiskillAllocation.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocation.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="EquilibrateMultiskillAllocation">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocation">[docs]</a>
+<span class="k">class</span> <span class="nc">EquilibrateMultiskillAllocation</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+<div class="viewcode-block" id="EquilibrateMultiskillAllocation.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocation.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="k">pass</span></div>
+
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -1747,7 +1881,9 @@
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
 
-<div class="viewcode-block" id="EquilibrateMultiskillAllocation.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocation.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="EquilibrateMultiskillAllocation.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../api/discrete_optimization.generic_rcpsp_tools.html#discrete_optimization.generic_rcpsp_tools.neighbor_tools_rcpsp.EquilibrateMultiskillAllocation.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">ANY_CP_SOLVER</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -1829,7 +1965,9 @@
             <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span>
                 <span class="s2">&quot;constraint sec_objective&gt;=min(res_load)-max(res_load);</span><span class="se">\n</span><span class="s2">&quot;</span>
             <span class="p">)</span>
-        <span class="k">return</span> <span class="p">[]</span></div></div>
+        <span class="k">return</span> <span class="p">[]</span></div>
+</div>
+
 </pre></div>
 
            </div>

@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -104,30 +104,47 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="CPMObject"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject">[docs]</a><span class="k">class</span> <span class="nc">CPMObject</span><span class="p">:</span>
+<div class="viewcode-block" id="CPMObject">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject">[docs]</a>
+<span class="k">class</span> <span class="nc">CPMObject</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ESD</span><span class="p">,</span> <span class="n">EFD</span><span class="p">,</span> <span class="n">LSD</span><span class="p">,</span> <span class="n">LFD</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ESD</span> <span class="o">=</span> <span class="n">ESD</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_EFD</span> <span class="o">=</span> <span class="n">EFD</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_LSD</span> <span class="o">=</span> <span class="n">LSD</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_LFD</span> <span class="o">=</span> <span class="n">LFD</span>
 
-<div class="viewcode-block" id="CPMObject.set_earliest_start_date"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_earliest_start_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_earliest_start_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ESD</span><span class="p">):</span>
+<div class="viewcode-block" id="CPMObject.set_earliest_start_date">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_earliest_start_date">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_earliest_start_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ESD</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ESD</span> <span class="o">=</span> <span class="n">ESD</span></div>
 
-<div class="viewcode-block" id="CPMObject.set_earliest_finish_date"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_earliest_finish_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_earliest_finish_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">EFD</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPMObject.set_earliest_finish_date">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_earliest_finish_date">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_earliest_finish_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">EFD</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_EFD</span> <span class="o">=</span> <span class="n">EFD</span></div>
 
-<div class="viewcode-block" id="CPMObject.set_latest_start_date"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_latest_start_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_latest_start_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LSD</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPMObject.set_latest_start_date">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_latest_start_date">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_latest_start_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LSD</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_LSD</span> <span class="o">=</span> <span class="n">LSD</span></div>
 
-<div class="viewcode-block" id="CPMObject.set_latest_finish_date"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_latest_finish_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_latest_finish_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LFD</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPMObject.set_latest_finish_date">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPMObject.set_latest_finish_date">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_latest_finish_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LFD</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_LFD</span> <span class="o">=</span> <span class="n">LFD</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">()})</span></div>
 
 
-<div class="viewcode-block" id="CPM"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM">[docs]</a><span class="k">class</span> <span class="nc">CPM</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPM">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM">[docs]</a>
+<span class="k">class</span> <span class="nc">CPM</span><span class="p">(</span><span class="n">SolverRCPSP</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rcpsp_model</span><span class="p">:</span> <span class="n">RCPSPModel</span><span class="p">,</span>
@@ -171,7 +188,9 @@
                 <span class="s2">&quot;nb&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">predecessors</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span>
             <span class="p">}</span>
 
-<div class="viewcode-block" id="CPM.run_classic_cpm"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.run_classic_cpm">[docs]</a>    <span class="k">def</span> <span class="nf">run_classic_cpm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CPM.run_classic_cpm">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.run_classic_cpm">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_classic_cpm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">done_forward</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="n">done_backward</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="n">current_pred</span> <span class="o">=</span> <span class="p">{</span>
@@ -245,7 +264,10 @@
             <span class="n">critical_path</span> <span class="o">+=</span> <span class="p">[</span><span class="n">cur_node</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">critical_path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="CPM.return_order_cpm"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.return_order_cpm">[docs]</a>    <span class="k">def</span> <span class="nf">return_order_cpm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPM.return_order_cpm">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.return_order_cpm">[docs]</a>
+    <span class="k">def</span> <span class="nf">return_order_cpm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">order</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">map_node</span><span class="p">,</span>
             <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
@@ -255,7 +277,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">order</span></div>
 
-<div class="viewcode-block" id="CPM.run_sgs_on_order"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.run_sgs_on_order">[docs]</a>    <span class="k">def</span> <span class="nf">run_sgs_on_order</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CPM.run_sgs_on_order">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.run_sgs_on_order">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_sgs_on_order</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">map_nodes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">CPMObject</span><span class="p">],</span>
         <span class="n">critical_path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
@@ -439,7 +464,10 @@
             <span class="n">causes_of_delay</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CPM.get_first_time_to_do_one_task"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.get_first_time_to_do_one_task">[docs]</a>    <span class="k">def</span> <span class="nf">get_first_time_to_do_one_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource_avail_in_time</span><span class="p">,</span> <span class="n">task_id</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CPM.get_first_time_to_do_one_task">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.get_first_time_to_do_one_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_first_time_to_do_one_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource_avail_in_time</span><span class="p">,</span> <span class="n">task_id</span><span class="p">):</span>
         <span class="n">early_start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_node</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">_ESD</span>
         <span class="n">ressource_consumption</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">r</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcpsp_model</span><span class="o">.</span><span class="n">mode_details</span><span class="p">[</span><span class="n">task_id</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
@@ -460,7 +488,10 @@
                     <span class="k">break</span>
         <span class="k">return</span> <span class="n">time_start</span><span class="p">,</span> <span class="n">time_start</span> <span class="o">+</span> <span class="n">duration</span></div>
 
-<div class="viewcode-block" id="CPM.run_sgs_time_loop"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.run_sgs_time_loop">[docs]</a>    <span class="k">def</span> <span class="nf">run_sgs_time_loop</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CPM.run_sgs_time_loop">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.run_sgs_time_loop">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_sgs_time_loop</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">map_nodes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">CPMObject</span><span class="p">],</span>
         <span class="n">critical_path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
@@ -592,7 +623,10 @@
             <span class="n">causes_of_delay</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CPM.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CPM.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.CPM.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">cpath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_classic_cpm</span><span class="p">()</span>
         <span class="n">order</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">map_node</span><span class="p">,</span>
@@ -637,10 +671,14 @@
             <span class="n">list_solution_fits</span><span class="o">=</span><span class="p">[(</span><span class="n">solution_sgs_0</span><span class="p">,</span> <span class="n">fit_0</span><span class="p">),</span> <span class="p">(</span><span class="n">solution_1</span><span class="p">,</span> <span class="n">fit_1</span><span class="p">)],</span>
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">res</span></div></div>
+        <span class="k">return</span> <span class="n">res</span></div>
+</div>
 
 
-<div class="viewcode-block" id="run_partial_classic_cpm"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.run_partial_classic_cpm">[docs]</a><span class="k">def</span> <span class="nf">run_partial_classic_cpm</span><span class="p">(</span><span class="n">partial_schedule</span><span class="p">,</span> <span class="n">cpm_solver</span><span class="p">):</span>
+
+<div class="viewcode-block" id="run_partial_classic_cpm">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cpm.run_partial_classic_cpm">[docs]</a>
+<span class="k">def</span> <span class="nf">run_partial_classic_cpm</span><span class="p">(</span><span class="n">partial_schedule</span><span class="p">,</span> <span class="n">cpm_solver</span><span class="p">):</span>
     <span class="n">done_forward</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">done_backward</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">current_pred</span> <span class="o">=</span> <span class="p">{</span>
@@ -735,6 +773,7 @@
         <span class="n">cur_node</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">critical_path</span> <span class="o">+=</span> <span class="p">[</span><span class="n">cur_node</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">critical_path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">map_node</span></div>
+
 </pre></div>
 
            </div>

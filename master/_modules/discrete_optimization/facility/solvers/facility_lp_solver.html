@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -138,7 +138,9 @@
     <span class="p">)</span>
 
 
-<div class="viewcode-block" id="compute_length_matrix"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.compute_length_matrix">[docs]</a><span class="k">def</span> <span class="nf">compute_length_matrix</span><span class="p">(</span>
+<div class="viewcode-block" id="compute_length_matrix">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.compute_length_matrix">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_length_matrix</span><span class="p">(</span>
     <span class="n">facility_problem</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">],</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">],</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Precompute all the cost of allocation in a matrix form.</span>
@@ -166,7 +168,10 @@
     <span class="k">return</span> <span class="n">costs</span><span class="p">,</span> <span class="n">closest</span><span class="p">,</span> <span class="n">matrix_distance</span></div>
 
 
-<div class="viewcode-block" id="prune_search_space"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.prune_search_space">[docs]</a><span class="k">def</span> <span class="nf">prune_search_space</span><span class="p">(</span>
+
+<div class="viewcode-block" id="prune_search_space">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.prune_search_space">[docs]</a>
+<span class="k">def</span> <span class="nf">prune_search_space</span><span class="p">(</span>
     <span class="n">facility_problem</span><span class="p">:</span> <span class="n">FacilityProblem</span><span class="p">,</span> <span class="n">n_cheapest</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n_shortest</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Utility function that can prune the search space.</span>
@@ -195,6 +200,7 @@
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_customers</span><span class="p">):</span>
         <span class="n">matrix_fc_indicator</span><span class="p">[</span><span class="n">closest</span><span class="p">[:</span><span class="n">n_shortest</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">matrix_fc_indicator</span><span class="p">,</span> <span class="n">matrix_distance</span></div>
+
 
 
 <span class="k">class</span> <span class="nc">_LPFacilitySolverBase</span><span class="p">(</span><span class="n">MilpSolver</span><span class="p">,</span> <span class="n">SolverFacility</span><span class="p">):</span>
@@ -260,7 +266,9 @@
         <span class="p">)</span>
 
 
-<div class="viewcode-block" id="LP_Facility_Solver"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver">[docs]</a><span class="k">class</span> <span class="nc">LP_Facility_Solver</span><span class="p">(</span><span class="n">GurobiMilpSolver</span><span class="p">,</span> <span class="n">_LPFacilitySolverBase</span><span class="p">):</span>
+<div class="viewcode-block" id="LP_Facility_Solver">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_Facility_Solver</span><span class="p">(</span><span class="n">GurobiMilpSolver</span><span class="p">,</span> <span class="n">_LPFacilitySolverBase</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Milp solver using gurobi library</span>
 
 <span class="sd">    Attributes:</span>
@@ -269,7 +277,9 @@
 <span class="sd">                        (however this is just used for the ResultStorage creation, not in the optimisation)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="LP_Facility_Solver.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="LP_Facility_Solver.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Keyword Args:</span>
@@ -365,14 +375,21 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">description_constraint</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Im lazy.&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;descr&quot;</span><span class="p">:</span> <span class="s2">&quot;Im lazy.&quot;</span><span class="p">}}</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Initialized&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_Facility_Solver.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_Facility_Solver.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="c1"># We call explicitely the method to be sure getting the proper one</span>
         <span class="k">return</span> <span class="n">_LPFacilitySolverBase</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LP_Facility_Solver_CBC"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC">[docs]</a><span class="k">class</span> <span class="nc">LP_Facility_Solver_CBC</span><span class="p">(</span><span class="n">SolverFacility</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LP_Facility_Solver_CBC">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_Facility_Solver_CBC</span><span class="p">(</span><span class="n">SolverFacility</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Milp formulation using cbc solver.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -404,7 +421,9 @@
             <span class="n">params_objective_function</span><span class="o">=</span><span class="n">params_objective_function</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="LP_Facility_Solver_CBC.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="LP_Facility_Solver_CBC.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">nb_facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span><span class="o">.</span><span class="n">facility_count</span>
         <span class="n">nb_customers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span><span class="o">.</span><span class="n">customer_count</span>
         <span class="n">use_matrix_indicator_heuristic</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -479,7 +498,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">description_constraint</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Im lazy.&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;descr&quot;</span><span class="p">:</span> <span class="s2">&quot;Im lazy.&quot;</span><span class="p">}}</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Initialized&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_Facility_Solver_CBC.retrieve"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC.retrieve">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_Facility_Solver_CBC.retrieve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC.retrieve">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">solution</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span><span class="o">.</span><span class="n">customer_count</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_decision</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]:</span>
             <span class="n">variable_decision_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_decision</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
@@ -498,7 +520,10 @@
             <span class="n">mode_optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params_objective_function</span><span class="o">.</span><span class="n">sense_function</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_Facility_Solver_CBC.solve"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LP_Facility_Solver_CBC.solve">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_CBC.solve">[docs]</a>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParametersMilp</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">parameters_milp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -524,10 +549,14 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Result: </span><span class="si">{</span><span class="n">resdict</span><span class="p">[</span><span class="n">res</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">objective</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">Objective</span><span class="p">()</span><span class="o">.</span><span class="n">Value</span><span class="p">()</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Objective : </span><span class="si">{</span><span class="n">objective</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LP_Facility_Solver_PyMip"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_PyMip">[docs]</a><span class="k">class</span> <span class="nc">LP_Facility_Solver_PyMip</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">,</span> <span class="n">_LPFacilitySolverBase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LP_Facility_Solver_PyMip">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_PyMip">[docs]</a>
+<span class="k">class</span> <span class="nc">LP_Facility_Solver_PyMip</span><span class="p">(</span><span class="n">PymipMilpSolver</span><span class="p">,</span> <span class="n">_LPFacilitySolverBase</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Milp solver using pymip library</span>
 
 <span class="sd">    Note:</span>
@@ -550,7 +579,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">milp_solver_name</span> <span class="o">=</span> <span class="n">milp_solver_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solver_name</span> <span class="o">=</span> <span class="n">map_solver</span><span class="p">[</span><span class="n">milp_solver_name</span><span class="p">]</span>
 
-<div class="viewcode-block" id="LP_Facility_Solver_PyMip.init_model"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_PyMip.init_model">[docs]</a>    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="LP_Facility_Solver_PyMip.init_model">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_PyMip.init_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">nb_facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span><span class="o">.</span><span class="n">facility_count</span>
         <span class="n">nb_customers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">facility_problem</span><span class="o">.</span><span class="n">customer_count</span>
         <span class="n">use_matrix_indicator_heuristic</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -632,11 +663,16 @@
         <span class="p">}</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Initialized&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LP_Facility_Solver_PyMip.retrieve_solutions"><a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_PyMip.retrieve_solutions">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LP_Facility_Solver_PyMip.retrieve_solutions">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.facility.solvers.html#discrete_optimization.facility.solvers.facility_lp_solver.LP_Facility_Solver_PyMip.retrieve_solutions">[docs]</a>
+    <span class="k">def</span> <span class="nf">retrieve_solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="p">:</span> <span class="n">ParametersMilp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="c1"># We call explicitely the method to be sure getting the proper one</span>
         <span class="k">return</span> <span class="n">_LPFacilitySolverBase</span><span class="o">.</span><span class="n">retrieve_solutions</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">parameters_milp</span><span class="o">=</span><span class="n">parameters_milp</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

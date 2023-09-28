@@ -10,12 +10,12 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/versions.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/versions.js?v=dd1a30db"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -133,7 +133,9 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="last_opti_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.last_opti_solution">[docs]</a><span class="k">def</span> <span class="nf">last_opti_solution</span><span class="p">(</span><span class="n">last_result_store</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">):</span>
+<div class="viewcode-block" id="last_opti_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.last_opti_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">last_opti_solution</span><span class="p">(</span><span class="n">last_result_store</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">):</span>
     <span class="n">current_solution</span><span class="p">,</span> <span class="n">fit</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
         <span class="p">(</span>
             <span class="n">last_result_store</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
@@ -148,7 +150,10 @@
     <span class="k">return</span> <span class="n">current_solution</span></div>
 
 
-<div class="viewcode-block" id="PostProLeftShift"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProLeftShift">[docs]</a><span class="k">class</span> <span class="nc">PostProLeftShift</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PostProLeftShift">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProLeftShift">[docs]</a>
+<span class="k">class</span> <span class="nc">PostProLeftShift</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -187,7 +192,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">do_ls</span> <span class="o">=</span> <span class="n">do_ls</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict_params</span> <span class="o">=</span> <span class="n">kwargs</span>
 
-<div class="viewcode-block" id="PostProLeftShift.build_other_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProLeftShift.build_other_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="PostProLeftShift.build_other_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProLeftShift.build_other_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="n">new_solution</span> <span class="o">=</span> <span class="n">sgs_variant</span><span class="p">(</span>
             <span class="n">solution</span><span class="o">=</span><span class="n">last_opti_solution</span><span class="p">(</span><span class="n">result_storage</span><span class="p">),</span>
             <span class="n">problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">,</span>
@@ -208,10 +215,14 @@
             <span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span> <span class="o">+=</span> <span class="p">[</span>
                 <span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_sol</span><span class="p">(</span><span class="n">solution</span><span class="p">))</span>
             <span class="p">]</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="sgs_variant"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.sgs_variant">[docs]</a><span class="k">def</span> <span class="nf">sgs_variant</span><span class="p">(</span>
+
+<div class="viewcode-block" id="sgs_variant">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.sgs_variant">[docs]</a>
+<span class="k">def</span> <span class="nf">sgs_variant</span><span class="p">(</span>
     <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span> <span class="n">predecessors_dict</span>
 <span class="p">):</span>
     <span class="n">new_proposed_schedule</span> <span class="o">=</span> <span class="p">{}</span>
@@ -376,7 +387,10 @@
     <span class="k">return</span> <span class="n">new_solution</span></div>
 
 
-<div class="viewcode-block" id="constraints_strings"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.constraints_strings">[docs]</a><span class="k">def</span> <span class="nf">constraints_strings</span><span class="p">(</span>
+
+<div class="viewcode-block" id="constraints_strings">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.constraints_strings">[docs]</a>
+<span class="k">def</span> <span class="nf">constraints_strings</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span><span class="p">,</span>
     <span class="n">subtasks</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Hashable</span><span class="p">],</span>
     <span class="n">minus_delta</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -518,7 +532,10 @@
     <span class="k">return</span> <span class="n">list_strings</span></div>
 
 
-<div class="viewcode-block" id="NeighborFixStart"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStart">[docs]</a><span class="k">class</span> <span class="nc">NeighborFixStart</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborFixStart">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStart">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborFixStart</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -529,7 +546,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fraction_to_fix</span> <span class="o">=</span> <span class="n">fraction_to_fix</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">delta_time_from_makepan_to_not_fix</span> <span class="o">=</span> <span class="n">delta_time_from_makepan_to_not_fix</span>
 
-<div class="viewcode-block" id="NeighborFixStart.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStart.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborFixStart.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStart.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -561,21 +580,31 @@
             <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="NeighborFixStart.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStart.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="NeighborFixStart.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStart.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MethodSubproblem"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.MethodSubproblem">[docs]</a><span class="k">class</span> <span class="nc">MethodSubproblem</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MethodSubproblem">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.MethodSubproblem">[docs]</a>
+<span class="k">class</span> <span class="nc">MethodSubproblem</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">BLOCK_TIME</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">BLOCK_TIME_AND_PREDECESSORS</span> <span class="o">=</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="intersect"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.intersect">[docs]</a><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
+
+<div class="viewcode-block" id="intersect">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.intersect">[docs]</a>
+<span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">i2</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
@@ -584,7 +613,10 @@
         <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="NeighborFixStartSubproblem"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStartSubproblem">[docs]</a><span class="k">class</span> <span class="nc">NeighborFixStartSubproblem</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborFixStartSubproblem">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStartSubproblem">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborFixStartSubproblem</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -612,7 +644,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_cut_part</span> <span class="o">=</span> <span class="n">nb_cut_part</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">current_sub_part</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="NeighborFixStartSubproblem.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStartSubproblem.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborFixStartSubproblem.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStartSubproblem.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -700,16 +734,23 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">current_sub_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_sub_part</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_cut_part</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="NeighborFixStartSubproblem.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStartSubproblem.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="NeighborFixStartSubproblem.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFixStartSubproblem.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="create_subproblem_cut_time"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblem_cut_time">[docs]</a><span class="k">def</span> <span class="nf">create_subproblem_cut_time</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_subproblem_cut_time">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblem_cut_time">[docs]</a>
+<span class="k">def</span> <span class="nf">create_subproblem_cut_time</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">,</span> <span class="n">neighbor_fix_problem</span><span class="p">:</span> <span class="n">NeighborFixStartSubproblem</span><span class="p">,</span> <span class="n">subtasks</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="n">nb_job_sub</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span>
@@ -732,7 +773,10 @@
     <span class="k">return</span> <span class="n">subtasks</span></div>
 
 
-<div class="viewcode-block" id="create_subproblems_random_and_predecessors"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblems_random_and_predecessors">[docs]</a><span class="k">def</span> <span class="nf">create_subproblems_random_and_predecessors</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_subproblems_random_and_predecessors">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblems_random_and_predecessors">[docs]</a>
+<span class="k">def</span> <span class="nf">create_subproblems_random_and_predecessors</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">,</span> <span class="n">neighbor_fix_problem</span><span class="p">:</span> <span class="n">NeighborFixStartSubproblem</span><span class="p">,</span> <span class="n">subtasks</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="k">if</span> <span class="n">subtasks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -780,7 +824,10 @@
     <span class="k">return</span> <span class="n">subtasks</span></div>
 
 
-<div class="viewcode-block" id="create_subproblems_problems"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblems_problems">[docs]</a><span class="k">def</span> <span class="nf">create_subproblems_problems</span><span class="p">(</span>
+
+<div class="viewcode-block" id="create_subproblems_problems">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.create_subproblems_problems">[docs]</a>
+<span class="k">def</span> <span class="nf">create_subproblems_problems</span><span class="p">(</span>
     <span class="n">current_solution</span><span class="p">,</span> <span class="n">neighbor_fix_problem</span><span class="p">:</span> <span class="n">NeighborFixStartSubproblem</span>
 <span class="p">):</span>
     <span class="k">if</span> <span class="n">neighbor_fix_problem</span><span class="o">.</span><span class="n">special_constraints</span><span class="p">:</span>
@@ -829,7 +876,10 @@
         <span class="k">return</span> <span class="n">create_subproblem_cut_time</span><span class="p">(</span><span class="n">current_solution</span><span class="p">,</span> <span class="n">neighbor_fix_problem</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="NeighborFlexibleStart"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFlexibleStart">[docs]</a><span class="k">class</span> <span class="nc">NeighborFlexibleStart</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NeighborFlexibleStart">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFlexibleStart">[docs]</a>
+<span class="k">class</span> <span class="nc">NeighborFlexibleStart</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -844,7 +894,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">plus_delta</span> <span class="o">=</span> <span class="n">plus_delta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">delta_time_from_makepan_to_not_fix</span> <span class="o">=</span> <span class="n">delta_time_from_makepan_to_not_fix</span>
 
-<div class="viewcode-block" id="NeighborFlexibleStart.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFlexibleStart.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="NeighborFlexibleStart.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFlexibleStart.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -902,16 +954,23 @@
             <span class="n">child_instance</span><span class="o">.</span><span class="n">add_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">list_strings</span></div>
 
-<div class="viewcode-block" id="NeighborFlexibleStart.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFlexibleStart.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="NeighborFlexibleStart.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.NeighborFlexibleStart.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="get_ressource_breaks"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.get_ressource_breaks">[docs]</a><span class="k">def</span> <span class="nf">get_ressource_breaks</span><span class="p">(</span>
+
+<div class="viewcode-block" id="get_ressource_breaks">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.get_ressource_breaks">[docs]</a>
+<span class="k">def</span> <span class="nf">get_ressource_breaks</span><span class="p">(</span>
     <span class="n">problem_calendar</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span>
 <span class="p">):</span>
     <span class="n">ressources</span> <span class="o">=</span> <span class="n">problem_calendar</span><span class="o">.</span><span class="n">resources_list</span>
@@ -1001,7 +1060,10 @@
     <span class="k">return</span> <span class="n">index_ressource</span><span class="p">,</span> <span class="n">constraints</span></div>
 
 
-<div class="viewcode-block" id="PostProcessSolutionNonFeasible"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProcessSolutionNonFeasible">[docs]</a><span class="k">class</span> <span class="nc">PostProcessSolutionNonFeasible</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PostProcessSolutionNonFeasible">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProcessSolutionNonFeasible">[docs]</a>
+<span class="k">class</span> <span class="nc">PostProcessSolutionNonFeasible</span><span class="p">(</span><span class="n">PostProcessSolution</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem_calendar</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -1068,7 +1130,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">do_ls</span> <span class="o">=</span> <span class="n">do_ls</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dict_params</span> <span class="o">=</span> <span class="n">kwargs</span>
 
-<div class="viewcode-block" id="PostProcessSolutionNonFeasible.build_other_solution"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProcessSolutionNonFeasible.build_other_solution">[docs]</a>    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
+<div class="viewcode-block" id="PostProcessSolutionNonFeasible.build_other_solution">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.PostProcessSolutionNonFeasible.build_other_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_other_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">:</span> <span class="n">ResultStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResultStorage</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span><span class="p">):</span>
             <span class="n">solution</span><span class="p">:</span> <span class="n">RCPSPSolutionPreemptive</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">if</span> <span class="s2">&quot;satisfy&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">solution</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -1109,10 +1173,14 @@
                 <span class="n">result_storage</span><span class="o">.</span><span class="n">list_solution_fits</span> <span class="o">+=</span> <span class="p">[</span>
                     <span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">aggreg_from_sol</span><span class="p">(</span><span class="n">solution</span><span class="p">))</span>
                 <span class="p">]</span>
-        <span class="k">return</span> <span class="n">result_storage</span></div></div>
+        <span class="k">return</span> <span class="n">result_storage</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerAddCalendarConstraint"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerAddCalendarConstraint">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerAddCalendarConstraint</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerAddCalendarConstraint">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerAddCalendarConstraint">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerAddCalendarConstraint</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem_calendar</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -1124,7 +1192,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">other_constraint</span> <span class="o">=</span> <span class="n">other_constraint</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">store_constraints</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
-<div class="viewcode-block" id="ConstraintHandlerAddCalendarConstraint.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerAddCalendarConstraint.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerAddCalendarConstraint.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerAddCalendarConstraint.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -1186,16 +1256,23 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">store_constraints</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">list_strings</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_constraints</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerAddCalendarConstraint.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerAddCalendarConstraint.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerAddCalendarConstraint.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerAddCalendarConstraint.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CP_RCPSP_MZN</span><span class="p">,</span>
         <span class="n">child_instance</span><span class="p">,</span>
         <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="OptionNeighbor"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.OptionNeighbor">[docs]</a><span class="k">class</span> <span class="nc">OptionNeighbor</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+<div class="viewcode-block" id="OptionNeighbor">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.OptionNeighbor">[docs]</a>
+<span class="k">class</span> <span class="nc">OptionNeighbor</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">MIX_ALL</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">MIX_FAST</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">MIX_LARGE_NEIGH</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1203,7 +1280,10 @@
     <span class="n">DEBUG</span> <span class="o">=</span> <span class="mi">3</span></div>
 
 
-<div class="viewcode-block" id="Params"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.Params">[docs]</a><span class="k">class</span> <span class="nc">Params</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Params">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.Params">[docs]</a>
+<span class="k">class</span> <span class="nc">Params</span><span class="p">:</span>
     <span class="n">fraction_to_fix</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">minus_delta</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">plus_delta</span><span class="p">:</span> <span class="nb">int</span>
@@ -1222,7 +1302,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">delta_time_from_makepan_to_not_fix</span> <span class="o">=</span> <span class="n">delta_time_from_makepan_to_not_fix</span></div>
 
 
-<div class="viewcode-block" id="ConstraintHandlerMix"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerMix">[docs]</a><span class="k">class</span> <span class="nc">ConstraintHandlerMix</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConstraintHandlerMix">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerMix">[docs]</a>
+<span class="k">class</span> <span class="nc">ConstraintHandlerMix</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem</span><span class="p">:</span> <span class="n">RCPSPModelPreemptive</span><span class="p">,</span>
@@ -1244,7 +1327,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">last_index_param</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">last_fitness</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="ConstraintHandlerMix.adding_constraint_from_results_store"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerMix.adding_constraint_from_results_store">[docs]</a>    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
+<div class="viewcode-block" id="ConstraintHandlerMix.adding_constraint_from_results_store">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerMix.adding_constraint_from_results_store">[docs]</a>
+    <span class="k">def</span> <span class="nf">adding_constraint_from_results_store</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cp_solver</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CP_MRCPSP_MZN_PREEMMPTIVE</span><span class="p">,</span> <span class="n">CP_RCPSP_MZN_PREEMMPTIVE</span><span class="p">],</span>
         <span class="n">child_instance</span><span class="p">:</span> <span class="n">Instance</span><span class="p">,</span>
@@ -1294,13 +1379,20 @@
             <span class="n">cp_solver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">result_storage</span><span class="p">,</span> <span class="n">last_result_store</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConstraintHandlerMix.remove_constraints_from_previous_iteration"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerMix.remove_constraints_from_previous_iteration">[docs]</a>    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConstraintHandlerMix.remove_constraints_from_previous_iteration">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.ConstraintHandlerMix.remove_constraints_from_previous_iteration">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_constraints_from_previous_iteration</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">cp_solver</span><span class="p">:</span> <span class="n">CPSolver</span><span class="p">,</span> <span class="n">child_instance</span><span class="p">,</span> <span class="n">previous_constraints</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
     <span class="p">):</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="build_neighbor_operator"><a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.build_neighbor_operator">[docs]</a><span class="k">def</span> <span class="nf">build_neighbor_operator</span><span class="p">(</span><span class="n">option_neighbor</span><span class="p">:</span> <span class="n">OptionNeighbor</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">):</span>
+
+<div class="viewcode-block" id="build_neighbor_operator">
+<a class="viewcode-back" href="../../../../api/discrete_optimization.rcpsp.solver.html#discrete_optimization.rcpsp.solver.cp_lns_methods_preemptive.build_neighbor_operator">[docs]</a>
+<span class="k">def</span> <span class="nf">build_neighbor_operator</span><span class="p">(</span><span class="n">option_neighbor</span><span class="p">:</span> <span class="n">OptionNeighbor</span><span class="p">,</span> <span class="n">rcpsp_model</span><span class="p">):</span>
     <span class="n">params_om</span> <span class="o">=</span> <span class="p">[</span><span class="n">Params</span><span class="p">(</span><span class="n">fraction_to_fix</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">minus_delta</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">plus_delta</span><span class="o">=</span><span class="mi">100</span><span class="p">)]</span>
     <span class="n">params_all</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">Params</span><span class="p">(</span><span class="n">fraction_to_fix</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">minus_delta</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">plus_delta</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
@@ -1369,6 +1461,7 @@
         <span class="n">problem</span><span class="o">=</span><span class="n">rcpsp_model</span><span class="p">,</span> <span class="n">list_params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">list_proba</span><span class="o">=</span><span class="n">probas</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">constraint_handler</span></div>
+
 </pre></div>
 
            </div>
