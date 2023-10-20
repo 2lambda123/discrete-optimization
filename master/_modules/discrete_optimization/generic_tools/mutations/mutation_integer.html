@@ -138,32 +138,14 @@
                 <span class="n">register</span><span class="p">,</span> <span class="n">TypeAttribute</span><span class="o">.</span><span class="n">LIST_INTEGER_SPECIFIC_ARITY</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="n">attribute_key</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-            <span class="n">arities</span> <span class="o">=</span> <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="n">attribute_key</span><span class="p">][</span><span class="s2">&quot;arities&quot;</span><span class="p">]</span>
-            <span class="n">lows</span> <span class="o">=</span> <span class="n">lower_bound_vector_encoding_from_dict</span><span class="p">(</span>
-                <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="n">attribute_key</span><span class="p">]</span>
-            <span class="p">)</span>
-            <span class="n">ups</span> <span class="o">=</span> <span class="n">upper_bound_vector_encoding_from_dict</span><span class="p">(</span>
-                <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="n">attribute_key</span><span class="p">]</span>
-            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span>
-        <span class="k">if</span> <span class="n">arities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">attribute_key</span> <span class="o">=</span> <span class="n">get_attribute_for_type</span><span class="p">(</span>
-                <span class="n">register</span><span class="p">,</span> <span class="n">TypeAttribute</span><span class="o">.</span><span class="n">LIST_INTEGER_SPECIFIC_ARITY</span>
-            <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">arities</span> <span class="o">=</span> <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="n">attribute_key</span><span class="p">][</span><span class="s2">&quot;arities&quot;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">arities</span> <span class="o">=</span> <span class="n">arities</span>
-        <span class="k">if</span> <span class="n">lows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">lows</span> <span class="o">=</span> <span class="p">[</span><span class="n">min_value</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arities</span><span class="p">))]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">lows</span> <span class="o">=</span> <span class="n">lows</span>
-        <span class="k">if</span> <span class="n">ups</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ups</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">min_value</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">arities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arities</span><span class="p">))</span>
-            <span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ups</span> <span class="o">=</span> <span class="n">ups</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lows</span> <span class="o">=</span> <span class="n">lower_bound_vector_encoding_from_dict</span><span class="p">(</span>
+            <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ups</span> <span class="o">=</span> <span class="n">upper_bound_vector_encoding_from_dict</span><span class="p">(</span>
+            <span class="n">register</span><span class="o">.</span><span class="n">dict_attribute_to_type</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">]</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">range_arities</span> <span class="o">=</span> <span class="p">[</span>
             <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">up</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">up</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ups</span><span class="p">)</span>
         <span class="p">]</span>

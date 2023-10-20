@@ -762,6 +762,11 @@
                 <span class="n">routing</span><span class="o">.</span><span class="n">AddVariableMinimizedByFinalizer</span><span class="p">(</span>
                     <span class="n">time_dimension</span><span class="o">.</span><span class="n">CumulVar</span><span class="p">(</span><span class="n">routing</span><span class="o">.</span><span class="n">End</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
                 <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;Distance&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_names</span><span class="p">:</span>
+            <span class="n">dim</span> <span class="o">=</span> <span class="n">routing</span><span class="o">.</span><span class="n">GetDimensionOrDie</span><span class="p">(</span><span class="s2">&quot;Distance&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">number_vehicle</span><span class="p">):</span>
+                <span class="n">routing</span><span class="o">.</span><span class="n">AddVariableMinimizedByFinalizer</span><span class="p">(</span><span class="n">dim</span><span class="o">.</span><span class="n">CumulVar</span><span class="p">(</span><span class="n">routing</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+                <span class="n">routing</span><span class="o">.</span><span class="n">AddVariableMinimizedByFinalizer</span><span class="p">(</span><span class="n">dim</span><span class="o">.</span><span class="n">CumulVar</span><span class="p">(</span><span class="n">routing</span><span class="o">.</span><span class="n">End</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
         <span class="n">origins</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">origin_vehicle</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">origin_vehicle</span><span class="p">}</span>
         <span class="n">targets</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">target_vehicle</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">target_vehicle</span><span class="p">}</span>
         <span class="k">if</span> <span class="n">include_time_windows</span><span class="p">:</span>
@@ -941,9 +946,18 @@
         <span class="n">sols</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># useful for callback</span>
         <span class="n">callback</span> <span class="o">=</span> <span class="n">make_routing_monitor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">AddAtSolutionCallback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
-        <span class="n">sols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">SolveWithParameters</span><span class="p">(</span>
-            <span class="n">search_parameters</span>
-        <span class="p">)</span>  <span class="c1"># useful for callback</span>
+        <span class="k">if</span> <span class="s2">&quot;initial_solution&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;initial_solution&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">initial_sol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">ReadAssignmentFromRoutes</span><span class="p">(</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;initial_solution&quot;</span><span class="p">],</span> <span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;laucnhing with assignment&quot;</span><span class="p">)</span>
+            <span class="n">sols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">SolveFromAssignmentWithParameters</span><span class="p">(</span>
+                <span class="n">initial_sol</span><span class="p">,</span> <span class="n">search_parameters</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">SolveWithParameters</span><span class="p">(</span>
+                <span class="n">search_parameters</span>
+            <span class="p">)</span>  <span class="c1"># useful for callback</span>
         <span class="k">return</span> <span class="n">callback</span><span class="o">.</span><span class="n">sols</span></div>
 
 

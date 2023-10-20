@@ -285,11 +285,15 @@
 
 <div class="viewcode-block" id="from_networkx">
 <a class="viewcode-back" href="../../../api/discrete_optimization.generic_tools.html#discrete_optimization.generic_tools.graph_api.from_networkx">[docs]</a>
-<span class="k">def</span> <span class="nf">from_networkx</span><span class="p">(</span><span class="n">graph_nx</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">]):</span>
+<span class="k">def</span> <span class="nf">from_networkx</span><span class="p">(</span>
+    <span class="n">graph_nx</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">],</span> <span class="n">undirected</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">):</span>
     <span class="k">return</span> <span class="n">Graph</span><span class="p">(</span>
         <span class="n">nodes</span><span class="o">=</span><span class="p">[(</span><span class="n">n</span><span class="p">,</span> <span class="n">graph_nx</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">graph_nx</span><span class="o">.</span><span class="n">nodes</span><span class="p">()],</span>
         <span class="n">edges</span><span class="o">=</span><span class="p">[(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">graph_nx</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">])</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph_nx</span><span class="o">.</span><span class="n">edges</span><span class="p">()],</span>
-        <span class="n">undirected</span><span class="o">=</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">graph_nx</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">),</span>
+        <span class="n">undirected</span><span class="o">=</span><span class="n">undirected</span>
+        <span class="k">if</span> <span class="n">undirected</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">graph_nx</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">),</span>
     <span class="p">)</span></div>
 
 </pre></div>
