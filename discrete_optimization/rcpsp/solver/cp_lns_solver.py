@@ -68,7 +68,7 @@ def build_default_cp_model(
                 nb_preemptive=12,
                 max_preempted=100,
                 partial_solution=partial_solution,
-                **kwargs
+                **kwargs,
             )
         else:
             solver = CP_RCPSP_MZN_PREEMMPTIVE(
@@ -80,7 +80,7 @@ def build_default_cp_model(
                 nb_preemptive=12,
                 max_preempted=100,
                 partial_solution=partial_solution,
-                **kwargs
+                **kwargs,
             )
         return solver
     else:
@@ -92,7 +92,7 @@ def build_default_cp_model(
                 output_type=True,
                 model_type="multi",
                 partial_solution=partial_solution,
-                **kwargs
+                **kwargs,
             )
         else:
             solver = CP_RCPSP_MZN(
@@ -111,7 +111,7 @@ class LargeNeighborhoodSearchRCPSP(SolverRCPSP):
         self,
         rcpsp_model: GENERIC_CLASS,
         partial_solution: PartialSolutionPreemptive = None,
-        **kwargs
+        **kwargs,
     ):
         SolverRCPSP.__init__(self, rcpsp_model=rcpsp_model)
         graph = build_graph_rcpsp_object(self.rcpsp_model)
@@ -250,7 +250,7 @@ class LargeNeighborhoodSearchRCPSP(SolverRCPSP):
         max_time_seconds: Optional[int] = None,
         skip_first_iteration: bool = False,
         stop_first_iteration_if_optimal: bool = True,
-        **args
+        **args,
     ) -> ResultStorage:
         if parameters_cp is None:
             parameters_cp = ParametersCP.default()

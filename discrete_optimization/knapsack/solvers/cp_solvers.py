@@ -347,9 +347,9 @@ class CPMultidimensionalMultiScenarioSolver(MinizincCPSolver):
             model.output_type = KnapsackSol
             self.custom_output_type = True
         instance = Instance(solver, model)
-        list_problems: Sequence[
-            MultidimensionalKnapsack
-        ] = self.knapsack_model.list_problem
+        list_problems: Sequence[MultidimensionalKnapsack] = (
+            self.knapsack_model.list_problem
+        )
         instance["nb_items"] = list_problems[0].nb_items
         instance["nb_dimension"] = len(list_problems[0].max_capacities)
         instance["nb_scenario"] = len(list_problems)

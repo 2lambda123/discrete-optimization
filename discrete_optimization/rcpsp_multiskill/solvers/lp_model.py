@@ -173,11 +173,11 @@ class LP_Solver_MRSCPSP(PymipMilpSolver):
                         continue
                     for s in required_skills:
                         for t in range(max_duration):
-                            self.employee_usage[
-                                (employee, task, mode, t, s)
-                            ] = self.model.add_var(
-                                name=f"employee_{employee}{task}{mode}{t}{s}",
-                                var_type=BINARY,
+                            self.employee_usage[(employee, task, mode, t, s)] = (
+                                self.model.add_var(
+                                    name=f"employee_{employee}{task}{mode}{t}{s}",
+                                    var_type=BINARY,
+                                )
                             )
                             task_in_employee_usage.add(task)
                             self.model.add_constr(
@@ -228,7 +228,7 @@ class LP_Solver_MRSCPSP(PymipMilpSolver):
                 <= 1
             )
         # ressource usage limit
-        for (r, t) in product(renewable, times):
+        for r, t in product(renewable, times):
             self.model.add_constr(
                 xsum(
                     int(self.rcpsp_model.mode_details[task][mode][r])
@@ -279,7 +279,7 @@ class LP_Solver_MRSCPSP(PymipMilpSolver):
                         for mode in self.modes[task]
                     )
                 )
-        for (j, s) in list_edges:
+        for j, s in list_edges:
             self.model.add_constr(
                 self.start_times_task[s] - self.end_times_task[j] >= 0
             )

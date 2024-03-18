@@ -1,4 +1,5 @@
 """Easy Large neighborhood search solver for coloring. """
+
 #  Copyright (c) 2023 AIRBUS and its affiliates.
 #  This source code is licensed under the MIT license found in the
 #  LICENSE file in the root directory of this source tree.
@@ -80,7 +81,7 @@ class LnsCpColoring(SolverColoring):
         self,
         coloring_model: ColoringProblem,
         params_objective_function: Optional[ParamsObjectiveFunction] = None,
-        **kwargs
+        **kwargs,
     ):
         SolverColoring.__init__(self, coloring_model=coloring_model)
         (
@@ -132,7 +133,7 @@ class LnsCpColoring(SolverColoring):
         max_time_seconds: Optional[int] = None,
         skip_first_iteration: bool = False,
         stop_first_iteration_if_optimal: bool = True,
-        **args
+        **args,
     ) -> ResultStorage:
         if parameters_cp is None:
             parameters_cp = ParametersCP.default()

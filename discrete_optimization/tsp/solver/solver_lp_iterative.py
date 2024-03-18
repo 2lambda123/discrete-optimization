@@ -118,7 +118,12 @@ def build_graph_pruned(
 
 def build_graph_complete(
     tsp_model: TSPModel,
-) -> Tuple[nx.DiGraph, nx.DiGraph, Dict[int, Set[Edge]], Dict[int, Set[Edge]],]:
+) -> Tuple[
+    nx.DiGraph,
+    nx.DiGraph,
+    Dict[int, Set[Edge]],
+    Dict[int, Set[Edge]],
+]:
     nodeCount = tsp_model.node_count
     mat = build_matrice_distance(nodeCount, tsp_model.evaluate_function_indexes)
     sd: npt.NDArray[np.int_] = np.argsort(mat, axis=1)

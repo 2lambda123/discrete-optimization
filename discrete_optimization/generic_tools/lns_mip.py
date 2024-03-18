@@ -26,20 +26,17 @@ class ConstraintHandler:
     @abstractmethod
     def adding_constraint_from_results_store(
         self, milp_solver: MilpSolver, result_storage: ResultStorage
-    ) -> Mapping[Hashable, Any]:
-        ...
+    ) -> Mapping[Hashable, Any]: ...
 
     @abstractmethod
     def remove_constraints_from_previous_iteration(
         self, milp_solver: MilpSolver, previous_constraints: Mapping[Hashable, Any]
-    ) -> None:
-        ...
+    ) -> None: ...
 
 
 class InitialSolution:
     @abstractmethod
-    def get_starting_solution(self) -> ResultStorage:
-        ...
+    def get_starting_solution(self) -> ResultStorage: ...
 
 
 class InitialSolutionFromSolver(InitialSolution):
@@ -69,8 +66,7 @@ class PostProcessSolution:
     # you can also do mall changes (filling gap in a schedule) to try to improve the solution
     # you can also run algorithms from the new found solution.
     @abstractmethod
-    def build_other_solution(self, result_storage: ResultStorage) -> ResultStorage:
-        ...
+    def build_other_solution(self, result_storage: ResultStorage) -> ResultStorage: ...
 
 
 class TrivialPostProcessSolution(PostProcessSolution):

@@ -307,17 +307,21 @@ def compute_schedule_per_resource_individual(
             "activity": np.zeros(
                 (
                     max_time - min_time + 1,
-                    max(rcpsp_model.resources[resources[i]])
-                    if with_calendar
-                    else rcpsp_model.resources[resources[i]],
+                    (
+                        max(rcpsp_model.resources[resources[i]])
+                        if with_calendar
+                        else rcpsp_model.resources[resources[i]]
+                    ),
                 )
             ),
             "binary_activity": np.zeros(
                 (
                     max_time - min_time + 1,
-                    max(rcpsp_model.resources[resources[i]])
-                    if with_calendar
-                    else rcpsp_model.resources[resources[i]],
+                    (
+                        max(rcpsp_model.resources[resources[i]])
+                        if with_calendar
+                        else rcpsp_model.resources[resources[i]]
+                    ),
                 )
             ),
             "total_activity": np.zeros(
@@ -328,9 +332,11 @@ def compute_schedule_per_resource_individual(
             "activity_last_n_hours": np.zeros(
                 (
                     max_time - min_time + 1,
-                    max(rcpsp_model.resources[resources[i]])
-                    if with_calendar
-                    else rcpsp_model.resources[resources[i]],
+                    (
+                        max(rcpsp_model.resources[resources[i]])
+                        if with_calendar
+                        else rcpsp_model.resources[resources[i]]
+                    ),
                 )
             ),
             "boxes_time": [],

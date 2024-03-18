@@ -80,18 +80,15 @@ class MilpSolver(SolverDO):
     model: Optional[Any]
 
     @abstractmethod
-    def init_model(self, **kwargs: Any) -> None:
-        ...
+    def init_model(self, **kwargs: Any) -> None: ...
 
     @abstractmethod
-    def retrieve_solutions(self, parameters_milp: ParametersMilp) -> ResultStorage:
-        ...
+    def retrieve_solutions(self, parameters_milp: ParametersMilp) -> ResultStorage: ...
 
     @abstractmethod
     def solve(
         self, parameters_milp: Optional[ParametersMilp] = None, **kwargs: Any
-    ) -> ResultStorage:
-        ...
+    ) -> ResultStorage: ...
 
     @abstractmethod
     def get_var_value_for_ith_solution(self, var: Any, i: int) -> float:

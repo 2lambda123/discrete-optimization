@@ -351,7 +351,7 @@ class MutationTwoOptVRP(Mutation):
         test_all: bool = False,
         nb_test: Optional[int] = None,
         return_only_improvement: bool = False,
-        **kwargs: Any
+        **kwargs: Any,
     ):
         self.node_count = vrp_model.customer_count
         self.points = vrp_model.customers

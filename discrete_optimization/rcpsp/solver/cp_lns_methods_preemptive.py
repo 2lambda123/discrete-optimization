@@ -74,7 +74,7 @@ class PostProLeftShift(PostProcessSolution):
         problem: RCPSPModelPreemptive,
         params_objective_function: ParamsObjectiveFunction = None,
         do_ls: bool = False,
-        **kwargs
+        **kwargs,
     ):
         self.problem = problem
         self.params_objective_function = params_objective_function
@@ -193,52 +193,62 @@ def sgs_variant(
         if len(solution.rcpsp_schedule[task]["starts"]) > 1:
             continue
         times_predecessors = [
-            new_proposed_schedule[t]["ends"][-1]
-            if t in new_proposed_schedule
-            else solution.rcpsp_schedule[t]["ends"][-1]
+            (
+                new_proposed_schedule[t]["ends"][-1]
+                if t in new_proposed_schedule
+                else solution.rcpsp_schedule[t]["ends"][-1]
+            )
             for t in predecessors_dict[task]
         ]
         if isinstance(problem, RCPSPModelSpecialConstraintsPreemptive):
             times_predecessors += [
-                new_proposed_schedule[t]["starts"][0]
-                if t in new_proposed_schedule
-                else solution.rcpsp_schedule[t]["starts"][0]
+                (
+                    new_proposed_schedule[t]["starts"][0]
+                    if t in new_proposed_schedule
+                    else solution.rcpsp_schedule[t]["starts"][0]
+                )
                 for t in problem.special_constraints.dict_start_together.get(
                     task, set()
                 )
             ]
             times_predecessors += [
-                new_proposed_schedule[t]["starts"][0]
-                + problem.special_constraints.dict_start_after_nunit_reverse.get(task)[
-                    t
-                ]
-                if t in new_proposed_schedule
-                else solution.rcpsp_schedule[t]["starts"][0]
-                + problem.special_constraints.dict_start_after_nunit_reverse.get(task)[
-                    t
-                ]
+                (
+                    new_proposed_schedule[t]["starts"][0]
+                    + problem.special_constraints.dict_start_after_nunit_reverse.get(
+                        task
+                    )[t]
+                    if t in new_proposed_schedule
+                    else solution.rcpsp_schedule[t]["starts"][0]
+                    + problem.special_constraints.dict_start_after_nunit_reverse.get(
+                        task
+                    )[t]
+                )
                 for t in problem.special_constraints.dict_start_after_nunit_reverse.get(
                     task, {}
                 )
             ]
             times_predecessors += [
-                new_proposed_schedule[t]["ends"][-1]
-                if t in new_proposed_schedule
-                else solution.rcpsp_schedule[t]["ends"][-1]
+                (
+                    new_proposed_schedule[t]["ends"][-1]
+                    if t in new_proposed_schedule
+                    else solution.rcpsp_schedule[t]["ends"][-1]
+                )
                 for t in problem.special_constraints.dict_start_at_end_reverse.get(
                     task, {}
                 )
             ]
             times_predecessors += [
-                new_proposed_schedule[t]["ends"][-1]
-                + problem.special_constraints.dict_start_at_end_offset_reverse.get(
-                    task
-                )[t]
-                if t in new_proposed_schedule
-                else solution.rcpsp_schedule[t]["ends"][-1]
-                + problem.special_constraints.dict_start_at_end_offset_reverse.get(
-                    task
-                )[t]
+                (
+                    new_proposed_schedule[t]["ends"][-1]
+                    + problem.special_constraints.dict_start_at_end_offset_reverse.get(
+                        task
+                    )[t]
+                    if t in new_proposed_schedule
+                    else solution.rcpsp_schedule[t]["ends"][-1]
+                    + problem.special_constraints.dict_start_at_end_offset_reverse.get(
+                        task
+                    )[t]
+                )
                 for t in problem.special_constraints.dict_start_at_end_offset_reverse.get(
                     task, {}
                 )
@@ -322,9 +332,11 @@ def constraints_strings(
             )
             string2Start = cp_solver.constraint_start_time_string_preemptive_i(
                 task=job,
-                start_time=min(max_time, start_time_j + plus_delta)
-                if constraint_max_time
-                else start_time_j + plus_delta,
+                start_time=(
+                    min(max_time, start_time_j + plus_delta)
+                    if constraint_max_time
+                    else start_time_j + plus_delta
+                ),
                 sign=SignEnum.LEQ,
                 part_id=j + 1,
             )
@@ -382,9 +394,11 @@ def constraints_strings(
                 )
                 string2Start = cp_solver.constraint_start_time_string_preemptive_i(
                     task=job,
-                    start_time=min(max_time, start_time_j + plus_delta_2)
-                    if constraint_max_time
-                    else start_time_j + plus_delta_2,
+                    start_time=(
+                        min(max_time, start_time_j + plus_delta_2)
+                        if constraint_max_time
+                        else start_time_j + plus_delta_2
+                    ),
                     sign=SignEnum.LEQ,
                     part_id=j + 1,
                 )
@@ -419,13 +433,16 @@ def constraints_strings(
                 )
                 string2Start = cp_solver.constraint_start_time_string_preemptive_i(
                     task=job,
-                    start_time=min(
-                        max_time,
-                        current_solution.rcpsp_schedule[job]["ends"][-1] + plus_delta_2,
-                    )
-                    if constraint_max_time
-                    else current_solution.rcpsp_schedule[job]["ends"][-1]
-                    + plus_delta_2,
+                    start_time=(
+                        min(
+                            max_time,
+                            current_solution.rcpsp_schedule[job]["ends"][-1]
+                            + plus_delta_2,
+                        )
+                        if constraint_max_time
+                        else current_solution.rcpsp_schedule[job]["ends"][-1]
+                        + plus_delta_2
+                    ),
                     sign=SignEnum.LEQ,
                     part_id=k + 1,
                 )
@@ -929,7 +946,7 @@ class PostProcessSolutionNonFeasible(PostProcessSolution):
         partial_solution: PartialSolutionPreemptive = None,
         params_objective_function: ParamsObjectiveFunction = None,
         do_ls=True,
-        **kwargs
+        **kwargs,
     ):
         self.problem_calendar = problem_calendar
         self.problem_no_calendar = problem_no_calendar
@@ -954,28 +971,28 @@ class PostProcessSolutionNonFeasible(PostProcessSolution):
                 start_at_end = partial_solution.start_at_end
                 start_at_end_plus_offset = partial_solution.start_at_end_plus_offset
                 start_after_nunit = partial_solution.start_after_nunit
-                for (t1, t2) in start_together:
+                for t1, t2 in start_together:
                     b = (
                         solution.rcpsp_schedule[t1]["starts"][0]
                         == solution.rcpsp_schedule[t2]["starts"][0]
                     )
                     if not b:
                         return False
-                for (t1, t2) in start_at_end:
+                for t1, t2 in start_at_end:
                     b = (
                         solution.rcpsp_schedule[t2]["starts"][0]
                         == solution.rcpsp_schedule[t1]["ends"][-1]
                     )
                     if not b:
                         return False
-                for (t1, t2, off) in start_at_end_plus_offset:
+                for t1, t2, off in start_at_end_plus_offset:
                     b = (
                         solution.rcpsp_schedule[t2]["starts"][0]
                         >= solution.rcpsp_schedule[t1]["ends"][-1] + off
                     )
                     if not b:
                         return False
-                for (t1, t2, off) in start_after_nunit:
+                for t1, t2, off in start_after_nunit:
                     b = (
                         solution.rcpsp_schedule[t2]["starts"][0]
                         >= solution.rcpsp_schedule[t1]["starts"][0] + off

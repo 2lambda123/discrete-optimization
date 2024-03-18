@@ -137,7 +137,7 @@ class LP_RCPSP(PymipMilpSolver, SolverRCPSP):
         for task in self.index_task:
             self.model += xsum(self.x[task][t] for t in self.index_time) == 1
 
-        for (r, t) in product(self.index_resource, self.index_time):
+        for r, t in product(self.index_resource, self.index_time):
             self.model += (
                 xsum(
                     u[j][r] * self.x[j][t2]
@@ -147,7 +147,7 @@ class LP_RCPSP(PymipMilpSolver, SolverRCPSP):
                 <= c[r]
             )
 
-        for (j, s) in S:
+        for j, s in S:
             self.model += (
                 xsum(
                     t * self.x[self.index_in_var[s]][t]
@@ -276,7 +276,7 @@ class LP_RCPSP(PymipMilpSolver, SolverRCPSP):
         list_solution_fits: List[Tuple[Solution, Union[float, TupleFitness]]] = []
         for s in range(n_solutions):
             rcpsp_schedule = {}
-            for (task_index, time) in product(self.index_task, self.index_time):
+            for task_index, time in product(self.index_task, self.index_time):
                 value = self.get_var_value_for_ith_solution(self.x[task_index][time], s)
                 if value >= 0.5:
                     task = self.rcpsp_model.tasks_list[task_index]
@@ -457,7 +457,7 @@ class LP_MRCPSP(PymipMilpSolver, _BaseLP_MRCPSP):
                 r: [non_renewable[r]] * len(self.index_time) for r in non_renewable
             }
 
-        for (r, t) in product(renewable, self.index_time):
+        for r, t in product(renewable, self.index_time):
             self.model.add_constr(
                 xsum(
                     int(self.rcpsp_model.mode_details[key[0]][key[1]][r]) * self.x[key]
@@ -494,7 +494,7 @@ class LP_MRCPSP(PymipMilpSolver, _BaseLP_MRCPSP):
                 )
                 == durations[j]
             )
-        for (j, s) in S:
+        for j, s in S:
             self.model.add_constr(
                 xsum(
                     [key[2] * self.x[key] for key in variable_per_task[s]]

@@ -359,12 +359,12 @@ def compute_schedule_per_resource_individual(
                     array_ressource_usage[r]["total_activity"][resource] += (
                         end_time - start_time
                     )
-                    array_ressource_usage[r]["activity_last_n_hours"][
-                        :, resource
-                    ] = np.convolve(
-                        array_ressource_usage[r]["binary_activity"][:, resource],
-                        np.array([1] * nhour + [0] + [0] * nhour),
-                        mode="same",
+                    array_ressource_usage[r]["activity_last_n_hours"][:, resource] = (
+                        np.convolve(
+                            array_ressource_usage[r]["binary_activity"][:, resource],
+                            np.array([1] * nhour + [0] + [0] * nhour),
+                            mode="same",
+                        )
                     )
                     array_ressource_usage[r]["boxes_time"] += [
                         [

@@ -90,8 +90,7 @@ class ResultComparator:
         )
         return fig
 
-    def print_test_distribution(self) -> None:
-        ...
+    def print_test_distribution(self) -> None: ...
 
     def get_best_by_objective_by_result_storage(
         self, objectif_str: str

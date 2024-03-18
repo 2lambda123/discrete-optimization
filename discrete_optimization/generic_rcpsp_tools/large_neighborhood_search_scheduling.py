@@ -99,7 +99,7 @@ def build_default_cp_model(rcpsp_problem: ANY_RCPSP, partial_solution=None, **kw
                         "fake_tasks",
                         "add_partial_solution_hard_constraint",
                     ]
-                }
+                },
             )
             return solver
     if rcpsp_problem.is_preemptive():
@@ -133,7 +133,7 @@ def build_default_cp_model(rcpsp_problem: ANY_RCPSP, partial_solution=None, **kw
                             "fake_tasks",
                             "add_partial_solution_hard_constraint",
                         ]
-                    }
+                    },
                 )
                 return solver
             if not rcpsp_problem.is_rcpsp_multimode():
@@ -165,7 +165,7 @@ def build_default_cp_model(rcpsp_problem: ANY_RCPSP, partial_solution=None, **kw
                             "fake_tasks",
                             "add_partial_solution_hard_constraint",
                         ]
-                    }
+                    },
                 )
                 return solver
     if not rcpsp_problem.is_preemptive():
@@ -188,7 +188,7 @@ def build_default_cp_model(rcpsp_problem: ANY_RCPSP, partial_solution=None, **kw
                     x: kwargs[x]
                     for x in kwargs
                     if x not in ["add_partial_solution_hard_constraint"]
-                }
+                },
             )
             return solver
         if not rcpsp_problem.is_multiskill():
@@ -207,7 +207,7 @@ def build_default_cp_model(rcpsp_problem: ANY_RCPSP, partial_solution=None, **kw
                         x: kwargs[x]
                         for x in kwargs
                         if x not in ["add_partial_solution_hard_constraint"]
-                    }
+                    },
                 )
                 return solver
             if not rcpsp_problem.is_rcpsp_multimode():
@@ -225,7 +225,7 @@ def build_default_cp_model(rcpsp_problem: ANY_RCPSP, partial_solution=None, **kw
                         x: kwargs[x]
                         for x in kwargs
                         if x not in ["add_partial_solution_hard_constraint"]
-                    }
+                    },
                 )
                 return solver
 
@@ -466,14 +466,14 @@ class LargeNeighborhoodSearchScheduling(SolverGenericRCPSP):
                 graph=graph,
                 multiskill=self.rcpsp_model.is_multiskill(),
                 preemptive=self.rcpsp_model.is_preemptive(),
-                **kwargs
+                **kwargs,
             )
         self.post_pro = kwargs.get("post_process_solution", None)
         if self.post_pro is None:
             self.post_pro = build_default_postpro(
                 rcpsp_problem=self.rcpsp_model,
                 partial_solution=partial_solution,
-                **kwargs
+                **kwargs,
             )
         self.initial_solution_provider = kwargs.get("initial_solution_provider", None)
         if self.initial_solution_provider is None:
@@ -497,7 +497,7 @@ class LargeNeighborhoodSearchScheduling(SolverGenericRCPSP):
         max_time_seconds: Optional[int] = None,
         skip_first_iteration: bool = False,
         stop_first_iteration_if_optimal: bool = True,
-        **args
+        **args,
     ) -> ResultStorage:
         if parameters_cp is None:
             parameters_cp = ParametersCP.default()
