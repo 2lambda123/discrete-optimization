@@ -108,12 +108,10 @@ class VrpProblem(Problem):
     @abstractmethod
     def evaluate_function(
         self, var_tsp: VrpSolution
-    ) -> Tuple[List[List[float]], List[float], float, List[float]]:
-        ...
+    ) -> Tuple[List[List[float]], List[float], float, List[float]]: ...
 
     @abstractmethod
-    def evaluate_function_indexes(self, index_1: int, index_2: int) -> float:
-        ...
+    def evaluate_function_indexes(self, index_1: int, index_2: int) -> float: ...
 
     def evaluate(self, variable: VrpSolution) -> Dict[str, float]:  # type: ignore # avoid isinstance checks for efficiency
         if (

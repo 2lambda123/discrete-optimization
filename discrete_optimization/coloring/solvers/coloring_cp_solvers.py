@@ -149,9 +149,11 @@ class ColoringCP(MinizincCPSolver, SolverColoring):
         print(nb_colors)
         model_type = kwargs.get(
             "cp_model",
-            ColoringCPModel.DEFAULT
-            if not with_subset_nodes
-            else ColoringCPModel.DEFAULT_WITH_SUBSET,
+            (
+                ColoringCPModel.DEFAULT
+                if not with_subset_nodes
+                else ColoringCPModel.DEFAULT_WITH_SUBSET
+            ),
         )
         if with_subset_nodes and model_type != ColoringCPModel.DEFAULT_WITH_SUBSET:
             model_type = ColoringCPModel.DEFAULT_WITH_SUBSET

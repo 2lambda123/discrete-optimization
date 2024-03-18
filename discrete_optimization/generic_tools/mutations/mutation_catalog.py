@@ -101,9 +101,9 @@ def get_available_mutations(
 ]:
     register = problem.get_attribute_register()
     present_types = set(register.get_types())
-    mutations: Dict[
-        TypeAttribute, Dict[str, Tuple[Type[Mutation], Dict[str, Any]]]
-    ] = {}
+    mutations: Dict[TypeAttribute, Dict[str, Tuple[Type[Mutation], Dict[str, Any]]]] = (
+        {}
+    )
     mutations_list: List[Tuple[Type[Mutation], Dict[str, Any]]] = []
     nb_mutations = 0
     for pr_type in present_types:

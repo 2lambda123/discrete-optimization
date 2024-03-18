@@ -127,11 +127,11 @@ def constraints_strings(
         )
         string_start_2 = cp_solver.constraint_start_time_string(
             task=job,
-            start_time=min(
-                max_time, start_time_j + params_constraints.plus_delta_primary
-            )
-            if params_constraints.constraint_max_time_to_current_solution
-            else start_time_j + params_constraints.plus_delta_primary,
+            start_time=(
+                min(max_time, start_time_j + params_constraints.plus_delta_primary)
+                if params_constraints.constraint_max_time_to_current_solution
+                else start_time_j + params_constraints.plus_delta_primary
+            ),
             sign=SignEnum.LEQ,
         )
         list_strings += [string_start_1, string_start_2]
@@ -157,11 +157,13 @@ def constraints_strings(
             )
             string_start_2 = cp_solver.constraint_start_time_string(
                 task=job,
-                start_time=min(
-                    max_time, start_time_j + params_constraints.plus_delta_secondary
-                )
-                if params_constraints.constraint_max_time_to_current_solution
-                else start_time_j + params_constraints.plus_delta_secondary,
+                start_time=(
+                    min(
+                        max_time, start_time_j + params_constraints.plus_delta_secondary
+                    )
+                    if params_constraints.constraint_max_time_to_current_solution
+                    else start_time_j + params_constraints.plus_delta_secondary
+                ),
                 sign=SignEnum.LEQ,
             )
             list_strings += [string_start_1, string_start_2]
@@ -203,11 +205,11 @@ def constraints_strings_preemptive(
             )
             string2_start = cp_solver.constraint_start_time_string_preemptive_i(
                 task=job,
-                start_time=min(
-                    max_time, start_time_j + params_constraints.plus_delta_primary
-                )
-                if params_constraints.constraint_max_time_to_current_solution
-                else start_time_j + params_constraints.plus_delta_primary,
+                start_time=(
+                    min(max_time, start_time_j + params_constraints.plus_delta_primary)
+                    if params_constraints.constraint_max_time_to_current_solution
+                    else start_time_j + params_constraints.plus_delta_primary
+                ),
                 sign=SignEnum.LEQ,
                 part_id=j + 1,
             )
@@ -295,11 +297,14 @@ def constraints_strings_preemptive(
                 )
                 string2_start = cp_solver.constraint_start_time_string_preemptive_i(
                     task=job,
-                    start_time=min(
-                        max_time, start_time_j + params_constraints.plus_delta_secondary
-                    )
-                    if params_constraints.constraint_max_time_to_current_solution
-                    else start_time_j + params_constraints.plus_delta_secondary,
+                    start_time=(
+                        min(
+                            max_time,
+                            start_time_j + params_constraints.plus_delta_secondary,
+                        )
+                        if params_constraints.constraint_max_time_to_current_solution
+                        else start_time_j + params_constraints.plus_delta_secondary
+                    ),
                     sign=SignEnum.LEQ,
                     part_id=j + 1,
                 )
@@ -342,14 +347,16 @@ def constraints_strings_preemptive(
                 )
                 string2_start = cp_solver.constraint_start_time_string_preemptive_i(
                     task=job,
-                    start_time=min(
-                        max_time,
-                        current_solution.get_end_time(job)
-                        + params_constraints.plus_delta_secondary,
-                    )
-                    if params_constraints.constraint_max_time_to_current_solution
-                    else current_solution.get_end_time(job)
-                    + params_constraints.plus_delta_secondary,
+                    start_time=(
+                        min(
+                            max_time,
+                            current_solution.get_end_time(job)
+                            + params_constraints.plus_delta_secondary,
+                        )
+                        if params_constraints.constraint_max_time_to_current_solution
+                        else current_solution.get_end_time(job)
+                        + params_constraints.plus_delta_secondary
+                    ),
                     sign=SignEnum.LEQ,
                     part_id=k + 1,
                 )
@@ -832,7 +839,7 @@ def constraint_unit_used_subset_employees(
         )
     strings = []
     for e in employees_set:
-        for (task, j) in employees_usage_dict[e]:
+        for task, j in employees_usage_dict[e]:
             strings += cp_solver.constraint_used_employee(
                 task=task, employee=e, indicator=True
             )
@@ -900,7 +907,7 @@ def constraint_unit_used_subset_employees_preemptive(
         )
     strings = []
     for e in employees_set:
-        for (task, j) in employees_usage_dict[e]:
+        for task, j in employees_usage_dict[e]:
             if (task, j) in exceptions:
                 continue
             strings += cp_solver.constraint_used_employee(
@@ -1319,7 +1326,10 @@ class ConstraintHandlerScheduling(ConstraintHandler):
         self.problem = problem
         self.basic_constraint_builder = basic_constraint_builder
 
-        if isinstance(self.problem, RCPSPModelSpecialConstraintsPreemptive,) or (
+        if isinstance(
+            self.problem,
+            RCPSPModelSpecialConstraintsPreemptive,
+        ) or (
             isinstance(self.problem, RCPSPModel) and self.problem.do_special_constraints
         ):
             self.graph_rcpsp = GraphRCPSPSpecialConstraints(problem=self.problem)

@@ -618,20 +618,20 @@ class LinearFlowSolver(GurobiMilpSolver):
                         name="convflow_" + str((vehicle, node)),
                     )
                     if unique_visit:
-                        constraints_flow_conservation[
-                            (vehicle, node, "in")
-                        ] = model.addLConstr(
-                            grb.quicksum(
-                                [
-                                    variables_edges[vehicle][e]
-                                    for e in edges_in_per_vehicles[vehicle].get(
-                                        node, set()
-                                    )
-                                    if e[1] != e[0]
-                                ]
+                        constraints_flow_conservation[(vehicle, node, "in")] = (
+                            model.addLConstr(
+                                grb.quicksum(
+                                    [
+                                        variables_edges[vehicle][e]
+                                        for e in edges_in_per_vehicles[vehicle].get(
+                                            node, set()
+                                        )
+                                        if e[1] != e[0]
+                                    ]
+                                )
+                                <= 1,
+                                name="valueflow_" + str((vehicle, node)),
                             )
-                            <= 1,
-                            name="valueflow_" + str((vehicle, node)),
                         )
 
         if include_backward:
@@ -780,30 +780,30 @@ class LinearFlowSolver(GurobiMilpSolver):
         model.setParam("Heuristics", 0.5)
         model.setParam(grb.GRB.Param.Method, 2)
         model.modelSense = grb.GRB.MINIMIZE
-        self.edges_in_all_vehicles: Dict[
-            Node, Set[Tuple[int, Edge]]
-        ] = edges_in_all_vehicles
-        self.edges_out_all_vehicles: Dict[
-            Node, Set[Tuple[int, Edge]]
-        ] = edges_out_all_vehicles
-        self.edges_in_per_vehicles: Dict[
-            int, Dict[Node, Set[Edge]]
-        ] = edges_in_per_vehicles
-        self.edges_out_per_vehicles: Dict[
-            int, Dict[Node, Set[Edge]]
-        ] = edges_out_per_vehicles
-        self.edges_in_all_vehicles_cluster: Dict[
-            Hashable, Set[Tuple[int, Edge]]
-        ] = edges_in_all_vehicles_cluster
-        self.edges_out_all_vehicles_cluster: Dict[
-            Hashable, Set[Tuple[int, Edge]]
-        ] = edges_out_all_vehicles_cluster
-        self.edges_in_per_vehicles_cluster: Dict[
-            int, Dict[Hashable, Set[Edge]]
-        ] = edges_in_per_vehicles_cluster
-        self.edges_out_per_vehicles_cluster: Dict[
-            int, Dict[Hashable, Set[Edge]]
-        ] = edges_out_per_vehicles_cluster
+        self.edges_in_all_vehicles: Dict[Node, Set[Tuple[int, Edge]]] = (
+            edges_in_all_vehicles
+        )
+        self.edges_out_all_vehicles: Dict[Node, Set[Tuple[int, Edge]]] = (
+            edges_out_all_vehicles
+        )
+        self.edges_in_per_vehicles: Dict[int, Dict[Node, Set[Edge]]] = (
+            edges_in_per_vehicles
+        )
+        self.edges_out_per_vehicles: Dict[int, Dict[Node, Set[Edge]]] = (
+            edges_out_per_vehicles
+        )
+        self.edges_in_all_vehicles_cluster: Dict[Hashable, Set[Tuple[int, Edge]]] = (
+            edges_in_all_vehicles_cluster
+        )
+        self.edges_out_all_vehicles_cluster: Dict[Hashable, Set[Tuple[int, Edge]]] = (
+            edges_out_all_vehicles_cluster
+        )
+        self.edges_in_per_vehicles_cluster: Dict[int, Dict[Hashable, Set[Edge]]] = (
+            edges_in_per_vehicles_cluster
+        )
+        self.edges_out_per_vehicles_cluster: Dict[int, Dict[Hashable, Set[Edge]]] = (
+            edges_out_per_vehicles_cluster
+        )
 
         self.variable_decisions = all_variables
         self.model = model
@@ -1673,14 +1673,14 @@ class ConstraintHandlerOrWarmStart:
                             and v in edges_to_constraint
                             and e in edges_to_constraint[v]
                         ):
-                            self.linear_solver.constraint_on_edge[
-                                iedge
-                            ] = self.linear_solver.model.addLConstr(
-                                self.linear_solver.variable_decisions[
-                                    "variables_edges"
-                                ][v][e]
-                                == val,
-                                name="c_" + str(v) + "_" + str(e) + "_" + str(val),
+                            self.linear_solver.constraint_on_edge[iedge] = (
+                                self.linear_solver.model.addLConstr(
+                                    self.linear_solver.variable_decisions[
+                                        "variables_edges"
+                                    ][v][e]
+                                    == val,
+                                    name="c_" + str(v) + "_" + str(e) + "_" + str(val),
+                                )
                             )
                             iedge += 1
         self.linear_solver.model.update()
@@ -2299,15 +2299,16 @@ def update_model(
                                     name="order_" + str(node),
                                 )
                             if use_indicator:
-                                constraints_order[
-                                    node
-                                ] = lp_solver.model.addGenConstrIndicator(
-                                    lp_solver.variable_decisions["variables_edges"][
-                                        vehicle
-                                    ][edge],
-                                    1,
-                                    variable_order[node] == variable_order[edge[0]] + 1,
-                                    name="order_" + str(node),
+                                constraints_order[node] = (
+                                    lp_solver.model.addGenConstrIndicator(
+                                        lp_solver.variable_decisions["variables_edges"][
+                                            vehicle
+                                        ][edge],
+                                        1,
+                                        variable_order[node]
+                                        == variable_order[edge[0]] + 1,
+                                        name="order_" + str(node),
+                                    )
                                 )
     lp_solver.model.update()
     return list_constraints
@@ -2414,15 +2415,15 @@ def update_model_lazy(
                                 )
                             )
                         if use_indicator:
-                            constraints_order[
-                                node
-                            ] = lp_solver.model.addGenConstrIndicator(
-                                lp_solver.variable_decisions["variables_edges"][
-                                    vehicle
-                                ][edge],
-                                1,
-                                variable_order[node] == variable_order[edge[0]] + 1,
-                                name="order_" + str(node),
+                            constraints_order[node] = (
+                                lp_solver.model.addGenConstrIndicator(
+                                    lp_solver.variable_decisions["variables_edges"][
+                                        vehicle
+                                    ][edge],
+                                    1,
+                                    variable_order[node] == variable_order[edge[0]] + 1,
+                                    name="order_" + str(node),
+                                )
                             )
     lp_solver.model.update()
     return list_constraints

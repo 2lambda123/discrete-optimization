@@ -53,7 +53,7 @@ class LS_RCPSP_Solver(SolverGenericRCPSP):
         rcpsp_model: ANY_RCPSP,
         params_objective_function: ParamsObjectiveFunction = None,
         ls_solver: LS_SOLVER = LS_SOLVER.SA,
-        **args
+        **args,
     ):
         SolverGenericRCPSP.__init__(self, rcpsp_model=rcpsp_model)
         (

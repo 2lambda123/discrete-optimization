@@ -1130,9 +1130,11 @@ def sgs_multi_skill_preemptive(solution: MS_RCPSPSolution_Preemptive_Variant):
                 current_min_time = next(
                     t
                     for t in range(
-                        reached_t + 2
-                        if reached_t is not None
-                        else current_min_time + 1,
+                        (
+                            reached_t + 2
+                            if reached_t is not None
+                            else current_min_time + 1
+                        ),
                         new_horizon,
                     )
                     if all(
@@ -1466,9 +1468,11 @@ def sgs_multi_skill_preemptive_partial_schedule(
                 current_min_time = next(
                     t
                     for t in range(
-                        reached_t + 2
-                        if reached_t is not None
-                        else current_min_time + 1,
+                        (
+                            reached_t + 2
+                            if reached_t is not None
+                            else current_min_time + 1
+                        ),
                         new_horizon,
                     )
                     if all(
@@ -2259,8 +2263,7 @@ class MS_RCPSPModel(Problem):
         return makespan
 
     @abstractmethod
-    def evaluate_from_encoding(self, int_vector, encoding_name):
-        ...
+    def evaluate_from_encoding(self, int_vector, encoding_name): ...
 
     def evaluate(self, rcpsp_sol: MS_RCPSPSolution) -> Dict[str, float]:
         obj_makespan = self.evaluate_function(rcpsp_sol)
@@ -2668,9 +2671,9 @@ class MS_RCPSPModel(Problem):
             one_unit_per_task_max=self.one_unit_per_task_max,
             preemptive=self.preemptive,
             preemptive_indicator=self.preemptive_indicator,
-            special_constraints=None
-            if not self.do_special_constraints
-            else self.special_constraints,
+            special_constraints=(
+                None if not self.do_special_constraints else self.special_constraints
+            ),
             partial_preemption_data=self.partial_preemption_data,
             always_releasable_resources=self.always_releasable_resources,
             never_releasable_resources=self.never_releasable_resources,
@@ -3165,9 +3168,9 @@ def create_np_data_and_jit_functions(
     if rcpsp_problem.includes_special_constraint():
         for t in rcpsp_problem.special_constraints.start_times_window:
             if rcpsp_problem.special_constraints.start_times_window[t][0] is not None:
-                minimum_starting_time_array[
-                    rcpsp_problem.index_task[t]
-                ] = rcpsp_problem.special_constraints.start_times_window[t][0]
+                minimum_starting_time_array[rcpsp_problem.index_task[t]] = (
+                    rcpsp_problem.special_constraints.start_times_window[t][0]
+                )
     task_index = {rcpsp_problem.tasks_list[i]: i for i in range(rcpsp_problem.n_jobs)}
     for k in range(len(rcpsp_problem.resources_list)):
         ressource_available[k, :] = rcpsp_problem.resources_availability[
@@ -3372,7 +3375,7 @@ def compute_constraints_details(
     start_after_nunit = constraints.start_after_nunit
     disjunctive = constraints.disjunctive_tasks
     list_constraints_not_respected = []
-    for (t1, t2) in start_together:
+    for t1, t2 in start_together:
         time1 = solution.get_start_time(t1)
         time2 = solution.get_start_time(t2)
         b = time1 == time2
@@ -3380,7 +3383,7 @@ def compute_constraints_details(
             list_constraints_not_respected += [
                 ("start_together", t1, t2, time1, time2, abs(time2 - time1))
             ]
-    for (t1, t2) in start_at_end:
+    for t1, t2 in start_at_end:
         time1 = solution.get_end_time(t1)
         time2 = solution.get_start_time(t2)
         b = time1 == time2
@@ -3388,7 +3391,7 @@ def compute_constraints_details(
             list_constraints_not_respected += [
                 ("start_at_end", t1, t2, time1, time2, abs(time2 - time1))
             ]
-    for (t1, t2, off) in start_at_end_plus_offset:
+    for t1, t2, off in start_at_end_plus_offset:
         time1 = solution.get_end_time(t1) + off
         time2 = solution.get_start_time(t2)
         b = time2 >= time1
@@ -3396,7 +3399,7 @@ def compute_constraints_details(
             list_constraints_not_respected += [
                 ("start_at_end_plus_offset", t1, t2, time1, time2, abs(time2 - time1))
             ]
-    for (t1, t2, off) in start_after_nunit:
+    for t1, t2, off in start_after_nunit:
         time1 = solution.get_start_time(t1) + off
         time2 = solution.get_start_time(t2)
         b = time2 >= time1
@@ -3478,7 +3481,7 @@ def start_together_problem_description(
 ):
     start_together = constraints.start_together
     list_constraints_not_respected = []
-    for (t1, t2) in start_together:
+    for t1, t2 in start_together:
         time1 = solution.get_start_time(t1)
         time2 = solution.get_start_time(t2)
         b = time1 == time2
@@ -3515,23 +3518,23 @@ def check_solution(
     start_at_end_plus_offset = problem.special_constraints.start_at_end_plus_offset
     start_after_nunit = problem.special_constraints.start_after_nunit
     disjunctive = problem.special_constraints.disjunctive_tasks
-    for (t1, t2) in start_together:
+    for t1, t2 in start_together:
         if not relax_the_start_at_end:
             b = solution.get_start_time(t1) == solution.get_start_time(t2)
             if not b:
                 return False
-    for (t1, t2) in start_at_end:
+    for t1, t2 in start_at_end:
         if relax_the_start_at_end:
             b = solution.get_start_time(t2) >= solution.get_end_time(t1)
         else:
             b = solution.get_start_time(t2) == solution.get_end_time(t1)
         if not b:
             return False
-    for (t1, t2, off) in start_at_end_plus_offset:
+    for t1, t2, off in start_at_end_plus_offset:
         b = solution.get_start_time(t2) >= solution.get_end_time(t1) + off
         if not b:
             return False
-    for (t1, t2, off) in start_after_nunit:
+    for t1, t2, off in start_after_nunit:
         b = solution.get_start_time(t2) >= solution.get_start_time(t1) + off
         if not b:
             return False

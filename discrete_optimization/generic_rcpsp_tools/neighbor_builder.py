@@ -538,7 +538,7 @@ def mix_both(
     rcpsp_model: ANY_RCPSP,
     option_neighbor_random: OptionNeighborRandom,
     graph: GraphRCPSP = None,
-    **kwargs
+    **kwargs,
 ):
     a_s = [
         build_neighbor_random(

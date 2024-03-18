@@ -94,7 +94,7 @@ class Mutation2Opt(Mutation):
         test_all: bool = False,
         nb_test: Optional[int] = None,
         return_only_improvement: bool = False,
-        **kwargs: Any
+        **kwargs: Any,
     ):
         self.node_count = tsp_model.node_count
         self.length_permutation = tsp_model.length_permutation
@@ -232,7 +232,7 @@ class Mutation2OptIntersection(Mutation2Opt):
         nb_test: Optional[int] = None,
         return_only_improvement: bool = False,
         i_j_pairs: Optional[List[Tuple[int, int]]] = None,
-        **kwargs: Any
+        **kwargs: Any,
     ):
         Mutation2Opt.__init__(
             self, tsp_model, test_all, nb_test, return_only_improvement

@@ -231,9 +231,11 @@ def problem_constraints(
             )
             string2_start = cp_solver.constraint_start_time_string_preemptive_i(
                 task=job,
-                start_time=min(max_time, start_time_j + plus_delta)
-                if constraint_max_time
-                else start_time_j + plus_delta,
+                start_time=(
+                    min(max_time, start_time_j + plus_delta)
+                    if constraint_max_time
+                    else start_time_j + plus_delta
+                ),
                 sign=SignEnum.LEQ,
                 part_id=j + 1,
             )
@@ -303,9 +305,11 @@ def problem_constraints(
                 )
                 string2_start = cp_solver.constraint_start_time_string_preemptive_i(
                     task=job,
-                    start_time=min(max_time, start_time_j + plus_delta_2)
-                    if constraint_max_time
-                    else start_time_j + plus_delta_2,
+                    start_time=(
+                        min(max_time, start_time_j + plus_delta_2)
+                        if constraint_max_time
+                        else start_time_j + plus_delta_2
+                    ),
                     sign=SignEnum.LEQ,
                     part_id=j + 1,
                 )
@@ -337,11 +341,11 @@ def problem_constraints(
                 )
                 string2_start = cp_solver.constraint_start_time_string_preemptive_i(
                     task=job,
-                    start_time=min(
-                        max_time, current_solution.get_end_time(job) + plus_delta_2
-                    )
-                    if constraint_max_time
-                    else current_solution.get_end_time(job) + plus_delta_2,
+                    start_time=(
+                        min(max_time, current_solution.get_end_time(job) + plus_delta_2)
+                        if constraint_max_time
+                        else current_solution.get_end_time(job) + plus_delta_2
+                    ),
                     sign=SignEnum.LEQ,
                     part_id=k + 1,
                 )
@@ -412,7 +416,10 @@ class NeighborRepairProblems(ConstraintHandler):
         params_list: List[ParamsConstraintBuilder] = None,
     ):
         self.problem = problem
-        if isinstance(self.problem, RCPSPModelSpecialConstraintsPreemptive,) or (
+        if isinstance(
+            self.problem,
+            RCPSPModelSpecialConstraintsPreemptive,
+        ) or (
             isinstance(self.problem, RCPSPModel) and self.problem.do_special_constraints
         ):
             self.graph_rcpsp = GraphRCPSPSpecialConstraints(problem=self.problem)

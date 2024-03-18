@@ -55,7 +55,10 @@ class NeighborSubproblem(ConstraintHandler):
     ):
         self.problem = problem
         self.basic_constraint_builder = basic_constraint_builder
-        if isinstance(self.problem, RCPSPModelSpecialConstraintsPreemptive,) or (
+        if isinstance(
+            self.problem,
+            RCPSPModelSpecialConstraintsPreemptive,
+        ) or (
             isinstance(self.problem, RCPSPModel) and self.problem.do_special_constraints
         ):
             self.graph_rcpsp = GraphRCPSPSpecialConstraints(problem=self.problem)

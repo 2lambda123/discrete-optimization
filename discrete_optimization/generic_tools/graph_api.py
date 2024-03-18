@@ -152,7 +152,9 @@ def from_networkx(
     return Graph(
         nodes=[(n, graph_nx.nodes[n]) for n in graph_nx.nodes()],
         edges=[(e[0], e[1], graph_nx.edges[e]) for e in graph_nx.edges()],
-        undirected=undirected
-        if undirected is not None
-        else not isinstance(graph_nx, nx.DiGraph),
+        undirected=(
+            undirected
+            if undirected is not None
+            else not isinstance(graph_nx, nx.DiGraph)
+        ),
     )

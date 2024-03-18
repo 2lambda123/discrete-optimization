@@ -73,7 +73,7 @@ def build_default_cp_model(
             exact_skills_need=False,
             add_calendar_constraint_unit=False,
             add_partial_solution_hard_constraint=False,
-            **kwargs
+            **kwargs,
         )
         return solver
     else:
@@ -87,7 +87,7 @@ def build_default_cp_model(
             exact_skills_need=False,
             add_calendar_constraint_unit=False,
             add_partial_solution_hard_constraint=False,
-            **kwargs
+            **kwargs,
         )
         return solver
 
@@ -183,7 +183,7 @@ class LargeNeighborhoodSearchMSRCPSP(SolverDO):
         self,
         rcpsp_problem: GENERIC_CLASS_MULTISKILL,
         partial_solution: PartialSolutionPreemptive = None,
-        **kwargs
+        **kwargs,
     ):
         self.rcpsp_problem = rcpsp_problem
         graph = build_graph_rcpsp_object(self.rcpsp_problem)
@@ -200,7 +200,7 @@ class LargeNeighborhoodSearchMSRCPSP(SolverDO):
             graph=graph,
             multiskill=isinstance(self.rcpsp_problem, MS_RCPSPModel),
             preemptive=self.rcpsp_problem.preemptive,
-            **kwargs
+            **kwargs,
         )
         self.post_pro = None
         if not self.rcpsp_problem.preemptive:
@@ -232,7 +232,7 @@ class LargeNeighborhoodSearchMSRCPSP(SolverDO):
         max_time_seconds: Optional[int] = None,
         skip_first_iteration: bool = False,
         stop_first_iteration_if_optimal: bool = True,
-        **args
+        **args,
     ) -> ResultStorage:
         if parameters_cp is None:
             parameters_cp = ParametersCP.default()

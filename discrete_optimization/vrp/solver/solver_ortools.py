@@ -83,6 +83,7 @@ class VrpORToolsSolver(SolverVrp):
             self.vrp_model.end_indexes,
         )
         routing = pywrapcp.RoutingModel(manager)
+
         # Create and register a transit callback.
         def distance_callback(from_index: int, to_index: int) -> int:
             """Returns the distance between the two nodes."""

@@ -21,7 +21,7 @@ class GA_RCPSP_Solver(SolverRCPSP):
         self,
         rcpsp_model: RCPSPModel,
         params_objective_function: ParamsObjectiveFunction = None,
-        **kwargs
+        **kwargs,
     ):
         SolverRCPSP.__init__(self, rcpsp_model=rcpsp_model)
         (
@@ -57,7 +57,7 @@ class GA_MRCPSP_Solver(SolverRCPSP):
         self,
         rcpsp_model: RCPSPModel,
         params_objective_function: ParamsObjectiveFunction = None,
-        **kwargs
+        **kwargs,
     ):
         SolverRCPSP.__init__(self, rcpsp_model=rcpsp_model)
         (
