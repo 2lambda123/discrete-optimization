@@ -195,8 +195,7 @@ class CPSolver(SolverDO):
     @abstractmethod
     def solve(
         self, parameters_cp: Optional[ParametersCP] = None, **args: Any
-    ) -> ResultStorage:
-        ...
+    ) -> ResultStorage: ...
 
     def get_status_solver(self) -> Union[StatusSolver, None]:
         return self.status_solver
@@ -227,9 +226,9 @@ class MinizincCPSolver(CPSolver):
                 result = self.instance.solve(
                     timeout=timedelta(seconds=limit_time_s),
                     intermediate_solutions=intermediate_solutions,
-                    processes=parameters_cp.nb_process
-                    if parameters_cp.multiprocess
-                    else None,
+                    processes=(
+                        parameters_cp.nb_process if parameters_cp.multiprocess else None
+                    ),
                     free_search=parameters_cp.free_search,
                     optimisation_level=parameters_cp.optimisation_level,
                 )
@@ -242,9 +241,9 @@ class MinizincCPSolver(CPSolver):
             result = self.instance.solve(
                 timeout=timedelta(seconds=limit_time_s),
                 intermediate_solutions=intermediate_solutions,
-                processes=parameters_cp.nb_process
-                if parameters_cp.multiprocess
-                else None,
+                processes=(
+                    parameters_cp.nb_process if parameters_cp.multiprocess else None
+                ),
                 free_search=parameters_cp.free_search,
                 optimisation_level=parameters_cp.optimisation_level,
             )

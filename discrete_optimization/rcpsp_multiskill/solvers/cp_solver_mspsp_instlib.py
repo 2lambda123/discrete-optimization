@@ -187,9 +187,9 @@ class CP_MSPSP_MZN(MinizincCPSolver):
     def init_from_model(self, **args):
         dict_data = {}
         list_skills = sorted(list(self.rcpsp_model.skills_set))
-        dict_data[
-            "mint"
-        ] = 10  # here put a better number (from critical path method for example)
+        dict_data["mint"] = (
+            10  # here put a better number (from critical path method for example)
+        )
         dict_data["nActs"] = self.rcpsp_model.n_jobs
         dict_data["dur"] = [
             self.rcpsp_model.mode_details[t][1]["duration"]
