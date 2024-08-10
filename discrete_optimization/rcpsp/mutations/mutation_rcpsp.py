@@ -35,7 +35,7 @@ class PermutationMutationRCPSP(Mutation):
         problem: Problem,
         solution: Solution,
         other_mutation: Type[Mutation] = PermutationShuffleMutation,
-        **kwargs: Any
+        **kwargs: Any,
     ) -> "PermutationMutationRCPSP":
         built_other_mutation = other_mutation.build(problem, solution, **kwargs)
         return PermutationMutationRCPSP(

@@ -644,9 +644,9 @@ def sgs_fast_ms_preemptive(
                                         ]
                                     ]
                                     minimum_starting_time[act_id] = indexes[-1] + 1
-                                    done_duration[
-                                        act_id
-                                    ] = 0  # a bit conservative here.
+                                    done_duration[act_id] = (
+                                        0  # a bit conservative here.
+                                    )
                                     to_break = True
                                     unfeasible_non_renewable_resources = True
                                     break

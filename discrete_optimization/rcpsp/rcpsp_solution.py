@@ -279,17 +279,22 @@ class RCPSPSolution(Solution):
                     ),
                     completed_task_times=np.array(
                         [
-                            completed_tasks[self.problem.tasks_list[i]].end
-                            if self.problem.tasks_list[i] in completed_tasks
-                            else 0
+                            (
+                                completed_tasks[self.problem.tasks_list[i]].end
+                                if self.problem.tasks_list[i] in completed_tasks
+                                else 0
+                            )
                             for i in range(self.problem.n_jobs)
                         ]
                     ),
                     scheduled_task=np.array(
                         [
-                            scheduled_tasks_start_times[self.problem.tasks_list[i]]
-                            if self.problem.tasks_list[i] in scheduled_tasks_start_times
-                            else -1
+                            (
+                                scheduled_tasks_start_times[self.problem.tasks_list[i]]
+                                if self.problem.tasks_list[i]
+                                in scheduled_tasks_start_times
+                                else -1
+                            )
                             for i in range(self.problem.n_jobs)
                         ]
                     ),

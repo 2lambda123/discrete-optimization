@@ -48,8 +48,7 @@ class ConstraintHandler:
         child_instance: Instance,
         result_storage: ResultStorage,
         last_result_store: Optional[ResultStorage] = None,
-    ) -> Iterable[Any]:
-        ...
+    ) -> Iterable[Any]: ...
 
     @abstractmethod
     def remove_constraints_from_previous_iteration(
@@ -57,8 +56,7 @@ class ConstraintHandler:
         cp_solver: CPSolver,
         child_instance: Instance,
         previous_constraints: Iterable[Any],
-    ) -> None:
-        ...
+    ) -> None: ...
 
 
 class LNS_CP(SolverDO):
@@ -146,9 +144,9 @@ class LNS_CP(SolverDO):
                             cp_solver=self.cp_solver,
                             child_instance=child,
                             result_storage=store_lns,
-                            last_result_store=store_lns
-                            if iteration == 0
-                            else result_store,
+                            last_result_store=(
+                                store_lns if iteration == 0 else result_store
+                            ),
                         )
                     )
                 try:
@@ -157,18 +155,22 @@ class LNS_CP(SolverDO):
                             timeout=timedelta(seconds=parameters_cp.time_limit_iter0),
                             intermediate_solutions=parameters_cp.intermediate_solution,
                             free_search=parameters_cp.free_search,
-                            processes=None
-                            if not parameters_cp.multiprocess
-                            else parameters_cp.nb_process,
+                            processes=(
+                                None
+                                if not parameters_cp.multiprocess
+                                else parameters_cp.nb_process
+                            ),
                         )
                     else:
                         result = child.solve(
                             timeout=timedelta(seconds=parameters_cp.time_limit),
                             intermediate_solutions=parameters_cp.intermediate_solution,
                             free_search=parameters_cp.free_search,
-                            processes=None
-                            if not parameters_cp.multiprocess
-                            else parameters_cp.nb_process,
+                            processes=(
+                                None
+                                if not parameters_cp.multiprocess
+                                else parameters_cp.nb_process
+                            ),
                         )
                     result_store = self.cp_solver.retrieve_solutions(
                         result, parameters_cp=parameters_cp

@@ -1933,9 +1933,9 @@ class CP_MRCPSP_MZN_NOBOOL(MinizincCPSolver, SolverRCPSP):
         for res in object_result:
             modes_dict = {}
             for j in range(len(res.mode_chosen)):
-                modes_dict[
-                    self.modeindex_map[res.mode_chosen[j]]["task"]
-                ] = self.modeindex_map[res.mode_chosen[j]]["original_mode_index"]
+                modes_dict[self.modeindex_map[res.mode_chosen[j]]["task"]] = (
+                    self.modeindex_map[res.mode_chosen[j]]["original_mode_index"]
+                )
             rcpsp_schedule = {}
             start_times = res.dict["start"]
             for i in range(len(start_times)):
@@ -2103,9 +2103,9 @@ class CP_MRCPSP_MZN_MODES:
         intermediate_solutions = parameters_cp.intermediate_solution
         result = self.instance.solve(
             timeout=timedelta(seconds=timeout),
-            nr_solutions=parameters_cp.nr_solutions
-            if not parameters_cp.all_solutions
-            else None,
+            nr_solutions=(
+                parameters_cp.nr_solutions if not parameters_cp.all_solutions else None
+            ),
             all_solutions=parameters_cp.all_solutions,
             intermediate_solutions=intermediate_solutions,
         )

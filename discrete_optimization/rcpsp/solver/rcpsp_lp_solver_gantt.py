@@ -48,6 +48,7 @@ def intersect(i1, i2):
 
 class ConstraintTaskIndividual:
     list_tuple: List[Tuple[str, int, int, bool]]
+
     # task, ressource, ressource_individual, has or has not to do a task
     # indicates constraint for a given resource individual that has to do a tas
     def __init__(self, list_tuple):
@@ -188,12 +189,12 @@ class LP_MRCPSP_GANTT(PymipMilpSolver, _Base_LP_MRCPSP_GANTT):
                         )
                         if available:
                             key_variable = (k, individual, task)
-                            self.ressource_id_usage[k][individual][
-                                task
-                            ] = self.model.add_var(
-                                name=str(key_variable),
-                                var_type=BINARY,
-                                obj=random.random(),
+                            self.ressource_id_usage[k][individual][task] = (
+                                self.model.add_var(
+                                    name=str(key_variable),
+                                    var_type=BINARY,
+                                    obj=random.random(),
+                                )
                             )
                             if task not in variables_per_task:
                                 variables_per_task[task] = set()
@@ -231,16 +232,16 @@ class LP_MRCPSP_GANTT(PymipMilpSolver, _Base_LP_MRCPSP_GANTT):
                         if variable[2] in tasks
                     ]
                     if len(keys_variable) > 0:
-                        overlaps_constraints[
-                            (i, k, individual)
-                        ] = self.model.add_constr(
-                            xsum(
-                                [
-                                    self.ressource_id_usage[key[0]][key[1]][key[2]]
-                                    for key in keys_variable
-                                ]
+                        overlaps_constraints[(i, k, individual)] = (
+                            self.model.add_constr(
+                                xsum(
+                                    [
+                                        self.ressource_id_usage[key[0]][key[1]][key[2]]
+                                        for key in keys_variable
+                                    ]
+                                )
+                                <= 1
                             )
-                            <= 1
                         )
 
 
@@ -272,10 +273,10 @@ class LP_MRCPSP_GANTT_GUROBI(GurobiMilpSolver, _Base_LP_MRCPSP_GANTT):
                         )
                         if available:
                             key_variable = (k, individual, task)
-                            self.ressource_id_usage[k][individual][
-                                task
-                            ] = self.model.addVar(
-                                name=str(key_variable), vtype=gurobi.GRB.BINARY
+                            self.ressource_id_usage[k][individual][task] = (
+                                self.model.addVar(
+                                    name=str(key_variable), vtype=gurobi.GRB.BINARY
+                                )
                             )
                             if task not in variables_per_task:
                                 variables_per_task[task] = set()
@@ -313,16 +314,16 @@ class LP_MRCPSP_GANTT_GUROBI(GurobiMilpSolver, _Base_LP_MRCPSP_GANTT):
                         if variable[2] in tasks
                     ]
                     if len(keys_variable) > 0:
-                        overlaps_constraints[
-                            (i, k, individual)
-                        ] = self.model.addLConstr(
-                            gurobi.quicksum(
-                                [
-                                    self.ressource_id_usage[key[0]][key[1]][key[2]]
-                                    for key in keys_variable
-                                ]
+                        overlaps_constraints[(i, k, individual)] = (
+                            self.model.addLConstr(
+                                gurobi.quicksum(
+                                    [
+                                        self.ressource_id_usage[key[0]][key[1]][key[2]]
+                                        for key in keys_variable
+                                    ]
+                                )
+                                <= 1
                             )
-                            <= 1
                         )
         self.model.modelSense = gurobi.GRB.MINIMIZE
 

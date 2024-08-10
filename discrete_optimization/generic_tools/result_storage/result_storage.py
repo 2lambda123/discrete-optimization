@@ -45,9 +45,9 @@ class ResultStorage:
         self.map_solutions = {}
         for i in range(len(self.list_solution_fits)):
             if self.list_solution_fits[i][0] not in self.map_solutions:
-                self.map_solutions[
-                    self.list_solution_fits[i][0]
-                ] = self.list_solution_fits[i][1]
+                self.map_solutions[self.list_solution_fits[i][0]] = (
+                    self.list_solution_fits[i][1]
+                )
                 heappush(self.heap, self.list_solution_fits[i][1])
                 self.size_heap += 1
         if self.size_heap >= self.nb_best_score and self.limit_store:

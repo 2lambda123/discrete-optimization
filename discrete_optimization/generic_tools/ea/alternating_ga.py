@@ -114,7 +114,7 @@ class AlternatingGa:
                 objectives=self.objectives,
                 objective_weights=self.objective_weights,
                 deap_verbose=self.deap_verbose,
-                **kwargs_ga
+                **kwargs_ga,
             )
             tmp_sol = ga_solver.solve().get_best_solution()
             count_evals += self.sub_evals[current_encoding_index]  # type: ignore

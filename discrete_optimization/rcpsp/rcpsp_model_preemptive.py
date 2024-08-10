@@ -298,16 +298,18 @@ class RCPSPSolutionPreemptive(Solution):
                     partial_schedule_starts=np.array(
                         [
                             [
-                                partial_schedule.get(
-                                    self.problem.tasks_list[i], {}
-                                ).get("starts", [])[k]
-                                if k
-                                < len(
+                                (
                                     partial_schedule.get(
                                         self.problem.tasks_list[i], {}
-                                    ).get("starts", [])
+                                    ).get("starts", [])[k]
+                                    if k
+                                    < len(
+                                        partial_schedule.get(
+                                            self.problem.tasks_list[i], {}
+                                        ).get("starts", [])
+                                    )
+                                    else -1
                                 )
-                                else -1
                                 for k in range(10)
                             ]
                             for i in range(self.problem.n_jobs)
@@ -317,16 +319,18 @@ class RCPSPSolutionPreemptive(Solution):
                     partial_schedule_ends=np.array(
                         [
                             [
-                                partial_schedule.get(
-                                    self.problem.tasks_list[i], {}
-                                ).get("ends", [])[k]
-                                if k
-                                < len(
+                                (
                                     partial_schedule.get(
                                         self.problem.tasks_list[i], {}
-                                    ).get("ends", [])
+                                    ).get("ends", [])[k]
+                                    if k
+                                    < len(
+                                        partial_schedule.get(
+                                            self.problem.tasks_list[i], {}
+                                        ).get("ends", [])
+                                    )
+                                    else -1
                                 )
-                                else -1
                                 for k in range(10)
                             ]
                             for i in range(self.problem.n_jobs)
@@ -871,9 +875,11 @@ def generate_schedule_from_permutation_serial_sgs(
                     (
                         t
                         for t in range(
-                            reached_t + 2
-                            if reached_t is not None
-                            else current_min_time + 1,
+                            (
+                                reached_t + 2
+                                if reached_t is not None
+                                else current_min_time + 1
+                            ),
                             new_horizon,
                         )
                         if all(
@@ -1079,9 +1085,11 @@ def generate_schedule_from_permutation_serial_sgs_partial_schedule(
                 current_min_time = next(
                     t
                     for t in range(
-                        reached_t + 2
-                        if reached_t is not None
-                        else current_min_time + 1,
+                        (
+                            reached_t + 2
+                            if reached_t is not None
+                            else current_min_time + 1
+                        ),
                         new_horizon,
                     )
                     if all(
@@ -1179,9 +1187,11 @@ def compute_mean_resource_reserve(
         mean_avail[res] = np.mean(resource_avail_in_time[res])
     mean_resource_reserve = np.mean(
         [
-            mean_avail[res] / max(rcpsp_problem.resources[res])
-            if rcpsp_problem.is_varying_resource()
-            else mean_avail[res] / rcpsp_problem.resources[res]
+            (
+                mean_avail[res] / max(rcpsp_problem.resources[res])
+                if rcpsp_problem.is_varying_resource()
+                else mean_avail[res] / rcpsp_problem.resources[res]
+            )
             for res in rcpsp_problem.resources_list
         ]
     )

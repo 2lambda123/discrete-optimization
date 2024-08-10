@@ -37,8 +37,7 @@ class TemperatureScheduling:
     temperature: float
 
     @abstractmethod
-    def next_temperature(self) -> float:
-        ...
+    def next_temperature(self) -> float: ...
 
 
 class SimulatedAnnealing:

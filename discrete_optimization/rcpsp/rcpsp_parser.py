@@ -93,9 +93,9 @@ def parse_psplib(input_data: str) -> RCPSPModel:
         mode_details[int(task_id)][mode_id] = {}  # Dict[int, Dict[str, int]]
         mode_details[int(task_id)][mode_id]["duration"] = duration
         for i in range(n_resources):
-            mode_details[int(task_id)][mode_id][
-                list(resources.keys())[i]
-            ] = resources_usage[i]
+            mode_details[int(task_id)][mode_id][list(resources.keys())[i]] = (
+                resources_usage[i]
+            )
 
     return RCPSPModel(
         resources=resources,

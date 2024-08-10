@@ -132,9 +132,9 @@ def add_fake_task_cp_data(
                 [fake_tasks_unit[i].get(res, 0) for i in range(n_fake_tasks_unit)]
                 for res in rcpsp_model.employees_list
             ]
-            dict_to_add_in_instance[
-                "max_duration_fake_task_unit"
-            ] = max_duration_fake_task_unit
+            dict_to_add_in_instance["max_duration_fake_task_unit"] = (
+                max_duration_fake_task_unit
+            )
             dict_to_add_in_instance["n_fake_task_unit"] = n_fake_tasks_unit
             dict_to_add_in_instance["fakestart_unit"] = fakestart_unit
             dict_to_add_in_instance["fakedur_unit"] = fake_dur_unit
@@ -487,9 +487,9 @@ class CP_MS_MRCPSP_MZN(MinizincCPSolver):
         instance["add_objective_makespan"] = add_objective_makespan
         instance["ignore_sec_objective"] = ignore_sec_objective
         instance["include_cumulative_resource"] = include_cumulative_resource
-        instance[
-            "include_constraint_on_start_value"
-        ] = include_constraint_on_start_value
+        instance["include_constraint_on_start_value"] = (
+            include_constraint_on_start_value
+        )
         n_res = len(resources_list)
         keys = []
         if not no_ressource:
@@ -580,9 +580,15 @@ class CP_MS_MRCPSP_MZN(MinizincCPSolver):
         )
         skillunits = [
             [
-                int(math.floor(self.rcpsp_model.employees[j].dict_skill[s].skill_value))
-                if s in self.rcpsp_model.employees[j].dict_skill
-                else 0
+                (
+                    int(
+                        math.floor(
+                            self.rcpsp_model.employees[j].dict_skill[s].skill_value
+                        )
+                    )
+                    if s in self.rcpsp_model.employees[j].dict_skill
+                    else 0
+                )
                 for s in skills_set
             ]
             for j in self.rcpsp_model.employees_list
@@ -1103,9 +1109,15 @@ class CP_MS_MRCPSP_MZN_PREEMPTIVE(MinizincCPSolver):
 
         skillunits = [
             [
-                int(math.floor(self.rcpsp_model.employees[j].dict_skill[s].skill_value))
-                if s in self.rcpsp_model.employees[j].dict_skill
-                else 0
+                (
+                    int(
+                        math.floor(
+                            self.rcpsp_model.employees[j].dict_skill[s].skill_value
+                        )
+                    )
+                    if s in self.rcpsp_model.employees[j].dict_skill
+                    else 0
+                )
                 for s in skills_set
             ]
             for j in self.rcpsp_model.employees_list
@@ -1386,9 +1398,9 @@ class CP_MS_MRCPSP_MZN_PARTIAL_PREEMPTIVE(CP_MS_MRCPSP_MZN_PREEMPTIVE):
         n_res = len(resources_list)
         keys = []
         instance["nb_preemptive"] = args.get("nb_preemptive", 2)
-        instance[
-            "include_constraint_on_start_value"
-        ] = include_constraint_on_start_value
+        instance["include_constraint_on_start_value"] = (
+            include_constraint_on_start_value
+        )
         self.nb_preemptive = instance["nb_preemptive"]
         keys += ["nb_preemptive"]
         instance["possibly_preemptive"] = args.get(
@@ -1481,9 +1493,15 @@ class CP_MS_MRCPSP_MZN_PARTIAL_PREEMPTIVE(CP_MS_MRCPSP_MZN_PREEMPTIVE):
         keys += ["nb_skill", "skillreq", "nb_units"]
         skillunits = [
             [
-                int(math.floor(self.rcpsp_model.employees[j].dict_skill[s].skill_value))
-                if s in self.rcpsp_model.employees[j].dict_skill
-                else 0
+                (
+                    int(
+                        math.floor(
+                            self.rcpsp_model.employees[j].dict_skill[s].skill_value
+                        )
+                    )
+                    if s in self.rcpsp_model.employees[j].dict_skill
+                    else 0
+                )
                 for s in skills_set
             ]
             for j in self.rcpsp_model.employees_list
@@ -2292,13 +2310,15 @@ class PrecomputeEmployeesForTasks:
 
         skillunits = [
             [
-                int(
-                    math.floor(
-                        self.ms_rcpsp_model.employees[j].dict_skill[s].skill_value
+                (
+                    int(
+                        math.floor(
+                            self.ms_rcpsp_model.employees[j].dict_skill[s].skill_value
+                        )
                     )
+                    if s in self.ms_rcpsp_model.employees[j].dict_skill
+                    else 0
                 )
-                if s in self.ms_rcpsp_model.employees[j].dict_skill
-                else 0
                 for s in skills_set
             ]
             for j in self.ms_rcpsp_model.employees_list

@@ -144,9 +144,11 @@ def sgs_variant(solution: MS_RCPSPSolution, problem: MS_RCPSPModel, predecessors
             if len(solution.employee_usage[task][emp]) > 0
         ]
         times_predecessors = [
-            new_proposed_schedule[t]["end_time"]
-            if t in new_proposed_schedule
-            else solution.schedule[t]["end_time"]
+            (
+                new_proposed_schedule[t]["end_time"]
+                if t in new_proposed_schedule
+                else solution.schedule[t]["end_time"]
+            )
             for t in predecessors_dict[task]
         ]
         if len(times_predecessors) > 0:
@@ -282,52 +284,62 @@ def sgs_variant_preemptive(
         if len(solution.schedule[task]["starts"]) > 1:
             continue
         times_predecessors = [
-            new_proposed_schedule[t]["ends"][-1]
-            if t in new_proposed_schedule
-            else solution.schedule[t]["ends"][-1]
+            (
+                new_proposed_schedule[t]["ends"][-1]
+                if t in new_proposed_schedule
+                else solution.schedule[t]["ends"][-1]
+            )
             for t in predecessors_dict[task]
         ]
         if isinstance(problem, MS_RCPSPSolution_Preemptive_Variant):
             times_predecessors += [
-                new_proposed_schedule[t]["starts"][0]
-                if t in new_proposed_schedule
-                else solution.schedule[t]["starts"][0]
+                (
+                    new_proposed_schedule[t]["starts"][0]
+                    if t in new_proposed_schedule
+                    else solution.schedule[t]["starts"][0]
+                )
                 for t in problem.special_constraints.dict_start_together.get(
                     task, set()
                 )
             ]
             times_predecessors += [
-                new_proposed_schedule[t]["starts"][0]
-                + problem.special_constraints.dict_start_after_nunit_reverse.get(task)[
-                    t
-                ]
-                if t in new_proposed_schedule
-                else solution.schedule[t]["starts"][0]
-                + problem.special_constraints.dict_start_after_nunit_reverse.get(task)[
-                    t
-                ]
+                (
+                    new_proposed_schedule[t]["starts"][0]
+                    + problem.special_constraints.dict_start_after_nunit_reverse.get(
+                        task
+                    )[t]
+                    if t in new_proposed_schedule
+                    else solution.schedule[t]["starts"][0]
+                    + problem.special_constraints.dict_start_after_nunit_reverse.get(
+                        task
+                    )[t]
+                )
                 for t in problem.special_constraints.dict_start_after_nunit_reverse.get(
                     task, {}
                 )
             ]
             times_predecessors += [
-                new_proposed_schedule[t]["ends"][-1]
-                if t in new_proposed_schedule
-                else solution.schedule[t]["ends"][-1]
+                (
+                    new_proposed_schedule[t]["ends"][-1]
+                    if t in new_proposed_schedule
+                    else solution.schedule[t]["ends"][-1]
+                )
                 for t in problem.special_constraints.dict_start_at_end_reverse.get(
                     task, {}
                 )
             ]
             times_predecessors += [
-                new_proposed_schedule[t]["ends"][-1]
-                + problem.special_constraints.dict_start_at_end_offset_reverse.get(
-                    task
-                )[t]
-                if t in new_proposed_schedule
-                else solution.schedule[t]["ends"][-1]
-                + problem.special_constraints.dict_start_at_end_offset_reverse.get(
-                    task
-                )[t]
+                (
+                    new_proposed_schedule[t]["ends"][-1]
+                    + problem.special_constraints.dict_start_at_end_offset_reverse.get(
+                        task
+                    )[t]
+                    if t in new_proposed_schedule
+                    else solution.schedule[t]["ends"][-1]
+                    + problem.special_constraints.dict_start_at_end_offset_reverse.get(
+                        task
+                    )[t]
+                )
                 for t in problem.special_constraints.dict_start_at_end_offset_reverse.get(
                     task, {}
                 )
@@ -492,9 +504,11 @@ def shift_left_method(
             dones.add(task)
         if task not in new_proposed_schedule:
             times_predecessors = [
-                new_proposed_schedule[t]["ends"][-1]
-                if t in new_proposed_schedule
-                else solution.schedule[t]["ends"][-1]
+                (
+                    new_proposed_schedule[t]["ends"][-1]
+                    if t in new_proposed_schedule
+                    else solution.schedule[t]["ends"][-1]
+                )
                 for t in predecessors_dict[task]
             ]
             if task in problem.special_constraints.start_times_window:
@@ -504,45 +518,61 @@ def shift_left_method(
                     ]
             if isinstance(solution, MS_RCPSPSolution_Preemptive_Variant):
                 times_predecessors += [
-                    new_proposed_schedule[t]["starts"][0]
-                    if t in new_proposed_schedule
-                    else solution.schedule[t]["starts"][0]
+                    (
+                        new_proposed_schedule[t]["starts"][0]
+                        if t in new_proposed_schedule
+                        else solution.schedule[t]["starts"][0]
+                    )
                     for t in problem.special_constraints.dict_start_together.get(
                         task, set()
                     )
                 ]
                 times_predecessors += [
-                    new_proposed_schedule[t]["starts"][0]
-                    + problem.special_constraints.dict_start_after_nunit_reverse.get(
-                        task
-                    )[t]
-                    if t in new_proposed_schedule
-                    else solution.schedule[t]["starts"][0]
-                    + problem.special_constraints.dict_start_after_nunit_reverse.get(
-                        task
-                    )[t]
+                    (
+                        new_proposed_schedule[t]["starts"][0]
+                        + problem.special_constraints.dict_start_after_nunit_reverse.get(
+                            task
+                        )[
+                            t
+                        ]
+                        if t in new_proposed_schedule
+                        else solution.schedule[t]["starts"][0]
+                        + problem.special_constraints.dict_start_after_nunit_reverse.get(
+                            task
+                        )[
+                            t
+                        ]
+                    )
                     for t in problem.special_constraints.dict_start_after_nunit_reverse.get(
                         task, {}
                     )
                 ]
                 times_predecessors += [
-                    new_proposed_schedule[t]["ends"][-1]
-                    if t in new_proposed_schedule
-                    else solution.schedule[t]["ends"][-1]
+                    (
+                        new_proposed_schedule[t]["ends"][-1]
+                        if t in new_proposed_schedule
+                        else solution.schedule[t]["ends"][-1]
+                    )
                     for t in problem.special_constraints.dict_start_at_end_reverse.get(
                         task, {}
                     )
                 ]
                 times_predecessors += [
-                    new_proposed_schedule[t]["ends"][-1]
-                    + problem.special_constraints.dict_start_at_end_offset_reverse.get(
-                        task
-                    )[t]
-                    if t in new_proposed_schedule
-                    else solution.schedule[t]["ends"][-1]
-                    + problem.special_constraints.dict_start_at_end_offset_reverse.get(
-                        task
-                    )[t]
+                    (
+                        new_proposed_schedule[t]["ends"][-1]
+                        + problem.special_constraints.dict_start_at_end_offset_reverse.get(
+                            task
+                        )[
+                            t
+                        ]
+                        if t in new_proposed_schedule
+                        else solution.schedule[t]["ends"][-1]
+                        + problem.special_constraints.dict_start_at_end_offset_reverse.get(
+                            task
+                        )[
+                            t
+                        ]
+                    )
                     for t in problem.special_constraints.dict_start_at_end_offset_reverse.get(
                         task, {}
                     )

@@ -558,7 +558,7 @@ class ORToolsGPDP(SolverDO):
             intervals = {}
             time_dimension = routing.GetDimensionOrDie("Time")
             i = 0
-            for (set_of_task, limit) in self.problem.cumulative_constraints:
+            for set_of_task, limit in self.problem.cumulative_constraints:
                 list_of_tasks = list(set_of_task)
                 index_tasks = [
                     manager.NodeToIndex(self.problem.index_nodes[t])
