@@ -282,7 +282,7 @@ def return_solver(
 
 
 def get_solver_default_arguments(
-    method: Union[Type[SolverRCPSP], Type[SolverGenericRCPSP]]
+    method: Union[Type[SolverRCPSP], Type[SolverGenericRCPSP]],
 ) -> Dict[str, Any]:
     try:
         return solvers_map[method][1]
