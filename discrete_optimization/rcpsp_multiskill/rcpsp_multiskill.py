@@ -3010,7 +3010,7 @@ def build_partial_vectors_preemptive(
 
 
 def create_fake_tasks_multiskills(
-    rcpsp_problem: Union[MS_RCPSPModel, MS_RCPSPSolution_Variant]
+    rcpsp_problem: Union[MS_RCPSPModel, MS_RCPSPSolution_Variant],
 ):
     ressources_arrays = {
         r: np.array(rcpsp_problem.get_resource_availability_array(r))
@@ -3092,7 +3092,7 @@ def cluster_employees_to_resource_types(ms_rcpsp_problem: MS_RCPSPModel):
 
 
 def create_np_data_and_jit_functions(
-    rcpsp_problem: Union[MS_RCPSPModel, MS_RCPSPModel_Variant]
+    rcpsp_problem: Union[MS_RCPSPModel, MS_RCPSPModel_Variant],
 ):
     consumption_array = np.zeros(
         (

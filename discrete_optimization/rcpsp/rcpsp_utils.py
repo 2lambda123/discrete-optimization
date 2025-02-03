@@ -490,7 +490,7 @@ def intersect(i1: Sequence[int], i2: Sequence[int]) -> Optional[List[int]]:
 
 
 def all_diff_start_time(
-    rcpsp_sols: Tuple[RCPSPSolution, RCPSPSolution]
+    rcpsp_sols: Tuple[RCPSPSolution, RCPSPSolution],
 ) -> Dict[Hashable, int]:
     sol1 = rcpsp_sols[0]
     sol2 = rcpsp_sols[1]
@@ -566,7 +566,7 @@ def create_fake_tasks(rcpsp_problem: RCPSPModel) -> List[Dict[str, int]]:
 
 
 def get_max_time_solution(
-    solution: Union[RCPSPSolutionPreemptive, RCPSPSolution]
+    solution: Union[RCPSPSolutionPreemptive, RCPSPSolution],
 ) -> int:
     if isinstance(solution, RCPSPSolutionPreemptive):
         max_time = max(

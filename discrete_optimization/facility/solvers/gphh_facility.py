@@ -1,5 +1,4 @@
-"""Genetic programming based solver for facility location problem.
-"""
+"""Genetic programming based solver for facility location problem."""
 
 #  Copyright (c) 2022 AIRBUS and its affiliates.
 #  This source code is licensed under the MIT license found in the

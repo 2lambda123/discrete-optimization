@@ -1,4 +1,4 @@
-"""Easy Large neighborhood search solver for coloring. """
+"""Easy Large neighborhood search solver for coloring."""
 
 #  Copyright (c) 2023 AIRBUS and its affiliates.
 #  This source code is licensed under the MIT license found in the
